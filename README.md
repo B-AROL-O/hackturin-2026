@@ -8,21 +8,23 @@
 ## The Team
 
 - <https://github.com/giacolees>
-- <https://github.com/gmacario/>
+- <https://github.com/gmacario>
 - <https://github.com/lorenzopalloni>
+- Telegram: younglees
 
 ## Key People for hackTurin 2026
 
 ### Presenters during Kickoff
 
-- <https://www.linkedin.com/in/marcogay> - CEO, Zest. Ex Presidente Giovani Imprenditori di Confindustria
-- <https://www.linkedin.com/in/federico-sandrone> - CEO, Coesa Energy. Presidente Gruppo Giovani Imprenditori di Torino
+- [Marco Gay](https://www.linkedin.com/in/marcogay) - CEO, Zest. Ex Presidente Giovani Imprenditori di Confindustria
+- [Federico Sandrone](https://www.linkedin.com/in/federico-sandrone) - CEO, Coesa Energy. Presidente Gruppo Giovani Imprenditori di Torino
 - ...
 
 ### Confirmed Mentors
 
-- <https://www.linkedin.com/in/andrearichetta> - Arduino
-- <https://www.linkedin.com/in/davidegomba> - Seeed Studio
-- <https://www.linkedin.com/in/matteo-stoppa> - Coesa Energy
+- [Davide Gomba](https://www.linkedin.com/in/davidegomba) - Seeed Studio
+- [Luciano Lavagno](https://www.linkedin.com/in/luciano-lavagno-487495) - Politecnico di Torino
+- [Andrea Richetta](https://www.linkedin.com/in/andrearichetta) - Arduino
+- [Matteo Stoppa](https://www.linkedin.com/in/matteo-stoppa) - Coesa Energy
 
 <!-- EOF -->
