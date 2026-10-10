@@ -7,19 +7,19 @@
     {
       "id": "pv-pitch",
       "path": "docs/pitch-draft.md",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "sha256": "f8f9273494b40bc0d2083f50c8576d97a2d7ba7e117ac0b1815a1c4c5be13d56",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "sha256": "977bdb60da8d9a17bdae49551638afc2a5cae33211392db2d6e04d36c44b1680",
       "status": "intended_behavior",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/pitch-draft.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/pitch-draft.md",
       "source_state": "committed"
     },
     {
       "id": "pv-index",
       "path": "docs/architecture/README.md",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "sha256": "de0ded43492e7e26eab5937f43749a44ca925b1037f93846add0f18fda1e39a5",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "sha256": "acf86e7d9e36fc098be0d992f140da89cf80092dcb95396300b7804cd8611eb5",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/README.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/architecture/README.md",
       "source_state": "committed"
     },
     {
@@ -43,37 +43,37 @@
     {
       "id": "pv-architecture",
       "path": "docs/architecture/architecture.md",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "sha256": "e28448611c7e5c91b40ed23146cbb506bc26449cc5fab7456cec54b4ae81b363",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "sha256": "e8bf3ef5e1949c7bce51611b037f821350e339687f910fe24629bc3ab7a917d3",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/architecture.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/architecture/architecture.md",
       "source_state": "committed"
     },
     {
       "id": "pv-deployment",
       "path": "docs/architecture/deployment.md",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "sha256": "2a1702273b9fa050fd1b925efa6ddd470eb7e33293615e7eda670e9b23f38e04",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "sha256": "9986594f2595307089f3e1b7b2db4b36af30dea734d6dc69b6d319bfacf8fa5e",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/deployment.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/architecture/deployment.md",
       "source_state": "committed"
     },
     {
       "id": "pv-acquisition",
       "path": "docs/architecture/components/acquisition.md",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "sha256": "32b9ab37745adef2e6eb6fc9cc335eebeed6733e0c2a7b9a0e0dfd737898e68a",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "sha256": "0930e1825e757b4d99b490ace0f54bee16b898fbe4c188a09980ddaee6386511",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/components/acquisition.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/architecture/components/acquisition.md",
       "source_state": "committed"
     },
     {
       "id": "pv-diagnostics",
       "path": "docs/architecture/components/diagnostics.md",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "sha256": "2b6c71a0999c15be05b8ffac60271d31906006700ca63091020299b2a0d8f582",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "sha256": "30ec58c2ab194965e4ea8ce1c44e09b0a7efad30438637c1bf65a47d56323c35",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/components/diagnostics.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/architecture/components/diagnostics.md",
       "source_state": "committed"
     },
     {
@@ -106,20 +106,20 @@
     {
       "id": "pv-references",
       "path": "docs/references.md",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "sha256": "ca67ee585e8567b2a74980b4fd96267421f19cbbe920c5a18507ef96564af9a8",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "sha256": "89837588b0b6fe7298df0170aaf92a5b7081ab2ec6c204ef32f0e9cf97b337d4",
       "status": "retrieval_index",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/references.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/references.md",
       "source_state": "committed"
     },
     {
       "id": "pv-data-plan",
       "path": "docs/data-plan.md",
       "status": "proposed",
-      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/data-plan.md",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/data-plan.md",
       "source_state": "committed",
-      "sha256": "e51f793b895ff93657d802d7ac6981179d37a3640230de5b74581cf55a41205a"
+      "sha256": "133ff46a12c6d54003b51ee1d0f25604a4fefb8adfb39061792a1dd415dce364"
     },
     {
       "id": "pv-flow-plant",
@@ -138,6 +138,15 @@
       "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/company/coesa-energy.md",
       "source_state": "committed",
       "sha256": "cd3e0c4c1fcfb74d4ef751100a0ae397f17830547bb02def51697df14c55d5fd"
+    },
+    {
+      "id": "pv-hardware",
+      "path": "docs/hardware.md",
+      "status": "team_reported_availability",
+      "revision": "d8b86bf2d3473c38902936ff8cdb61568c8d0bd4",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/d8b86bf2d3473c38902936ff8cdb61568c8d0bd4/docs/hardware.md",
+      "sha256": "9a39fda6641269898fcb1e9a8cb5b0f62571a7ac34a56486f72a1621746d5822",
+      "source_state": "committed"
     }
   ],
   "external_sources": [
