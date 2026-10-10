@@ -12,7 +12,8 @@ predictive maintenance system for off-grid photovoltaic installations. See the
 - `presentation/`: HTML presentation draft.
 - `poopvolt/`: Python package, managed with [uv](https://docs.astral.sh/uv/).
 - `firmware/`: code for the Arduino UNO Q (placeholder).
-- `hardware/`: schematics and 3D-printable parts (placeholder).
+- [hardware/](hardware/README.md): available parts and substitutions; schematics,
+  wiring diagrams, and 3D-printable parts are planned.
 - `data/`: measurements and fixtures (placeholder).
 
 Set up the Python environment with `uv sync`.
