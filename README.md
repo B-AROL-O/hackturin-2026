@@ -6,6 +6,9 @@
   and implementation plan.
 - [Presentation guidelines](.agent/README.md) — contributor and agent guidance.
 - [Architecture index](docs/architecture/README.md) — diagram hierarchy and system design.
+- [Coesa Energy evaluator context](docs/company/coesa-energy.md) — researched
+  company background, sources, and PoopVolt fit hypotheses for contributors and
+  AI models.
 
 - [Documentation reference index](docs/references.md) — official sources and retrieval keywords for contributors and AI agents.
 - [hackTurin Manuale dei partecipanti](https://docs.google.com/document/u/0/d/1Amd6yVSujHK4o_KcjB97IKTJN76TH6P6QJ-XG2Q1pEk/mobilebasic)
