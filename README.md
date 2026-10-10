@@ -35,13 +35,13 @@
 
 ## Partners and Sponsors
 
-- [Amazon Web Services (AWS)]()
-- [Apeira]()
-- [Arduino]()
-- [Club TOsto]()
-- [COESA Energy]()
-- [GOMA Elettronica]()
-- [Seeed Studio]()
+- [Amazon Web Services (AWS)](https://aws.amazon.com)
+- [Apeira](https://www.apeira.it/)
+- [Arduino](https://www.arduino.cc/)
+- [Club TOsto](https://www.clubtosto.com/)
+- [COESA Energy](https://landing.coesaenergy.it)
+- [GOMA Elettronica](https://www.goma.it)
+- [Seeed Studio](https://www.seeedstudio.com)
 - [Unione Industriali Torino - Gruppo Giovani Imprenditori]()
 
 ### Useful links
