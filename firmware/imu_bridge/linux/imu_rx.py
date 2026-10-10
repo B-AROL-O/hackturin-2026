@@ -100,10 +100,13 @@ def worker():
 
         now = time.monotonic()
         if now - window_start >= 1.0:
-            print(f"rate={n / (now - window_start):6.1f} Hz  max_rx_jitter={max_rx_jitter_ms:5.2f} ms  "
-                  f"gaps={stats['seq_gaps']} dropped={stats['dropped']}  "
-                  f"a=({sample.ax:+.2f},{sample.ay:+.2f},{sample.az:+.2f}) g  "
-                  f"w=({sample.gx:+7.1f},{sample.gy:+7.1f},{sample.gz:+7.1f}) dps", flush=True)
+            print(
+                f"rate={n / (now - window_start):6.1f} Hz  max_rx_jitter={max_rx_jitter_ms:5.2f} ms  "
+                f"gaps={stats['seq_gaps']} dropped={stats['dropped']}  "
+                f"a=({sample.ax:+.2f},{sample.ay:+.2f},{sample.az:+.2f}) g  "
+                f"w=({sample.gx:+7.1f},{sample.gy:+7.1f},{sample.gz:+7.1f}) dps",
+                flush=True,
+            )
             window_start, n, max_rx_jitter_ms = now, 0, 0.0
 
 
