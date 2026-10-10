@@ -2,6 +2,9 @@
 
 ## Quick links
 
+- [HTML presentation draft](presentation/README.md) — architecture, narrative,
+  and implementation plan.
+- [Presentation guidelines](.agent/README.md) — contributor and agent guidance.
 - [Architecture index](docs/architecture/README.md) — diagram hierarchy and system design.
 
 - [Documentation reference index](docs/references.md) — official sources and retrieval keywords for contributors and AI agents.
