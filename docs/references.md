@@ -1,7 +1,31 @@
 # Reference Index
 
 Use this index to locate external documentation and datasets for PoopVolt. Each entry includes a stable identifier, a canonical URL, and retrieval keywords for AI agents and contributors.
-Open the linked source before relying on hardware specifications, setup instructions, or example code; this index does not contain local copies of the sources.
+Open the linked source before relying on hardware specifications, setup
+instructions, or example code. External sources are linked rather than copied;
+the company context entry also provides a dated local research summary.
+
+## coesa-energy-context
+
+- Title: Coesa Energy — evaluator context for PoopVolt
+- Publisher of external sources: Coesa Energy / COESA Srl
+- Canonical URL: <https://coesaenergy.it/>
+- Local context: [Company research and source register](company/coesa-energy.md)
+- Source type: Dated local synthesis of official company pages and
+  company-authored posts, with separately labeled team analysis
+- Researched on: 2026-10-10
+- Language: English synthesis; primarily Italian source material
+- Project relevance: Company identified by the user as evaluating our idea;
+  background for PoopVolt's pitch and pilot design.
+- Retrieve when: Preparing the Coesa pitch, comparing existing monitoring
+  capabilities, or exploring second-life panel and off-grid maintenance use
+  cases.
+- Search keywords: Coesa, COESA Srl, evaluator, hackTurin, Federico Sandrone,
+  Matteo Stoppa, ESCo, EPC, O&M, KeepTheSun, JuaKit, SPARC, off-grid, soiling,
+  predictive maintenance, circular economy, PoopVolt.
+- Retrieval note: Start with the local context and its linked sources. Treat
+  suggested product fit as hypotheses, and refresh changing company facts before
+  external use.
 
 ## arduino-uno-q-user-manual
 
@@ -14,6 +38,34 @@ Open the linked source before relying on hardware specifications, setup instruct
 - Retrieve when: Investigating UNO Q hardware, board setup, interfaces, or integration constraints.
 - Search keywords: Arduino, UNO Q, UNO Q 4GB, user manual, hardware, setup, sensors, Edge AI, PoopVolt.
 - Retrieval note: Fetch the canonical URL when needed. If the page requires JavaScript, open it in a browser; do not infer specifications from this entry.
+
+## arduino-uno-q-pinout
+
+- Title: Arduino UNO Q full pinout
+- Publisher: Arduino
+- Canonical URL: <https://docs.arduino.cc/resources/pinouts/ABX00162-full-pinout.pdf>
+- Source type: Official hardware pinout
+- Project relevance: MCU/header signal mapping for the [prototype wiring](hardware-connections.md).
+- Search keywords: UNO Q, PB10, PB11, PB6, PB7, PA4, SDA, SCL, UART, A0.
+
+## seeed-grove-connectors
+
+- Title: Grove Ecosystem Introduction — Interface of Grove modules
+- Publisher: Seeed Studio
+- Canonical URL: <https://wiki.seeedstudio.com/Grove_System/#interface-of-grove-modules>
+- Source type: Official connector documentation
+- Project relevance: Four-wire cable colors, pin numbering, and host-side UART convention for the [prototype wiring](hardware-connections.md).
+- Search keywords: Grove, connector, yellow, white, red, black, VCC, GND, I2C, UART, analog.
+
+## kicad-schematic-workflow
+
+- Title: KiCad schematic editor and command-line interface
+- Publisher: KiCad
+- Canonical URLs: <https://docs.kicad.org/10.0/en/eeschema/eeschema.html>, <https://docs.kicad.org/10.0/en/cli/cli.html>
+- Source type: Official EDA documentation
+- Project relevance: Editable module/connector schematic, electrical rules checking, netlist export, and SVG/PDF rendering for `pv-wiring`.
+- Search keywords: KiCad, schematic, custom symbol, ERC, kicad-cli, sch export, SVG, PDF.
+- Retrieval note: Exports and checks were validated with KiCad 10.0.6. The local schematic is the source; published images are generated artifacts.
 
 ## arduino-uno-q-apps
 
