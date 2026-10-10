@@ -86,6 +86,11 @@ Neither the AHT20 nor the light sensor replaces thermal imaging.
   Verify interfaces and cables for additional devices, including the unused
   Media Carrier, before extending the assembly.
 - Build a breadboard-free connection plan from the available parts.
+- **Supply blocker (checked 2026-10-10):** the "HAS4966" step-down module uses an
+  LM2596HV (buck, about 1.5–2 V dropout), so it cannot make 5 V from the 3.0–4.2 V
+  LiPo behind the CN3065-based HRS1358. Do not wire HRS1358 → LM2596 → UNO Q 5V.
+  Options: power the UNO Q from USB-C and keep solar → current sensor → charger →
+  LiPo as a measured subsystem, or use a 3.7→5 V boost converter rated ≥2–3 A.
 - Verify the panel, charger, battery, converter, and device supply requirements.
   The parts list does not establish that this assembly can power the UNO Q
   continuously or provide a measured battery runtime.
