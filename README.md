@@ -1,5 +1,22 @@
 # Team response to hackTurin 2026
 
+## Challenge
+
+We are tackling the **Beyond Solar** challenge with **PoopVolt**, an Edge AI
+predictive maintenance system for off-grid photovoltaic installations. See the
+[project pitch](docs/pitch-draft.md) for the idea description.
+
+## Repository layout
+
+- `docs/`: architecture, pitch and reference documentation.
+- `presentation/`: HTML presentation draft.
+- `suncheck/`: Python package, managed with [uv](https://docs.astral.sh/uv/).
+- `firmware/`: code for the Arduino UNO Q (placeholder).
+- `hardware/`: schematics and 3D-printable parts (placeholder).
+- `data/`: measurements and fixtures (placeholder).
+
+Set up the Python environment with `uv sync`.
+
 ## Quick links
 
 - [HTML presentation draft](presentation/README.md) — architecture, narrative,
