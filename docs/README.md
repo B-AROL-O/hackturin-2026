@@ -7,6 +7,8 @@
 - [Prototype electrical wiring](hardware-connections.md): as-built USB power,
   Grove connections, and connector pinouts from the Arduino bring-up.
 
+- [Project status and reuse disclosure](project-status.md): working versus
+  incomplete features, team-built versus pre-existing components.
 - [Three-minute narrative](pitch-narrative.md): owner story, expected/observed
   comparison, software case, STL concept, and regeneration review.
 - [PoopVolt project pitch](pitch-draft.md): proposed product, reference model,

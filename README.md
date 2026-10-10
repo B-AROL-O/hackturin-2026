@@ -20,10 +20,11 @@ predictive maintenance system for off-grid photovoltaic installations. See the
 - `docs/`: architecture, pitch and reference documentation.
 - `presentation/`: HTML presentation draft.
 - `poopvolt/`: Python package, managed with [uv](https://docs.astral.sh/uv/).
-- `firmware/`: code for the Arduino UNO Q (placeholder).
-- [hardware/](hardware/README.md): available parts and substitutions; schematics,
-  wiring diagrams, and 3D-printable parts are planned.
-- `data/`: measurements and fixtures (placeholder).
+- [firmware/](firmware/README.md): Arduino UNO Q sketches (sensor bring-up, NFC station).
+- [hardware/](hardware/README.md): available parts and substitutions, KiCad
+  schematic; 3D-printable parts are planned.
+- `data/`: measurements and fixtures; SOLARMA replay notice in `data/solarma/`.
+- `tests/`: Python tests, run with `uv run pytest`.
 
 Set up the Python environment with `uv sync`.
 
@@ -37,6 +38,8 @@ Set up the Python environment with `uv sync`.
   separate historical SOLARMA replay.
 - [Hardware availability](docs/hardware.md) — secured prototype parts and phone
   RGB camera replacement for the unavailable thermal camera.
+- [Project status and reuse disclosure](docs/project-status.md) — what works,
+  what is incomplete, what we built and what we reuse.
 - [HTML presentation draft](presentation/README.md) — architecture, narrative,
   and implementation plan.
 - [Presentation guidelines](.agent/README.md) — contributor and agent guidance.
