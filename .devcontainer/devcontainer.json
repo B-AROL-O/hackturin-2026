@@ -16,11 +16,12 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "uname -a",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
       "extensions": [
+        "anthropic.claude-code",
         "esbenp.prettier-vscode",
         "mhutchie.git-graph",
         "ms-python.black-formatter"
