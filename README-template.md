@@ -6,7 +6,7 @@ This template provides a basic [Development Container](https://containers.dev/) 
 
 - [Ubuntu 24.04](https://ubuntu.com/)
 - [Python 3.12](https://www.python.org/)
-- [Poetry](https://python-poetry.org/)
+- [uv](https://docs.astral.sh/uv/)
 - [Visual Studio Code](https://code.visualstudio.com/) extensions: [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
 ## Copyright and license for "python-project-template"
