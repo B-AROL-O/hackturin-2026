@@ -20,14 +20,14 @@ The site runs on an audience browser independently of the intended UNO Q system.
 
 <!-- markdownlint-disable MD013 -->
 
-| Canonical area | Audience explanation | Presentation work | Product work still unresolved |
-| --- | --- | --- | --- |
-| Context | The operator reviews recommendations and performs physical work | Operator/installations relationship visual | Local operator access method |
-| Acquisition | Observations need timestamps and quality checks | Quality annotations and missing-input scenario | Sensors, adapters, units, rates, alignment tolerance |
-| Diagnostics | Each modality supplies different evidence | RGB, thermal, electrical, and history explanation | Models, calibration, fusion, thresholds, evaluation |
-| Maintenance | Evidence supports a proportionate recommendation | Illustrated finding and review sequence | Decision policy, forecasting, battery-aware scheduling |
-| Local storage | History supports reassessment after an intervention | History loop and evidence links | Retention, storage medium, record contracts |
-| Deployment | Local processing targets the intended UNO Q platform | Proposed deployment view in appendix | Power, compatibility, MCU/Linux bridge, camera interfaces |
+| Canonical area  | Audience explanation                                            | Presentation work                                 | Product work still unresolved                             |
+| --------------- | --------------------------------------------------------------- | ------------------------------------------------- | --------------------------------------------------------- |
+| Context         | The operator reviews recommendations and performs physical work | Operator/installations relationship visual        | Local operator access method                              |
+| Acquisition     | Observations need timestamps and quality checks                 | Quality annotations and missing-input scenario    | Sensors, adapters, units, rates, alignment tolerance      |
+| Diagnostics     | Each modality supplies different evidence                       | RGB, thermal, electrical, and history explanation | Models, calibration, fusion, thresholds, evaluation       |
+| Maintenance     | Evidence supports a proportionate recommendation                | Illustrated finding and review sequence           | Decision policy, forecasting, battery-aware scheduling    |
+| `Local storage` | History supports reassessment after an intervention             | History loop and evidence links                   | Retention, storage medium, record contracts               |
+| Deployment      | Local processing targets the intended UNO Q platform            | Proposed deployment view in appendix              | Power, compatibility, MCU/Linux bridge, camera interfaces |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -129,15 +129,15 @@ presentation/
 
 <!-- markdownlint-disable MD013 -->
 
-| Module | Inputs | Outputs and limits |
-| --- | --- | --- |
-| Narrative source | Plan, canonical docs, source IDs | Slides, notes, stable anchors, timing metadata |
-| Diagram generation | Canonical page, Mermaid block, diagram ID | Static figure, description, parent ID, source hash |
-| Theme | Design tokens and layout classes | Screen, print, and narrow-width styles |
-| Motion enhancement | Active slide, preference, visibility, print state | Optional motion with a complete static fallback |
-| Scenario enhancement | Local fixture and explicit selection | Coupled observation/finding/recommendation view |
-| Source checker | Manifest, slide source, plans, assets | Errors for mismatched claims, inputs, or dependencies |
-| Packaging | Validated render, local assets, source documents | Audience bundle with working relative references |
+| Module               | Inputs                                            | Outputs and limits                                    |
+| -------------------- | ------------------------------------------------- | ----------------------------------------------------- |
+| Narrative source     | Plan, canonical docs, source IDs                  | Slides, notes, stable anchors, timing metadata        |
+| Diagram generation   | Canonical page, Mermaid block, diagram ID         | Static figure, description, parent ID, source hash    |
+| Theme                | Design tokens and layout classes                  | Screen, print, and narrow-width styles                |
+| Motion enhancement   | Active slide, preference, visibility, print state | Optional motion with a complete static fallback       |
+| Scenario enhancement | Local fixture and explicit selection              | Coupled observation/finding/recommendation view       |
+| Source checker       | Manifest, slide source, plans, assets             | Errors for mismatched claims, inputs, or dependencies |
+| Packaging            | Validated render, local assets, source documents  | Audience bundle with working relative references      |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -164,15 +164,15 @@ The proposed fixture schema is presentation-only. It is not an edge API contract
 
 <!-- markdownlint-disable MD013 -->
 
-| Field | Meaning |
-| --- | --- |
-| `id` | Stable scenario ID |
-| `status` | Always `illustrative` for the initial fixture |
-| `sourceIds` | Canonical design sources that justify the depicted behavior |
-| `observations` | Modality, readable summary, timestamp context, quality flag |
-| `finding` | Kind, evidence references, uncertainty explanation |
+| Field            | Meaning                                                      |
+| ---------------- | ------------------------------------------------------------ |
+| `id`             | Stable scenario ID                                           |
+| `status`         | Always `illustrative` for the initial fixture                |
+| `sourceIds`      | Canonical design sources that justify the depicted behavior  |
+| `observations`   | Modality, readable summary, timestamp context, quality flag  |
+| `finding`        | Kind, evidence references, uncertainty explanation           |
 | `recommendation` | Suggested action, reason, and `operatorReviewRequired: true` |
-| `limitations` | Missing inputs and unverified assumptions |
+| `limitations`    | Missing inputs and unverified assumptions                    |
 
 <!-- markdownlint-enable MD013 -->
 

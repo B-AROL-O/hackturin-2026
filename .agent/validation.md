@@ -2,8 +2,9 @@
 
 ## Checks for this architecture draft
 
-Check Markdown formatting, relative links, the nine-slide timing total, and the
-source manifest's paths, revisions, and checksums. Confirm that implemented,
+Check Markdown with the CI versions and rules for Markdownlint, Prettier, and
+textlint. Check relative links, the nine-slide timing total, and the source
+manifest's paths, revisions, and checksums. Confirm that implemented,
 measured, and generated outputs are never claimed without evidence.
 No HTML deck or visual result exists yet, so browser review is pending.
 
@@ -11,19 +12,19 @@ No HTML deck or visual result exists yet, so browser review is pending.
 
 <!-- markdownlint-disable MD013 -->
 
-| Area | Acceptance criterion |
-| --- | --- |
-| Narrative | One claim per main slide, all nine planned anchors, 300 seconds total |
-| Fidelity | Canonical module names, operator responsibility, quality handling, proposed status |
-| Sources | Valid registry IDs, matching hashes, local reference files, rights for every asset |
-| Rendering | No clipped text, overlaps, missing diagrams, or unreadable labels |
-| Navigation | Keyboard, touch, overview, direct hash links, browser history, and notes work |
-| Scenario | Complete static default, both branches, accessible selector, and load-failure fallback |
-| Motion | Reduced motion and pause reveal all content; inactive slides stop custom motion |
-| Accessibility | Visible focus, readable scaled text, meaningful alternatives, verified contrast |
-| Offline | Local HTTP bundle works with the network disabled and has no external runtime requests |
-| Print | Complete builds and both scenario states, readable sources, no clipped content |
-| Packaging | Audience notes removed, assets and references present, nested host path works |
+| Area          | Acceptance criterion                                                                   |
+| ------------- | -------------------------------------------------------------------------------------- |
+| Narrative     | One claim per main slide, all nine planned anchors, 300 seconds total                  |
+| Fidelity      | Canonical module names, operator responsibility, quality handling, proposed status     |
+| Sources       | Valid registry IDs, matching hashes, local reference files, rights for every asset     |
+| Rendering     | No clipped text, overlaps, missing diagrams, or unreadable labels                      |
+| Navigation    | Keyboard, touch, overview, direct hash links, browser history, and notes work          |
+| Scenario      | Complete static default, both branches, accessible selector, and load-failure fallback |
+| Motion        | Reduced motion and pause reveal all content; inactive slides stop custom motion        |
+| Accessibility | Visible focus, readable scaled text, meaningful alternatives, verified contrast        |
+| Offline       | Local HTTP bundle works with the network disabled and has no external runtime requests |
+| Print         | Complete builds and both scenario states, readable sources, no clipped content         |
+| Packaging     | Audience notes removed, assets and references present, nested host path works          |
 
 <!-- markdownlint-enable MD013 -->
 

@@ -39,10 +39,10 @@
     {
       "id": "pv-architecture",
       "path": "docs/architecture/architecture.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "0add2bbe58a0fd40d4fc7655e65821495aad76662db67eafed1a4aa60b10d0f8",
+      "revision": "6994d38531f267e81bf1081f16eeeee6e31ac457",
+      "sha256": "5de68c4b71ee4d7f61e1ae08f223087e816b0258853f27a55b62848eca547c09",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/architecture.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/6994d38531f267e81bf1081f16eeeee6e31ac457/docs/architecture/architecture.md"
     },
     {
       "id": "pv-deployment",
@@ -95,10 +95,10 @@
     {
       "id": "pv-references",
       "path": "docs/references.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "f52dc4fc3f8bcf3cb4477b37a756caaa62eaa078c27ccc828c3bb19324b124da",
+      "revision": "6994d38531f267e81bf1081f16eeeee6e31ac457",
+      "sha256": "2d4f2df699695347445fbcd6d60667327b986177db2d966684af87b96563d409",
       "status": "retrieval_index",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/references.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/6994d38531f267e81bf1081f16eeeee6e31ac457/docs/references.md"
     }
   ]
 }

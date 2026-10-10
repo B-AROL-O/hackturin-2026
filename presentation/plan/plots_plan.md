@@ -7,17 +7,17 @@ Apply [visual guidelines](../../.agent/visual-design.md) when implementing.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID | Primary visual | Source or provenance | Visible qualification |
-| --- | --- | --- | --- |
-| `pv-title` | One solar-panel image on a graphite title canvas | Original, licensed photograph, or labeled generated illustration | Proposed system in subtitle |
-| `pv-problem` | Panel contamination detail with a restrained annotation | Verified image with rights, or clearly illustrative image | No claimed production-loss value |
-| `pv-context` | Operator, installation, and PoopVolt boundary | Canonical `pv-context` diagram | Proposed architecture |
-| `pv-pipeline` | Horizontal edge flow and Local storage connection | `pv-architecture` with canonical names | Proposed architecture, intended platform |
-| `pv-quality` | Valid observation contrasted with a missing or stale observation | `pv-acquisition` and `pv-flow-soiling` | Illustrative observations |
-| `pv-evidence` | Aligned RGB, thermal, and electrical/history evidence groups | `pv-diagnostics`; actual assets still needed | Illustrative modalities, history required for degradation |
-| `pv-decision` | Evidence, finding, recommendation, and operator review | `pv-maintenance`, `pv-flow-maintenance` | Illustrative recommendation |
-| `pv-validation` | Compact integration and evaluation roadmap | Open decisions in `pv-index` and `pv-deployment` | Work planned, results pending |
-| `pv-close` | Simple return to the operator decision loop | `pv-context` and `pv-maintenance` | Intended benefit |
+| Slide ID        | Primary visual                                                   | Source or provenance                                             | Visible qualification                                     |
+| --------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
+| `pv-title`      | One solar-panel image on a graphite title canvas                 | Original, licensed photograph, or labeled generated illustration | Proposed system in subtitle                               |
+| `pv-problem`    | Panel contamination detail with a restrained annotation          | Verified image with rights, or clearly illustrative image        | No claimed production-loss value                          |
+| `pv-context`    | Operator, installation, and PoopVolt boundary                    | Canonical `pv-context` diagram                                   | Proposed architecture                                     |
+| `pv-pipeline`   | Horizontal edge flow and `Local storage` connection              | `pv-architecture` with canonical names                           | Proposed architecture, intended platform                  |
+| `pv-quality`    | Valid observation contrasted with a missing or stale observation | `pv-acquisition` and `pv-flow-soiling`                           | Illustrative observations                                 |
+| `pv-evidence`   | Aligned RGB, thermal, and electrical/history evidence groups     | `pv-diagnostics`; actual assets still needed                     | Illustrative modalities, history required for degradation |
+| `pv-decision`   | Evidence, finding, recommendation, and operator review           | `pv-maintenance`, `pv-flow-maintenance`                          | Illustrative recommendation                               |
+| `pv-validation` | Compact integration and evaluation roadmap                       | Open decisions in `pv-index` and `pv-deployment`                 | Work planned, results pending                             |
+| `pv-close`      | Simple return to the operator decision loop                      | `pv-context` and `pv-maintenance`                                | Intended benefit                                          |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -43,7 +43,7 @@ deployment appendix with their existing TBD status.
 Create `assets/README.md` during implementation. For every image or font, record
 its source, creator, license, retrieval date, modifications, and intended use.
 Keep original rights information next to locally bundled assets. Sponsor listing
-in the repository README does not itself establish usable logo artwork or rights.
+in the repository readme does not itself establish usable logo artwork or rights.
 
 No quantitative results are currently available for a performance chart.
 The first deck can use conceptual diagrams and illustrative observation examples.

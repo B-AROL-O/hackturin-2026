@@ -7,16 +7,16 @@ planning corpus, and source registry only.
 
 <!-- markdownlint-disable MD013 -->
 
-| Step | Work | Depends on | Reviewable result and acceptance |
-| --- | --- | --- | --- |
-| P0 | Review audience language, time budget, evidence status, and visual direction | Current draft | Updated agenda and accepted defaults recorded |
-| P1 | Add `talk.qmd`, `_quarto.yml`, initial theme, and local preview instructions | P0 | Nine stable main anchors, four appendix anchors, notes, one local render |
-| P2 | Render canonical diagrams and acquire local images and fonts with provenance | P1 | Readable figures, recorded licenses, matching source hashes |
-| P3 | Compose every slide and notes using the speaking and visual plans | P1, P2 | Complete static narrative, readable at 1280 by 720, 300-second budget |
-| P4 | Add reduced-motion handling, print/reading layouts, and optional scenario controls | P3 | Complete static fallback, usable keyboard controls, both scenario states |
-| P5 | Implement source, timing, rendered-link, and packaging checks | P3 | Meaningful failures for stale sources, duplicate anchors, missing dependencies |
-| P6 | Build portable audience and presenter bundles | P4, P5 | Local assets and references, audience notes absent, network-free HTTP preview |
-| P7 | Review all slides, rehearse, and choose hosting integration | P6 | Reviewed portable bundle and documented host/base-path choice |
+| Step | Work                                                                               | Depends on    | Reviewable result and acceptance                                               |
+| ---- | ---------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------ |
+| P0   | Review audience language, time budget, evidence status, and visual direction       | Current draft | Updated agenda and accepted defaults recorded                                  |
+| P1   | Add `talk.qmd`, `_quarto.yml`, initial theme, and local preview instructions       | P0            | Nine stable main anchors, four appendix anchors, notes, one local render       |
+| P2   | Render canonical diagrams and acquire local images and fonts with provenance       | P1            | Readable figures, recorded licenses, matching source hashes                    |
+| P3   | Compose every slide and notes using the speaking and visual plans                  | P1, P2        | Complete static narrative, readable at 1280 by 720, 300-second budget          |
+| P4   | Add reduced-motion handling, print/reading layouts, and optional scenario controls | P3            | Complete static fallback, usable keyboard controls, both scenario states       |
+| P5   | Implement source, timing, rendered-link, and packaging checks                      | P3            | Meaningful failures for stale sources, duplicate anchors, missing dependencies |
+| P6   | Build portable audience and presenter bundles                                      | P4, P5        | Local assets and references, audience notes absent, network-free HTTP preview  |
+| P7   | Review all slides, rehearse, and choose hosting integration                        | P6            | Reviewed portable bundle and documented host/base-path choice                  |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -40,21 +40,21 @@ Record the exact tested Quarto and diagram-rendering versions in build guidance.
 
 <!-- markdownlint-disable MD013 -->
 
-| Planned helper | Contract |
-| --- | --- |
-| `render_diagrams.py` | Extract named canonical Mermaid blocks, render figures, retain text alternatives and provenance |
+| Planned helper          | Contract                                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `render_diagrams.py`    | Extract named canonical Mermaid blocks, render figures, retain text alternatives and provenance                           |
 | `check_presentation.py` | Check manifest hashes, source IDs, main/appendix anchors, 300-second timing, local links, assets, and note-exclusion mode |
-| `build_share.py` | Package validated output with assets, fixture, and complete referenced documentation; verify copied links |
+| `build_share.py`        | Package validated output with assets, fixture, and complete referenced documentation; verify copied links                 |
 
 <!-- markdownlint-enable MD013 -->
 
 A render-stage checker must inspect the generated HTML, not merely match strings
 in the source. A packaging-stage check must inspect the portable bundle after
-copying. Avoid hard-coding reference slide counts or deployment identifiers.
+copying. Avoid hardcoding reference slide counts or deployment identifiers.
 
 Future local build sequence: verify sources, generate figures, render the selected
 profile, validate HTML, package, and serve the output over HTTP. Detailed commands
-belong in the README when the helpers exist. Quarto render by itself will not
+belong in the readme when the helpers exist. Quarto render by itself will not
 establish that the planned portable packaging or source checks are implemented.
 
 ## Product prototype work that can supply later evidence

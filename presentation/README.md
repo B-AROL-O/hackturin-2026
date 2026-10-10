@@ -35,7 +35,7 @@ deployment credentials, or site configuration are copied.
 ## Current system baseline
 
 The [canonical architecture](../docs/architecture/README.md) is a proposed draft.
-It describes Acquisition, Diagnostics, Maintenance, Local storage, and an
+It describes Acquisition, Diagnostics, Maintenance, `Local storage`, and an
 Operator interface on an intended UNO Q edge platform. Hardware integration,
 model selection, data contracts, and access methods remain open.
 

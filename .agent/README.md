@@ -11,13 +11,13 @@ defines the order of work and acceptance criteria.
 
 <!-- markdownlint-disable MD013 -->
 
-| Task | Read |
-| --- | --- |
-| Understand the presentation | [Presentation overview](../presentation/README.md), then the architecture |
-| Write or revise slides | [Content and evidence](content.md), [agenda](../presentation/plan/agenda.md), [speaking plan](../presentation/plan/speech_plan.md) |
-| Design layouts or assets | [Visual design](visual-design.md), [visual plan](../presentation/plan/plots_plan.md) |
-| Add navigation, motion, or a scenario | [Interaction and accessibility](interaction.md), then the architecture contracts |
-| Build, package, or review | [Engineering workflow](workflow.md), [validation](validation.md) |
+| Task                                  | Read                                                                                                                               |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Understand the presentation           | [Presentation overview](../presentation/README.md), then the architecture                                                          |
+| Write or revise slides                | [Content and evidence](content.md), [agenda](../presentation/plan/agenda.md), [speaking plan](../presentation/plan/speech_plan.md) |
+| Design layouts or assets              | [Visual design](visual-design.md), [visual plan](../presentation/plan/plots_plan.md)                                               |
+| Add navigation, motion, or a scenario | [Interaction and accessibility](interaction.md), then the architecture contracts                                                   |
+| Build, package, or review             | [Engineering workflow](workflow.md), [validation](validation.md)                                                                   |
 
 <!-- markdownlint-enable MD013 -->
 

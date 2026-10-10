@@ -10,15 +10,15 @@ canvas with one panel image and a large PoopVolt wordmark.
 
 These are proposed tokens to evaluate on a projector, not an inherited brand.
 
-| Role | Draft value | Use |
-| --- | --- | --- |
-| Canvas | `#F7F4EC` | Warm background for content slides |
-| Ink | `#172A2A` | Headings, body copy, diagram labels |
-| Teal | `#176B63` | Processing stages and selected state |
-| Amber | `#E9AD35` | Solar context and highlighted evidence |
-| Rust | `#A5432C` | Anomaly emphasis with an explicit text label |
-| Muted ink | `#4D605D` | Secondary copy and source captions |
-| Rule | `#CED5CE` | Dividers and diagram connections |
+| Role      | Draft value | Use                                          |
+| --------- | ----------- | -------------------------------------------- |
+| Canvas    | `#F7F4EC`   | Warm background for content slides           |
+| Ink       | `#172A2A`   | Headings, body copy, diagram labels          |
+| Teal      | `#176B63`   | Processing stages and selected state         |
+| Amber     | `#E9AD35`   | Solar context and highlighted evidence       |
+| Rust      | `#A5432C`   | Anomaly emphasis with an explicit text label |
+| Muted ink | `#4D605D`   | Secondary copy and source captions           |
+| Rule      | `#CED5CE`   | Dividers and diagram connections             |
 
 Use ink on amber. Check every final foreground/background pairing. Color is
 supporting information: labels, shapes, and line patterns must communicate

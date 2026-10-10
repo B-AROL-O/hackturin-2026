@@ -21,12 +21,12 @@ Edge AI once as processing observations locally on the installation.
 
 <!-- markdownlint-disable MD013 -->
 
-| Status | Required treatment |
-| --- | --- |
-| Proposed | Use intended behavior and visibly mark architecture or deployment as proposed |
-| Illustrative | Label a scenario, image overlay, chart, or UI example as illustrative |
-| Implemented | Link to concrete code and describe its verified scope |
-| Measured | Cite a recorded evaluation with method, units, dataset or hardware, and revision |
+| Status       | Required treatment                                                               |
+| ------------ | -------------------------------------------------------------------------------- |
+| Proposed     | Use intended behavior and visibly mark architecture or deployment as proposed    |
+| Illustrative | Label a scenario, image overlay, chart, or UI example as illustrative            |
+| Implemented  | Link to concrete code and describe its verified scope                            |
+| Measured     | Cite a recorded evaluation with method, units, dataset or hardware, and revision |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -38,7 +38,7 @@ MCU/Linux bridge. Consult the official sources before introducing specifications
 
 ## Semantic guardrails
 
-- Preserve Acquisition, Diagnostics, Maintenance, Local storage, and Operator interface.
+- Preserve Acquisition, Diagnostics, Maintenance, `Local storage`, and Operator interface.
 - Distinguish soiling, thermal anomalies, electrical behavior, and degradation.
 - Explain that degradation needs history and an environmental baseline.
 - Show missing or unreliable input leading to inspection or a new observation.

@@ -48,7 +48,7 @@ can require connectivity, but navigating the talk must not.
 
 Select GitHub Pages, Netlify, or another static host only after the portable
 bundle works. Keep hosting configuration explicit about base paths and output
-directories. Account IDs and URLs from the reference are unrelated to this repo.
+directories. Account IDs and URLs from the reference are unrelated to this repository.
 Avoid changing the existing Docsify documentation deployment while adding the
 presentation. Record the chosen path and link the two surfaces deliberately.
 
