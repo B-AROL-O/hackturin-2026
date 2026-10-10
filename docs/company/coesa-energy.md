@@ -2,7 +2,7 @@
 
 - Document ID: `coesa-energy-context`
 - Entity: Coesa Energy / COESA Srl, Torino, Italy
-- Official website: <https://coesaenergy.it/>
+- Official site: <https://coesaenergy.it/>
 - Researched on: 2026-10-10
 - Language: English summary of primarily Italian sources
 - Purpose: Give contributors and AI models retrievable company context when
@@ -35,7 +35,7 @@ COESA Srl is a Turin-based energy services and engineering company, founded in
 Service Company (ESCo) operating as an Engineering, Procurement and Construction
 (EPC) contractor. Its customers include businesses, public administrations,
 condominiums and third-sector organizations. It reports a separate engineering
-spin-off, COESA Engineering Srl, established in 2019. Its registered website
+spin-off, COESA Engineering Srl, established in 2019. Its registered site
 details identify Via Beaumont 7, 10143 Torino, and VAT/tax code 10734760019.
 [Company overview](https://coesaenergy.it/chi-siamo/).
 
@@ -118,7 +118,7 @@ A separate company post identifies Matteo Stoppa, PhD, as Chief Innovation
 Officer and describes his presentation of KeepTheSun, JuaKit and SPARC.
 [Coesa innovation outreach post](https://it.linkedin.com/posts/coesa-srl_formazione-its-itspeano-activity-7460677442442182656-x8eN).
 
-The [repository README](../../README.md) also lists Sandrone as a kickoff
+The [repository readme](../../README.md) also lists Sandrone as a kickoff
 presenter and Stoppa as a confirmed mentor. These links establish relevant
 people and event involvement; they do not establish that either individual will
 personally judge PoopVolt or has approved an integration.
@@ -131,13 +131,13 @@ product requirement or pilot commitment.
 
 <!-- markdownlint-disable MD013 -->
 
-| Company context | Proposed PoopVolt contribution | Evidence to bring to a discussion |
-| --- | --- | --- |
-| JuaKit and second-life off-grid panels | Assess panel condition and recommend useful local maintenance despite intermittent connectivity. | A disconnected demonstration, representative used-panel data, and a measured power budget. |
-| Existing O&M activities | Help distinguish a cleaning opportunity from a fault requiring inspection. | Labeled examples, false-alert rates, intervention cost, and performance before/after cleaning. |
-| Panel reuse and circular economy | Support decisions about continued use, targeted repair or replacement. | A defensible baseline and decision rule; distinguish short-term soiling detection from long-term degradation prediction. |
-| Small-system monitoring constraints | Offer a device whose cost, energy use and usability fit a small installation. | Bill of materials, installation steps, standby/inference consumption and an understandable alert. |
-| MVP and market validation process | Present a working subsystem and a practical next experiment. | What works today, what remains proposed, the pilot owner, success criteria and required data. |
+| Company context                        | Proposed PoopVolt contribution                                                                   | Evidence to bring to a discussion                                                                                        |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| JuaKit and second-life off-grid panels | Assess panel condition and recommend useful local maintenance despite intermittent connectivity. | A disconnected demonstration, representative used-panel data, and a measured power budget.                               |
+| Existing O&M activities                | Help distinguish a cleaning opportunity from a fault requiring inspection.                       | Labeled examples, false-alert rates, intervention cost, and performance before/after cleaning.                           |
+| Panel reuse and circular economy       | Support decisions about continued use, targeted repair or replacement.                           | A defensible baseline and decision rule; distinguish short-term soiling detection from long-term degradation prediction. |
+| Small-system monitoring constraints    | Offer a device whose cost, energy use and usability fit a small installation.                    | Bill of materials, installation steps, standby/inference consumption and an understandable alert.                        |
+| MVP and market validation process      | Present a working subsystem and a practical next experiment.                                     | What works today, what remains proposed, the pilot owner, success criteria and required data.                            |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -188,20 +188,20 @@ These are team-proposed evaluation dimensions, not Coesa's judging criteria:
 
 All entries were researched on **2026-10-10**. Sources are first-party company
 publications, primarily in Italian. Summaries above are paraphrases. An indexed
-page may lag the live website.
+page may lag the live site.
 
 <!-- markdownlint-disable MD013 -->
 
-| Source ID | Source and canonical URL | Retrieve for | Access during research |
-| --- | --- | --- | --- |
-| `coesa-home` | [Official homepage](https://coesaenergy.it/) | Service areas, workflow, published scale counters | Search-indexed text; direct fetch failed. |
-| `coesa-about` | [Chi siamo](https://coesaenergy.it/chi-siamo/) | Identity, founders, history, ESCo/EPC positioning | Direct page text read. |
-| `coesa-industrial-pv` | [Fotovoltaico per imprese](https://coesaenergy.it/fotovoltaico/fotovoltaico-per-imprese/) | Commercial arrangements, washing, monitoring, module replacement | Search-indexed text; direct fetch timed out. |
-| `coesa-pa-services` | [Public-administration services](https://coesaenergy.it/efficientamento-energetico/efficientamento-energetico-pubblica-amministrazione/) | Company-listed certifications and public-sector offer | Search-indexed text read. |
-| `coesa-monitoring` | [Sistemi di monitoraggio](https://coesaenergy.it/sistemi-di-monitoraggio/) | Monitoring perspective, local/cloud analysis, small-system constraints | Direct page text read. |
-| `coesa-innovation` | [Innovazione e ricerca energetica](https://coesaenergy.it/innovazione-ricerca-energetica/) | KeepTheSun, JuaKit, SPARC, innovation process | Search-indexed text; direct fetch timed out. |
-| `coesa-hackturin` | [Company hackTurin announcement](https://it.linkedin.com/posts/coesa-srl_hackturin-challenge-activity-7510670035141627904-gUKs) | Sponsorship, CEO identification, prototype emphasis | Search-indexed company-post text read. |
-| `coesa-innovation-outreach` | [Company innovation outreach post](https://it.linkedin.com/posts/coesa-srl_formazione-its-itspeano-activity-7460677442442182656-x8eN) | Stoppa's company-published role and portfolio presentation | Search-indexed company-post text read. |
+| Source ID                   | Source and canonical URL                                                                                                                 | Retrieve for                                                           | Access during research                       |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------- |
+| `coesa-home`                | [Official homepage](https://coesaenergy.it/)                                                                                             | Service areas, workflow, published scale counters                      | Search-indexed text; direct fetch failed.    |
+| `coesa-about`               | [Chi siamo](https://coesaenergy.it/chi-siamo/)                                                                                           | Identity, founders, history, ESCo/EPC positioning                      | Direct page text read.                       |
+| `coesa-industrial-pv`       | [Fotovoltaico per imprese](https://coesaenergy.it/fotovoltaico/fotovoltaico-per-imprese/)                                                | Commercial arrangements, washing, monitoring, module replacement       | Search-indexed text; direct fetch timed out. |
+| `coesa-pa-services`         | [Public-administration services](https://coesaenergy.it/efficientamento-energetico/efficientamento-energetico-pubblica-amministrazione/) | Company-listed certifications and public-sector offer                  | Search-indexed text read.                    |
+| `coesa-monitoring`          | [Sistemi di monitoraggio](https://coesaenergy.it/sistemi-di-monitoraggio/)                                                               | Monitoring perspective, local/cloud analysis, small-system constraints | Direct page text read.                       |
+| `coesa-innovation`          | [Innovazione e ricerca energetica](https://coesaenergy.it/innovazione-ricerca-energetica/)                                               | KeepTheSun, JuaKit, SPARC, innovation process                          | Search-indexed text; direct fetch timed out. |
+| `coesa-hackturin`           | [Company hackTurin announcement](https://it.linkedin.com/posts/coesa-srl_hackturin-challenge-activity-7510670035141627904-gUKs)          | Sponsorship, CEO identification, prototype emphasis                    | Search-indexed company-post text read.       |
+| `coesa-innovation-outreach` | [Company innovation outreach post](https://it.linkedin.com/posts/coesa-srl_formazione-its-itspeano-activity-7460677442442182656-x8eN)    | Stoppa's company-published role and portfolio presentation             | Search-indexed company-post text read.       |
 
 <!-- markdownlint-enable MD013 -->
 
