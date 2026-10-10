@@ -19,8 +19,9 @@
 | Grove Light Sensor (P) v1.1                 | Secured                                          | Relative light context; not an established calibrated irradiance measurement.                          |
 | Grove 2.5A DC Current Sensor (ACS70331)     | Secured                                          | Current observations on a compatible small test circuit; range and integration to verify.              |
 | Grove 16x2 LCD (White on Blue)              | Secured                                          | Proposed local status/findings display; connection and software to verify.                             |
+| Grove NFC Reader (PN532)                    | Secured                                          | Shows the latest finding as NFC tag text (UART mode); wired and verified in PR #49.                    |
 | 1000mAh LiPo battery with JST 2mm           | Secured                                          | Candidate prototype power component; runtime and connector compatibility unmeasured.                   |
-| Solar Charger HRS1358                       | Secured                                          | Candidate charging component selected in place of the unavailable Waveshare solar charger.             |
+| Solar Charger HRS1358                       | Secured                                          | Secured but not used: the Waveshare solar power manager is the charger in the as-built path.           |
 | Mini Solar Panel R1123 (90x60)              | Secured                                          | Small-panel test fixture and candidate charging input; electrical specifications to verify.            |
 | HAS4966 step-down converter                 | Secured                                          | Candidate power conversion component; supply design and settings to verify.                            |
 
@@ -28,14 +29,15 @@
 
 Names, versions, capacities, and dimensions above follow the team's inventory.
 Availability does not establish a tested connection, model, or power budget.
+See the [bill of materials](../hardware/bom.md) for quantities, status and approximate cost.
 
 ## Missing or unavailable
 
-| Item                         | Reported status         | Prototype decision                                                                     |
-| ---------------------------- | ----------------------- | -------------------------------------------------------------------------------------- |
-| Breadboards                  | Completely out of stock | Plan assembly around shield/connector connections; confirm needed cables and adapters. |
-| Grove Thermal Imaging Camera | Unavailable             | Replace image acquisition with a phone RGB camera.                                     |
-| Waveshare Solar Charger      | Unavailable             | Use the secured HRS1358 as the charging candidate; integration remains to verify.      |
+| Item                         | Reported status                                           | Prototype decision                                                                     |
+| ---------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Breadboards                  | Completely out of stock                                   | Plan assembly around shield/connector connections; confirm needed cables and adapters. |
+| Grove Thermal Imaging Camera | Unavailable                                               | Replace image acquisition with a phone RGB camera.                                     |
+| Waveshare Solar Charger      | Found 2026-10-10 (Solar Power Manager, 5 V / 1 A version) | Now the charger in the as-built solar path; HRS1358 and LM2596 are no longer used.     |
 
 ## Camera substitution
 
