@@ -60,11 +60,11 @@ Availability does not establish a tested connection, model, or power budget.
 
 ## Missing or unavailable
 
-| Item                         | Reported status         | Prototype decision                                                                     |
-| ---------------------------- | ----------------------- | -------------------------------------------------------------------------------------- |
-| Breadboards                  | Completely out of stock | Plan assembly around shield/connector connections; confirm needed cables and adapters. |
-| Grove Thermal Imaging Camera | Unavailable             | Replace image acquisition with a phone RGB camera.                                     |
-| Waveshare Solar Charger      | Unavailable             | Use the secured HRS1358 as the charging candidate; integration remains to verify.      |
+| Item                         | Reported status                                           | Prototype decision                                                                     |
+| ---------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Breadboards                  | Completely out of stock                                   | Plan assembly around shield/connector connections; confirm needed cables and adapters. |
+| Grove Thermal Imaging Camera | Unavailable                                               | Replace image acquisition with a phone RGB camera.                                     |
+| Waveshare Solar Charger      | Found 2026-10-10 (Solar Power Manager, 5 V / 1 A version) | Now the charger in the as-built solar path; HRS1358 and LM2596 are no longer used.     |
 
 ## Camera substitution
 
