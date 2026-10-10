@@ -14,9 +14,7 @@ EXPORTS = ROOT / "docs" / "architecture" / "diagrams"
 # These endpoints encode the bring-up connection record, not drawing coordinates.
 EXPECTED_NETS = {
     "+5V_USB": {("P1", "VBUS"), ("U1", "USB_VBUS")},
-    "+3V3": {("U1", "3V3")}
-    | {(f"J{i}", "3") for i in range(1, 6)}
-    | {(f"U{i}", "3") for i in range(2, 7)},
+    "+3V3": {("U1", "3V3")} | {(f"J{i}", "3") for i in range(1, 6)} | {(f"U{i}", "3") for i in range(2, 7)},
     "GND": {("P1", "GND"), ("U1", "USB_GND")}
     | {(f"J{i}", "4") for i in range(1, 6)}
     | {(f"U{i}", "4") for i in range(2, 7)},
@@ -39,9 +37,7 @@ def check_connections(netlist):
     """Detect missing connections, crossed pins, and accidental power shorts."""
     nets = ET.parse(netlist).getroot().findall("./nets/net")
     actual = {
-        net.attrib["name"].lstrip("/"): {
-            (node.attrib["ref"], node.attrib["pin"]) for node in net.findall("node")
-        }
+        net.attrib["name"].lstrip("/"): {(node.attrib["ref"], node.attrib["pin"]) for node in net.findall("node")}
         for net in nets
     }
     if actual != EXPECTED_NETS:
@@ -50,13 +46,8 @@ def check_connections(netlist):
             expected = EXPECTED_NETS.get(name, set())
             got = actual.get(name, set())
             if expected != got:
-                differences.append(
-                    f"{name}: missing={sorted(expected - got)}, "
-                    f"extra={sorted(got - expected)}"
-                )
-        raise ValueError(
-            "Schematic differs from bring-up wiring:\n" + "\n".join(differences)
-        )
+                differences.append(f"{name}: missing={sorted(expected - got)}, extra={sorted(got - expected)}")
+        raise ValueError("Schematic differs from bring-up wiring:\n" + "\n".join(differences))
     pin_count = sum(len(pins) for pins in actual.values())
     print(f"Connectivity verified: {len(actual)} nets, {pin_count} pins.", flush=True)
 
@@ -74,9 +65,7 @@ def main():
         parser.error("Install KiCad or pass --kicad-cli /path/to/kicad-cli")
 
     def run(*arguments):
-        subprocess.run(
-            [cli, *map(str, arguments), str(SCHEMATIC)], check=True, cwd=ROOT
-        )
+        subprocess.run([cli, *map(str, arguments), str(SCHEMATIC)], check=True, cwd=ROOT)
 
     with tempfile.TemporaryDirectory(prefix="poopvolt-schematic-") as temporary:
         work = Path(temporary)

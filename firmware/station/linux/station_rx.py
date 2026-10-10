@@ -17,14 +17,12 @@ import sys
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor"))
-import msgpack  # noqa: E402
+import msgpack
 
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "station"
 
-Reading = collections.namedtuple(
-    "Reading", "seq uptime_ms temp_c rh_pct light_raw pv_ma pv_mv"
-)
+Reading = collections.namedtuple("Reading", "seq uptime_ms temp_c rh_pct light_raw pv_ma pv_mv")
 FIELDS = ("rx_unix_s",) + Reading._fields
 
 
@@ -45,9 +43,7 @@ def process(reading):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--csv", help="append readings to this CSV file instead of stdout"
-    )
+    parser.add_argument("--csv", help="append readings to this CSV file instead of stdout")
     args = parser.parse_args()
 
     if args.csv:
