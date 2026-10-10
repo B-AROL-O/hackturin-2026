@@ -1,7 +1,9 @@
 # PoopVolt Architecture Index
 
 This is the entry point for architectural questions about PoopVolt. The views follow a C4-inspired hierarchy with additional physical deployment and runtime views.
-All views are proposed drafts. They describe intended behavior, not a verified implementation or measured performance.
+The system-design views are proposed drafts. They describe intended behavior,
+not a verified implementation or measured performance. The electrical wiring
+view separately records the prototype connections reported in PR #49.
 
 ## Diagram Registry
 
@@ -11,6 +13,7 @@ All views are proposed drafts. They describe intended behavior, not a verified i
 | `pv-context`          | [System context](context.md)                                      | Operator, installation, and system boundary            |
 | `pv-architecture`     | [Application architecture](architecture.md)                       | Application modules, storage, and information flow     |
 | `pv-deployment`       | [Physical deployment](deployment.md)                              | Intended devices and execution environments            |
+| `pv-wiring`           | [Prototype electrical wiring](../hardware-connections.md)         | As-built USB power, Grove ports, and module pinouts    |
 | `pv-acquisition`      | [Acquisition](components/acquisition.md)                          | Input normalization, quality checks, and alignment     |
 | `pv-diagnostics`      | [Diagnostics](components/diagnostics.md)                          | Soiling, thermal, electrical, and degradation analysis |
 | `pv-maintenance`      | [Maintenance](components/maintenance.md)                          | Evidence assessment and operator recommendations       |
@@ -41,7 +44,11 @@ Use the [reference index](../references.md) for hardware sources and dataset ver
 
 ## Open Decisions
 
-Sensor and camera selection, electrical compatibility, MCU/Linux responsibilities, observation contracts, storage retention, model selection, evaluation criteria, operator access, and energy-aware scheduling remain unresolved.
+The [prototype wiring](../hardware-connections.md) records selected and
+reported-tested sensor/display interfaces. Full-system sensor and camera
+selection, power integration, MCU/Linux responsibilities, observation contracts,
+storage retention, model selection, evaluation criteria, operator access, and
+energy-aware scheduling remain unresolved.
 
 ## Method References
 

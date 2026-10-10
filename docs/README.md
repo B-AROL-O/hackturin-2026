@@ -3,6 +3,8 @@
 ## Project documentation
 
 - [Architecture index](architecture/README.md): overview, context, components, deployment, and runtime flows.
+- [Prototype electrical wiring](hardware-connections.md): as-built USB power,
+  Grove connections, and connector pinouts from the Arduino bring-up.
 
 - [PoopVolt project pitch](pitch-draft.md)
 - [Reference index](references.md): canonical external sources and retrieval keywords for AI agents and contributors.
