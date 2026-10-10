@@ -6,7 +6,8 @@
   [PR #49](https://github.com/B-AROL-O/hackturin-2026/pull/49); not independently
   retested for this diagram.
 - Parent: [Physical deployment](architecture/deployment.md)
-- Scope: USB-powered UNO Q, Base Shield, and the four connected Grove modules.
+- Scope: USB-powered UNO Q, Base Shield, five connected Grove modules, and the
+  separate solar charging path (panel, current sensor, Waveshare manager, LiPo).
 
 The connection record in PR #49 reports verification with
 [`sensor_diag`](../firmware/sensor_diag/sensor_diag.ino) and
@@ -36,9 +37,15 @@ Same-name net labels are electrically connected across the sheet. `SCL` and
 UART uses separate `D0_RX` and `D1_TX` nets, with PN532 TX connected to MCU RX.
 
 The light sensor's white conductor terminates at its unused connector contact.
-`SPARE_A1` records the shield's A1 connection; it is not a second sensor reading.
-Pin 2 of `U5` is modeled as a passive connector contact labeled `NC / unused`,
-with no internal sensor function. The UNO Q's remaining headers are omitted.
+That conductor carries A1, so `PV_ISENSE_A1` joins it with the current sensor
+`U6` on the A1 port (`J5`); the light sensor does not drive it. Pin 2 of `U5`
+and `U6` is modeled as a passive `NC / unused` contact. The UNO Q's remaining
+headers are omitted.
+
+The solar section (`PV1`, `U6` current path, `U7`, `BT1`) shares no conductor
+with the UNO Q supply or Grove GND: `U6` is in series on the panel's positive
+wire (`PV_POS` → IN+ … IN− → `PV_TO_CHARGER` → SOLAR IN +), and the LiPo plugs
+into the Waveshare's PH2.0 socket. The Waveshare USB OUT is not connected.
 
 ## Grove cable pinout
 
@@ -72,12 +79,13 @@ The MCU header mapping is documented in the
 
 Stacked on the UNO Q's UNO-format headers. **VCC switch set to 3.3 V**, so every Grove port supplies 3.3 V and GND.
 
-| Shield port | UNO Q signal (MCU pin)                                      | Device                                             | Bus / address   | Status   |
-| ----------- | ----------------------------------------------------------- | -------------------------------------------------- | --------------- | -------- |
-| I2C         | SDA (PB11), SCL (PB10): MCU I2C2, `Wire`                    | Grove AHT20 temperature/humidity                   | I2C 0x38        | verified |
-| I2C         | same bus                                                    | Grove 16x2 LCD (monochrome, no RGB backlight chip) | I2C 0x3E        | verified |
-| UART        | D0 = MCU RX (PB7), D1 = MCU TX (PB6): MCU USART1, `Serial1` | Grove NFC (PN532), HSU mode, 115200 baud           | UART            | verified |
-| A0          | A0 (PA4), ADC1 ch 9                                         | Grove light sensor (phototransistor)               | analog, 0–3.3 V | verified |
+| Shield port | UNO Q signal (MCU pin)                                      | Device                                                       | Bus / address                   | Status                                     |
+| ----------- | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------- | ------------------------------------------ |
+| I2C         | SDA (PB11), SCL (PB10): MCU I2C2, `Wire`                    | Grove AHT20 temperature/humidity                             | I2C 0x38                        | verified                                   |
+| I2C         | same bus                                                    | Grove 16x2 LCD (monochrome, no RGB backlight chip)           | I2C 0x3E                        | verified                                   |
+| UART        | D0 = MCU RX (PB7), D1 = MCU TX (PB6): MCU USART1, `Serial1` | Grove NFC (PN532), HSU mode, 115200 baud                     | UART                            | verified                                   |
+| A0          | A0 (PA4), ADC1 ch 9                                         | Grove light sensor (phototransistor)                         | analog, 0–3.3 V                 | verified                                   |
+| A1          | A1 (PA5), ADC1 ch 10                                        | Grove 2.5A DC current sensor (ACS70331), solar panel current | analog, 800 mV/A, zero 266.5 mV | zero verified; current under light pending |
 
 Notes:
 
@@ -87,11 +95,11 @@ Notes:
 
 ## Not currently connected
 
-- Grove 2.5A DC Current Sensor (ACS70331): loose in the photo; no Grove cable or measured-current circuit connected. No current or voltage acquisition is shown in this diagram.
 - Arduino Modulino Movement (LSM6DSOX, I2C 0x6A): connects to the UNO Q's Qwiic connector (MCU `Wire1`). It was used for the first bring-up and is unplugged now.
 - Arduino Media Carrier: not used.
 - Camera (planned): an Android phone streaming over Wi-Fi to the Linux side. Wireless, no wiring.
-- Solar panel, charger, LiPo battery, and step-down converter: inventory items, not part of the USB-powered wiring recorded in PR #49. Their power path remains unverified.
+- Waveshare Solar Power Manager USB OUT (5 V / 1 A): not connected; whether it can run the UNO Q is untested.
+- HRS1358 charger and LM2596 ("HAS4966") step-down: not used. The step-down cannot make 5 V from a 3.7 V LiPo.
 
 ## Edit, check, and render
 
@@ -115,7 +123,7 @@ For a KiCad installation outside `PATH`, pass `--kicad-cli /path/to/kicad-cli`.
 When hardware changes intentionally, update the connection record and expected
 net endpoints in the script together with the schematic and symbol library.
 
-Validation with KiCad 10.0.6: electrical rules check and nine-net connectivity
+Validation with KiCad 10.0.7: electrical rules check and 15-net connectivity
 check pass. Review the regenerated page visually before committing it. These
 checks validate the modeled interconnect; they do not retest the physical board
 or validate the internals of the purchased modules.
