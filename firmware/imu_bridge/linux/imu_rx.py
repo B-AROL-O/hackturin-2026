@@ -16,7 +16,7 @@ import threading
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor"))
-import msgpack  # pylint: disable=wrong-import-position
+import msgpack  # noqa: E402, RUF100  # pylint: disable=wrong-import-position
 
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "imu"
