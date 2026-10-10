@@ -1,7 +1,31 @@
 # Reference Index
 
 Use this index to locate external documentation and datasets for PoopVolt. Each entry includes a stable identifier, a canonical URL, and retrieval keywords for AI agents and contributors.
-Open the linked source before relying on hardware specifications, setup instructions, or example code; this index does not contain local copies of the sources.
+Open the linked source before relying on hardware specifications, setup
+instructions, or example code. External sources are linked rather than copied;
+the company context entry also provides a dated local research summary.
+
+## coesa-energy-context
+
+- Title: Coesa Energy — evaluator context for PoopVolt
+- Publisher of external sources: Coesa Energy / COESA Srl
+- Canonical URL: <https://coesaenergy.it/>
+- Local context: [Company research and source register](company/coesa-energy.md)
+- Source type: Dated local synthesis of official company pages and
+  company-authored posts, with separately labeled team analysis
+- Researched on: 2026-10-10
+- Language: English synthesis; primarily Italian source material
+- Project relevance: Company identified by the user as evaluating our idea;
+  background for PoopVolt's pitch and pilot design.
+- Retrieve when: Preparing the Coesa pitch, comparing existing monitoring
+  capabilities, or exploring second-life panel and off-grid maintenance use
+  cases.
+- Search keywords: Coesa, COESA Srl, evaluator, hackTurin, Federico Sandrone,
+  Matteo Stoppa, ESCo, EPC, O&M, KeepTheSun, JuaKit, SPARC, off-grid, soiling,
+  predictive maintenance, circular economy, PoopVolt.
+- Retrieval note: Start with the local context and its linked sources. Treat
+  suggested product fit as hypotheses, and refresh changing company facts before
+  external use.
 
 ## arduino-uno-q-user-manual
 
