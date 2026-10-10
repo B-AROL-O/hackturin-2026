@@ -43,7 +43,7 @@
 - [COESA Energy](https://landing.coesaenergy.it)
 - [GOMA Elettronica](https://www.goma.it)
 - [Seeed Studio](https://www.seeedstudio.com)
-- [Unione Industriali Torino - Gruppo Giovani Imprenditori]()
+- Unione Industriali Torino - Gruppo Giovani Imprenditori
 
 ### Useful links
 
