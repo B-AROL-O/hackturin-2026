@@ -12,6 +12,7 @@ sequenceDiagram
     participant L as Logger or historical replay
     participant A as Acquisition
     participant D as Diagnostics
+    participant R as Proposed theoretical reference
     participant S as Local storage
     participant M as Maintenance
     participant P as Company service platform
@@ -20,7 +21,9 @@ sequenceDiagram
     A->>D: Quality-checked samples and operating context
     D->>S: Read compatible history and channel topology
     S-->>D: Historical baseline and known limitations
-    D->>D: Assess deviations and persistent trends on edge
+    D->>R: Request expected production for matching scope and period
+    R-->>D: Estimated reference and uncertainty, or unavailable inputs
+    D->>D: Assess scoped deviations only with adequate comparison inputs
     alt Adequate evidence
         D->>M: Candidate anomaly, location scope and uncertainty
     else Missing history, mapping or reliable inputs
@@ -38,12 +41,16 @@ sequenceDiagram
 ## Explanation
 
 Historical replay retains its original timestamps and a replay label. It is
-independent of the phone scene. Field ingestion would use a verified adapter.
-An anomaly's scope cannot exceed the known plant/channel/string mapping.
-This flow demonstrates the proposed path toward predictive maintenance; a
+independent of the phone scene. Field ingestion would use a verified adapter. An
+anomaly's scope cannot exceed the known plant/channel/string mapping. The
+theoretical reference is an additional proposed input, not an implemented
+service. Missing weather or plant metadata yields an unavailable estimate or a
+narrower explicitly defined baseline, never an invented expected-production
+value. This flow demonstrates the proposed path toward predictive maintenance; a
 current deviation is not proof that a future failure has been predicted.
 
 ## Related Views
 
 [Data plan](../../data-plan.md) · [Diagnostics](../components/diagnostics.md) ·
-[Maintenance flow](recommend-maintenance.md) · [Architecture index](../README.md)
+[Maintenance flow](recommend-maintenance.md) ·
+[Architecture index](../README.md)

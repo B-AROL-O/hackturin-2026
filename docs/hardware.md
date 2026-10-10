@@ -1,6 +1,7 @@
 # PoopVolt hardware availability
 
-- Status: Availability reported by the team; assembly and integration unverified.
+- Status: Availability reported by the team; assembly and integration
+  unverified.
 - Updated: 2026-10-10.
 - Source: Team-provided inventory in the project conversation.
 - Scope: Hackathon prototype parts, substitutions, and their proposed roles.
@@ -49,6 +50,13 @@ There is no thermal acquisition or measured hotspot confirmation in the current
 prototype scope. Hotspot risk can remain narrative background; thermal diagnosis
 is deferred until an appropriate camera and aligned measurements are available.
 Neither the AHT20 nor the light sensor replaces thermal imaging.
+
+## STL presentation concept
+
+The team plans an STL design view in the three-minute pitch. It illustrates the
+physical proposal and is distinct from this secured-parts inventory. Link the
+actual STL filename/revision and explain its function when supplied. This PR
+includes no STL artifact, assembled-device proof, or fabrication result.
 
 ## Integration work still required
 

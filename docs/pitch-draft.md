@@ -1,107 +1,102 @@
-# PoopVolt — from a pigeon to a plant service opportunity
+# PoopVolt — make an older plant's performance visible
 
-Status: Proposed product and commercial model. No working edge pipeline,
-validated model, field benefit, or Coesa partnership is established yet.
+Status: Proposed product and commercial model. This PR supplies documentation,
+not an implemented MVP, validated theoretical model, field benefit, or Coesa
+partnership.
 
-**PoopVolt is an Edge AI device sold to photovoltaic service companies such as
-Coesa. The company can provide it free of charge to plant owners, turning
-installation observations into targeted maintenance and evidence-based
-revamping proposals.**
+## The story: a working plant with unknown performance
 
-## The story: one pigeon, one affected string
+An owner installed a photovoltaic plant years ago. It still produces
+electricity, but the owner cannot see how each mapped string performs or whether
+the plant produces as expected. Dust, wear, and pigeon droppings are possible
+contributors to investigate, not causes proved by a chart or a visible deposit.
 
-A pigeon leaves droppings on a photovoltaic panel. Localized contamination can
-shade cells, reduce output, and contribute to hotspot risk. Dust introduces a
-broader soiling problem. The useful question is: where should a technician look,
-what might be wrong, and which intervention is worth considering?
+PoopVolt proposes a comparison between observed and expected production. The
+intended theoretical reference must be defined using plant characteristics and
+adequate operating/environmental inputs. Compare the same period and compatible
+conditions, reporting missing inputs and uncertainty.
 
-PoopVolt aims to identify the affected string and, where mapped imagery provides
-enough detail, the visible contaminated region on a panel. It proposes a problem
-class with supporting evidence and uncertainty. An RGB image does not establish
-a thermal hotspot, an electrical interruption, or the amount of lost energy.
-Those claims require appropriate thermal or electrical measurements.
+A deviation points to something worth inspecting. It does not alone establish a
+failure, historical degradation, or recoverable energy. String-level conclusions
+require measured coverage and a verified channel-to-string map.
 
-## The product: one edge device, two observation paths
+The owner can use that evidence to request a technical assessment from a company
+such as Coesa. Cleaning, repair, component replacement, and wider revamping are
+options to evaluate. Comparable measurements after an intervention test its
+benefit.
 
-The proposed edge platform runs Acquisition, Diagnostics, and Maintenance locally
-and retains observations in `Local storage`. The Arduino UNO Q 4GB with Media
-Carrier and supporting parts are secured; see the [hardware inventory](hardware.md).
-Integration remains to be verified. The phone RGB camera replaces the unavailable
-Grove thermal camera, so measured thermal hotspot detection is outside the current
-prototype scope.
+The canonical Italian story is the [three-minute narrative](pitch-narrative.md),
+adapted from the team's `pitch-narrative2.md`.
 
-- **Single-string demonstration:** A phone camera supplies RGB images of a
-  mapped panel/string with simulated dust or droppings. The target is visible
-  contamination classification and image-region localization. Electrical loss
-  and hotspot confirmation are separate validation steps.
-- **Multi-string and whole-plant monitoring:** Inverter or logger telemetry feeds
-  historical and cross-channel analysis. Edge ML aims to detect persistent
-  underperformance and prioritize inspection; predictive maintenance requires
-  representative history and intervention/failure outcomes. SOLARMA's public
-  inverter logs supply a proposed replay source, not a proven prediction model.
+## The hackathon presentation
 
-Local analysis should continue during a connectivity outage. When connected,
-the device synchronizes summaries, findings, coverage, and intervention history
-to a proposed company service platform. Coesa can review a portfolio of customer
-plants; each customer sees the evidence and recommendations for their own plant.
-Remote portfolio visibility depends on synchronization and must show freshness.
+The agreed talk is three minutes, including a software demonstration and an STL
+design view. Follow owner, problem, expected/observed comparison, physical
+concept, software case, and regeneration review. Do not lead with the
+distribution offer.
 
-Whole-plant coverage requires all relevant channels to be connected and mapped.
-Aggregate power alone cannot identify an exact module or distinguish every cause.
+The team's MVP software and STL are presentation materials whose files and
+verified functions must be linked before making implemented claims. This
+documentation change does not implement either artifact.
 
-## The offer: company pays, customer receives the device
+If the theoretical reference, mapped strings, or software comparison are not
+available, use a clearly labeled simulation or narrow the demonstration. State
+provenance, period, units, reference method, and actual coverage.
 
-PoopVolt sells the device to the service company. The proposed distribution
-model lets that company give it to a customer at no upfront device charge.
-Pricing, ownership, installation, support, and any recurring platform fee remain
-to be agreed. Free to the customer still leaves a cost for the company to recover.
+## Proposed system and separate evidence paths
 
-The company gains a proposed path from observed underperformance to a service:
+Acquisition, Diagnostics, and Maintenance remain local logical modules with
+`Local storage` and an Operator interface on the intended Arduino UNO Q
+platform. The [hardware inventory](hardware.md) records secured components;
+availability does not establish assembly, compatible measurements, or successful
+inference.
 
-1. Review a localized finding and its uncertainty.
-2. Offer cleaning, inspection, or repair where the evidence supports it.
-3. Reassess production after the intervention.
-4. Compare continued operation, maintenance, and revamping when persistent
-   losses justify a technical and economic review.
+- **Production review:** Telemetry and a proposed expected-production reference
+  support deviation review. The theoretical model, inputs, and calibration
+  remain decisions, not an established baseline.
+- **Visible inspection:** Phone RGB with simulated deposits can illustrate
+  visible contamination on a declared panel/string. It cannot measure hotspots
+  or lost kWh.
+- **Historical replay:** SOLARMA inverter logs are a separate source for channel
+  plots and anomaly development. They lack verified string mapping and populated
+  irradiance, so they do not validate the theoretical model or the phone scene.
 
-For the owner, the intended value is an understandable explanation of plant
-condition and whether an intervention could improve profitability. Revamping
-is an option to evaluate alongside maintenance and continued operation. Estimates
-must disclose baseline production, expected incremental energy, energy value,
-intervention cost, and uncertainty; no savings or payback is measured today.
+Keep these evidence scopes separate. Thermal acquisition remains deferred.
+Predictive maintenance requires longitudinal outcomes and evaluation beyond a
+current deviation. The [data plan](data-plan.md) records input and source
+limits.
 
-## Why this fits Coesa
+The proposed company platform supplies portfolio and own-plant views through
+queued synchronization. Remote freshness depends on connection and record
+synchronization; the static presentation is not that service platform.
 
-Coesa already advertises monitoring and O&M, including washing and replacement
-of underperforming modules. The proposed fit is a device distribution channel
-and an evidence-to-service workflow within those activities. Coesa also discusses
-local analytics, so Edge AI alone is not an established differentiator.
-See the [company context](company/coesa-energy.md) for sources and hypotheses.
-Off-grid and second-life systems remain possible later applications rather than
-the primary market constraint.
+## Coesa and the commercial hypothesis
 
-## What the hackathon should demonstrate
+The existing business proposal remains a hypothesis: sell an edge device to a
+photovoltaic service company, which could offer it to customers at no upfront
+device charge. Pricing, ownership, installation, support, and recurring fees are
+open. The three-minute narrative emphasizes owner value; explain the
+distribution model in questions or the appendix rather than treating it as an
+agreed partnership.
 
-Demonstrate the phone-to-localization path and the independent historical
-telemetry replay path, with provenance, mapped scope, and uncertain-input handling.
-Show an illustrative company finding and a customer maintenance/revamping review.
-Do not present the phone scene as paired with the historical plant or call an
-anomaly detector a validated failure predictor.
+Coesa is a potential technical/service counterpart. Its existing monitoring and
+O&M activities provide context; Edge AI alone is not an established
+differentiator. Read the [company context](company/coesa-energy.md) for sources
+and hypotheses.
 
-The next step is a company-led pilot to measure detection quality, field mapping,
-device cost and power draw, service usefulness, and post-intervention production.
-The [data plan](data-plan.md) defines source limits and the
-[architecture index](architecture/README.md) defines the proposed system.
+Revamping is one option beside cleaning, repair, and continued operation. No
+measured savings, payback, service conversion, or full recovery of the
+production gap is established. Economic estimates need costs, baseline
+production, incremental energy, energy value, and uncertainty.
 
-## Short Italian pitch
+## Next validation
 
-Un piccione sporca un pannello: dove interveniamo, e quanto conviene farlo?
-PoopVolt è un dispositivo Edge AI che vendiamo all'azienda di servizi energetici,
-che può offrirlo gratuitamente ai propri clienti. Su una singola stringa puntiamo
-a localizzare e classificare lo sporco visibile; su più stringhe analizziamo i
-dati dell'impianto per individuare anomalie e sviluppare manutenzione predittiva.
-L'azienda riceve evidenze per proporre pulizia, manutenzione o una valutazione
-di revamping; il proprietario può capire il possibile beneficio economico.
-Per il prototipo useremo una fotocamera del telefono con sporco simulato e,
-separatamente, log storici SOLARMA. Hotspot, perdita elettrica e ritorno economico
-richiedono misure dedicate: sono obiettivi da validare, non risultati già ottenuti.
+Define and evaluate the expected-production reference, verify channel mapping,
+and run a reproducible software case with clear provenance. Link the STL concept
+and implemented MVP separately from this architecture draft.
+
+A field pilot should record operating conditions, intervention details,
+comparable before/after production, and technician usefulness. Off-grid,
+second-life, forecasting, and battery scheduling remain possible extensions.
+
+See the [architecture index](architecture/README.md) for proposed system views.

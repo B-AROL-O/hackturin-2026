@@ -2,19 +2,22 @@
 
 ## Direction
 
-Build a calm, editorial presentation about photovoltaic field maintenance.
-Use generous whitespace, clear technical drawings, and close views of a panel
-when a photograph supplies useful context. Let the sensing and decision flow
-provide the recurring visual structure. The title slide can use a dark graphite
-canvas with one panel image and a large PoopVolt wordmark.
+Build a calm, editorial presentation about photovoltaic field maintenance. Use
+generous whitespace, clear technical drawings, and close views of a panel when a
+photograph supplies useful context. Let the sensing and decision flow provide
+the recurring visual structure. The title slide can use a dark graphite canvas
+with one panel image and a large PoopVolt wordmark.
 
-Use the pigeon and its deposit as a restrained recurring cue on the same panel.
-Carry that location into the phone RGB view with declared string/panel mapping.
-Any thermal illustration must be separately labeled as risk context. Keep the
-SOLARMA telemetry plant visually separate and show channels as unverified strings.
-Use a company-to-owner visual for the device offer and an option comparison for
-maintenance/revamping inputs. Keep the pigeon
-cue subordinate to the evidence and operator decision.
+Use the older plant and its owner's question as the recurring visual context.
+The pigeon cue explains the name and remains secondary. The central visual is
+expected versus observed production over matching periods, with estimates,
+observations, and simulations distinguished by labels and line patterns. Unknown
+reference inputs must remain visibly unavailable.
+
+Show the STL as a design concept and the software case with provenance. Keep
+SOLARMA channels distinct from verified strings and phone imagery separate from
+replay. A company-to-owner offer belongs in supporting context or the appendix.
+Thermal illustrations are risk context only, never current measured output.
 
 These are proposed tokens to evaluate on a projector, not an inherited brand.
 
@@ -48,10 +51,13 @@ shrinking text. Use a consistent baseline grid and at most two content columns.
 
 - Cover: large title, one-line purpose, panel visual, team attribution.
 - Problem: one field image with a localized, labeled observation.
-- Architecture: one generous horizontal flow with a clearly marked edge boundary.
+- Architecture: one generous horizontal flow with a clearly marked edge
+  boundary.
 - Diagnostics: aligned evidence views with readable labels and a common legend.
-- Decision: observation, finding, and operator recommendation in a stable sequence.
-- Roadmap: current design state and the next validation steps, with honest status.
+- Decision: observation, finding, and operator recommendation in a stable
+  sequence.
+- Roadmap: current design state and the next validation steps, with honest
+  status.
 
 Use flat compositions for explanations. Reserve UI panels for the illustrative
 operator interface, where they demonstrate an actual interaction. Avoid turning
@@ -67,7 +73,8 @@ diagram ID and extraction rule. Adapt colors during generation, without changing
 the original system semantics or hand-editing generated files.
 
 For photographs, preserve provenance and avoid crops that remove the evidence.
-Show RGB and thermal observations as separate modalities. Label synthetic thermal
-overlays as illustrations. Do not imply a photograph came from PoopVolt hardware.
-Use diagram rendering or native chart tools for technical figures, and image
-search or image generation for photographic or decorative assets when needed.
+Show RGB and thermal observations as separate modalities. Label synthetic
+thermal overlays as illustrations. Do not imply a photograph came from PoopVolt
+hardware. Use diagram rendering or native chart tools for technical figures, and
+image search or image generation for photographic or decorative assets when
+needed.

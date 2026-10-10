@@ -126,10 +126,10 @@ personally judge PoopVolt or has approved an integration.
 ## PoopVolt fit — team hypotheses to validate
 
 The renewed team proposal is to **sell edge devices to Coesa, which can offer
-them free to its plant-owner customers**. The company uses the resulting evidence
-to prioritize maintenance and explain when revamping could improve profitability.
-This is a team commercial hypothesis, not a Coesa requirement, partnership,
-integration agreement, or commitment to distribute devices.
+them free to its plant-owner customers**. The company uses the resulting
+evidence to prioritize maintenance and explain when revamping could improve
+profitability. This is a team commercial hypothesis, not a Coesa requirement,
+partnership, integration agreement, or commitment to distribute devices.
 
 The primary scope now includes grid-connected customer plants, single-string
 visual diagnosis, and multi-channel plant monitoring. Off-grid and second-life
@@ -151,19 +151,25 @@ applications remain possible extensions. See the [pitch](../pitch-draft.md),
 
 ### Suggested pitch emphasis
 
-Lead with the buyer and distribution model: Coesa buys the proposed device,
-the owner receives it free, and evidence supports a useful service proposal.
-Follow the pigeon-droppings story to a mapped visible region on one string, then
-explain the separate route from multiple electrical channels to plant-level
-anomaly/trend analysis. Phone RGB images do not confirm a hotspot, lost kWh, or
-an electrical interruption. Whole-plant coverage depends on mapped channel access.
+Follow the [three-minute owner narrative](../pitch-narrative.md): an older plant
+still works, but the owner cannot assess its performance. Explain the proposed
+expected/observed comparison, STL concept, software case, and
+technician-reviewed regeneration. The theoretical reference and its inputs
+remain to define and validate.
+
+The company buys/free-device proposal is a secondary commercial hypothesis for
+questions or the appendix, not the opening. Coesa is a potential service
+counterpart, not an agreed partner. Mention droppings as a possible inspection
+issue and keep phone imagery separate from multi-channel replay. Phone RGB
+images do not confirm a hotspot, lost kWh, or an electrical interruption.
+Whole-plant coverage depends on mapped channel access.
 
 Describe maintenance and revamping as alternatives to assess for the owner.
 Device distribution must have viable economics for Coesa; customer profitability
-needs measured production and explicit costs, not invented savings.
-Generic AI dashboards and offline analysis do not establish differentiation from
-Coesa's existing activities. Test whether the proposed workflow makes service
-decisions more useful, specific, and economical.
+needs measured production and explicit costs, not invented savings. Generic AI
+dashboards and offline analysis do not establish differentiation from Coesa's
+existing activities. Test whether the proposed workflow makes service decisions
+more useful, specific, and economical.
 
 ### Suggested pilot measurements
 
@@ -172,7 +178,8 @@ These are team-proposed dimensions, not Coesa's judging criteria:
 - Single-string image classification and localization on held-out capture
   sessions, including shade, reflections, blur, and uncertain mapping.
 - Multi-channel anomaly quality against a baseline, operating context, and
-  verified events; later predictive evaluation with outcomes and a warning horizon.
+  verified events; later predictive evaluation with outcomes and a warning
+  horizon.
 - Service usefulness: technician assessment, avoided unnecessary work, and
   comparable production observations after intervention.
 - Device/distribution economics: hardware, installation, operation, and support
@@ -186,8 +193,10 @@ These are team-proposed dimensions, not Coesa's judging criteria:
 
 1. Which customer segment and existing O&M workflow should host the first pilot?
 2. What would justify paying for devices and providing them free to owners?
-3. Which inverter/loggers expose useful channels, and is a string/panel map available?
-4. What failure, cleaning, repair, revamping, and production history can be shared?
+3. Which inverter/loggers expose useful channels, and is a string/panel map
+   available?
+4. What failure, cleaning, repair, revamping, and production history can be
+   shared?
 5. Which monitoring decisions still require site visits, and what improvement
    would be useful compared with the tools already used?
 6. What ownership, installation/support responsibilities, integration options,

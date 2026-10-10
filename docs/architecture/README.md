@@ -1,21 +1,30 @@
 # PoopVolt Architecture Index
 
-This is the entry point for architectural questions about PoopVolt. The views follow a C4-inspired hierarchy with additional physical deployment and runtime views.
-All views are proposed drafts. They describe intended behavior, not a verified implementation or measured performance.
+This is the entry point for architectural questions about PoopVolt. The views
+follow a C4-inspired hierarchy with additional physical deployment and runtime
+views. All views are proposed drafts. They describe intended behavior, not a
+verified implementation or measured performance.
 
-The renewed proposal sells an edge device to a photovoltaic service company,
-which can offer it free to customers. Local string-level observations and
-multi-channel plant history support company maintenance services and customer
-revamping assessments. A proposed company service platform adds portfolio views;
-offline diagnostics remain local, while remote visibility requires synchronization.
-Read the [pitch](../pitch-draft.md), [company context](../company/coesa-energy.md),
-and [data plan](../data-plan.md) together with these views.
+The [three-minute owner narrative](../pitch-narrative.md) starts with an older
+plant whose performance is unclear to its owner. It proposes an
+expected/observed comparison using a theoretical reference, software case, and
+STL concept. The model, required inputs, string mapping, and implemented demo
+scope remain unverified; see the data plan before making quantitative claims.
 
-The [hardware inventory](../hardware.md) records the secured UNO Q 4GB with Media
-Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate power components.
-The current prototype uses a phone RGB camera in place of the unavailable Grove
-thermal camera. Thermal acquisition is deferred; hardware availability does not
-establish tested integration.
+The secondary commercial proposal sells an edge device to a photovoltaic service
+company, which can offer it free to customers. Local string-level observations
+and multi-channel plant history support company maintenance services and
+customer revamping assessments. A proposed company service platform adds
+portfolio views; offline diagnostics remain local, while remote visibility
+requires synchronization. Read the [pitch](../pitch-draft.md),
+[company context](../company/coesa-energy.md), and [data plan](../data-plan.md)
+together with these views.
+
+The [hardware inventory](../hardware.md) records the secured UNO Q 4GB with
+Media Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate power
+components. The current prototype uses a phone RGB camera in place of the
+unavailable Grove thermal camera. Thermal acquisition is deferred; hardware
+availability does not establish tested integration.
 
 ## Diagram Registry
 
@@ -34,33 +43,50 @@ establish tested integration.
 
 ## How to Navigate
 
-Start at the overview for project purpose, context for boundaries, or architecture for engineering work. Follow Parent links to zoom out and Related Views links to zoom in.
-Deployment and runtime flows supplement the hierarchy; they are not deeper abstraction levels.
-Implementation diagrams should be added only when concrete algorithms, interfaces, or state machines exist. Link those pages to actual code and their parent component.
+Start at the overview for project purpose, context for boundaries, or
+architecture for engineering work. Follow Parent links to zoom out and Related
+Views links to zoom in. Deployment and runtime flows supplement the hierarchy;
+they are not deeper abstraction levels. Implementation diagrams should be added
+only when concrete algorithms, interfaces, or state machines exist. Link those
+pages to actual code and their parent component.
 
 ## Diagram Conventions
 
-- Keep one canonical Mermaid source per diagram in its Markdown page. Link from pitches and other documents; generate exports from that source.
-- Preserve stable diagram IDs and component names across levels. Update this registry when a view is added or moved.
-- State scope, status, and a text explanation on each page. Use proposed, partially implemented, or implemented status based on evidence.
-- Label arrows with the information exchanged. Document protocols and hardware interfaces only once selected and verified.
-- Keep each diagram within its stated abstraction level. Explain colors or symbols when they carry meaning.
-- Update affected diagrams in the same change as architectural code or hardware changes.
-- Before publishing, check Markdown formatting, Mermaid rendering, and relative links. Automated diagram and link checks are recommended future CI work; the current workflow is a general linter.
+- Keep one canonical Mermaid source per diagram in its Markdown page. Link from
+  pitches and other documents; generate exports from that source.
+- Preserve stable diagram IDs and component names across levels. Update this
+  registry when a view is added or moved.
+- State scope, status, and a text explanation on each page. Use proposed,
+  partially implemented, or implemented status based on evidence.
+- Label arrows with the information exchanged. Document protocols and hardware
+  interfaces only once selected and verified.
+- Keep each diagram within its stated abstraction level. Explain colors or
+  symbols when they carry meaning.
+- Update affected diagrams in the same change as architectural code or hardware
+  changes.
+- Before publishing, check Markdown formatting, Mermaid rendering, and relative
+  links. Automated diagram and link checks are recommended future CI work; the
+  current workflow is a general linter.
 
 ## Retrieval for AI Agents
 
-Use the registry to select a view by scope or stable ID, then read its explanation and linked component pages. Treat proposed decisions as assumptions, not implementation facts.
-Search terms: PoopVolt, Coesa, free customer device, Edge AI, Arduino UNO Q,
-Acquisition, Diagnostics, Maintenance, string, inverter channel, SOLARMA,
-phone camera, soiling, localization, predictive maintenance, revamping,
-profitability, company platform, portfolio, synchronization, deployment.
-Use the [reference index](../references.md) for hardware sources and dataset versions. Consult the canonical source before relying on specifications or example code.
+Use the registry to select a view by scope or stable ID, then read its
+explanation and linked component pages. Treat proposed decisions as assumptions,
+not implementation facts. Search terms: PoopVolt, Coesa, free customer device,
+Edge AI, Arduino UNO Q, Acquisition, Diagnostics, Maintenance, string, inverter
+channel, SOLARMA, phone camera, soiling, localization, predictive maintenance,
+revamping, profitability, company platform, portfolio, synchronization,
+deployment. Use the [reference index](../references.md) for hardware sources and
+dataset versions. Consult the canonical source before relying on specifications
+or example code.
 
 ## Open Decisions
 
 - Field logger compatibility, channel/string topology, image-to-panel mapping,
-  phone transfer, secured-part interfaces, power, and MCU/Linux responsibilities.
+  phone transfer, secured-part interfaces, power, and MCU/Linux
+  responsibilities.
+- Theoretical expected-production reference, plant metadata, weather inputs,
+  reference uncertainty, matched periods, and independent validation.
 - Observation contracts, retention, model selection, edge resource budget,
   evaluation labels, prediction horizon, and environmental baselines.
 - Company platform technology, identity and plant access, transport, queue

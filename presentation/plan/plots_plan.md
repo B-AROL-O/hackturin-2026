@@ -1,57 +1,59 @@
 # Visual and asset plan
 
-Status: Proposed visuals. No images, figures, or charts have been produced.
-Apply [visual guidelines](../../.agent/visual-design.md) when implementing.
+Status: Proposed visuals for the three-minute owner story. Apply
+[visual guidelines](../../.agent/visual-design.md) during implementation.
 
 ## Main visuals
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID        | Primary visual                                                                        | Source or provenance                                       | Visible qualification                             |
-| --------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------- |
-| `pv-title`      | Panel and restrained pigeon cue, with company-to-customer offer                       | Original/licensed image or labeled generated illustration  | Proposed product                                  |
-| `pv-problem`    | Deposit region on one panel; localized shading and possible heating relationship      | `pv-soiling-background`, `pv-hotspot-background`           | Mechanism illustration; no measured loss/hotspot  |
-| `pv-context`    | Buyer, owner, technician, site device, and company platform                           | Canonical `pv-context`; `coesa-energy-context`             | Proposed free-device offer; no partnership        |
-| `pv-pipeline`   | Edge flow, local history, queued sync, company/own-plant views                        | `pv-architecture`, `pv-overview`                           | Local operation; remote freshness depends on sync |
-| `pv-quality`    | Phone RGB image, deposit region, declared string/panel map, unknown-input alternative | `pv-acquisition`, `pv-flow-soiling`, `pv-data-plan`        | Simulated capture; visible contamination only     |
-| `pv-evidence`   | Separate telemetry pathway with channel coverage and history                          | `pv-diagnostics`, `pv-flow-plant`, pinned SOLARMA source   | Historical replay; mapping/prediction unverified  |
-| `pv-decision`   | Continued operation, cleaning/repair, and revamping comparison with economic inputs   | `pv-maintenance`, `pv-flow-maintenance`                    | Illustrative options; no invented ROI             |
-| `pv-validation` | Secured kit and camera substitution versus planned integration and field checks       | `pv-index`, `pv-deployment`, `pv-data-plan`, `pv-hardware` | Results pending                                   |
-| `pv-close`      | Company pilot connecting observations, reviewed work, and reassessment                | `pv-pitch`, `coesa-energy-context`                         | Proposed pilot and intended benefit               |
+| Slide ID       | Primary visual                                                        | Source or provenance                                              | Visible qualification                                   |
+| -------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------- |
+| `pv-title`     | Older plant and the owner's question                                  | Original/licensed image and `pv-narrative`                        | Illustrative scene                                      |
+| `pv-problem`   | Plant/string schematic with a subtle dust or pigeon cue               | `pv-narrative`, `pv-soiling-background`                           | Possible contributors; no established cause             |
+| `pv-pipeline`  | Observed and expected production, same period and units               | `pv-diagnostics`, `pv-data-plan`                                  | Proposed reference; unknown inputs visible              |
+| `pv-prototype` | STL viewport or labeled design export                                 | Team STL when supplied; `pv-hardware` for secured kit             | Design concept, not working hardware                    |
+| `pv-evidence`  | One software comparison with asset scope and provenance               | Executed MVP evidence when linked; otherwise illustrative fixture | Measured, simulated, or replayed status; mapping limits |
+| `pv-decision`  | Owner and technician review followed by intervention and reassessment | `pv-maintenance`, `coesa-energy-context`                          | Options to evaluate; benefit unmeasured                 |
 
 <!-- markdownlint-enable MD013 -->
 
-## Diagrams and imagery
+## Chart and evidence rules
 
-Keep the same illustrative panel/deposit in the pigeon and phone-camera story.
-Use readable string and panel labels, a mapping-status label, and an image-region
-outline. Do not display phone RGB as a measured thermal view. If a thermal risk
-illustration is used, keep it separate and explicitly illustrative.
+Label the theoretical reference as estimated. Keep observed values, estimated
+values, and illustrative values visually distinct with text and line patterns,
+not color alone. Use common periods and units. Never fabricate a quantitative
+gap. Show missing reference inputs as unavailable rather than drawing an
+invented curve.
 
-Use `pv-hardware` for the slide-8/appendix hardware view. Distinguish secured
-parts, selected substitutions, unavailable equipment, and integration still to
-verify. Show the phone camera as the current image source, not a thermal camera.
+String labels require verified topology. An unknown mapping stays an inverter or
+channel view. The SOLARMA replay has its own plant/time identity and lacks
+populated irradiance; phone images cannot supply its missing weather baseline.
 
-Keep the historical SOLARMA plant visually separate from the phone scene. Any
-real replay plot must come from pinned files with units, time range, device/input
-identity, missing-data treatment, and reproducible generation. Do not rename
-inverters as panels or show channels as verified strings.
+The pigeon cue explains the name and a possible inspection issue. It is not the
+recurring protagonist. Keep phone RGB capture separate from electrical plots and
+never represent RGB as measured thermal imagery.
 
-Generate full canonical Mermaid exports for the appendix and concise main-deck
-excerpts with parent diagram IDs, proposed status, and omission notes. Preserve
-module names and boundaries, including the new company platform and sync path.
-Technical figures use diagram/chart tools and retain source hashes.
+## STL and hardware
 
-## Image and data acquisition
+Record the STL's filename, creator, revision, intended function, and actual
+status when supplied. A viewport shows a proposed design, not proof of
+fabrication. Use `pv-hardware` to distinguish secured parts, unavailable
+equipment, and integration work. The phone replaces the unavailable thermal
+camera for visible inspection.
 
-Create `assets/README.md` during implementation with creator, source, license,
-retrieval date, modifications, and intended use for every bundled asset.
-Sponsor status does not establish logo rights. Phone captures record simulation
-method and session provenance as defined in the [data plan](../../docs/data-plan.md).
+## Appendix and asset acquisition
 
-No project performance results currently support a quantitative benefit chart.
-Economic review can show required inputs and an unavailable estimate when inputs
-are missing. Do not invent ROI, recovered kWh, accuracy, or service-margin values.
+Use canonical Mermaid exports with parent IDs and proposed status. Put full
+company distribution, local architecture, synchronization, and independent
+phone/replay paths in the appendix when they exceed the main story.
 
-The optional phone scenario has usable-evidence and uncertain-input cases.
-Render both in print/handout, retaining the simulated and illustrative labels.
+Create `assets/README.md` during implementation with source, creator, license,
+modifications, and intended use. Record data/figure generation and source
+hashes. Phone capture provenance follows the
+[data plan](../../docs/data-plan.md).
+
+Economic figures require explicit inputs. No measured savings, recovered kWh,
+accuracy, or conversion rate currently supports a benefit chart. The optional
+comparison scenario has usable-input and missing-input states; both need a
+complete static and print fallback.
