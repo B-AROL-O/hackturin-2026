@@ -82,6 +82,17 @@ Neither the AHT20 nor the light sensor replaces thermal imaging.
 
 ## Integration work still required
 
+- Record the correct date, time, and location for every measurement, so the sun's
+  position can be estimated. That means latitude and longitude, plus the panel's
+  tilt and azimuth (compass direction). The UNO Q's clock is currently wrong (it
+  reads December 2025) until the board gets network time over Wi-Fi. With these
+  values, the sun's position and the expected clear-sky irradiance can be
+  computed with published models (for example the NOAA solar position
+  algorithm and the Ineichen clear-sky model, both available in `pvlib`).
+  Comparing that expected value with the measured panel current and light level
+  gives an efficiency or soiling estimate. Power, not only current, also needs
+  the panel voltage, which requires a voltage divider (not wired yet). The light
+  sensor is uncalibrated.
 - Use the recorded USB prototype connections for the active Grove modules.
   Verify interfaces and cables for additional devices, including the unused
   Media Carrier, before extending the assembly.
