@@ -2,6 +2,9 @@
 
 ## Quick links
 
+- [Architecture index](docs/architecture/README.md) — diagram hierarchy and system design.
+
+- [Documentation reference index](docs/references.md) — official sources and retrieval keywords for contributors and AI agents.
 - [hackTurin Manuale dei partecipanti](https://docs.google.com/document/u/0/d/1Amd6yVSujHK4o_KcjB97IKTJN76TH6P6QJ-XG2Q1pEk/mobilebasic)
 - Dropbox share: [hackturin-2026](https://www.dropbox.com/scl/fo/5eclqx2zvtit1mjfkiske/AGWotLCqgu1aaEHfJxRGDaE?rlkey=ni635441clcv6t9ir6xaxde1j&st=n5uyvz8e&dl=0)
 - <https://kiro.dev/>
