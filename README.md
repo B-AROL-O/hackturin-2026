@@ -33,4 +33,21 @@
 - [Andrea Richetta](https://www.linkedin.com/in/andrearichetta) - Arduino
 - [Matteo Stoppa](https://www.linkedin.com/in/matteo-stoppa) - Coesa Energy
 
+## Partners and Sponsors
+
+- [Amazon Web Services (AWS)]()
+- [Apeira]()
+- [Arduino]()
+- [Club TOsto]()
+- [COESA Energy]()
+- [GOMA Elettronica]()
+- [Seeed Studio]()
+- [Unione Industriali Torino - Gruppo Giovani Imprenditori]()
+
+### Useful links
+
+- <https://fuorielettrico.vercel.app/>
+- <https://www.solarma.it/impianto.html>
+- <https://www.solarma.it/servizi.html#progettazione>
+
 <!-- EOF -->
