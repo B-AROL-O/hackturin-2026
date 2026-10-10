@@ -29,7 +29,7 @@ flowchart LR
 
 ## Explanation
 
-Acquisition, Diagnostics, and Maintenance are logical modules within a proposed edge application, not confirmed independent services. Local storage preserves observations and intervention history. The Operator interface exposes recommendations; its technology is undecided.
+Acquisition, Diagnostics, and Maintenance are logical modules within a proposed edge application, not confirmed independent services. The `Local storage` component preserves observations and intervention history. The Operator interface exposes recommendations; its technology is undecided.
 
 ## Related Views
 

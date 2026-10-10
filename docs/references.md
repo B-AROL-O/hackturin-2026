@@ -26,7 +26,7 @@ Open the linked source before relying on hardware specifications, setup instruct
 - Retrieve when: Looking for UNO Q object detection, monitoring, relay control, App Lab interfaces, or Linux-to-MCU communication examples.
 - Search keywords: Arduino, UNO Q, apps, sketches, App Lab, Linux, MCU, RPC, object detection, monitoring, relay, Modulino, Edge AI, PoopVolt.
 - Example directories: `detect-objects-to-sketch`, `monitor-example`, `4-relay-shield`, `4-relay-ui`, `double-bridge`, `rpc-call-buzz`.
-- Retrieval note: Start with the repository README, then inspect the relevant example directory and its hardware requirements. Record the commit SHA when referencing code so it can be retrieved reproducibly.
+- Retrieval note: Start with the repository readme, then inspect the relevant example directory and its hardware requirements. Record the commit SHA when referencing code so it can be retrieved reproducibly.
 
 ## Datasets
 
@@ -69,4 +69,4 @@ Open the linked source before relying on hardware specifications, setup instruct
 - Dataset size: 20,000 infrared images, each 24 by 40 pixels, across 12 classes: 11 anomaly classes and No-Anomaly.
 - Project relevance: Candidate data for thermal anomaly classification, including hot spots, diode anomalies, shadowing, and soiling.
 - Search keywords: infrared, thermal imaging, photovoltaic, solar module, anomaly classification, hot spot, diode, shadowing, soiling, Raptor Maps, PoopVolt.
-- Retrieval note: Start with the README, then retrieve `2020-02-14_InfraredSolarModules.zip`, which contains images and `module_metadata.json` labels. Record the repository commit SHA and archive checksum for reproducibility.
+- Retrieval note: Start with the readme, then retrieve `2020-02-14_InfraredSolarModules.zip`, which contains images and `module_metadata.json` labels. Record the repository commit SHA and archive checksum for reproducibility.
