@@ -10,7 +10,7 @@
 #include <Arduino.h>
 
 class Pn532Tag {
-public:
+ public:
   static constexpr size_t MAX_TEXT = 100;
 
   explicit Pn532Tag(HardwareSerial& serial) : ser(serial) {}
@@ -21,7 +21,7 @@ public:
   void poll();
   uint32_t reads() const { return ndef_reads; }
 
-private:
+ private:
   enum class State { Idle, WaitActivation, WaitGetData, WaitSetData };
 
   void send(const uint8_t* cmd, uint8_t len);

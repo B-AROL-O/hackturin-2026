@@ -43,4 +43,5 @@ This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38
 
 ## Station sketch (`firmware/station`)
 
-Reads the sensors and shows them on the LCD. The PN532 (on the UART port) emulates a read-only NFC Forum Type 4 tag. Its NDEF Text record holds the current readings and is refreshed every second, so a phone tap (Android, for example with NFC Tools) shows the data when the LCD can't be read. In this mode the PN532 does not read cards. Verified: a full NDEF read from a phone (Monitor shows `nfc_reads` increasing).
+Reads the sensors and shows them on the LCD. The PN532 (on the UART port) emulates a read-only NFC Forum Type 4 tag. Its NDEF Text record holds the current readings and is refreshed every second, so a phone tap (Android, for example with NFC Tools) shows the data when the LCD can't be read. In this
+mode the PN532 does not read cards. Verified: a full NDEF read from a phone (Monitor shows `nfc_reads` increasing).

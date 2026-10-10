@@ -1,0 +1,3 @@
+{
+  "ignore": ["**/*.svg", "**/*.kicad_sch", "**/*.kicad_pcb"]
+}
