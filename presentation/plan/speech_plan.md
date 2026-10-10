@@ -1,42 +1,55 @@
 # Speaking storyboard
 
-Status: Proposed speaker outline. Times match the [agenda](agenda.md).
-These notes guide authoring and rehearsal; they are not implemented slide notes.
+Status: Speaker plan for the three-minute company-use narrative. The
+[Italian copione](../../docs/pitch-narrative.md) is the spoken source. Times
+match the [agenda](agenda.md); demo time is included.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide | Seconds | Start | End   | Main spoken point                                                                                            | Bridge to next slide                              |
-| ----- | ------- | ----- | ----- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| 1     | 20      | 00:00 | 00:20 | Introduce the pigeon story and PoopVolt as proposed local maintenance support                                | Introduce the decision an operator faces          |
-| 2     | 35      | 00:20 | 00:55 | Follow the deposit to a suspected hotspot; widen the problem to dust and hail                                | Identify who acts on the diagnosis                |
-| 3     | 30      | 00:55 | 01:25 | The system observes and advises, while the operator reviews and performs maintenance                         | Open the local processing boundary                |
-| 4     | 45      | 01:25 | 02:10 | Acquisition produces usable observations, Diagnostics produces findings, Maintenance proposes action         | Explain what makes an observation usable          |
-| 5     | 40      | 02:10 | 02:50 | Timestamp and quality checks prevent unreliable input from becoming a confident finding                      | Show what each modality can contribute            |
-| 6     | 45      | 02:50 | 03:35 | Compare deposit imagery and an illustrative thermal hotspot; history supports reassessment                   | Turn the evidence into an operator recommendation |
-| 7     | 40      | 03:35 | 04:15 | Return to the same panel: adequate evidence prompts cleaning review; missing input prompts inspection        | Explain what needs to become real next            |
-| 8     | 25      | 04:15 | 04:40 | State the current design status and the next acquisition, inference, and recommendation validation steps     | Return to the operator's goal                     |
-| 9     | 20      | 04:40 | 05:00 | Close on proportionate maintenance and propose validating the evidence chain on an instrumented installation | Move to questions and technical appendix          |
+| Slide | Seconds | Start | End   | Main spoken point                                                                                | Bridge to next slide                |
+| ----- | ------- | ----- | ----- | ------------------------------------------------------------------------------------------------ | ----------------------------------- |
+| 1     | 25      | 00:00 | 00:25 | Use the approved strong hook, pause on Letteralmente, and ask about production impact            | How does the company explain it?    |
+| 2     | 25      | 00:25 | 00:50 | The company needs evidence to motivate work the owner can understand and assess                  | Make the proposal understandable    |
+| 3     | 30      | 00:50 | 01:20 | A proposed scoped production comparison supports the next inspection or service proposal         | Show the physical concept           |
+| 4     | 15      | 01:20 | 01:35 | The STL is a design concept; secured parts and tested integration are different states           | Show one software case              |
+| 5     | 40      | 01:35 | 02:15 | One actual MVP case or labeled simulation shows the company's evidence-to-proposal workflow      | Who reviews and decides?            |
+| 6     | 45      | 02:15 | 03:00 | Company and technician explain alternatives, owner assesses work, and follow-up verifies benefit | Close on an understandable proposal |
 
 <!-- markdownlint-enable MD013 -->
 
-## Required notes when authoring
+## Required speaker notes
 
-Introduce the pigeon as a memorable story device on slide 1 and its deposit on
-slide 2. Explain that dust is another soiling example, while hail can cause
-physical damage requiring inspection. On slide 6, connect localized soiling and
-partial shading to a possible hotspot using separate RGB and illustrative thermal
-observations; a visible deposit does not establish thermal detection. On slide 7,
-return to the same panel for cleaning review or a request for better observations.
-Do not present the story as measured project evidence or claim that dust and hail
-account for most interruptions without field data.
+Use the approved strong opening, pause before "Letteralmente", then connect
+immediately to production impact. Keep it an illustrative hook, not proof of
+loss. Explain the company's use of PoopVolt: inspect the evidence, motivate a
+proposal, and let the owner understand and assess it. Do not guarantee an
+intervention request. The free-device sales model remains supporting context,
+not the opening.
 
-Each slide's notes should state its claim status, source IDs, essential limitation,
-and transition. Keep details of sensor selection, model evaluation, and wiring in
-appendix notes. On slide 6, explicitly say that a single image cannot establish
-irreversible degradation. On slide 7, identify both cases as illustrative.
-On slide 8, say that no end-to-end prototype or measured benefit is established
-by the repository's current documentation.
+Describe the theoretical production model as proposed until an implementation
+and evaluation are linked. Specify actual inputs, uncertainty, units, comparison
+period, and channel/string coverage. If inputs are missing, say what cannot be
+estimated. Do not describe a model deviation as measured historical degradation.
 
-Rehearse the full talk with static slides first. Interaction must fit the
-40-second scenario budget and must remain optional if the presenter needs to
-continue without it. Do not spend the pitch explaining deck controls or build tools.
+The hardware segment shows an STL concept. Link its actual file and explain its
+function when available. Do not substitute the secured kit for a working device.
+The software segment must be completed from the MVP's actual functions; if it is
+not linked or executed, use a labeled illustrative scenario and say so.
+
+Historical SOLARMA replay and phone RGB captures describe separate observations.
+The logs do not provide populated irradiance or verified channel-to-string
+mapping. RGB cannot measure heat or lost kWh. Never attach a replay loss to a
+phone deposit.
+
+Explain Coesa as a possible service counterpart, not an established partner. The
+proposed company purchase/free customer device model remains in the appendix.
+Pricing, support costs, and owner acceptance are unresolved.
+
+Cleaning is an option for dirty panels; dirt alone is not a reason to replace
+them. Keep repair, replacement, revamping, and continued operation as reviewed
+alternatives. Do not promise maximum production, guaranteed service requests, or
+full gap recovery. Verify the benefit after intervention under comparable
+operating conditions.
+
+Rehearse the complete static talk and demo within 180 seconds before adding
+interaction.

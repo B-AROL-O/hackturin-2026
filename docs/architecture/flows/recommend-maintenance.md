@@ -2,7 +2,7 @@
 
 - Diagram ID: `pv-flow-maintenance`
 - Level: Runtime flow
-- Status: Proposed draft; implementation and hardware choices are unverified.
+- Status: Proposed draft; service and economic review unimplemented.
 - Parent: [Parent view](../components/maintenance.md)
 
 ## Diagram
@@ -12,21 +12,35 @@ sequenceDiagram
     participant D as Diagnostics
     participant M as Maintenance
     participant S as Local storage
-    participant O as Operator
-    D->>M: Findings, evidence and uncertainty
-    M->>S: Read intervention history
-    S-->>M: Historical interventions and outcomes
-    M->>M: Assess evidence and choose recommendation
-    M-->>O: Recommendation through Operator interface
-    O->>O: Review and perform approved physical intervention
-    O->>S: Record action and outcome through Operator interface
-    Note over D,O: Later observations support reassessment without assuming improvement
+    participant P as Company service platform
+    participant O as Operator / technician
+    participant C as Customer / owner
+    D->>M: Scoped findings, evidence and uncertainty
+    M->>S: Read baseline, intervention history and cost assumptions
+    S-->>M: Available inputs and missing-data flags
+    M->>M: Compare no action, maintenance and revamping review
+    M->>S: Recommendation and qualified economic scenario
+    S-->>P: Synchronize queued records when connected
+    P-->>O: Evidence, coverage, freshness and proposed options
+    O->>C: Reviewed service proposal and assumptions
+    C-->>O: Accept or decline quoted intervention
+    opt Owner accepts work
+        O->>O: Perform approved physical intervention
+        O->>P: Record action, cost and outcome
+        P-->>S: Synchronize intervention record
+    end
+    Note over D,C: Later comparable observations assess results, benefit is not assumed
 ```
 
 ## Explanation
 
-The operator reviews a recommendation before physical maintenance. Recorded actions and later observations support reassessment. This draft does not automate cleaning, switching, or component replacement.
+The company reviews evidence before offering cleaning, inspection, repair, or
+revamping. The owner accepts service work. Economic scenarios need explicit
+inputs and cannot be derived from a visible deposit alone. Local operator review
+remains available offline; remote company and customer views require connection
+and expose record freshness. This draft automates no physical intervention.
 
 ## Related Views
 
-[Soiling detection](detect-soiling.md) · [System context](../context.md) · [Architecture index](../README.md)
+[Soiling flow](detect-soiling.md) · [Whole-plant flow](monitor-plant.md) ·
+[System context](../context.md) · [Architecture index](../README.md)

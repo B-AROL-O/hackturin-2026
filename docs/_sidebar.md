@@ -3,7 +3,10 @@
 <!-- markdownlint-disable MD041 -->
 
 - [Home](/)
+- [Three-minute narrative](/pitch-narrative.md)
 - [Project pitch](/pitch-draft.md)
+- [Data and demonstration plan](/data-plan.md)
+- [Hardware availability](/hardware.md)
 - [Coesa Energy context](/company/coesa-energy.md)
 - [Architecture index](/architecture/README.md)
 - [Prototype electrical wiring](/hardware-connections.md)
