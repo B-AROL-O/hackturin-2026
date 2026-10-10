@@ -12,7 +12,13 @@
 - <https://github.com/lorenzopalloni>
 - Telegram: younglees
 
-## Key People for hackTurin 2026
+## hackTurin 2026 at a glance
+
+### Events on Luma
+
+- [hackTurin - kickoff](https://luma.com/q34azfxn?tk=ttfAQz)
+- [hackTurin](https://luma.com/t2odor1k?tk=Sw9Jz9)
+- [hackTurin - premiazione](https://luma.com/gwgj3w45?tk=Np7Euc)
 
 ### Presenters during Kickoff
 
