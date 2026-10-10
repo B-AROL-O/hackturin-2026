@@ -1,6 +1,8 @@
 // Station sketch: reads the Grove sensors on the Base Shield, shows them on the
-// 16x2 LCD and exposes the same readings as an NFC tag, so a phone tap shows
-// the current data when the display is not readable.
+// 16x2 LCD, exposes the same readings as an NFC tag (a phone tap shows them when
+// the display is not readable) and streams them to the Linux side over the
+// Bridge as notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma,
+// pv_mv); see linux/station_rx.py.
 //
 // I2C (Wire): AHT20 0x38, LCD 0x3E. A0: light sensor. A1: Grove 2.5A DC current
 // sensor (ACS70331) in series with the solar panel. PN532 on the shield
@@ -25,6 +27,7 @@ Pn532Tag tag(Serial1);
 
 bool has_aht = false;
 bool has_nfc = false;
+uint32_t seq = 0;
 static struct k_thread nfc_data;
 
 float read_pv_mv() {
@@ -81,12 +84,14 @@ void loop() {
   int light_raw = analogRead(A0);
   float pv_mv = read_pv_mv();
   float pv_ma = (pv_mv - PV_ZERO_MV) * PV_MA_PER_MV;
-  uint32_t uptime_s = millis() / 1000;
+  uint32_t uptime_ms = millis();
+  uint32_t uptime_s = uptime_ms / 1000;
 
   char text[Pn532Tag::MAX_TEXT];
   snprintf(text, sizeof(text), "PoopVolt: T=%.1fC RH=%.0f%% light=%d Ipv=%.0fmA up=%lus",
            (double)temp_c, (double)hum_pct, light_raw, (double)pv_ma, (unsigned long)uptime_s);
   tag.setText(text);
+  Bridge.notify("station", seq++, uptime_ms, temp_c, hum_pct, light_raw, pv_ma, pv_mv);
 
   lcd.clear();
   lcd.setCursor(0, 0);

@@ -145,7 +145,9 @@ void Pn532Tag::handleApdu(const uint8_t* apdu, uint8_t len) {
   } else if (apdu[1] == 0xA4) {  // SELECT
     uint8_t lc = len > 4 ? apdu[4] : 0;
     const uint8_t* data = apdu + 5;
-    if (apdu[2] == 0x04 && lc == sizeof(NDEF_AID) && memcmp(data, NDEF_AID, lc) == 0) {
+    if (len < 5u + lc) {
+      sw(0x67, 0x00);  // Lc claims more data than was received
+    } else if (apdu[2] == 0x04 && lc == sizeof(NDEF_AID) && memcmp(data, NDEF_AID, lc) == 0) {
       app_selected = true;
       sw(0x90, 0x00);
     } else if (apdu[2] == 0x00 && app_selected && lc == 2 && data[0] == 0xE1 && data[1] == 0x03) {

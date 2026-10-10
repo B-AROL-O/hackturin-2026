@@ -12,9 +12,9 @@
 The connection record in PR #49 reports verification with
 [`sensor_diag`](../firmware/sensor_diag/sensor_diag.ino) and
 [`station`](../firmware/station/station.ino). The team photo supplied on
-2026-10-10 shows the assembly and a loose current sensor. Pin assignments and
-the shield voltage setting below come from the bring-up record, since they
-cannot all be read from the photo.
+2026-10-10 shows the assembly before the current sensor and solar path were
+connected later that day. Pin assignments and the shield voltage setting below
+come from the bring-up record, since they cannot all be read from the photo.
 
 ## Electrical schematic
 
@@ -25,15 +25,16 @@ cannot all be read from the photo.
 [Editable KiCad schematic](../hardware/poopvolt.kicad_sch)
 
 The single-sheet schematic shows individual electrical nets and numbered Grove
-connector pins. `U1` represents the UNO Q with its stacked Base Shield, `J1`–`J4`
-represent the shield's occupied Grove ports, and `U2`–`U5` represent the modules
-at the other ends of their cables. These are interconnect symbols, not internal
+connector pins. `U1` represents the UNO Q with its stacked Base Shield, `J1`–`J5`
+represent the shield's occupied Grove ports, and `U2`–`U6` represent the modules
+at the other ends of their cables. `PV1`, `U7` and `BT1` are the solar panel,
+Waveshare Solar Power Manager and LiPo. These are interconnect symbols, not internal
 IC schematics or a PCB design. USB data and internal processor wiring are outside
 this sheet's scope.
 
 Each line between a shield port and a module represents one cable conductor.
 Same-name net labels are electrically connected across the sheet. `SCL` and
-`SDA` are shared by the AHT20 and LCD; `+3V3` and `GND` reach all four modules.
+`SDA` are shared by the AHT20 and LCD; `+3V3` and `GND` reach all five Grove modules.
 UART uses separate `D0_RX` and `D1_TX` nets, with PN532 TX connected to MCU RX.
 
 The light sensor's white conductor terminates at its unused connector contact.
