@@ -16,3 +16,7 @@ Beyond traditional predictive maintenance, PoopVolt introduces **intelligent rev
 By integrating these capabilities with battery-aware energy management, the platform aims to extend asset lifetime, minimize unnecessary interventions, reduce lifecycle costs, and maintain reliable energy production in remote or isolated environments.
 
 **The ultimate goal is to transform off-grid photovoltaic maintenance from reactive intervention into intelligent, autonomous, and lifecycle-aware decision-making.**
+
+## High-Level System Diagram
+
+See the [system overview](architecture/overview.md) for the canonical diagram and the [architecture index](architecture/README.md) for deeper views.

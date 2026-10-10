@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>PoopVolt Documentation</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Description" />
     <meta
@@ -17,11 +17,36 @@
 
   <body>
     <div id="app"></div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
     <script>
+      mermaid.initialize({ startOnLoad: false, securityLevel: "strict" });
       window.$docsify = {
-        name: "",
+        name: "PoopVolt",
         repo: "",
         loadSidebar: true,
+        relativePath: true,
+        plugins: [
+          function (hook) {
+            hook.doneEach(async function () {
+              const blocks = document.querySelectorAll(
+                "pre code.lang-mermaid, pre code.language-mermaid",
+              );
+              for (const block of blocks) {
+                const diagram = document.createElement("div");
+                diagram.className = "mermaid";
+                diagram.textContent = block.textContent;
+                const source = block.parentElement;
+                source.replaceWith(diagram);
+                try {
+                  await mermaid.run({ nodes: [diagram] });
+                } catch (error) {
+                  diagram.replaceWith(source);
+                  console.error("Could not render Mermaid diagram", error);
+                }
+              }
+            });
+          },
+        ],
       };
     </script>
     <!-- Docsify v4 -->
