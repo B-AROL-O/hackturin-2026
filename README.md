@@ -15,6 +15,118 @@ We are tackling the **Beyond Solar** challenge with **PoopVolt**, an Edge AI
 predictive maintenance system for off-grid photovoltaic installations. See the
 [project pitch](docs/pitch-draft.md) for the idea description.
 
+## The problem and who it is for
+
+The owner of an older photovoltaic plant usually cannot tell whether it still
+produces as much as it should. Dust, bird droppings and ageing lower the output
+slowly, and a plant that "apparently works" is rarely inspected. A service
+company that maintains the plant has the same problem in reverse: it needs
+evidence the owner can understand before proposing a cleaning, a repair or a
+replacement.
+
+## Our solution: PoopVolt
+
+PoopVolt is a proposed Edge AI maintenance aid built around an Arduino UNO Q.
+It combines three things, each kept separate and labelled by where its data
+comes from (measured, replayed or simulated):
+
+- **Expected versus observed production:** compare what a plant produced with a
+  theoretical reference, and show the gap with its uncertainty. A gap is a
+  candidate for inspection, not a diagnosis.
+- **Visible soiling from a phone photo:** classify clean, dust or droppings on a
+  panel and mark the affected region. RGB images cannot show hotspots or lost
+  energy, and we make no such claim.
+- **A technician-reviewed proposal:** a short evidence summary the service
+  company can use to explain an intervention to the owner.
+
+The UNO Q also reads local sensors (temperature, humidity, light, panel
+current) and shows the latest findings on its LCD and as NFC tag text that a
+technician's phone can read. See the [project pitch](docs/pitch-draft.md) and
+the [Italian three-minute narrative](docs/pitch-narrative.md).
+
+## How it works
+
+Electrical, environmental and image data feed local diagnostics on the UNO Q;
+maintenance and lifecycle recommendations come from those diagnostics. The
+diagram shows the proposed design. Only the parts marked "working" in
+[project status](docs/project-status.md) exist today.
+
+```mermaid
+flowchart TB
+    A["Off-grid photovoltaic system"]
+    B["Data collection<br/>Electrical, environmental, phone RGB"]
+    C["Arduino UNO Q 4GB<br/>Edge AI"]
+    D["Diagnostics<br/>Soiling, expected vs observed"]
+    E["Maintenance proposal<br/>technician-reviewed"]
+
+    A --> B --> C --> D --> E
+```
+
+The prototype wiring (UNO Q with Base Shield, five Grove modules and a separate
+solar charging path) is recorded in [hardware connections](docs/hardware-connections.md):
+
+![PoopVolt prototype electrical schematic](docs/architecture/diagrams/pv-wiring.svg)
+
+More views are in the [architecture index](docs/architecture/README.md).
+
+## What works today
+
+| Area                                                | State              |
+| --------------------------------------------------- | ------------------ |
+| Grove sensors, LCD and NFC on the UNO Q             | Working (bring-up) |
+| Readings streamed to the Linux side over the Bridge | Working (bring-up) |
+| SOLARMA inverter log importer and replay            | Working            |
+| Expected-versus-observed comparison                 | Not implemented    |
+| Phone RGB soiling detection                         | Not implemented    |
+| Operator UI and maintenance output                  | Not implemented    |
+| STL enclosure concept                               | Not delivered      |
+
+[Project status and reuse disclosure](docs/project-status.md) has the evidence
+and limits for every row, and separates what the team built from what it reuses.
+
+## Build and run
+
+Python (importer, replay and tests), with [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv sync
+uv run pytest
+# Downloads the pinned SOLARMA export (needs network) and loads it
+uv run python -c "from poopvolt import solarma as s; d = s.fetch('data/solarma/raw'); r = s.load_details(d / 'details.txt'); print(len(r), 'rows,', len(s.by_device(r)), 'inverters')"
+```
+
+Firmware and the bench setup: follow
+[Replicate the UNO Q prototype](docs/replicate-uno-q-setup.md) (laptop tools,
+wiring, flashing and checks) and [UNO Q setup](docs/uno-q-setup.md). The parts,
+quantities and approximate cost are in the [bill of materials](hardware/bom.md).
+
+## Validation
+
+Numbers we have, with their origin:
+
+- **Measured on the UNO Q:** CPU-only inference of reference models, for
+  example NanoDet-Plus at 416x416 in 258 ms and YOLOX-S at 640x640 in 2.27 s
+  ([model budget](docs/uno-q-model-budget.md)). No PoopVolt model has been run
+  yet.
+- **Replayed:** the SOLARMA export loads as 58,687 detail rows from 13
+  inverters, with 1,157 communication outages and no irradiance values
+  ([data plan](docs/data-plan.md)). One plant does not show how a model
+  generalises.
+- **Approximate device cost:** about 145 for the prototype, from single-unit
+  list prices ([bill of materials](hardware/bom.md)). It is not a production
+  cost.
+
+Not yet available: soiling classifier accuracy, the expected-versus-observed
+deviation with its uncertainty, and inference time of a PoopVolt model on the
+board. They will be added here, each labelled as measured, replayed or
+simulated.
+
+## Licence and reuse
+
+The repository is MIT licensed ([LICENSE](LICENSE)). SOLARMA data is MIT
+licensed and its notice is kept in [`data/solarma/NOTICE.md`](data/solarma/NOTICE.md).
+[Project status](docs/project-status.md) lists what is pre-existing.
+
 ## Repository layout
 
 - `docs/`: architecture, pitch and reference documentation.
