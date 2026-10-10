@@ -10,7 +10,7 @@ predictive maintenance system for off-grid photovoltaic installations. See the
 
 - `docs/`: architecture, pitch and reference documentation.
 - `presentation/`: HTML presentation draft.
-- `suncheck/`: Python package, managed with [uv](https://docs.astral.sh/uv/).
+- `poopvolt/`: Python package, managed with [uv](https://docs.astral.sh/uv/).
 - `firmware/`: code for the Arduino UNO Q (placeholder).
 - `hardware/`: schematics and 3D-printable parts (placeholder).
 - `data/`: measurements and fixtures (placeholder).

@@ -1,5 +1,5 @@
 [project]
-name = "suncheck"
+name = "PoopVolt"
 version = "0.1.0"
 description = "PoopVolt edge diagnostics for off-grid photovoltaic installations"
 readme = "README.md"
