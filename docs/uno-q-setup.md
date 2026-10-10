@@ -35,3 +35,7 @@ Measured: 100 Hz, no gaps or drops. Arrival jitter is about 0.6 ms, with peaks u
 - Sketch threads get their stacks from a pool of 2 × 1024 B, and the Bridge already uses one. A larger `k_thread_stack_alloc` fails silently and the sketch hangs.
 - `SCHED_FIFO` on Linux needs root (`sudo python3 imu_rx.py`).
 - The board has no network until Wi-Fi is configured. The Edge Impulse runner image (`ei-models-runner`) is already on the board.
+
+## Grove sensor diagnostic (`firmware/sensor_diag`)
+
+This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38, 16x2 LCD at 0x3E, PN532 at 0x24, and the light sensor on A0. Libraries: `arduino-cli lib install "Adafruit AHTX0" "Adafruit PN532" "Grove - LCD RGB Backlight"`. Don't create `Adafruit_PN532` as a global object, because its constructor hangs the MCU before `setup()`.
