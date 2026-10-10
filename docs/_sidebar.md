@@ -3,6 +3,7 @@
 <!-- markdownlint-disable MD041 -->
 
 - [Home](/)
+- [Project status](/project-status.md)
 - [Three-minute narrative](/pitch-narrative.md)
 - [Project pitch](/pitch-draft.md)
 - [Data and demonstration plan](/data-plan.md)
