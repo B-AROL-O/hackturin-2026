@@ -40,3 +40,7 @@ Measured: 100 Hz, no gaps or drops. Arrival jitter is about 0.6 ms, with peaks u
 ## Grove sensor diagnostic (`firmware/sensor_diag`)
 
 This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38, 16x2 LCD at 0x3E, PN532 at 0x24 or on the shield UART port (D0/D1 = `Serial1`; the Bridge uses `Serial2`), and the light sensor on A0. Libraries: `arduino-cli lib install "Adafruit AHTX0" "Adafruit PN532" "Grove - LCD RGB Backlight"`. Verified: AHT20, LCD and light sensor all OK, PN532 OK over UART (firmware 1.6).
+
+## Station sketch (`firmware/station`)
+
+Reads the sensors and shows them on the LCD. The PN532 (on the UART port) emulates a read-only NFC Forum Type 4 tag. Its NDEF Text record holds the current readings and is refreshed every second, so a phone tap (Android, for example with NFC Tools) shows the data when the LCD can't be read. In this mode the PN532 does not read cards. Verified: a full NDEF read from a phone (Monitor shows `nfc_reads` increasing).
