@@ -1,6 +1,6 @@
 """Tests for the SOLARMA importer, using small synthetic fixtures."""
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -94,3 +94,106 @@ def test_verify_detects_missing_and_modified_files(tmp_path: Path) -> None:
         (tmp_path / name).write_text("tampered")
     with pytest.raises(ValueError, match="pinned"):
         solarma.verify(tmp_path)
+
+
+def _details_file(tmp_path: Path, *rows: str, header: str = DETAILS_HEADER) -> Path:
+    path = tmp_path / "details.txt"
+    path.write_bytes((header + "".join(rows)).encode("latin-1"))
+    return path
+
+
+def _row(minute: int, device: int = 1, power: str = "100") -> str:
+    """A details row at 12:<minute> with only power and DC input 1 populated."""
+    return (
+        f"2019-07-01 12:{minute:02d}:00\t{device}\tSN{device}\t{power}\t1\t50\t"
+        "240\t1\t50\t400\t5\t\t\t\t\t60\t\t0\t0\t16000\t\t\n"
+    )
+
+
+def test_rejects_unexpected_header_unit(tmp_path: Path) -> None:
+    header = DETAILS_HEADER.replace("Potenza [W]", "Potenza [kW]")
+    path = _details_file(tmp_path, ROW_1, header=header)
+    with pytest.raises(ValueError, match="unit 'kW', expected 'W'"):
+        solarma.load_details(path)
+
+
+def test_irradiance_unit_mojibake_is_repaired(tmp_path: Path) -> None:
+    # The real header spells the unit "W/m\xfd"; it must still be accepted.
+    path = tmp_path / "summary.txt"
+    path.write_bytes(
+        (
+            "Orario di rilevazione\tNumero registratore di dati\tPotenza [W]\t"
+            "Energia di oggi [kWh]\tRendimento conteggiato [kWh]\t"
+            "Intensità di irradiamento [W/m\xfd]\t"
+            "Energia di irradiamento odierna [kWh]\n"
+        ).encode("latin-1")
+    )
+    assert solarma.load_summary(path) == []
+
+
+def test_rejects_duplicate_timestamp_for_a_device(tmp_path: Path) -> None:
+    path = _details_file(tmp_path, ROW_1, ROW_1)
+    with pytest.raises(ValueError, match="duplicate record for device 1"):
+        solarma.load_details(path)
+
+
+def test_same_timestamp_on_different_devices_is_fine(tmp_path: Path) -> None:
+    assert len(solarma.load_details(_details_file(tmp_path, ROW_1, ROW_3))) == 2
+
+
+def test_localize_marks_the_assumed_timezone() -> None:
+    summer = solarma.localize(datetime(2019, 7, 1, 12, 10))
+    assert summer.utcoffset() == timedelta(hours=2)  # CEST
+    assert summer.tzinfo is solarma.LOCAL_TIMEZONE
+
+
+def test_gaps_report_outages_without_filling(tmp_path: Path) -> None:
+    rows = [_row(0), _row(10), _row(20), _row(55), _row(5, device=2)]
+    records = solarma.load_details(_details_file(tmp_path, *rows))
+    (gap,) = solarma.gaps(records)
+    assert gap.device == 1
+    assert (gap.start.minute, gap.end.minute) == (20, 55)
+    assert gap.duration == timedelta(minutes=35)
+    assert len(records) == 5  # nothing was interpolated
+
+
+def test_dc_input_series_keeps_zero_and_missing_apart(details: Path) -> None:
+    records = solarma.load_details(details)
+    third = solarma.dc_input_series(records, 1, 3)
+    assert [(v, c) for _, v, c in third] == [(0.0, 0.0), (0.0, 0.0)]
+    assert solarma.dc_input_series(records, 99, 1) == []
+    with pytest.raises(ValueError, match="1, 2 or 3"):
+        solarma.dc_input_series(records, 1, 4)
+
+
+def test_dc_input_missing_stays_none(tmp_path: Path) -> None:
+    records = solarma.load_details(_details_file(tmp_path, _row(0)))
+    ((_, voltage, current),) = solarma.dc_input_series(records, 1, 2)
+    assert (voltage, current) == (None, None)
+
+
+def test_observed_windows_use_positive_power_only(tmp_path: Path) -> None:
+    rows = [_row(0, power="0"), _row(10), _row(20), _row(30, power="0")]
+    records = solarma.load_details(_details_file(tmp_path, *rows))
+    first, last = solarma.observed_windows(records, 1)["2019-07-01"]
+    assert (first.minute, last.minute) == (10, 20)
+    assert solarma.observed_windows(records, 2) == {}
+
+
+def test_replay_steps_in_time_order_without_zero_filling(tmp_path: Path) -> None:
+    rows = [_row(20), _row(0), _row(0, device=2), _row(10, device=2)]
+    records = solarma.load_details(_details_file(tmp_path, *rows))
+    snapshots = list(solarma.replay(records))
+    assert [s.replay_time.minute for s in snapshots] == [0, 10, 20]
+    assert list(snapshots[0].records) == [1, 2]
+    assert list(snapshots[1].records) == [2]  # device 1 has no sample: absent
+    assert list(snapshots[2].records) == [1]
+
+
+def test_replay_window_is_inclusive(tmp_path: Path) -> None:
+    rows = [_row(0), _row(10), _row(20), _row(30)]
+    records = solarma.load_details(_details_file(tmp_path, *rows))
+    window = solarma.replay(
+        records, start=datetime(2019, 7, 1, 12, 10), end=datetime(2019, 7, 1, 12, 20)
+    )
+    assert [s.replay_time.minute for s in window] == [10, 20]
