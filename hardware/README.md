@@ -1,13 +1,39 @@
 # Hardware and prototype availability
 
-- Status: Availability reported by the team; assembly and integration unverified.
+- Status: Inventory availability reported by the team; USB prototype wiring
+  reported tested in PR #49. Remaining power and camera integration unverified.
 - Updated: 2026-10-10.
-- Source: Team-provided inventory in the project conversation.
+- Sources: Team-provided inventory and the connection record in PR #49.
 - Scope: Hackathon prototype parts, substitutions, and their proposed roles.
 
-Schematics, wiring diagrams, and 3D-printable parts (STL) are planned for this
-folder. None is implemented yet. The inventory below records parts available
-for the hackathon prototype, not a verified assembly.
+The [prototype electrical schematic](../docs/hardware-connections.md) records
+USB power and the four connected Grove modules reported in PR #49. The
+inventory below records available parts and proposed roles; the schematic's
+connection record tracks which parts are currently connected. Internal board
+schematics and 3D-printable parts (STL) remain outside this implementation.
+
+## Editable schematic and exports
+
+Open [`poopvolt.kicad_pro`](poopvolt.kicad_pro) in KiCad 9 or newer. Its
+[`poopvolt.kicad_sch`](poopvolt.kicad_sch) is the canonical electrical source.
+The project includes a [local symbol library](PoopVolt.kicad_sym) and
+[library table](sym-lib-table). Symbols describe module interfaces and Grove
+connectors, not internal circuits or PCB footprints.
+
+From the repository root, with Python 3.12 or newer:
+
+```sh
+python3 hardware/export_schematic.py
+```
+
+The [export script](export_schematic.py) runs KiCad ERC and checks the electrical
+netlist against the bring-up record before replacing the published
+[SVG](../docs/architecture/diagrams/pv-wiring.svg) and
+[PDF](../docs/architecture/diagrams/pv-wiring.pdf). Pass
+`--kicad-cli /path/to/kicad-cli` if needed. Edit the schematic directly in KiCad;
+update the library and refresh embedded symbols if pin definitions change.
+Visually review exports after editing. Detailed scope and editing instructions
+are in the [connection record](../docs/hardware-connections.md).
 
 ## Secured hardware
 
@@ -56,8 +82,9 @@ Neither the AHT20 nor the light sensor replaces thermal imaging.
 
 ## Integration work still required
 
-- Verify UNO Q, Media Carrier, Base Shield, sensor, and LCD interfaces before
-  specifying connections. Grove cables/adapters are not confirmed by this list.
+- Use the recorded USB prototype connections for the active Grove modules.
+  Verify interfaces and cables for additional devices, including the unused
+  Media Carrier, before extending the assembly.
 - Build a breadboard-free connection plan from the available parts.
 - Verify the panel, charger, battery, converter, and device supply requirements.
   The parts list does not establish that this assembly can power the UNO Q
@@ -70,6 +97,6 @@ Neither the AHT20 nor the light sensor replaces thermal imaging.
 
 See the [proposed deployment](../docs/architecture/deployment.md),
 [architecture index](../docs/architecture/README.md),
-[firmware placeholder](../firmware/README.md), and
+[firmware](../firmware/README.md), and
 [data placeholder](../data/README.md). Thermal paths in the proposed system design
 remain future work; the current prototype uses the phone camera described above.

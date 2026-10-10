@@ -3,6 +3,8 @@
 ## Project documentation
 
 - [Architecture index](architecture/README.md): overview, context, components, deployment, and runtime flows.
+- [Prototype electrical wiring](hardware-connections.md): as-built USB power,
+  Grove connections, and connector pinouts from the Arduino bring-up.
 
 - [PoopVolt project pitch](pitch-draft.md)
 - [Coesa Energy evaluator context](company/coesa-energy.md): company facts,

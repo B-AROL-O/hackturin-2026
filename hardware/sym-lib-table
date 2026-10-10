@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "PoopVolt") (type "KiCad") (uri "${KIPRJMOD}/PoopVolt.kicad_sym") (options "") (descr "PoopVolt prototype interconnect symbols"))
+)
