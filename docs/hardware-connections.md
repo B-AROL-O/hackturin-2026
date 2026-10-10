@@ -15,46 +15,30 @@ The connection record in PR #49 reports verification with
 the shield voltage setting below come from the bring-up record, since they
 cannot all be read from the photo.
 
-## Electrical wiring diagram
+## Electrical schematic
 
-```mermaid
-%%{init: {"theme": "neutral", "htmlLabels": false, "flowchart": {"curve": "linear"}, "fontFamily": "Arial"}}%%
-flowchart TB
-    laptop["Laptop / USB host"]
-    uno["Arduino UNO Q 4 GB<br/>USB-C power input; onboard 3.3 V rail<br/>STM32U585 MCU + Linux MPU<br/>Internal Bridge UART: 115200 baud"]
+![PoopVolt prototype electrical schematic](architecture/diagrams/pv-wiring.svg)
 
-    subgraph shield["Seeed Grove Base Shield — stacked on UNO headers; VCC switch = 3.3 V"]
-        rails["Common supply to every Grove port<br/>VCC = 3.3 V; GND = UNO Q GND"]
-        i2c["I2C ports — shared parallel bus<br/>SCL = PB10; SDA = PB11<br/>Wire / MCU I2C2"]
-        uart["UART port<br/>D0 / RX = PB7; D1 / TX = PB6<br/>Serial1 / MCU USART1"]
-        analog["A0 port<br/>A0 = PA4<br/>Analog input: 0–3.3 V"]
-    end
+[Open SVG](architecture/diagrams/pv-wiring.svg) ·
+[Download PDF](architecture/diagrams/pv-wiring.pdf) ·
+[Editable KiCad schematic](../hardware/poopvolt.kicad_sch)
 
-    aht["Grove AHT20<br/>Temperature / humidity<br/>I2C address 0x38"]
-    lcd["Grove 16x2 LCD<br/>White on Blue; no RGB controller<br/>I2C address 0x3E"]
-    nfc["Grove NFC / PN532<br/>HSU UART mode<br/>115200 baud<br/>External antenna attached"]
-    light["Grove Light Sensor (P)<br/>Analog OUT to A0<br/>Relative light reading"]
-    phone["Phone — tap to read<br/>NDEF text with station readings"]
+The single-sheet schematic shows individual electrical nets and numbered Grove
+connector pins. `U1` represents the UNO Q with its stacked Base Shield, `J1`–`J4`
+represent the shield's occupied Grove ports, and `U2`–`U5` represent the modules
+at the other ends of their cables. These are interconnect symbols, not internal
+IC schematics or a PCB design. USB data and internal processor wiring are outside
+this sheet's scope.
 
-    laptop -->|"USB-C: 5 V / GND + USB data"| uno
-    uno ---|"3.3 V / GND via headers"| rails
-    uno <-->|"SCL / SDA via headers"| i2c
-    uno <-->|"D0 / D1 via headers"| uart
-    uno ---|"A0 via header"| analog
-    i2c <-->|"SCL / SDA + 3.3 V / GND"| aht
-    i2c <-->|"SCL / SDA + 3.3 V / GND"| lcd
-    uart <-->|"D0 to PN532 TX; D1 to PN532 RX<br/>+ 3.3 V / GND"| nfc
-    analog ---|"Light OUT to A0; second signal unused<br/>+ 3.3 V / GND"| light
-    nfc -.->|"NFC radio — no wire"| phone
-```
+Each line between a shield port and a module represents one cable conductor.
+Same-name net labels are electrically connected across the sheet. `SCL` and
+`SDA` are shared by the AHT20 and LCD; `+3V3` and `GND` reach all four modules.
+UART uses separate `D0_RX` and `D1_TX` nets, with PN532 TX connected to MCU RX.
 
-[Open the rendered SVG](architecture/diagrams/pv-wiring.svg).
-
-Each module connection represents one four-conductor Grove cable, not a single
-wire. The common supply node describes the power pins in those same cables;
-there are no separate power jumpers. Solid lines are wired connections; arrows
-show signal direction, not current direction. The dashed line is the station's
-NFC interface. The internal Bridge is on the UNO Q and does not use D0/D1.
+The light sensor's white conductor terminates at its unused connector contact.
+`SPARE_A1` records the shield's A1 connection; it is not a second sensor reading.
+Pin 2 of `U5` is modeled as a passive connector contact labeled `NC / unused`,
+with no internal sensor function. The UNO Q's remaining headers are omitted.
 
 ## Grove cable pinout
 
@@ -109,13 +93,33 @@ Notes:
 - Camera (planned): an Android phone streaming over Wi-Fi to the Linux side. Wireless, no wiring.
 - Solar panel, charger, LiPo battery, and step-down converter: inventory items, not part of the USB-powered wiring recorded in PR #49. Their power path remains unverified.
 
-## Diagram maintenance
+## Edit, check, and render
 
-The Mermaid block above is the canonical source for `pv-wiring`. Regenerate
-`docs/architecture/diagrams/pv-wiring.svg` from that block when connections change; do not
-edit the export independently. The export uses Mermaid CLI 11.4.2 with native
-SVG text and `xml:space="preserve"` on the SVG root to retain spaces between
-words in image viewers. Keep this as-built snapshot separate from the
-proposed full-system deployment, which includes future power and camera paths.
+Open [`hardware/poopvolt.kicad_pro`](../hardware/poopvolt.kicad_pro) in KiCad,
+then open its schematic. The project includes a local
+[symbol library](../hardware/PoopVolt.kicad_sym) and
+[library table](../hardware/sym-lib-table); no third-party part downloads are
+required. Embedded definitions also keep the schematic self-contained.
 
-See the [architecture index](architecture/README.md).
+The editable `.kicad_sch` is the canonical source for `pv-wiring`. After editing,
+run this command from the repository root with KiCad 9 or newer and Python 3.12:
+
+```sh
+python3 hardware/export_schematic.py
+```
+
+The [export script](../hardware/export_schematic.py) runs KiCad's electrical
+rules check, checks the exported netlist against the bring-up connections, and
+then regenerates the SVG and PDF. It stops on violations or unexpected wiring.
+For a KiCad installation outside `PATH`, pass `--kicad-cli /path/to/kicad-cli`.
+When hardware changes intentionally, update the connection record and expected
+net endpoints in the script together with the schematic and symbol library.
+
+Validation with KiCad 10.0.6: electrical rules check and nine-net connectivity
+check pass. Review the regenerated page visually before committing it. These
+checks validate the modeled interconnect; they do not retest the physical board
+or validate the internals of the purchased modules.
+
+Keep this as-built snapshot separate from the proposed full-system deployment,
+which includes future power and camera paths. See the
+[architecture index](architecture/README.md).

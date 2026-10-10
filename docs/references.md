@@ -57,6 +57,16 @@ the company context entry also provides a dated local research summary.
 - Project relevance: Four-wire cable colors, pin numbering, and host-side UART convention for the [prototype wiring](hardware-connections.md).
 - Search keywords: Grove, connector, yellow, white, red, black, VCC, GND, I2C, UART, analog.
 
+## kicad-schematic-workflow
+
+- Title: KiCad schematic editor and command-line interface
+- Publisher: KiCad
+- Canonical URLs: <https://docs.kicad.org/10.0/en/eeschema/eeschema.html>, <https://docs.kicad.org/10.0/en/cli/cli.html>
+- Source type: Official EDA documentation
+- Project relevance: Editable module/connector schematic, electrical rules checking, netlist export, and SVG/PDF rendering for `pv-wiring`.
+- Search keywords: KiCad, schematic, custom symbol, ERC, kicad-cli, sch export, SVG, PDF.
+- Retrieval note: Exports and checks were validated with KiCad 10.0.6. The local schematic is the source; published images are generated artifacts.
+
 ## arduino-uno-q-apps
 
 - Title: Arduino Uno Q Apps

@@ -28,7 +28,11 @@ Implementation diagrams should be added only when concrete algorithms, interface
 
 ## Diagram Conventions
 
-- Keep one canonical Mermaid source per diagram in its Markdown page. Link from pitches and other documents; generate exports from that source.
+- Keep one canonical Mermaid source per logical diagram in its Markdown page.
+  The electrical schematic `pv-wiring` uses the native
+  [`hardware/poopvolt.kicad_sch`](../../hardware/poopvolt.kicad_sch) source instead;
+  regenerate its exports with the documented KiCad workflow. Link from pitches
+  and other documents; do not edit generated exports independently.
 - Preserve stable diagram IDs and component names across levels. Update this registry when a view is added or moved.
 - State scope, status, and a text explanation on each page. Use proposed, partially implemented, or implemented status based on evidence.
 - Label arrows with the information exchanged. Document protocols and hardware interfaces only once selected and verified.
