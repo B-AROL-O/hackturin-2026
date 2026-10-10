@@ -2,20 +2,23 @@
 
 - Diagram ID: `pv-deployment`
 - Level: Deployment
-- Status: Proposed draft; hardware and transport require verification.
+- Status: Proposed integration; secured hardware is recorded, interfaces unverified.
 - Parent: [Parent view](architecture.md)
 
 ## Diagram
 
 ```mermaid
-flowchart TB
-    phone["Phone camera / simulated single-string contamination"]
+flowchart LR
+    phone["Phone RGB camera / replaces unavailable thermal camera"]
     replay["Historical SOLARMA replay / separate demo source"]
     plant["Customer PV plant"]
     logger["Inverter or logger / field adapter TBD"]
-    sensors["Optional electrical, environmental and thermal sensors"]
-    power["Regulated device power / design pending"]
-    subgraph uno["Intended Arduino UNO Q edge device"]
+    mini["Secured mini panel R1123 / small test fixture"]
+    sensors["Secured AHT20, Light Sensor P v1.1 and ACS70331"]
+    shield["Secured Seeed Studio Base Shield / interfaces TBD"]
+    lcd["Secured Grove 16x2 LCD / local status proposed"]
+    power["HRS1358, 1000mAh LiPo and HAS4966 / supply design pending"]
+    subgraph uno["Secured Arduino UNO Q 4GB + Media Carrier"]
         mcu["MCU acquisition if required / split TBD"]
         app["Linux edge application / proposed"]
         storage[("Local storage")]
@@ -26,8 +29,10 @@ flowchart TB
     phone -->|Image transfer TBD| app
     replay -->|Offline import or replay adapter TBD| app
     plant -->|Telemetry| logger
-    plant -->|Physical observations| sensors
-    sensors -->|Selected interfaces TBD| mcu
+    mini -->|Candidate current test after verification| sensors
+    sensors -->|Connections and pin mapping TBD| shield
+    shield -->|Acquisition interface TBD| mcu
+    mcu -->|Display path TBD| lcd
     logger -->|Verified read-only interface TBD| app
     mcu -->|Observation bridge TBD| app
     power -->|Supply compatibility pending| uno
@@ -39,9 +44,23 @@ flowchart TB
 
 ## Explanation
 
-The intended UNO Q runs local inference and history analysis. A phone supplies
-RGB frames for the hackathon; no permanent phone installation or thermal camera
-is assumed. Historical replay is imported independently of the phone scene.
+The UNO Q 4GB with Media Carrier is secured for proposed local inference and
+history analysis. The selected phone RGB camera replaces the unavailable Grove
+thermal camera. Phone transfer is unverified; no permanent phone installation or
+thermal acquisition is in the current prototype scope. Historical replay is
+imported independently of the phone scene.
+
+The [hardware inventory](../hardware.md) records all secured and missing items.
+The Seeed Studio Base Shield is selected instead of the Grove shield v2. Sensor
+and LCD paths are logical integration intentions, not verified wiring. No
+breadboards are available; cables, adapters, and pin mapping still need checking.
+
+HRS1358 replaces the unavailable Waveshare charger as the charging candidate.
+The battery, mini panel, and step-down converter are secured components, not an
+assembled or validated supply. The diagram does not establish their wiring order
+or sufficient power for the UNO Q. AHT20/light readings supply context, and the
+current sensor targets a compatible small test circuit. These are not thermal
+imaging or full-plant instrumentation.
 
 A field device needs verified logger compatibility or instrumentation for each
 claimed channel. One inverter input can represent several parallel strings;
@@ -56,4 +75,5 @@ future off-grid deployments. No arrows specify wiring or voltage compatibility.
 ## Related Views
 
 [UNO Q references](../references.md) · [Data plan](../data-plan.md) ·
-[Acquisition](components/acquisition.md) · [Architecture index](README.md)
+[Hardware inventory](../hardware.md) · [Acquisition](components/acquisition.md) ·
+[Architecture index](README.md)

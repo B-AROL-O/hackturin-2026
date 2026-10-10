@@ -80,6 +80,11 @@ generalization.
 
 ## Single-string source: phone RGB capture
 
+The phone RGB camera is the selected replacement for the unavailable Grove
+thermal camera. The [hardware inventory](hardware.md) records secured parts and
+missing equipment. Thermal acquisition is deferred from the current prototype;
+phone model and image transfer remain to be selected.
+
 Capture a panel or clearly labeled panel mockup in clean, simulated dust,
 simulated droppings, and mixed conditions. Keep simulation method and ground truth
 separate from the inference input. Include shade, reflections, blur, different
@@ -96,6 +101,12 @@ mapped asset identity, and an uncertainty/review state. Evaluate classification
 and localization separately, including incorrect classes and missed deposits.
 A phone RGB image cannot measure heat, electrical continuity, or lost kWh.
 Thermal/electrical claims require separately acquired, aligned observations.
+
+The secured AHT20, light sensor, and ACS70331 current sensor provide proposed
+additional prototype context once integrated. Ambient temperature is not thermal
+imagery, relative light is not a calibrated irradiance baseline, and current alone
+is not power or energy. Keep any small-panel test observations separate from the
+historical SOLARMA plant and label their actual capture/setup provenance.
 
 ## Proposed observation and finding contract
 

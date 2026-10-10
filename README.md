@@ -10,6 +10,8 @@ The product, business model, and benefits remain proposals to validate.
 - [Renewed pitch](docs/pitch-draft.md) — company offer and customer value.
 - [Data and demonstration plan](docs/data-plan.md) — phone-camera simulation
   and separate historical SOLARMA replay.
+- [Hardware availability](docs/hardware.md) — secured prototype parts and
+  phone RGB camera replacement for the unavailable thermal camera.
 - [HTML presentation draft](presentation/README.md) — architecture, narrative,
   and implementation plan.
 - [Presentation guidelines](.agent/README.md) — contributor and agent guidance.

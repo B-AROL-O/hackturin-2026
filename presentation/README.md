@@ -13,6 +13,11 @@ history supplies the whole-plant telemetry path. RGB does not confirm hotspots o
 lost energy. Predictive maintenance and profitability gains remain validation
 goals, with company and owner roles explained in the service review.
 
+The [hardware inventory](../docs/hardware.md) records secured prototype parts and
+unavailable items. The UNO Q 4GB with Media Carrier is secured; the phone RGB camera
+replaces the unavailable thermal camera. Integration and power validation remain
+planned work.
+
 ## Read the draft
 
 - [Presentation architecture](architecture.md): stack, module boundaries,

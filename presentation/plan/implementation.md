@@ -68,6 +68,13 @@ establish that the planned portable packaging or source checks are implemented.
 These are proposed PoopVolt engineering steps, separate from the deck build.
 Track implementation status against actual code and hardware artifacts.
 
+Start from the [reported hardware inventory](../../docs/hardware.md). The UNO Q
+4GB with Media Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate
+power components are secured. Use phone RGB instead of the unavailable thermal
+camera. Use the Base Shield instead of the Grove shield v2 and HRS1358 instead of
+the Waveshare charger. Breadboards are unavailable; confirm a connection plan
+and required cables/adapters before assembly. Availability is not integration.
+
 1. Pin the inspected SOLARMA revision and downloaded file hashes; implement a
    replay importer with units, missing values, observation time, and coverage.
 2. Capture phone scenes with clean, simulated dust/droppings, and controls;
@@ -76,8 +83,10 @@ Track implementation status against actual code and hardware artifacts.
    retention. Keep phone simulation and historical plant data separate.
 4. Select an initial visible-contamination detector and a telemetry anomaly
    baseline; evaluate separately on held-out capture sessions and time periods.
-5. Run the verified paths on the intended UNO Q. Measure quality, localization
-   scope, latency, memory, and power draw; verify transfer and device power.
+5. Verify secured-part interfaces, phone transfer, the local LCD status path, and
+   device supply. Run the paths on the UNO Q and measure quality, localization
+   scope, latency, memory, and power draw. Keep any small-panel sensor test distinct
+   from phone simulation and historical replay.
 6. Add maintenance review and intervention history, with explicit unknown inputs
    for economic scenarios and no unsupported hotspot/loss claim.
 7. Prototype queued synchronization and company/own-plant views; test outages,
@@ -87,8 +96,9 @@ Track implementation status against actual code and hardware artifacts.
 9. Validate predictive maintenance using outcomes and a warning horizon; evaluate
    customer maintenance/revamping benefit and company free-device economics.
 
-Thermal confirmation and multi-year degradation need separate measurements and
-validation. Battery-aware scheduling is a later off-grid extension. A replay
+Thermal acquisition and confirmation are deferred because the thermal camera is
+unavailable. Multi-year degradation needs separate measurements and validation.
+Battery-aware scheduling is a later off-grid extension. A replay
 anomaly, phone simulation, or mocked platform does not complete these steps.
 Only recorded evaluations can supply measured presentation claims.
 

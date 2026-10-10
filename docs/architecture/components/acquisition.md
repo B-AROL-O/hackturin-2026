@@ -11,6 +11,7 @@
 flowchart LR
     phone["Phone RGB capture"]
     telemetry["Inverter or logger / historical replay"]
+    sensors["Secured environmental and current sensors / integration pending"]
     mapping["Plant and channel topology"]
     adapters["Input adapters"]
     validate["Identity, timestamp and quality checks"]
@@ -19,6 +20,7 @@ flowchart LR
     storage[("Local storage")]
     phone -->|Frames and declared demo mapping| adapters
     telemetry -->|Samples and provenance| adapters
+    sensors -->|Prototype observations after interface verification| adapters
     mapping -->|Verified or unknown asset relationships| validate
     adapters -->|Normalized observations| validate
     validate -->|Scoped observations and quality flags| align
@@ -32,6 +34,11 @@ Adapters handle phone images, historical SOLARMA exports, and future verified
 field telemetry. Preserve units, source identity, original observation time,
 ingestion time, and whether data are simulated, replayed, or measured in the field.
 Missing values remain missing rather than becoming zeros.
+
+The [hardware inventory](../../hardware.md) identifies AHT20 temperature/humidity,
+relative light, and ACS70331 current inputs to integrate. None supplies thermal
+images, a verified irradiance baseline, or current-and-voltage power measurements.
+The phone RGB camera is the current camera input; thermal acquisition is deferred.
 
 Mapping associates an inverter/channel or image region with a plant and, only
 where established, a string/panel. A declared demo mapping is not a surveyed

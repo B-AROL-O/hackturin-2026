@@ -7,17 +7,17 @@ Apply [visual guidelines](../../.agent/visual-design.md) when implementing.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID        | Primary visual                                                                        | Source or provenance                                      | Visible qualification                             |
-| --------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------- |
-| `pv-title`      | Panel and restrained pigeon cue, with company-to-customer offer                       | Original/licensed image or labeled generated illustration | Proposed product                                  |
-| `pv-problem`    | Deposit region on one panel; localized shading and possible heating relationship      | `pv-soiling-background`, `pv-hotspot-background`          | Mechanism illustration; no measured loss/hotspot  |
-| `pv-context`    | Buyer, owner, technician, site device, and company platform                           | Canonical `pv-context`; `coesa-energy-context`            | Proposed free-device offer; no partnership        |
-| `pv-pipeline`   | Edge flow, local history, queued sync, company/own-plant views                        | `pv-architecture`, `pv-overview`                          | Local operation; remote freshness depends on sync |
-| `pv-quality`    | Phone RGB image, deposit region, declared string/panel map, unknown-input alternative | `pv-acquisition`, `pv-flow-soiling`, `pv-data-plan`       | Simulated capture; visible contamination only     |
-| `pv-evidence`   | Separate telemetry pathway with channel coverage and history                          | `pv-diagnostics`, `pv-flow-plant`, pinned SOLARMA source  | Historical replay; mapping/prediction unverified  |
-| `pv-decision`   | Continued operation, cleaning/repair, and revamping comparison with economic inputs   | `pv-maintenance`, `pv-flow-maintenance`                   | Illustrative options; no invented ROI             |
-| `pv-validation` | Existing docs/logs versus planned phone, edge, platform, and field checks             | `pv-index`, `pv-deployment`, `pv-data-plan`               | Results pending                                   |
-| `pv-close`      | Company pilot connecting observations, reviewed work, and reassessment                | `pv-pitch`, `coesa-energy-context`                        | Proposed pilot and intended benefit               |
+| Slide ID        | Primary visual                                                                        | Source or provenance                                       | Visible qualification                             |
+| --------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------- |
+| `pv-title`      | Panel and restrained pigeon cue, with company-to-customer offer                       | Original/licensed image or labeled generated illustration  | Proposed product                                  |
+| `pv-problem`    | Deposit region on one panel; localized shading and possible heating relationship      | `pv-soiling-background`, `pv-hotspot-background`           | Mechanism illustration; no measured loss/hotspot  |
+| `pv-context`    | Buyer, owner, technician, site device, and company platform                           | Canonical `pv-context`; `coesa-energy-context`             | Proposed free-device offer; no partnership        |
+| `pv-pipeline`   | Edge flow, local history, queued sync, company/own-plant views                        | `pv-architecture`, `pv-overview`                           | Local operation; remote freshness depends on sync |
+| `pv-quality`    | Phone RGB image, deposit region, declared string/panel map, unknown-input alternative | `pv-acquisition`, `pv-flow-soiling`, `pv-data-plan`        | Simulated capture; visible contamination only     |
+| `pv-evidence`   | Separate telemetry pathway with channel coverage and history                          | `pv-diagnostics`, `pv-flow-plant`, pinned SOLARMA source   | Historical replay; mapping/prediction unverified  |
+| `pv-decision`   | Continued operation, cleaning/repair, and revamping comparison with economic inputs   | `pv-maintenance`, `pv-flow-maintenance`                    | Illustrative options; no invented ROI             |
+| `pv-validation` | Secured kit and camera substitution versus planned integration and field checks       | `pv-index`, `pv-deployment`, `pv-data-plan`, `pv-hardware` | Results pending                                   |
+| `pv-close`      | Company pilot connecting observations, reviewed work, and reassessment                | `pv-pitch`, `coesa-energy-context`                         | Proposed pilot and intended benefit               |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -27,6 +27,10 @@ Keep the same illustrative panel/deposit in the pigeon and phone-camera story.
 Use readable string and panel labels, a mapping-status label, and an image-region
 outline. Do not display phone RGB as a measured thermal view. If a thermal risk
 illustration is used, keep it separate and explicitly illustrative.
+
+Use `pv-hardware` for the slide-8/appendix hardware view. Distinguish secured
+parts, selected substitutions, unavailable equipment, and integration still to
+verify. Show the phone camera as the current image source, not a thermal camera.
 
 Keep the historical SOLARMA plant visually separate from the phone scene. Any
 real replay plot must come from pinned files with units, time range, device/input

@@ -38,6 +38,19 @@ the company context entry also provides a dated local research summary.
 - Search keywords: phone RGB, simulated dust, pigeon droppings, SOLARMA, string,
   inverter channel, provenance, localization, held-out evaluation, predictive maintenance.
 
+## pv-hardware
+
+- Title: PoopVolt hardware availability
+- Local source: [Hardware inventory](hardware.md)
+- Source type: Team-reported secured/unavailable parts and prototype substitutions
+- Updated on: 2026-10-10
+- Retrieve when: Planning prototype assembly or describing what hardware is available.
+- Search keywords: UNO Q 4GB, Media Carrier, Seeed Studio Base Shield, AHT20,
+  Light Sensor P v1.1, ACS70331, Grove LCD, LiPo, HRS1358, R1123, HAS4966,
+  breadboards, Waveshare, phone RGB, unavailable thermal camera.
+- Limits: Availability is reported by the team. Interfaces, power, assembly,
+  phone transfer, and sensor acquisition are not validated by this inventory.
+
 ## solarma-pv-analysis-tools
 
 - Title: PV analysis tools and SOLPEV inverter logs
@@ -58,6 +71,11 @@ the company context entry also provides a dated local research summary.
   parsed inventory and evaluation constraints.
 
 ## arduino-uno-q-user-manual
+
+The [hardware inventory](hardware.md) records the secured UNO Q 4GB with Media
+Carrier and supporting parts. It is a team availability report, not a hardware
+compatibility assessment. The phone RGB camera replaces the unavailable thermal
+camera in the current prototype.
 
 - Title: Arduino UNO Q User Manual
 - Publisher: Arduino

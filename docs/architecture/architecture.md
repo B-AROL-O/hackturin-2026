@@ -11,7 +11,6 @@
 flowchart LR
     phone["Phone RGB capture / single-string demo"]
     inputs["Inverter, logger or sensors / SOLARMA replay"]
-    thermal["Optional verified thermal input / future"]
     subgraph edge["Customer-site PoopVolt edge application"]
         acquisition["Acquisition"]
         diagnostics["Diagnostics"]
@@ -26,7 +25,6 @@ flowchart LR
     end
     phone -->|Frames and declared plant/string mapping| acquisition
     inputs -->|Telemetry and source identity| acquisition
-    thermal -->|Thermal observations if available| acquisition
     acquisition -->|Quality-checked scoped observations| diagnostics
     acquisition -->|Observations and mapping| storage
     storage -->|History and topology| diagnostics
@@ -48,6 +46,11 @@ flowchart LR
 Acquisition, Diagnostics, and Maintenance remain logical modules on the edge.
 `Local storage` is inside that boundary. The Operator interface has proposed
 local, company, and customer views; its framework is undecided.
+
+The [secured hardware](../hardware.md) supplies the UNO Q 4GB with Media Carrier,
+Base Shield, environmental/current sensors, and LCD for integration work. The
+phone RGB camera replaces the unavailable thermal camera. Thermal acquisition
+and thermal inference are deferred and are not part of the current input path.
 
 The company platform supplies portfolio access and service review. Owners see
 their own plant, while company operators see assigned plants. Identity, access

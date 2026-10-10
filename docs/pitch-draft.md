@@ -23,8 +23,12 @@ Those claims require appropriate thermal or electrical measurements.
 
 ## The product: one edge device, two observation paths
 
-The intended Arduino UNO Q edge platform runs Acquisition, Diagnostics, and
-Maintenance locally and retains observations in `Local storage`.
+The proposed edge platform runs Acquisition, Diagnostics, and Maintenance locally
+and retains observations in `Local storage`. The Arduino UNO Q 4GB with Media
+Carrier and supporting parts are secured; see the [hardware inventory](hardware.md).
+Integration remains to be verified. The phone RGB camera replaces the unavailable
+Grove thermal camera, so measured thermal hotspot detection is outside the current
+prototype scope.
 
 - **Single-string demonstration:** A phone camera supplies RGB images of a
   mapped panel/string with simulated dust or droppings. The target is visible

@@ -41,6 +41,11 @@ The proposed company platform is part of the product architecture, not this
 static presentation. Illustrative company/customer screens are fixtures only;
 they provide no live monitoring, login, or economic calculation service.
 
+Hardware availability comes from [the team inventory](../docs/hardware.md), source
+ID `pv-hardware`. Show the UNO Q 4GB with Media Carrier and selected Base Shield
+as secured parts with integration pending. The current demo uses phone RGB
+instead of the unavailable thermal camera; thermal diagnosis is deferred.
+
 ## Stack decision
 
 Propose Quarto with Reveal.js, following the reference's authoring workflow.

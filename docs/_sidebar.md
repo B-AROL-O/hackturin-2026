@@ -5,6 +5,7 @@
 - [Home](/)
 - [Project pitch](/pitch-draft.md)
 - [Data and demonstration plan](/data-plan.md)
+- [Hardware availability](/hardware.md)
 - [Coesa Energy context](/company/coesa-energy.md)
 - [Architecture index](/architecture/README.md)
 - [Reference index](/references.md)

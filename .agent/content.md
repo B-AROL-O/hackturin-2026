@@ -47,6 +47,13 @@ Dataset entries identify candidates, not adopted models or validated coverage.
 The intended UNO Q platform does not establish sensor compatibility or a working
 MCU/Linux bridge. Consult the official sources before introducing specifications.
 
+Use the [hardware inventory](../docs/hardware.md) for reported availability:
+UNO Q 4GB with Media Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate
+power parts are secured. The phone RGB camera replaces the unavailable Grove
+thermal camera; thermal acquisition is deferred. Keep secured, selected, assembled,
+and measured status distinct. Do not depict a thermal camera in the current demo
+path or treat the AHT20/light sensor as thermal imaging.
+
 ## Semantic guardrails
 
 - Preserve Acquisition, Diagnostics, Maintenance, `Local storage`, and Operator interface.

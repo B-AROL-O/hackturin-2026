@@ -11,6 +11,12 @@ offline diagnostics remain local, while remote visibility requires synchronizati
 Read the [pitch](../pitch-draft.md), [company context](../company/coesa-energy.md),
 and [data plan](../data-plan.md) together with these views.
 
+The [hardware inventory](../hardware.md) records the secured UNO Q 4GB with Media
+Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate power components.
+The current prototype uses a phone RGB camera in place of the unavailable Grove
+thermal camera. Thermal acquisition is deferred; hardware availability does not
+establish tested integration.
+
 ## Diagram Registry
 
 | Diagram ID            | View                                                              | Scope                                                  |
@@ -54,7 +60,7 @@ Use the [reference index](../references.md) for hardware sources and dataset ver
 ## Open Decisions
 
 - Field logger compatibility, channel/string topology, image-to-panel mapping,
-  phone transfer, optional sensors, power, and MCU/Linux responsibilities.
+  phone transfer, secured-part interfaces, power, and MCU/Linux responsibilities.
 - Observation contracts, retention, model selection, edge resource budget,
   evaluation labels, prediction horizon, and environmental baselines.
 - Company platform technology, identity and plant access, transport, queue
