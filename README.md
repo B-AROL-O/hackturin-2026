@@ -11,7 +11,7 @@
 - [Giacomo Lisita](https://www.linkedin.com/in/giacomolisita) | GitHub: <https://github.com/giacolees> | Telegram: @younglees
 - [Gianpaolo Macario](https://www.linkedin.com/in/gmacario/) | GitHub: <https://github.com/gmacario> | Telegram: @gmacario
 - [Lorenzo Palloni](https://www.linkedin.com/in/lorenzopalloni/) | GitHub: <https://github.com/lorenzopalloni> | Telegram: @lorenzopalloni
-- [Federico Nebuloni](https://www.linkedin.com/in/federico-nebuloni-770641246) | GitHub: TODO | Telegram: @Foxtrot230
+- [Federico Nebuloni](https://www.linkedin.com/in/federico-nebuloni-770641246) | GitHub: todo | Telegram: @Foxtrot230
 
 ## hackTurin 2026 at a glance
 
