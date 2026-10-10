@@ -1,0 +1,9 @@
+[flake8]
+# Match black's line length and slice/operator style.
+max-line-length = 88
+extend-ignore = E203,W503
+per-file-ignores =
+    # Test fixtures embed real, long log lines.
+    tests/*:E501
+    # sys.path is extended before importing the vendored msgpack.
+    firmware/*/linux/*.py:E402

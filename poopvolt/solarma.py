@@ -148,15 +148,16 @@ def _read_table(path: Path, columns: dict[str, str]) -> list[dict[str, str]]:
     with path.open(encoding="latin-1", newline="") as handle:
         reader = csv.reader(handle, delimiter="\t")
         header = next(reader)
-        names = [columns.get(_strip_unit(h)) for h in header]
-        unknown = [h for h, n in zip(header, names, strict=True) if n is None]
+        mapped = [columns.get(_strip_unit(h)) for h in header]
+        unknown = [h for h, n in zip(header, mapped, strict=True) if n is None]
         if unknown:
             raise ValueError(f"{path.name}: unrecognised columns {unknown!r}")
+        names = [n for n in mapped if n is not None]
         for h, n in zip(header, names, strict=True):
-            if _unit(h) != UNITS.get(n or ""):
+            if _unit(h) != UNITS.get(n):
                 raise ValueError(
                     f"{path.name}: column {h.strip()!r} has unit {_unit(h)!r}, "
-                    f"expected {UNITS.get(n or '')!r}"
+                    f"expected {UNITS.get(n)!r}"
                 )
         rows = []
         for line_no, row in enumerate(reader, start=2):
@@ -164,7 +165,8 @@ def _read_table(path: Path, columns: dict[str, str]) -> list[dict[str, str]]:
                 continue
             if len(row) != len(names):
                 raise ValueError(
-                    f"{path.name}:{line_no}: expected {len(names)} fields, got {len(row)}"
+                    f"{path.name}:{line_no}: expected {len(names)} fields, "
+                    f"got {len(row)}"
                 )
             rows.append(dict(zip(names, row, strict=True)))
     return rows
@@ -349,9 +351,7 @@ def fetch(directory: str | Path) -> Path:
         f"{SOURCE_REVISION}/data/{EXPORT_FOLDER}"
     )
     for name in PINNED_SHA256:
-        with urllib.request.urlopen(
-            f"{base}/{name}", timeout=60
-        ) as response:  # noqa: S310
+        with urllib.request.urlopen(f"{base}/{name}", timeout=60) as response:
             (directory / name).write_bytes(response.read())
     verify(directory)
     return directory

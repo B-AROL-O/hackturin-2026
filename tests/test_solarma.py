@@ -66,7 +66,8 @@ def test_summary_without_irradiance(tmp_path: Path) -> None:
         (
             "Orario di rilevazione\tNumero registratore di dati\tPotenza [W]\t"
             "Energia di oggi [kWh]\tRendimento conteggiato [kWh]\t"
-            "Intensità di irradiamento [W/m\xfd]\tEnergia di irradiamento odierna [kWh]\n"
+            "Intensità di irradiamento [W/m\xfd]\t"
+            "Energia di irradiamento odierna [kWh]\n"
             "2019-07-01 12:10:00\t0\t121186\t11.542\t\t\t\n"
         ).encode("latin-1")
     )
