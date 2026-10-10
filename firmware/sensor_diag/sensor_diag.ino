@@ -1,9 +1,10 @@
 // Sensor diagnostic for the UNO Q + Seeed Grove Base Shield (VCC switch at 3.3V).
 //
 // I2C (header SDA/SCL = Wire): AHT20 0x38, Grove 16x2 LCD 0x3E (+ RGB backlight
-// 0x62 or 0x30 on the RGB version), PN532 NFC 0x24. Analog A0: Grove light sensor.
-// Scans the bus (again every 5 s while the PN532 is missing), then every second reads each detected device, prints to
-// the Monitor and shows the readings on the LCD.
+// 0x62 or 0x30 on the RGB version), PN532 NFC 0x24 or on the UART port (D0/D1 =
+// Serial1). Analog A0: Grove light sensor.
+// Scans the bus (again every 5 s while the PN532 is missing), then every second
+// reads each detected device, prints to the Monitor and shows it on the LCD.
 
 #include <Arduino_RouterBridge.h>
 #include <Wire.h>
@@ -19,7 +20,11 @@ constexpr uint8_t ADDR_PN532 = 0x24;
 constexpr uint8_t NO_PIN = 0xFF;  // Grove NFC does not wire IRQ/RESET
 
 Adafruit_AHTX0 aht;
-Adafruit_PN532* nfc = nullptr;  // created in setup(): its constructor touches pins and the heap
+// Created at runtime: constructing Adafruit_PN532 statically (global or function-local
+// static) hangs the sketch before setup() prints anything.
+Adafruit_PN532* nfc = nullptr;  // whichever of the two below answered
+Adafruit_PN532* nfc_i2c = nullptr;
+Adafruit_PN532* nfc_uart = nullptr;
 rgb_lcd lcd;
 
 bool has_aht = false;
@@ -51,24 +56,31 @@ void scan() {
   if (found == 0) Monitor.println("  nothing found: check shield seating and the 3.3V/5V switch");
 }
 
+bool try_nfc(Adafruit_PN532* candidate, const char* bus) {
+  candidate->begin();
+  uint32_t version = candidate->getFirmwareVersion();
+  if (!version) return false;
+  candidate->SAMConfig();
+  nfc = candidate;
+  has_nfc = true;
+  Monitor.print("PN532: OK over ");
+  Monitor.print(bus);
+  Monitor.print(", firmware ");
+  Monitor.print((version >> 16) & 0xFF);
+  Monitor.print(".");
+  Monitor.println((version >> 8) & 0xFF);
+  return true;
+}
+
 void init_nfc() {
   if (probe(ADDR_PN532)) {
-    if (nfc == nullptr) nfc = new Adafruit_PN532(NO_PIN, NO_PIN, &Wire);
-    nfc->begin();
-    uint32_t version = nfc->getFirmwareVersion();
-    if (version) {
-      nfc->SAMConfig();
-      has_nfc = true;
-      Monitor.print("PN532: OK, firmware ");
-      Monitor.print((version >> 16) & 0xFF);
-      Monitor.print(".");
-      Monitor.println((version >> 8) & 0xFF);
-    } else {
-      Monitor.println("PN532: ACKs at 0x24 but no firmware reply");
-    }
-  } else {
-    Monitor.println("PN532: not found at 0x24 (is the module set to I2C, not UART?)");
+    if (nfc_i2c == nullptr) nfc_i2c = new Adafruit_PN532(NO_PIN, NO_PIN, &Wire);
+    if (try_nfc(nfc_i2c, "I2C")) return;
   }
+  // Grove UART port on the shield = D0/D1 = Serial1 (Bridge uses Serial2).
+  if (nfc_uart == nullptr) nfc_uart = new Adafruit_PN532(NO_PIN, &Serial1);
+  if (try_nfc(nfc_uart, "UART (D0/D1)")) return;
+  Monitor.println("PN532: no reply on I2C 0x24 nor UART D0/D1");
 }
 
 void setup() {

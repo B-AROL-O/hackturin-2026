@@ -38,4 +38,4 @@ Measured: 100 Hz, no gaps or drops. Arrival jitter is about 0.6 ms, with peaks u
 
 ## Grove sensor diagnostic (`firmware/sensor_diag`)
 
-This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38, 16x2 LCD at 0x3E, PN532 at 0x24, and the light sensor on A0. Libraries: `arduino-cli lib install "Adafruit AHTX0" "Adafruit PN532" "Grove - LCD RGB Backlight"`. Don't create `Adafruit_PN532` as a global object, because its constructor hangs the MCU before `setup()`.
+This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38, 16x2 LCD at 0x3E, PN532 at 0x24 or on the shield UART port (D0/D1 = `Serial1`; the Bridge uses `Serial2`), and the light sensor on A0. Libraries: `arduino-cli lib install "Adafruit AHTX0" "Adafruit PN532" "Grove - LCD RGB Backlight"`. Create `Adafruit_PN532` at runtime with `new`. A global or function-local `static` instance hangs the MCU before `setup()`.
