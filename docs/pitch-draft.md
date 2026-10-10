@@ -1,8 +1,9 @@
-### Project Pitch
+# Project Pitch
 
 **PoopVolt is an Edge AI-powered predictive maintenance system designed to maximize the efficiency, reliability, and operational lifetime of off-grid photovoltaic installations.**
 
-Photovoltaic systems progressively lose efficiency due to dust accumulation, environmental contamination, electrical faults, and component aging. Conventional monitoring systems often detect performance losses only after they occur, making it difficult to distinguish recoverable inefficiencies from irreversible degradation. This can lead to unnecessary maintenance, premature component replacement, and costly revamping.
+Photovoltaic systems progressively lose efficiency due to dust accumulation, environmental contamination, electrical faults, and component aging.
+Conventional monitoring systems often detect performance losses only after they occur, making it difficult to distinguish recoverable inefficiencies from irreversible degradation. This can lead to unnecessary maintenance, premature component replacement, and costly revamping.
 
 PoopVolt addresses this challenge by combining **real-time electrical monitoring, environmental sensing, and thermal imaging** within a unified intelligent platform.
 
