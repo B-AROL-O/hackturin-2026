@@ -26,8 +26,8 @@
         loadSidebar: true,
         relativePath: true,
         plugins: [
-          function (hook) {
-            hook.doneEach(async function () {
+          (hook) => {
+            hook.doneEach(async () => {
               const blocks = document.querySelectorAll(
                 "pre code.lang-mermaid, pre code.language-mermaid",
               );

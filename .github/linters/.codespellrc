@@ -1,0 +1,3 @@
+[codespell]
+# Ignore URLs, e.g. the "fo" path segment in Dropbox share links
+ignore-regex = https?://\S+
