@@ -7,55 +7,47 @@ Apply [visual guidelines](../../.agent/visual-design.md) when implementing.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID        | Primary visual                                                                | Source or provenance                                             | Visible qualification                                     |
-| --------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
-| `pv-title`      | Same panel with a restrained pigeon cue on a graphite title canvas            | Original, licensed photograph, or labeled generated illustration | Proposed system in subtitle                               |
-| `pv-problem`    | Pigeon-droppings detail; small dust and hail examples with distinct labels    | Verified image with rights, or clearly illustrative image        | No claimed production-loss value                          |
-| `pv-context`    | Operator, installation, and PoopVolt boundary                                 | Canonical `pv-context` diagram                                   | Proposed architecture                                     |
-| `pv-pipeline`   | Horizontal edge flow and `Local storage` connection                           | `pv-architecture` with canonical names                           | Proposed architecture, intended platform                  |
-| `pv-quality`    | Valid observation contrasted with a missing or stale observation              | `pv-acquisition` and `pv-flow-soiling`                           | Illustrative observations                                 |
-| `pv-evidence`   | Same deposit in RGB; illustrative thermal hotspot; electrical/history context | `pv-diagnostics`; actual assets still needed                     | Illustrative modalities, history required for degradation |
-| `pv-decision`   | Evidence, finding, recommendation, and operator review                        | `pv-maintenance`, `pv-flow-maintenance`                          | Illustrative recommendation                               |
-| `pv-validation` | Compact integration and evaluation roadmap                                    | Open decisions in `pv-index` and `pv-deployment`                 | Work planned, results pending                             |
-| `pv-close`      | Simple return to the operator decision loop                                   | `pv-context` and `pv-maintenance`                                | Intended benefit                                          |
+| Slide ID        | Primary visual                                                                        | Source or provenance                                      | Visible qualification                             |
+| --------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------- |
+| `pv-title`      | Panel and restrained pigeon cue, with company-to-customer offer                       | Original/licensed image or labeled generated illustration | Proposed product                                  |
+| `pv-problem`    | Deposit region on one panel; localized shading and possible heating relationship      | `pv-soiling-background`, `pv-hotspot-background`          | Mechanism illustration; no measured loss/hotspot  |
+| `pv-context`    | Buyer, owner, technician, site device, and company platform                           | Canonical `pv-context`; `coesa-energy-context`            | Proposed free-device offer; no partnership        |
+| `pv-pipeline`   | Edge flow, local history, queued sync, company/own-plant views                        | `pv-architecture`, `pv-overview`                          | Local operation; remote freshness depends on sync |
+| `pv-quality`    | Phone RGB image, deposit region, declared string/panel map, unknown-input alternative | `pv-acquisition`, `pv-flow-soiling`, `pv-data-plan`       | Simulated capture; visible contamination only     |
+| `pv-evidence`   | Separate telemetry pathway with channel coverage and history                          | `pv-diagnostics`, `pv-flow-plant`, pinned SOLARMA source  | Historical replay; mapping/prediction unverified  |
+| `pv-decision`   | Continued operation, cleaning/repair, and revamping comparison with economic inputs   | `pv-maintenance`, `pv-flow-maintenance`                   | Illustrative options; no invented ROI             |
+| `pv-validation` | Existing docs/logs versus planned phone, edge, platform, and field checks             | `pv-index`, `pv-deployment`, `pv-data-plan`               | Results pending                                   |
+| `pv-close`      | Company pilot connecting observations, reviewed work, and reassessment                | `pv-pitch`, `coesa-energy-context`                        | Proposed pilot and intended benefit               |
 
 <!-- markdownlint-enable MD013 -->
 
-## Canonical diagram exports
+## Diagrams and imagery
 
-Keep the same panel and deposit location across the cover, problem, evidence,
-and decision visuals. Show a pigeon or its droppings as the narrative cue, then
-align the RGB view with a separately labeled illustrative thermal hotspot view.
-Use small dust and hail examples to connect the story to broader maintenance;
-represent hail as damage requiring inspection, not another cleaning scenario.
-Background sources are recorded in the [source registry](../sources/README.md).
+Keep the same illustrative panel/deposit in the pigeon and phone-camera story.
+Use readable string and panel labels, a mapping-status label, and an image-region
+outline. Do not display phone RGB as a measured thermal view. If a thermal risk
+illustration is used, keep it separate and explicitly illustrative.
 
-Build a full export from each Mermaid page used in the appendix. For the main
-pitch, create concise excerpts from `pv-context`, `pv-architecture`, and the two
-runtime flows. Export names should include the diagram ID. Label an excerpt as
-a presentation view derived from its parent and explain omitted detail in notes.
+Keep the historical SOLARMA plant visually separate from the phone scene. Any
+real replay plot must come from pinned files with units, time range, device/input
+identity, missing-data treatment, and reproducible generation. Do not rename
+inverters as panels or show channels as verified strings.
 
-The extraction tool should read the canonical fenced block, apply presentation
-theme configuration, render a static asset, and retain a source hash. It should
-fail if the page has no unique expected diagram. Keep the complete source and
-diagram text available as a readable alternative in the bundled references.
-
-Use consistent module positions across pipeline and decision slides. Emphasize
-the stage being discussed with a label and optional short reveal. Avoid dense
-nested diagrams on the main canvas. Put unverified physical interfaces in the
-deployment appendix with their existing TBD status.
+Generate full canonical Mermaid exports for the appendix and concise main-deck
+excerpts with parent diagram IDs, proposed status, and omission notes. Preserve
+module names and boundaries, including the new company platform and sync path.
+Technical figures use diagram/chart tools and retain source hashes.
 
 ## Image and data acquisition
 
-Create `assets/README.md` during implementation. For every image or font, record
-its source, creator, license, retrieval date, modifications, and intended use.
-Keep original rights information next to locally bundled assets. Sponsor listing
-in the repository readme does not itself establish usable logo artwork or rights.
+Create `assets/README.md` during implementation with creator, source, license,
+retrieval date, modifications, and intended use for every bundled asset.
+Sponsor status does not establish logo rights. Phone captures record simulation
+method and session provenance as defined in the [data plan](../../docs/data-plan.md).
 
-No quantitative results are currently available for a performance chart.
-The first deck can use conceptual diagrams and illustrative observation examples.
-Later plots require recorded data, units, evaluation scope, uncertainty, and
-reproducible generation. Avoid decorative pseudo-charts and invented KPI tiles.
+No project performance results currently support a quantitative benefit chart.
+Economic review can show required inputs and an unavailable estimate when inputs
+are missing. Do not invent ROI, recovered kWh, accuracy, or service-margin values.
 
-The optional scenario needs two fixture cases. Default to the static adequate
-evidence view, with both cases rendered in the handout and print layout.
+The optional phone scenario has usable-evidence and uncertain-input cases.
+Render both in print/handout, retaining the simulated and illustrative labels.

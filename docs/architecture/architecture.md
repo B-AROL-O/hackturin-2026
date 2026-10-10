@@ -2,35 +2,70 @@
 
 - Diagram ID: `pv-architecture`
 - Level: Architecture
-- Status: Proposed draft; implementation and hardware choices are unverified.
+- Status: Proposed draft; interfaces, models, and platform unimplemented.
 - Parent: [Parent view](context.md)
 
 ## Diagram
 
 ```mermaid
 flowchart LR
-    sensors["Sensors and cameras"]
-    subgraph edge["PoopVolt edge application"]
+    phone["Phone RGB capture / single-string demo"]
+    inputs["Inverter, logger or sensors / SOLARMA replay"]
+    thermal["Optional verified thermal input / future"]
+    subgraph edge["Customer-site PoopVolt edge application"]
         acquisition["Acquisition"]
         diagnostics["Diagnostics"]
         maintenance["Maintenance"]
-        interface["Operator interface"]
+        storage[("Local storage")]
+        interface["Operator interface / local view"]
+        sync["Synchronization / queued exchange"]
     end
-    storage[("Local storage")]
-    sensors -->|Measurements and images| acquisition
-    acquisition -->|Validated observations| diagnostics
-    acquisition -->|Observation records| storage
-    storage -->|Historical observations| diagnostics
-    diagnostics -->|Findings and uncertainty| maintenance
-    storage -->|Intervention history| maintenance
-    maintenance -->|Recommendations| interface
-    interface -->|Intervention records| storage
+    subgraph company["Proposed company service platform"]
+        portfolio["Plant registry and portfolio findings"]
+        review["Operator interface / company and customer views"]
+    end
+    phone -->|Frames and declared plant/string mapping| acquisition
+    inputs -->|Telemetry and source identity| acquisition
+    thermal -->|Thermal observations if available| acquisition
+    acquisition -->|Quality-checked scoped observations| diagnostics
+    acquisition -->|Observations and mapping| storage
+    storage -->|History and topology| diagnostics
+    diagnostics -->|Findings, localization scope and uncertainty| maintenance
+    diagnostics -->|Finding records and evidence| storage
+    storage -->|Interventions and cost assumptions| maintenance
+    maintenance -->|Recommendations and economic review inputs| interface
+    maintenance -->|Recommendation and scenario records| storage
+    interface -->|Reviewed actions and outcomes| storage
+    storage -->|Queued findings, summaries and actions| sync
+    sync -->|Exchange when connected| portfolio
+    portfolio -->|Evidence, freshness and coverage| review
+    review -->|Reviewed interventions and configuration| sync
+    sync -->|Received records| storage
 ```
 
 ## Explanation
 
-Acquisition, Diagnostics, and Maintenance are logical modules within a proposed edge application, not confirmed independent services. The `Local storage` component preserves observations and intervention history. The Operator interface exposes recommendations; its technology is undecided.
+Acquisition, Diagnostics, and Maintenance remain logical modules on the edge.
+`Local storage` is inside that boundary. The Operator interface has proposed
+local, company, and customer views; its framework is undecided.
+
+The company platform supplies portfolio access and service review. Owners see
+their own plant, while company operators see assigned plants. Identity, access
+control, transport, retention, and integrations must be selected before a pilot.
+No existing Coesa API is assumed.
+
+Synchronization buffers outgoing records, preserves observation time separately
+from upload time, and needs duplicate handling and intervention reconciliation.
+Offline analysis continues; a remote view shows the age of its last update.
+Raw imagery stays local by default; any upload policy is an open decision.
+
+Findings carry plant, inverter/channel, optional mapped string/panel, source type,
+evidence references, quality, and localization scope. A phone scene and historical
+replay cannot be fused as simultaneous evidence from one plant. See the
+[data plan](../data-plan.md) for the proposed observation contract.
 
 ## Related Views
 
-[Acquisition](components/acquisition.md) · [Diagnostics](components/diagnostics.md) · [Maintenance](components/maintenance.md) · [Deployment](deployment.md) · [Architecture index](README.md)
+[Acquisition](components/acquisition.md) · [Diagnostics](components/diagnostics.md) ·
+[Maintenance](components/maintenance.md) · [Deployment](deployment.md) ·
+[Architecture index](README.md)

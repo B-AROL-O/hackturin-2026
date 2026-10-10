@@ -3,6 +3,14 @@
 This is the entry point for architectural questions about PoopVolt. The views follow a C4-inspired hierarchy with additional physical deployment and runtime views.
 All views are proposed drafts. They describe intended behavior, not a verified implementation or measured performance.
 
+The renewed proposal sells an edge device to a photovoltaic service company,
+which can offer it free to customers. Local string-level observations and
+multi-channel plant history support company maintenance services and customer
+revamping assessments. A proposed company service platform adds portfolio views;
+offline diagnostics remain local, while remote visibility requires synchronization.
+Read the [pitch](../pitch-draft.md), [company context](../company/coesa-energy.md),
+and [data plan](../data-plan.md) together with these views.
+
 ## Diagram Registry
 
 | Diagram ID            | View                                                              | Scope                                                  |
@@ -16,6 +24,7 @@ All views are proposed drafts. They describe intended behavior, not a verified i
 | `pv-maintenance`      | [Maintenance](components/maintenance.md)                          | Evidence assessment and operator recommendations       |
 | `pv-flow-soiling`     | [Soiling detection flow](flows/detect-soiling.md)                 | Observation-to-finding sequence                        |
 | `pv-flow-maintenance` | [Maintenance recommendation flow](flows/recommend-maintenance.md) | Finding-to-intervention sequence                       |
+| `pv-flow-plant`       | [Whole-plant monitoring flow](flows/monitor-plant.md)             | Multi-channel analysis, coverage, and synchronization  |
 
 ## How to Navigate
 
@@ -36,12 +45,26 @@ Implementation diagrams should be added only when concrete algorithms, interface
 ## Retrieval for AI Agents
 
 Use the registry to select a view by scope or stable ID, then read its explanation and linked component pages. Treat proposed decisions as assumptions, not implementation facts.
-Search terms: PoopVolt, architecture, system context, Edge AI, Arduino UNO Q, acquisition, diagnostics, soiling, thermal anomalies, degradation, maintenance, deployment, sequence diagram.
+Search terms: PoopVolt, Coesa, free customer device, Edge AI, Arduino UNO Q,
+Acquisition, Diagnostics, Maintenance, string, inverter channel, SOLARMA,
+phone camera, soiling, localization, predictive maintenance, revamping,
+profitability, company platform, portfolio, synchronization, deployment.
 Use the [reference index](../references.md) for hardware sources and dataset versions. Consult the canonical source before relying on specifications or example code.
 
 ## Open Decisions
 
-Sensor and camera selection, electrical compatibility, MCU/Linux responsibilities, observation contracts, storage retention, model selection, evaluation criteria, operator access, and energy-aware scheduling remain unresolved.
+- Field logger compatibility, channel/string topology, image-to-panel mapping,
+  phone transfer, optional sensors, power, and MCU/Linux responsibilities.
+- Observation contracts, retention, model selection, edge resource budget,
+  evaluation labels, prediction horizon, and environmental baselines.
+- Company platform technology, identity and plant access, transport, queue
+  reconciliation, customer views, and Coesa integration opportunities.
+- Device price and ownership, free-distribution economics, installation/support
+  responsibility, pilot scope, intervention costs, and revamping assumptions.
+
+The [data plan](../data-plan.md) identifies which demo data exist and which
+additional measurements are needed. Battery-aware scheduling is a later off-grid
+extension rather than a requirement of the primary commercial proposal.
 
 ## Method References
 

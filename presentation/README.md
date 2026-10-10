@@ -4,14 +4,14 @@ Status: Architecture and planning draft. The HTML deck, theme, JavaScript,
 assets, build scripts, and hosting integration have not been implemented.
 
 This folder defines a proposed web presentation for hackTurin. It translates the
-existing PoopVolt architecture into a short, visual explanation of a maintenance
-decision, local processing, and the next prototype work.
+renewed PoopVolt architecture into a short, visual explanation of the company
+buyer, free customer device, local analysis, and maintenance/revamping services.
 
-The narrative follows a pigeon leaving droppings on a panel, an illustrative
-hotspot candidate, and an operator's maintenance decision. The droppings are a
-storytelling device for the broader problem: dust-related soiling and possible
-hail damage also need assessment. The draft distinguishes cleaning from damage
-inspection and does not claim a measured frequency for any cause.
+The narrative follows pigeon droppings to visible contamination on one mapped
+string. A phone-camera simulation supplies that demonstration; separate SOLARMA
+history supplies the whole-plant telemetry path. RGB does not confirm hotspots or
+lost energy. Predictive maintenance and profitability gains remain validation
+goals, with company and owner roles explained in the service review.
 
 ## Read the draft
 
@@ -42,8 +42,11 @@ deployment credentials, or site configuration are copied.
 
 The [canonical architecture](../docs/architecture/README.md) is a proposed draft.
 It describes Acquisition, Diagnostics, Maintenance, `Local storage`, and an
-Operator interface on an intended UNO Q edge platform. Hardware integration,
-model selection, data contracts, and access methods remain open.
+Operator interface on an intended UNO Q edge platform, plus queued synchronization
+and a proposed company service platform with company/customer views. Hardware,
+models, mappings, access, integration, pricing, and free-device economics remain
+open. Read the [data plan](../docs/data-plan.md) and
+[company context](../docs/company/coesa-energy.md) for demo sources and buyer fit.
 
 The presentation should show these intended responsibilities clearly. An
 illustrative scenario can demonstrate the decision logic, while measured claims

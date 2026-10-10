@@ -7,9 +7,11 @@
 
 ## Purpose and boundaries
 
-Explain how observations become an evidence-based maintenance recommendation
-for an off-grid photovoltaic operator. Give judges a readable pitch and engineers
-a technical appendix, using the same sources and stable diagram identities.
+Explain the proposed device sale to a service company, free distribution to
+owners, and the path from mapped observations to maintenance and revamping review.
+Show phone-based single-string localization separately from historical
+multi-channel telemetry analysis. Give judges and the potential buyer a readable
+pitch and engineers a technical appendix from the same canonical sources.
 
 The presentation is a static site. It shows architectural proposals and an
 optional illustrative decision scenario. It does not acquire telemetry, execute
@@ -20,20 +22,24 @@ The site runs on an audience browser independently of the intended UNO Q system.
 
 <!-- markdownlint-disable MD013 -->
 
-| Canonical area  | Audience explanation                                            | Presentation work                                 | Product work still unresolved                             |
-| --------------- | --------------------------------------------------------------- | ------------------------------------------------- | --------------------------------------------------------- |
-| Context         | The operator reviews recommendations and performs physical work | Operator/installations relationship visual        | Local operator access method                              |
-| Acquisition     | Observations need timestamps and quality checks                 | Quality annotations and missing-input scenario    | Sensors, adapters, units, rates, alignment tolerance      |
-| Diagnostics     | Each modality supplies different evidence                       | RGB, thermal, electrical, and history explanation | Models, calibration, fusion, thresholds, evaluation       |
-| Maintenance     | Evidence supports a proportionate recommendation                | Illustrated finding and review sequence           | Decision policy, forecasting, battery-aware scheduling    |
-| `Local storage` | History supports reassessment after an intervention             | History loop and evidence links                   | Retention, storage medium, record contracts               |
-| Deployment      | Local processing targets the intended UNO Q platform            | Proposed deployment view in appendix              | Power, compatibility, MCU/Linux bridge, camera interfaces |
+| Canonical area  | Audience explanation                                                     | Presentation work                                     | Product work still unresolved                               |
+| --------------- | ------------------------------------------------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------- |
+| Context         | The company buys, the owner benefits, and the technician reviews work    | Buyer/owner/service relationship                      | Device ownership, pricing, and service workflow             |
+| Acquisition     | Phone capture and telemetry have separate provenance and mapped scope    | Phone scene, channel coverage, missing-input scenario | Transfer, adapters, topology, units, timestamp rules        |
+| Diagnostics     | Visible localization and multi-channel trends answer different questions | Independent RGB and telemetry paths                   | Labels, models, calibration, prediction horizon, evaluation |
+| Maintenance     | Evidence supports maintenance or revamping review                        | Service options and economic inputs                   | Policy, production baseline, quotes, uncertainty            |
+| `Local storage` | History supports reassessment after an intervention                      | History loop and evidence links                       | Retention, storage medium, record contracts                 |
+| Deployment      | Edge analysis targets UNO Q; remote views require synchronization        | Edge/platform boundary and stale remote state         | Power, compatibility, transfer, access and synchronization  |
 
 <!-- markdownlint-enable MD013 -->
 
 Source pages remain authoritative. Presentation excerpts must carry the parent
 diagram ID and proposed status. Keep wiring details and unsupported hardware
 specifications out of the main deck.
+
+The proposed company platform is part of the product architecture, not this
+static presentation. Illustrative company/customer screens are fixtures only;
+they provide no live monitoring, login, or economic calculation service.
 
 ## Stack decision
 
@@ -153,12 +159,15 @@ and validate the rendered metadata as well as the authored source.
 The nine-slide total is 300 seconds. Appendix IDs start with `pv-a-` and are
 excluded from the main timing and counter.
 
-The source manifest records repository-relative paths, baseline revision,
-SHA-256, scope, and upstream URL. It is a registry of canonical files, not a
-second copy of the system architecture. At build time, fail on a checksum mismatch
+The source manifest records repository-relative paths, source state, revision
+when committed, SHA-256, scope, and upstream URL when available. A reviewed
+uncommitted source has a null revision/URL and a recorded base revision; its
+checksum pins working-tree bytes without claiming that they exist at the base.
+It is a registry of canonical files, not a second copy of the system architecture.
+At build time, fail on a checksum mismatch
 until the source change has been reviewed and the baseline deliberately refreshed.
 
-Canonical file entries live in `sources`; external background retrieval entries
+Canonical file entries live in `sources`; external background and dataset records
 live in `external_sources`, with stable IDs and available revision or publication
 identifiers. The future source checker must resolve IDs from both collections,
 while requiring file checksums only for the canonical file entries.
@@ -169,29 +178,29 @@ The proposed fixture schema is presentation-only. It is not an edge API contract
 
 <!-- markdownlint-disable MD013 -->
 
-| Field            | Meaning                                                      |
-| ---------------- | ------------------------------------------------------------ |
-| `id`             | Stable scenario ID                                           |
-| `status`         | Always `illustrative` for the initial fixture                |
-| `sourceIds`      | Canonical design sources that justify the depicted behavior  |
-| `observations`   | Modality, readable summary, timestamp context, quality flag  |
-| `finding`        | Kind, evidence references, uncertainty explanation           |
-| `recommendation` | Suggested action, reason, and `operatorReviewRequired: true` |
-| `limitations`    | Missing inputs and unverified assumptions                    |
+| Field            | Meaning                                                                    |
+| ---------------- | -------------------------------------------------------------------------- |
+| `id`             | Stable scenario ID                                                         |
+| `status`         | Always `illustrative` for the initial fixture                              |
+| `sourceIds`      | Canonical design sources that justify the depicted behavior                |
+| `observations`   | Modality, provenance, plant/asset mapping, readable summary, time, quality |
+| `finding`        | Kind, image region, localization scope, evidence references, uncertainty   |
+| `recommendation` | Suggested action, reason, and `operatorReviewRequired: true`               |
+| `limitations`    | Missing inputs and unverified assumptions                                  |
 
 <!-- markdownlint-enable MD013 -->
 
-Both cases follow the same panel after a pigeon leaves droppings on it.
-Case one has adequate illustrative RGB soiling evidence and a thermal hotspot
-candidate consistent with localized shading; it proposes a cleaning review and
-reassessment by the operator. Case two has stale or missing imagery and requests
-inspection or a new observation. The narrative connects droppings, possible
-partial shading, and possible localized heating without treating the visible
-deposit as a verified cause or detection result.
-Dust is another soiling example; hail belongs to the physical-damage inspection
-path. These examples do not establish relative frequency or a hail classifier.
-Display uncertainty in words. Do not insert invented probabilities or electrical
-thresholds. Do not infer irreversible degradation from either case.
+Both cases follow the phone-camera simulation on one declared panel/string.
+Case one has usable illustrative RGB evidence, a deposit region, and known demo
+mapping; it proposes cleaning review. Case two has stale/missing imagery or unknown
+mapping and requests a new observation or asset inspection. Neither establishes
+a hotspot, electrical interruption, production loss, or irreversible degradation.
+
+Telemetry replay is a separate historical scene with its own provenance,
+channel coverage, and unknown string mapping. Never fuse it with the phone scene.
+An illustrative service view can compare maintenance and revamping inputs but
+must show an unavailable economic estimate where production/cost inputs are absent.
+No invented probabilities, electrical thresholds, ROI, or forecast performance.
 
 External background sources in the registry support the narrative's mechanisms;
 they are separate from the checksum-pinned system documents and supply no

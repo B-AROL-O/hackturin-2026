@@ -3,11 +3,11 @@
 Status: Proposed backlog. This change implements the architecture documentation,
 planning corpus, and source registry only.
 
-The pigeon-droppings narrative is selected: carry one illustrative panel case
-through contamination, a possible hotspot, and operator review. Include dust as
-another soiling example and hail as a separate damage-inspection example.
-Implement this story in the static deck before enhancing its evidence-quality
-branches. Follow the revised speaking and visual plans without changing timing.
+The renewed narrative sells an edge device to the company, which can provide it
+free to plant owners. Carry the pigeon story through phone-based visible
+contamination localization, then show the separate SOLARMA telemetry path and
+maintenance/revamping review. Implement the static story before enhancing the
+phone scenario. Preserve stable anchors and the 300-second timing.
 
 ## Ordered work
 
@@ -68,20 +68,29 @@ establish that the planned portable packaging or source checks are implemented.
 These are proposed PoopVolt engineering steps, separate from the deck build.
 Track implementation status against actual code and hardware artifacts.
 
-1. Select and verify sensors, cameras, power, and the MCU/Linux responsibilities.
-2. Define observation units, timestamps, quality flags, alignment, and retention.
-3. Implement acquisition and a replayable local observation record.
-4. Evaluate an initial soiling detector on pinned data and installation samples.
-5. Produce findings with evidence references and uncertainty handling.
-6. Add a maintenance policy and operator intervention history.
-7. Test the observation-to-recommendation chain, including missing/stale input.
-8. Measure defined detection, latency, resource, and energy-use outcomes on the
-   intended hardware, with a baseline and reproducible protocol.
+1. Pin the inspected SOLARMA revision and downloaded file hashes; implement a
+   replay importer with units, missing values, observation time, and coverage.
+2. Capture phone scenes with clean, simulated dust/droppings, and controls;
+   annotate visible regions and declare demo plant/string/panel mapping.
+3. Define scoped observation/finding contracts, source identity, topology, and
+   retention. Keep phone simulation and historical plant data separate.
+4. Select an initial visible-contamination detector and a telemetry anomaly
+   baseline; evaluate separately on held-out capture sessions and time periods.
+5. Run the verified paths on the intended UNO Q. Measure quality, localization
+   scope, latency, memory, and power draw; verify transfer and device power.
+6. Add maintenance review and intervention history, with explicit unknown inputs
+   for economic scenarios and no unsupported hotspot/loss claim.
+7. Prototype queued synchronization and company/own-plant views; test outages,
+   freshness, duplicate records, and plant access boundaries.
+8. Agree a field pilot with mapped logger channels, production/environment data,
+   verified interventions, costs, and buyer/owner responsibilities.
+9. Validate predictive maintenance using outcomes and a warning horizon; evaluate
+   customer maintenance/revamping benefit and company free-device economics.
 
-Thermal fusion, long-term degradation forecasting, and battery-aware scheduling
-need separate validation. A mocked UI or example dataset does not complete those
-steps. Incorporate measured outcomes into the presentation only when the source
-registry can link them to an evaluated implementation and recorded results.
+Thermal confirmation and multi-year degradation need separate measurements and
+validation. Battery-aware scheduling is a later off-grid extension. A replay
+anomaly, phone simulation, or mocked platform does not complete these steps.
+Only recorded evaluations can supply measured presentation claims.
 
 ## Draft completion and implementation completion
 

@@ -13,9 +13,13 @@ Touch controls must have at least a 44 by 44 CSS px hit area.
 
 ## Scenario interaction
 
-The planned scenario follows the pigeon-droppings story and compares adequate
-illustrative soiling/thermal evidence with missing or stale input. A deposit in
-an RGB image alone must not establish a hotspot or automatically authorize work.
+The planned slide-5 scenario follows a phone-camera simulation of the
+pigeon-droppings story and compares usable illustrative RGB/mapping evidence
+with missing/stale input or unknown mapping. A deposit in
+an RGB image alone must not establish a hotspot, electrical interruption,
+lost energy, or automatically authorize work. Keep historical telemetry replay
+separate from this scene. Company/customer screens are illustrative static views;
+show coverage, source type, freshness, and unavailable economic inputs.
 Use an explicit selector with a readable state label. Maintain the same layout
 while changing the observation quality, finding, and recommendation together.
 Announce the result in a polite live region. Keep the illustrative label visible.

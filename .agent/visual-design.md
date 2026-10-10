@@ -9,8 +9,11 @@ provide the recurring visual structure. The title slide can use a dark graphite
 canvas with one panel image and a large PoopVolt wordmark.
 
 Use the pigeon and its deposit as a restrained recurring cue on the same panel.
-Carry that location into separately labeled RGB and illustrative thermal views.
-Use dust and hail examples to show the wider maintenance scope. Keep the pigeon
+Carry that location into the phone RGB view with declared string/panel mapping.
+Any thermal illustration must be separately labeled as risk context. Keep the
+SOLARMA telemetry plant visually separate and show channels as unverified strings.
+Use a company-to-owner visual for the device offer and an option comparison for
+maintenance/revamping inputs. Keep the pigeon
 cue subordinate to the evidence and operator decision.
 
 These are proposed tokens to evaluate on a projector, not an inherited brand.

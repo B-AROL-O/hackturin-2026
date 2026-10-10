@@ -18,14 +18,44 @@ the company context entry also provides a dated local research summary.
 - Project relevance: Company identified by the user as evaluating our idea;
   background for PoopVolt's pitch and pilot design.
 - Retrieve when: Preparing the Coesa pitch, comparing existing monitoring
-  capabilities, or exploring second-life panel and off-grid maintenance use
-  cases.
+  capabilities, or exploring company-funded devices, maintenance services,
+  customer profitability, revamping, and later second-life/off-grid use cases.
 - Search keywords: Coesa, COESA Srl, evaluator, hackTurin, Federico Sandrone,
   Matteo Stoppa, ESCo, EPC, O&M, KeepTheSun, JuaKit, SPARC, off-grid, soiling,
   predictive maintenance, circular economy, PoopVolt.
 - Retrieval note: Start with the local context and its linked sources. Treat
   suggested product fit as hypotheses, and refresh changing company facts before
   external use.
+
+## pv-data-plan
+
+- Title: PoopVolt data and demonstration plan
+- Local source: [Data plan](data-plan.md)
+- Source type: Proposed ingestion/evaluation design and inspected external inventory
+- Reviewed on: 2026-10-10
+- Retrieve when: Planning phone capture, SOLARMA replay, string/channel mapping,
+  anomaly evaluation, or predictive-maintenance data requirements.
+- Search keywords: phone RGB, simulated dust, pigeon droppings, SOLARMA, string,
+  inverter channel, provenance, localization, held-out evaluation, predictive maintenance.
+
+## solarma-pv-analysis-tools
+
+- Title: PV analysis tools and SOLPEV inverter logs
+- Publisher: SOLARMA snc
+- Canonical URL: <https://github.com/SOLARMA/pv-analysis-tools>
+- Inspected revision: `fc96313e453978fc89211322a8afb966b85f7913`
+- Pinned data: <https://github.com/SOLARMA/pv-analysis-tools/tree/fc96313e453978fc89211322a8afb966b85f7913/data>
+- Source type: Historical Danfoss Comlynx Weblogger exports and plotting notebook
+- Inspected on: 2026-10-10, through GitHub API and raw files
+- License: Repository-level MIT; retain the notice when reusing files.
+- Project relevance: Proposed multi-channel/whole-plant replay source.
+- Retrieve when: Building a telemetry importer or assessing inverter input coverage.
+- Search keywords: SOLARMA, SOLPEV, Danfoss, Comlynx, details.txt, summary.txt,
+  events.txt, inverter, DC channel, telemetry, historical replay.
+- Limits: One plant, overlapping exports, no panel map or contamination/thermal
+  labels, missing values, and empty irradiance fields in the larger summary.
+  Event codes need interpretation. See the [data plan](data-plan.md) for the
+  parsed inventory and evaluation constraints.
 
 ## arduino-uno-q-user-manual
 

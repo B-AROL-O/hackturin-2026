@@ -2,49 +2,51 @@
 
 - Diagram ID: `pv-overview`
 - Level: Overview
-- Status: Proposed draft; implementation and hardware choices are unverified.
+- Status: Proposed draft; outcomes and implementation unverified.
 - Parent: [Parent view](README.md)
 
 ## Diagram
 
 ```mermaid
 flowchart TB
-    A["Off-Grid Photovoltaic System"]
-
-    B["Data Collection<br/>Electrical · Environmental · Thermal / RGB"]
-
-    C["Arduino UNO Q 4GB<br/>Edge AI"]
-
-    D["Intelligent Diagnostics<br/>Fault Detection · Soiling · Degradation"]
-
-    E["Predictive Maintenance<br/>& Lifecycle Optimization"]
-
-    F["Optimized Energy Production"]
-    G["Extended System Lifetime"]
-    H["Revamping Avoidance"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-
-    E --> F
-    E --> G
-    E --> H
-
-    classDef source fill:#dbeafe,stroke:#2563eb,color:#1e40af
-    classDef ai fill:#dcfce7,stroke:#16a34a,color:#166534
-    classDef result fill:#fef3c7,stroke:#d97706,color:#92400e
-
-    class A,B source
-    class C,D,E ai
-    class F,G,H result
+    plant["Customer PV plant / mapped strings"]
+    images["Single-string RGB observations"]
+    telemetry["Multi-channel electrical history"]
+    edge["PoopVolt edge device / intended Arduino UNO Q"]
+    diagnostics["Local classification, localization and trend analysis"]
+    local["Local maintenance review"]
+    platform["Company service platform / sync when connected"]
+    service["Technician and owner review"]
+    maintenance["Targeted cleaning, inspection or repair"]
+    revamping["Evidence-based revamping assessment"]
+    value["Goal: improved plant profitability and useful services"]
+    plant -->|Visible contamination| images
+    plant -->|Inverter or logger observations| telemetry
+    images --> edge
+    telemetry --> edge
+    edge --> diagnostics
+    diagnostics --> local
+    diagnostics --> platform
+    platform --> service
+    service --> maintenance
+    service --> revamping
+    maintenance --> value
+    revamping --> value
 ```
 
 ## Explanation
 
-Electrical, environmental, and image measurements feed local Edge AI diagnostics. Maintenance and lifecycle recommendations aim to improve energy availability and avoid unnecessary replacement. These outcomes are goals, not measured results.
+PoopVolt sells an edge device to a service company, which can distribute it free
+to its customers. One observation path targets visible contamination on a mapped
+string; another targets whole-plant underperformance using multi-channel history.
+Both support a service decision. Predictive maintenance is a development goal,
+requiring longitudinal validation beyond detecting a current anomaly.
+
+The phone-camera demo and SOLARMA replay are independent evidence paths. Neither
+establishes complete plant coverage, confirmed hotspots, or economic returns.
+The [data plan](../data-plan.md) defines their limits.
 
 ## Related Views
 
-[System context](context.md) · [Project pitch](../pitch-draft.md) · [Architecture index](README.md)
+[System context](context.md) · [Project pitch](../pitch-draft.md) ·
+[Architecture index](README.md)

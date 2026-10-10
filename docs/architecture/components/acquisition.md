@@ -2,30 +2,48 @@
 
 - Diagram ID: `pv-acquisition`
 - Level: Components
-- Status: Proposed draft; implementation and hardware choices are unverified.
+- Status: Proposed draft; adapters and observation contracts unimplemented.
 - Parent: [Parent view](../architecture.md)
 
 ## Diagram
 
 ```mermaid
 flowchart LR
-    inputs["Electrical, environmental and image inputs"]
+    phone["Phone RGB capture"]
+    telemetry["Inverter or logger / historical replay"]
+    mapping["Plant and channel topology"]
     adapters["Input adapters"]
-    validate["Timestamp and quality checks"]
-    align["Observation alignment"]
+    validate["Identity, timestamp and quality checks"]
+    align["Observation alignment within one source and plant"]
     diagnostics["Diagnostics"]
     storage[("Local storage")]
-    inputs -->|Raw samples and frames| adapters
+    phone -->|Frames and declared demo mapping| adapters
+    telemetry -->|Samples and provenance| adapters
+    mapping -->|Verified or unknown asset relationships| validate
     adapters -->|Normalized observations| validate
-    validate -->|Valid observations and quality flags| align
-    align -->|Aligned observation bundle| diagnostics
-    align -->|Observation records| storage
+    validate -->|Scoped observations and quality flags| align
+    align -->|Observation bundles and coverage| diagnostics
+    align -->|Records and source identity| storage
 ```
 
 ## Explanation
 
-Input adapters normalize source measurements. Quality checks identify missing, stale, or invalid inputs. Alignment associates measurements and frames in time before Diagnostics consumes them. Sample rates, units, timestamp tolerance, retention, and degraded-input behavior remain open decisions.
+Adapters handle phone images, historical SOLARMA exports, and future verified
+field telemetry. Preserve units, source identity, original observation time,
+ingestion time, and whether data are simulated, replayed, or measured in the field.
+Missing values remain missing rather than becoming zeros.
+
+Mapping associates an inverter/channel or image region with a plant and, only
+where established, a string/panel. A declared demo mapping is not a surveyed
+installation map. Unknown relationships limit localization to the known scope.
+Coverage reports expose missing, stale, or unmapped channels.
+
+Alignment combines observations only from the same plant and compatible times.
+The phone simulation and historical SOLARMA plant are separate scenarios.
+Sample rates, timezone interpretation, timestamp tolerance, image transfer,
+field protocols, and retention remain decisions to verify.
 
 ## Related Views
 
-[Diagnostics](diagnostics.md) · [Deployment](../deployment.md) · [Architecture index](../README.md)
+[Data plan](../../data-plan.md) · [Diagnostics](diagnostics.md) ·
+[Deployment](../deployment.md) · [Architecture index](../README.md)

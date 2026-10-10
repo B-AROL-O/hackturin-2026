@@ -1,7 +1,15 @@
 # Team response to hackTurin 2026
 
+PoopVolt proposes an Edge AI device sold to PV service companies, which can offer
+it free to customers. Mapped contamination findings and plant telemetry aim to
+support maintenance services and evidence-based revamping decisions.
+The product, business model, and benefits remain proposals to validate.
+
 ## Quick links
 
+- [Renewed pitch](docs/pitch-draft.md) — company offer and customer value.
+- [Data and demonstration plan](docs/data-plan.md) — phone-camera simulation
+  and separate historical SOLARMA replay.
 - [HTML presentation draft](presentation/README.md) — architecture, narrative,
   and implementation plan.
 - [Presentation guidelines](.agent/README.md) — contributor and agent guidance.

@@ -1,51 +1,48 @@
 # Proposed pitch agenda
 
-Status: Draft. Assumed audience: hackathon judges and potential technical partners.
+Status: Draft for hackathon judges and Coesa as a potential buyer/service partner.
 Assumed duration: five minutes. Assumed audience language: Italian.
-These defaults need confirmation against the actual pitch requirements.
+These defaults remain subject to the event's actual pitch requirements.
 
 ## Main sequence
 
-Follow one panel through the pigeon-droppings story: contamination, a suspected
-thermal hotspot, evidence quality, and an operator's maintenance review.
-Use dust and hail to widen the problem beyond the narrative device, distinguishing
-soiling from physical damage. Keep all observations and outcomes illustrative.
+Follow the pigeon story into a business offer: company buys the edge device,
+owner receives it free, and evidence supports maintenance or revamping review.
+Demonstrate phone-based single-string localization and independent whole-plant
+telemetry replay. Keep capabilities proposed and simulations illustrative.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide | Stable ID       | Draft title                                     | Seconds | Purpose                                                                               | Source IDs                                                                  |
-| ----- | --------------- | ----------------------------------------------- | ------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| 1     | `pv-title`      | PoopVolt                                        | 20      | Introduce local maintenance support for off-grid photovoltaics                        | `pv-pitch`                                                                  |
-| 2     | `pv-problem`    | Dal piccione al sospetto hotspot                | 35      | Introduce pigeon droppings as the story device, then dust soiling and hail damage     | `pv-pitch`, `pv-diagnostics`, `pv-soiling-background`, `pv-hail-background` |
-| 3     | `pv-context`    | L'operatore decide l'intervento                 | 30      | Establish the installation, system boundary, and human responsibility                 | `pv-context`                                                                |
-| 4     | `pv-pipeline`   | PoopVolt elabora le osservazioni sul posto      | 45      | Explain the proposed acquisition, diagnostics, and maintenance flow                   | `pv-architecture`, `pv-overview`                                            |
-| 5     | `pv-quality`    | Ogni osservazione porta anche la sua qualità    | 40      | Make validation, alignment, and missing inputs understandable                         | `pv-acquisition`, `pv-flow-soiling`                                         |
-| 6     | `pv-evidence`   | La diagnosi combina evidenze diverse            | 45      | Compare deposit imagery with an illustrative hotspot; explain uncertainty and history | `pv-diagnostics`, `pv-hotspot-background`                                   |
-| 7     | `pv-decision`   | La raccomandazione dipende dalle evidenze       | 40      | Compare an illustrative cleaning review with an inspection request                    | `pv-maintenance`, `pv-flow-maintenance`                                     |
-| 8     | `pv-validation` | Il prototipo deve verificare la catena completa | 25      | Separate today's design from the next integration and evaluation work                 | `pv-deployment`, `pv-index`                                                 |
-| 9     | `pv-close`      | La manutenzione parte da una scelta motivata    | 20      | Restate the goal and propose a concrete field-validation next step                    | `pv-pitch`, `pv-maintenance`                                                |
+| Slide | Stable ID       | Draft title                                          | Seconds | Purpose                                                                                              | Source IDs                                                                     |
+| ----- | --------------- | ---------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 1     | `pv-title`      | PoopVolt                                             | 20      | Introduce the device sold to a company and offered free to its customers                             | `pv-pitch`                                                                     |
+| 2     | `pv-problem`    | Un piccione, una stringa da controllare              | 35      | Explain localized soiling, lost-output risk, and possible hotspots without claiming confirmation     | `pv-pitch`, `pv-soiling-background`, `pv-hotspot-background`                   |
+| 3     | `pv-context`    | L'azienda acquista, il cliente riceve il dispositivo | 30      | Establish Coesa as proposed buyer, owner as beneficiary, and technician responsibility               | `pv-context`, `coesa-energy-context`                                           |
+| 4     | `pv-pipeline`   | Analisi locale, visibilità per l'azienda             | 45      | Explain edge modules, local history, queued sync, and company/customer views                         | `pv-architecture`, `pv-overview`                                               |
+| 5     | `pv-quality`    | Una foto localizza lo sporco visibile                | 40      | Explain phone simulation, mapped string/panel, classification, region, and unknown-input branch      | `pv-acquisition`, `pv-flow-soiling`, `pv-data-plan`                            |
+| 6     | `pv-evidence`   | Più canali raccontano la salute dell'impianto        | 45      | Explain independent SOLARMA replay, anomaly/trend analysis, and predictive-validation needs          | `pv-diagnostics`, `pv-flow-plant`, `pv-data-plan`, `solarma-pv-analysis-tools` |
+| 7     | `pv-decision`   | Manutenzione o revamping: valutiamo il beneficio     | 40      | Compare options for the owner and show the company's evidence-to-service opportunity                 | `pv-maintenance`, `pv-flow-maintenance`, `pv-pitch`                            |
+| 8     | `pv-validation` | Due percorsi da validare, un pilota da costruire     | 25      | Separate current docs/data from planned phone capture, edge inference, platform, and field economics | `pv-deployment`, `pv-index`, `pv-data-plan`                                    |
+| 9     | `pv-close`      | Dal dato a un servizio utile al cliente              | 20      | Ask for a company-led pilot with channel access, intervention history, and commercial validation     | `pv-pitch`, `coesa-energy-context`                                             |
 
 <!-- markdownlint-enable MD013 -->
 
-Total: 300 seconds. The implementation checker should read this table and compare
-IDs, order, and duration with `talk.qmd`. Main IDs are slide anchors, while source
-IDs refer to the registry. `pv-context` names both the context source and its slide
-intentionally. Keep those namespaces separate in the checker.
+Total: 300 seconds. The future checker compares IDs, order, and duration with
+`talk.qmd`. Main IDs are slide anchors; source IDs resolve in the registry.
+`pv-context` deliberately exists in both namespaces.
 
 ## Appendix
 
 <!-- markdownlint-disable MD013 -->
 
-| Stable ID         | Subject                                                               | Canonical sources                                    |
-| ----------------- | --------------------------------------------------------------------- | ---------------------------------------------------- |
-| `pv-a-deployment` | Intended UNO Q deployment and unresolved hardware interfaces          | `pv-deployment`, `pv-references`                     |
-| `pv-a-components` | Full acquisition, diagnostics, and maintenance views                  | `pv-acquisition`, `pv-diagnostics`, `pv-maintenance` |
-| `pv-a-flows`      | Soiling and operator maintenance runtime sequences                    | `pv-flow-soiling`, `pv-flow-maintenance`             |
-| `pv-a-sources`    | Source registry, candidate datasets, and current evidence limitations | `pv-index`, `pv-references`                          |
+| Stable ID         | Subject                                                                   | Canonical sources                                         |
+| ----------------- | ------------------------------------------------------------------------- | --------------------------------------------------------- |
+| `pv-a-deployment` | Intended UNO Q, phone transfer, logger coverage, synchronization          | `pv-deployment`, `pv-references`                          |
+| `pv-a-components` | Full edge modules, localization limits, and economic inputs               | `pv-acquisition`, `pv-diagnostics`, `pv-maintenance`      |
+| `pv-a-flows`      | Single-string, whole-plant, and owner-approved service sequences          | `pv-flow-soiling`, `pv-flow-plant`, `pv-flow-maintenance` |
+| `pv-a-sources`    | SOLARMA inventory, phone capture plan, Coesa context, and evidence status | `pv-data-plan`, `coesa-energy-context`, `pv-references`   |
 
 <!-- markdownlint-enable MD013 -->
 
-Appendix material is for questions and does not extend the five-minute pitch.
-Avoid an automatic title slide or section dividers that silently increase the
-main count. If the event requires another duration, revise this agenda and the
-speaking plan together before authoring or rendering slides.
+Appendix material does not extend the main pitch. Preserve anchors; revise agenda
+and speaking times together if the event requires a different duration.
