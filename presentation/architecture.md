@@ -158,6 +158,11 @@ SHA-256, scope, and upstream URL. It is a registry of canonical files, not a
 second copy of the system architecture. At build time, fail on a checksum mismatch
 until the source change has been reviewed and the baseline deliberately refreshed.
 
+Canonical file entries live in `sources`; external background retrieval entries
+live in `external_sources`, with stable IDs and available revision or publication
+identifiers. The future source checker must resolve IDs from both collections,
+while requiring file checksums only for the canonical file entries.
+
 ## Illustrative scenario contract
 
 The proposed fixture schema is presentation-only. It is not an edge API contract.
@@ -176,10 +181,21 @@ The proposed fixture schema is presentation-only. It is not an edge API contract
 
 <!-- markdownlint-enable MD013 -->
 
-Case one has adequate illustrative soiling evidence and a cleaning review.
-Case two has stale or missing imagery and requests inspection or a new observation.
+Both cases follow the same panel after a pigeon leaves droppings on it.
+Case one has adequate illustrative RGB soiling evidence and a thermal hotspot
+candidate consistent with localized shading; it proposes a cleaning review and
+reassessment by the operator. Case two has stale or missing imagery and requests
+inspection or a new observation. The narrative connects droppings, possible
+partial shading, and possible localized heating without treating the visible
+deposit as a verified cause or detection result.
+Dust is another soiling example; hail belongs to the physical-damage inspection
+path. These examples do not establish relative frequency or a hail classifier.
 Display uncertainty in words. Do not insert invented probabilities or electrical
 thresholds. Do not infer irreversible degradation from either case.
+
+External background sources in the registry support the narrative's mechanisms;
+they are separate from the checksum-pinned system documents and supply no
+measured PoopVolt results.
 
 ## Delivery model and open decisions
 

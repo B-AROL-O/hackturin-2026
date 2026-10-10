@@ -3,6 +3,12 @@
 Status: Proposed backlog. This change implements the architecture documentation,
 planning corpus, and source registry only.
 
+The pigeon-droppings narrative is selected: carry one illustrative panel case
+through contamination, a possible hotspot, and operator review. Include dust as
+another soiling example and hail as a separate damage-inspection example.
+Implement this story in the static deck before enhancing its evidence-quality
+branches. Follow the revised speaking and visual plans without changing timing.
+
 ## Ordered work
 
 <!-- markdownlint-disable MD013 -->

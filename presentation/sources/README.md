@@ -34,6 +34,23 @@ Architecture entries have proposed status. The pitch describes intended behavior
 and the reference index is a retrieval aid. Neither supplies measured project
 performance. Follow external links before quoting hardware or dataset details.
 
+## Narrative background
+
+The pigeon-droppings story is an illustrative device selected for this talk.
+These external research abstracts support background mechanisms, not measured
+PoopVolt behavior, cause frequency, asset rights, or an adopted detection model.
+Their `external_sources` records in the manifest are retrieval records; they are
+not checksum-pinned local snapshots. Inspected on 2026-10-10:
+
+- `pv-soiling-background`: [Dust accumulation and bird-droppings detection](https://arxiv.org/abs/2501.08304v1),
+  preprint revision v1. Dust and droppings can obstruct incident light.
+- `pv-hotspot-background`: [Mitigation of hot-spots in photovoltaic systems](https://research-hub.nlr.gov/en/publications/mitigation-of-hot-spots-in-photovoltaic-systems-using-distributed-2/),
+  publication DOI `10.3390/en11040726`. Partial shading and mismatch can cause
+  localized heating; the story's hotspot remains an illustrative candidate.
+- `pv-hail-background`: [Photovoltaic module imaging for hail damage assessment](https://research-hub.nlr.gov/en/publications/photovoltaic-module-imaging-for-hail-damage-assessment-with-multi-3/),
+  publication `NREL/PO-5K00-80227`. Hail damage can include cell cracking and
+  belongs to the damage-inspection path, separate from a cleaning review.
+
 ## Baseline maintenance
 
 The manifest is an auditable baseline. If a canonical file changes, review which

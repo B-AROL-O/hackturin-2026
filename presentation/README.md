@@ -7,6 +7,12 @@ This folder defines a proposed web presentation for hackTurin. It translates the
 existing PoopVolt architecture into a short, visual explanation of a maintenance
 decision, local processing, and the next prototype work.
 
+The narrative follows a pigeon leaving droppings on a panel, an illustrative
+hotspot candidate, and an operator's maintenance decision. The droppings are a
+storytelling device for the broader problem: dust-related soiling and possible
+hail damage also need assessment. The draft distinguishes cleaning from damage
+inspection and does not claim a measured frequency for any cause.
+
 ## Read the draft
 
 - [Presentation architecture](architecture.md): stack, module boundaries,

@@ -7,21 +7,28 @@ Apply [visual guidelines](../../.agent/visual-design.md) when implementing.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID        | Primary visual                                                   | Source or provenance                                             | Visible qualification                                     |
-| --------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
-| `pv-title`      | One solar-panel image on a graphite title canvas                 | Original, licensed photograph, or labeled generated illustration | Proposed system in subtitle                               |
-| `pv-problem`    | Panel contamination detail with a restrained annotation          | Verified image with rights, or clearly illustrative image        | No claimed production-loss value                          |
-| `pv-context`    | Operator, installation, and PoopVolt boundary                    | Canonical `pv-context` diagram                                   | Proposed architecture                                     |
-| `pv-pipeline`   | Horizontal edge flow and `Local storage` connection              | `pv-architecture` with canonical names                           | Proposed architecture, intended platform                  |
-| `pv-quality`    | Valid observation contrasted with a missing or stale observation | `pv-acquisition` and `pv-flow-soiling`                           | Illustrative observations                                 |
-| `pv-evidence`   | Aligned RGB, thermal, and electrical/history evidence groups     | `pv-diagnostics`; actual assets still needed                     | Illustrative modalities, history required for degradation |
-| `pv-decision`   | Evidence, finding, recommendation, and operator review           | `pv-maintenance`, `pv-flow-maintenance`                          | Illustrative recommendation                               |
-| `pv-validation` | Compact integration and evaluation roadmap                       | Open decisions in `pv-index` and `pv-deployment`                 | Work planned, results pending                             |
-| `pv-close`      | Simple return to the operator decision loop                      | `pv-context` and `pv-maintenance`                                | Intended benefit                                          |
+| Slide ID        | Primary visual                                                                | Source or provenance                                             | Visible qualification                                     |
+| --------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
+| `pv-title`      | Same panel with a restrained pigeon cue on a graphite title canvas            | Original, licensed photograph, or labeled generated illustration | Proposed system in subtitle                               |
+| `pv-problem`    | Pigeon-droppings detail; small dust and hail examples with distinct labels    | Verified image with rights, or clearly illustrative image        | No claimed production-loss value                          |
+| `pv-context`    | Operator, installation, and PoopVolt boundary                                 | Canonical `pv-context` diagram                                   | Proposed architecture                                     |
+| `pv-pipeline`   | Horizontal edge flow and `Local storage` connection                           | `pv-architecture` with canonical names                           | Proposed architecture, intended platform                  |
+| `pv-quality`    | Valid observation contrasted with a missing or stale observation              | `pv-acquisition` and `pv-flow-soiling`                           | Illustrative observations                                 |
+| `pv-evidence`   | Same deposit in RGB; illustrative thermal hotspot; electrical/history context | `pv-diagnostics`; actual assets still needed                     | Illustrative modalities, history required for degradation |
+| `pv-decision`   | Evidence, finding, recommendation, and operator review                        | `pv-maintenance`, `pv-flow-maintenance`                          | Illustrative recommendation                               |
+| `pv-validation` | Compact integration and evaluation roadmap                                    | Open decisions in `pv-index` and `pv-deployment`                 | Work planned, results pending                             |
+| `pv-close`      | Simple return to the operator decision loop                                   | `pv-context` and `pv-maintenance`                                | Intended benefit                                          |
 
 <!-- markdownlint-enable MD013 -->
 
 ## Canonical diagram exports
+
+Keep the same panel and deposit location across the cover, problem, evidence,
+and decision visuals. Show a pigeon or its droppings as the narrative cue, then
+align the RGB view with a separately labeled illustrative thermal hotspot view.
+Use small dust and hail examples to connect the story to broader maintenance;
+represent hail as damage requiring inspection, not another cleaning scenario.
+Background sources are recorded in the [source registry](../sources/README.md).
 
 Build a full export from each Mermaid page used in the appendix. For the main
 pitch, create concise excerpts from `pv-context`, `pv-architecture`, and the two

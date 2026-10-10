@@ -8,6 +8,11 @@ when a photograph supplies useful context. Let the sensing and decision flow
 provide the recurring visual structure. The title slide can use a dark graphite
 canvas with one panel image and a large PoopVolt wordmark.
 
+Use the pigeon and its deposit as a restrained recurring cue on the same panel.
+Carry that location into separately labeled RGB and illustrative thermal views.
+Use dust and hail examples to show the wider maintenance scope. Keep the pigeon
+cue subordinate to the evidence and operator decision.
+
 These are proposed tokens to evaluate on a projector, not an inherited brand.
 
 | Role      | Draft value | Use                                          |

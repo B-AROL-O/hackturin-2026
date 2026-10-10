@@ -100,5 +100,31 @@
       "status": "retrieval_index",
       "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/6994d38531f267e81bf1081f16eeeee6e31ac457/docs/references.md"
     }
+  ],
+  "external_sources": [
+    {
+      "id": "pv-soiling-background",
+      "upstream_url": "https://arxiv.org/abs/2501.08304v1",
+      "revision": "v1",
+      "inspected_on": "2026-10-10",
+      "status": "external_background",
+      "scope": "Research abstract: dust and bird droppings obstruct light; narrative context only, no adopted detector or project results."
+    },
+    {
+      "id": "pv-hotspot-background",
+      "upstream_url": "https://research-hub.nlr.gov/en/publications/mitigation-of-hot-spots-in-photovoltaic-systems-using-distributed-2/",
+      "publication_id": "10.3390/en11040726",
+      "inspected_on": "2026-10-10",
+      "status": "external_background",
+      "scope": "Research abstract: partial shading and mismatch can cause hot-spotting; no confirmed causality or project measurements."
+    },
+    {
+      "id": "pv-hail-background",
+      "upstream_url": "https://research-hub.nlr.gov/en/publications/photovoltaic-module-imaging-for-hail-damage-assessment-with-multi-3/",
+      "publication_id": "NREL/PO-5K00-80227",
+      "inspected_on": "2026-10-10",
+      "status": "external_background",
+      "scope": "Research abstract: hail damage and cell cracking assessed with imaging; damage-inspection context, not soiling or a project classifier."
+    }
   ]
 }

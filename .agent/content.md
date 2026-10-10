@@ -7,6 +7,16 @@ environmental, and image observations contribute different evidence. Show how
 Acquisition validates those inputs, Diagnostics produces findings, and Maintenance
 proposes an intervention for an operator to review.
 
+Use a pigeon leaving droppings on a photovoltaic panel as the recurring narrative
+device. Follow the same panel from visible contamination to an illustrative
+thermal hotspot candidate, evidence assessment, and an operator's cleaning review.
+Explain the proposed causal story as localized soiling, partial shading, and
+possible localized heating. A visible deposit alone does not confirm a hotspot.
+Introduce dust as a broader soiling example and hail as a separate physical-damage
+example that calls for inspection. Do not claim that these are the most frequent
+causes without supporting field data. Keep the pigeon story illustrative and
+trace its background to the [source registry](../presentation/sources/README.md).
+
 Use one clear claim per slide. Put reasoning, source details, and caveats in
 speaker notes without hiding a limitation that changes the visible claim.
 Use short declarative titles and concrete verbs. Avoid slogans, feature inventories,

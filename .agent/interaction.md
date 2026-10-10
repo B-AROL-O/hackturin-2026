@@ -13,7 +13,9 @@ Touch controls must have at least a 44 by 44 CSS px hit area.
 
 ## Scenario interaction
 
-The planned scenario compares adequate evidence with missing or stale input.
+The planned scenario follows the pigeon-droppings story and compares adequate
+illustrative soiling/thermal evidence with missing or stale input. A deposit in
+an RGB image alone must not establish a hotspot or automatically authorize work.
 Use an explicit selector with a readable state label. Maintain the same layout
 while changing the observation quality, finding, and recommendation together.
 Announce the result in a polite live region. Keep the illustrative label visible.
