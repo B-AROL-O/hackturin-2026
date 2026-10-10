@@ -2,37 +2,59 @@
 
 Status: Canonical documentation baseline, not measured experiment evidence.
 
-[manifest.json](manifest.json) pins the existing source files to repository
-revision `f6a89c971bd670386c02c6438710ab2a8ef920d2`, with the application architecture
-and reference index refreshed to `6994d38531f267e81bf1081f16eeeee6e31ac457` after
-reviewing their terminology-only changes. Paths are relative to the repository
-root. Checksums describe the bytes inspected for this draft. There are no local
-snapshot copies: the canonical documents remain under `docs/`.
+[manifest.json](manifest.json) uses schema version 2. The renewed canonical
+documents are pinned to revision `4d09115150b88226923b5badc43d1852dc03f880`.
+Each committed source records its revision, source URL, and SHA-256 checksum of
+the reviewed bytes.
+
+For later uncommitted edits, record `source_state: working_tree`, null `revision`
+and `upstream_url`, the checkout's `base_revision`, and the edited file's checksum.
+The base does not contain those new bytes. Replace provisional records with the
+immutable revision containing the reviewed bytes once available.
+
+Paths are relative to the repository root. Canonical documents stay under
+`docs/`; no snapshot copies are made. The future source checker must support
+explicit working-tree state, verify hashes, and reject fabricated revision links.
 
 ## Source map
 
 <!-- markdownlint-disable MD013 -->
 
-| Source ID             | Canonical page                                                             | Presentation use                                       |
-| --------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------ |
-| `pv-pitch`            | [Project pitch](../../docs/pitch-draft.md)                                 | Problem and intended value                             |
-| `pv-index`            | [Architecture index](../../docs/architecture/README.md)                    | View hierarchy, conventions, and open decisions        |
-| `pv-overview`         | [System overview](../../docs/architecture/overview.md)                     | Intended processing stages and goals                   |
-| `pv-context`          | [System context](../../docs/architecture/context.md)                       | Operator responsibility and system boundary            |
-| `pv-architecture`     | [Application architecture](../../docs/architecture/architecture.md)        | Logical modules and `Local storage`                    |
-| `pv-deployment`       | [Physical deployment](../../docs/architecture/deployment.md)               | Intended platform and unresolved interfaces            |
-| `pv-acquisition`      | [Acquisition](../../docs/architecture/components/acquisition.md)           | Normalization, quality, and alignment                  |
-| `pv-diagnostics`      | [Diagnostics](../../docs/architecture/components/diagnostics.md)           | Modality analysis, history, and uncertainty            |
-| `pv-maintenance`      | [Maintenance](../../docs/architecture/components/maintenance.md)           | Evidence checks and operator recommendation            |
-| `pv-flow-soiling`     | [Soiling flow](../../docs/architecture/flows/detect-soiling.md)            | Valid and unreliable input branches                    |
-| `pv-flow-maintenance` | [Maintenance flow](../../docs/architecture/flows/recommend-maintenance.md) | Operator review, intervention, and reassessment        |
-| `pv-references`       | [Reference index](../../docs/references.md)                                | Candidate datasets and links for hardware verification |
+| Source ID              | Canonical page                                                             | Presentation use                                       |
+| ---------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------ |
+| `pv-pitch`             | [Project pitch](../../docs/pitch-draft.md)                                 | Problem and intended value                             |
+| `pv-index`             | [Architecture index](../../docs/architecture/README.md)                    | View hierarchy, conventions, and open decisions        |
+| `pv-overview`          | [System overview](../../docs/architecture/overview.md)                     | Intended processing stages and goals                   |
+| `pv-context`           | [System context](../../docs/architecture/context.md)                       | Operator responsibility and system boundary            |
+| `pv-architecture`      | [Application architecture](../../docs/architecture/architecture.md)        | Logical modules and `Local storage`                    |
+| `pv-deployment`        | [Physical deployment](../../docs/architecture/deployment.md)               | Intended platform and unresolved interfaces            |
+| `pv-acquisition`       | [Acquisition](../../docs/architecture/components/acquisition.md)           | Normalization, quality, and alignment                  |
+| `pv-diagnostics`       | [Diagnostics](../../docs/architecture/components/diagnostics.md)           | Modality analysis, history, and uncertainty            |
+| `pv-maintenance`       | [Maintenance](../../docs/architecture/components/maintenance.md)           | Evidence checks and operator recommendation            |
+| `pv-flow-soiling`      | [Soiling flow](../../docs/architecture/flows/detect-soiling.md)            | Valid and unreliable input branches                    |
+| `pv-flow-maintenance`  | [Maintenance flow](../../docs/architecture/flows/recommend-maintenance.md) | Operator review, intervention, and reassessment        |
+| `pv-data-plan`         | [Data plan](../../docs/data-plan.md)                                       | Independent phone/replay paths and source limits       |
+| `pv-flow-plant`        | [Whole-plant flow](../../docs/architecture/flows/monitor-plant.md)         | Multi-channel analysis, coverage, synchronization      |
+| `coesa-energy-context` | [Company context](../../docs/company/coesa-energy.md)                      | Existing services and proposed buyer/distribution fit  |
+| `pv-references`        | [Reference index](../../docs/references.md)                                | Candidate datasets and links for hardware verification |
 
 <!-- markdownlint-enable MD013 -->
 
 Architecture entries have proposed status. The pitch describes intended behavior,
 and the reference index is a retrieval aid. Neither supplies measured project
 performance. Follow external links before quoting hardware or dataset details.
+
+## Demonstration sources
+
+- `solarma-pv-analysis-tools`: [Pinned SOLARMA repository](https://github.com/SOLARMA/pv-analysis-tools/tree/fc96313e453978fc89211322a8afb966b85f7913).
+  Inspected on 2026-10-10 via API/raw files; candidate historical telemetry
+  replay from one plant. The external record pins the inspected revision and
+  larger-export file hashes. It supplies no evaluated project model.
+- Phone RGB simulation: proposed data collection, not an existing external
+  dataset. Record capture-session provenance, simulated deposit method, labels,
+  image-to-asset mapping, and evaluation split when collected.
+- The phone scene and historical telemetry must remain independent. The
+  [data plan](../../docs/data-plan.md) is authoritative for their limits.
 
 ## Narrative background
 
@@ -54,8 +76,9 @@ not checksum-pinned local snapshots. Inspected on 2026-10-10:
 ## Baseline maintenance
 
 The manifest is an auditable baseline. If a canonical file changes, review which
-claims and figures are affected, update the source registry entry to the revision
-containing the reviewed bytes, and regenerate its checksum. Keep the previous
+claims and figures are affected, record the reviewed source state and regenerate its checksum. Use the revision
+containing the bytes when available; otherwise mark it working-tree with a null
+revision/URL and a base revision, as above. Keep the previous
 baseline in Git history. Do not silently bless a changed file during a build.
 
 For future measured reports, add immutable snapshots with their original path,

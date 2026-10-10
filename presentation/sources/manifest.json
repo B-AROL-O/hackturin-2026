@@ -1,104 +1,143 @@
 {
-  "schema_version": 1,
-  "description": "Canonical documentation baseline for the proposed PoopVolt HTML presentation. No measured system evidence.",
+  "schema_version": 2,
+  "description": "Committed canonical source baseline for the renewed PoopVolt commercial and technical proposal. No measured system evidence.",
   "inspected_on": "2026-10-10",
   "path_base": "repository_root",
   "sources": [
     {
       "id": "pv-pitch",
       "path": "docs/pitch-draft.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "b82ef5a43aac40e980e3ac9f82d6653f4e3f891d07379ed0483ef464ee98ea00",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "f8f9273494b40bc0d2083f50c8576d97a2d7ba7e117ac0b1815a1c4c5be13d56",
       "status": "intended_behavior",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/pitch-draft.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/pitch-draft.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-index",
       "path": "docs/architecture/README.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "111c90625b3025e0425931e655c4541226e86b65e12a6a078becd1722ee7af05",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "de0ded43492e7e26eab5937f43749a44ca925b1037f93846add0f18fda1e39a5",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/README.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/README.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-overview",
       "path": "docs/architecture/overview.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "d1675f4b66bbb37f0a73f76f6bfa05e2209ab2dbfc629a8a98e03ffa3b235eb1",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "99d7b0f71dabb1d7b9aef698b954d4ec59af27b9eb361ba1a4e1c9c653b9a00e",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/overview.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/overview.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-context",
       "path": "docs/architecture/context.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "59dc91191702503b648cf0323c212f0d35a62a5e71d6a815aecf5329ced27e02",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "da3030a25193ae24be1cbf91eb22d6197709f45991e98e49e557dced73c9993a",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/context.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/context.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-architecture",
       "path": "docs/architecture/architecture.md",
-      "revision": "6994d38531f267e81bf1081f16eeeee6e31ac457",
-      "sha256": "5de68c4b71ee4d7f61e1ae08f223087e816b0258853f27a55b62848eca547c09",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "e28448611c7e5c91b40ed23146cbb506bc26449cc5fab7456cec54b4ae81b363",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/6994d38531f267e81bf1081f16eeeee6e31ac457/docs/architecture/architecture.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/architecture.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-deployment",
       "path": "docs/architecture/deployment.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "a4dd7a1d6fcd4885b56ba01853974927ca7334f2f103842480bdd8908ed5720b",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "2a1702273b9fa050fd1b925efa6ddd470eb7e33293615e7eda670e9b23f38e04",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/deployment.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/deployment.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-acquisition",
       "path": "docs/architecture/components/acquisition.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "25a93ac790a7dc3129b1431582474427210be84b0bd0a68262a3db8faec243d6",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "32b9ab37745adef2e6eb6fc9cc335eebeed6733e0c2a7b9a0e0dfd737898e68a",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/components/acquisition.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/components/acquisition.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-diagnostics",
       "path": "docs/architecture/components/diagnostics.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "9e49f72634559c195110d6878e532b97efc2f84b980d4a9ec09b463a43e5fbc4",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "2b6c71a0999c15be05b8ffac60271d31906006700ca63091020299b2a0d8f582",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/components/diagnostics.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/components/diagnostics.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-maintenance",
       "path": "docs/architecture/components/maintenance.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "96bc49d2a281c8a23d042535b502504d23fba14be791c8b8db6cede2a3fcc5bd",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "9e8f56ee52a51bf4706a48439e4614f69cd9c4b2e7d512ed7b8d1402775e54d5",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/components/maintenance.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/components/maintenance.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-flow-soiling",
       "path": "docs/architecture/flows/detect-soiling.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "e1c75b2d986b20581e6d7622242b05b0b2d99831eee31de09180d14d395afa5c",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "61915b155bd89aa84d87a38b38664855c144c8586e0261bd954600c8179c2b1c",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/flows/detect-soiling.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/flows/detect-soiling.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-flow-maintenance",
       "path": "docs/architecture/flows/recommend-maintenance.md",
-      "revision": "f6a89c971bd670386c02c6438710ab2a8ef920d2",
-      "sha256": "5ec71fdec7c72d97bbd31b240fbc260f61427f1f240c6539010aa5ed30da28e8",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "d1e53de9d752ce6c9e47dd05d25dcc74329d36e0027a787f4ce4da2e46e99c65",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f6a89c971bd670386c02c6438710ab2a8ef920d2/docs/architecture/flows/recommend-maintenance.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/flows/recommend-maintenance.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-references",
       "path": "docs/references.md",
-      "revision": "6994d38531f267e81bf1081f16eeeee6e31ac457",
-      "sha256": "2d4f2df699695347445fbcd6d60667327b986177db2d966684af87b96563d409",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "sha256": "ca67ee585e8567b2a74980b4fd96267421f19cbbe920c5a18507ef96564af9a8",
       "status": "retrieval_index",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/6994d38531f267e81bf1081f16eeeee6e31ac457/docs/references.md"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/references.md",
+      "source_state": "committed"
+    },
+    {
+      "id": "pv-data-plan",
+      "path": "docs/data-plan.md",
+      "status": "proposed",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/data-plan.md",
+      "source_state": "committed",
+      "sha256": "e51f793b895ff93657d802d7ac6981179d37a3640230de5b74581cf55a41205a"
+    },
+    {
+      "id": "pv-flow-plant",
+      "path": "docs/architecture/flows/monitor-plant.md",
+      "status": "proposed",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/architecture/flows/monitor-plant.md",
+      "source_state": "committed",
+      "sha256": "75b704256b176efabb3e22f739741c3143e8237c4a6aabf4e2f6aae77cbd9e43"
+    },
+    {
+      "id": "coesa-energy-context",
+      "path": "docs/company/coesa-energy.md",
+      "status": "company_context_and_team_hypotheses",
+      "revision": "4d09115150b88226923b5badc43d1852dc03f880",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4d09115150b88226923b5badc43d1852dc03f880/docs/company/coesa-energy.md",
+      "source_state": "committed",
+      "sha256": "cd3e0c4c1fcfb74d4ef751100a0ae397f17830547bb02def51697df14c55d5fd"
     }
   ],
   "external_sources": [
@@ -125,6 +164,31 @@
       "inspected_on": "2026-10-10",
       "status": "external_background",
       "scope": "Research abstract: hail damage and cell cracking assessed with imaging; damage-inspection context, not soiling or a project classifier."
+    },
+    {
+      "id": "solarma-pv-analysis-tools",
+      "upstream_url": "https://github.com/SOLARMA/pv-analysis-tools/tree/fc96313e453978fc89211322a8afb966b85f7913",
+      "revision": "fc96313e453978fc89211322a8afb966b85f7913",
+      "inspected_on": "2026-10-10",
+      "status": "candidate_replay_data",
+      "access": "GitHub API tree and raw pinned files",
+      "scope": "Single-plant inverter/summary/event logs; independent of phone simulation. No verified string map, contamination/thermal labels, or project prediction results.",
+      "license": "Repository-level MIT",
+      "inspected_files": [
+        {
+          "path": "data/2019-10-05-solpev-danfoss-weblogger/details.txt",
+          "sha256": "2635281bb709e9b7301bbb095268397fa219b771c3500eed2c3ef0f458e89dae"
+        },
+        {
+          "path": "data/2019-10-05-solpev-danfoss-weblogger/summary.txt",
+          "sha256": "5c158cb2091d35e51a9fb18de4a6d5322e91a478923649fabe288b764b97b2e4"
+        },
+        {
+          "path": "data/2019-10-05-solpev-danfoss-weblogger/events.txt",
+          "sha256": "281027d74419a0b52b952e620e284bc03f86b8c09a3f5c8a25938df6b2154628"
+        }
+      ]
     }
-  ]
+  ],
+  "review_note": "Canonical source files are pinned to an immutable commit and verified by SHA-256. Later uncommitted edits must use explicit working-tree state until committed."
 }
