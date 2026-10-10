@@ -1,28 +1,30 @@
 {
   "schema_version": 2,
-  "description": "Canonical owner-first three-minute PoopVolt narrative, proposed production reference, architecture and evidence scope. No measured system evidence.",
+  "description": "Canonical three-minute company-use narrative with approved opening, understandable intervention proposals, theoretical reference and evidence scope. No measured system evidence.",
   "inspected_on": "2026-10-10",
   "path_base": "repository_root",
   "sources": [
     {
       "id": "pv-narrative",
       "path": "docs/pitch-narrative.md",
-      "revision": "3b0d3de4d1ab222619cea18722861714a2d117c1",
-      "sha256": "a5169d98ef25dbd1978fc0dd1e23fead7e1a1474274df75fb69b3d455d441160",
+      "revision": null,
+      "sha256": "003791f474f1f398c05347ccec354dc6586038fcc4ebb9818ff8b89335af70a3",
       "status": "intended_behavior",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/3b0d3de4d1ab222619cea18722861714a2d117c1/docs/pitch-narrative.md",
-      "source_state": "committed",
+      "upstream_url": null,
+      "source_state": "working_tree",
       "input_filename": "pitch-narrative2.md",
-      "input_sha256": "8b9bc4b989f2a28bb4a6324a8600df0128b29176d4db57ce4306e5bfe1208433"
+      "input_sha256": "8b9bc4b989f2a28bb4a6324a8600df0128b29176d4db57ce4306e5bfe1208433",
+      "base_revision": "6048e72f38dd0f6c1e379f84998ca3c9a1d13ab8"
     },
     {
       "id": "pv-pitch",
       "path": "docs/pitch-draft.md",
-      "revision": "3b0d3de4d1ab222619cea18722861714a2d117c1",
-      "sha256": "49c92e81ebc55713fee79cd54a5814b0445f7785b5b6c0c6584b072044efbafe",
+      "revision": null,
+      "sha256": "949d74af551cd92ebb195b51d8c744af6fba22e4f870b60f91d2c8f0d06e643e",
       "status": "intended_behavior",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/3b0d3de4d1ab222619cea18722861714a2d117c1/docs/pitch-draft.md",
-      "source_state": "committed"
+      "upstream_url": null,
+      "source_state": "working_tree",
+      "base_revision": "6048e72f38dd0f6c1e379f84998ca3c9a1d13ab8"
     },
     {
       "id": "pv-index",
@@ -145,10 +147,11 @@
       "id": "coesa-energy-context",
       "path": "docs/company/coesa-energy.md",
       "status": "company_context_and_team_hypotheses",
-      "revision": "3b0d3de4d1ab222619cea18722861714a2d117c1",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/3b0d3de4d1ab222619cea18722861714a2d117c1/docs/company/coesa-energy.md",
-      "source_state": "committed",
-      "sha256": "fbe5ae8f0e473d179e08dc6aee8e9d455b6940c55c0082e8ff14e154dffba5d0"
+      "revision": null,
+      "upstream_url": null,
+      "source_state": "working_tree",
+      "sha256": "dc0127723c0c5548af1881509a8f0763bae856cf055bc634495e84887e5712e0",
+      "base_revision": "6048e72f38dd0f6c1e379f84998ca3c9a1d13ab8"
     },
     {
       "id": "pv-hardware",

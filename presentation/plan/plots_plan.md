@@ -1,20 +1,20 @@
 # Visual and asset plan
 
-Status: Proposed visuals for the three-minute owner story. Apply
+Status: Proposed visuals for the three-minute company-use story. Apply
 [visual guidelines](../../.agent/visual-design.md) during implementation.
 
 ## Main visuals
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID       | Primary visual                                                        | Source or provenance                                              | Visible qualification                                   |
-| -------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------- |
-| `pv-title`     | Older plant and the owner's question                                  | Original/licensed image and `pv-narrative`                        | Illustrative scene                                      |
-| `pv-problem`   | Plant/string schematic with a subtle dust or pigeon cue               | `pv-narrative`, `pv-soiling-background`                           | Possible contributors; no established cause             |
-| `pv-pipeline`  | Observed and expected production, same period and units               | `pv-diagnostics`, `pv-data-plan`                                  | Proposed reference; unknown inputs visible              |
-| `pv-prototype` | STL viewport or labeled design export                                 | Team STL when supplied; `pv-hardware` for secured kit             | Design concept, not working hardware                    |
-| `pv-evidence`  | One software comparison with asset scope and provenance               | Executed MVP evidence when linked; otherwise illustrative fixture | Measured, simulated, or replayed status; mapping limits |
-| `pv-decision`  | Owner and technician review followed by intervention and reassessment | `pv-maintenance`, `coesa-energy-context`                          | Options to evaluate; benefit unmeasured                 |
+| Slide ID       | Primary visual                                                                | Source or provenance                                              | Visible qualification                                   |
+| -------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------- |
+| `pv-title`     | Approved typographic hook with a restrained panel/pigeon cue                  | Original/licensed image and `pv-narrative`                        | Illustrative scene                                      |
+| `pv-problem`   | Company, older plant, and owner: the missing evidence that motivates a review | `pv-narrative`, `pv-soiling-background`                           | Possible contributors; no established cause             |
+| `pv-pipeline`  | Observed and expected production, same period and units                       | `pv-diagnostics`, `pv-data-plan`                                  | Proposed reference; unknown inputs visible              |
+| `pv-prototype` | STL viewport or labeled design export                                         | Team STL when supplied; `pv-hardware` for secured kit             | Design concept, not working hardware                    |
+| `pv-evidence`  | One software case followed by a clearly attributed technician proposal        | Executed MVP evidence when linked; otherwise illustrative fixture | Measured, simulated, or replayed status; mapping limits |
+| `pv-decision`  | Company proposal, informed owner choice, intervention, and reassessment       | `pv-maintenance`, `coesa-energy-context`                          | Options to evaluate; benefit unmeasured                 |
 
 <!-- markdownlint-enable MD013 -->
 

@@ -5,8 +5,10 @@ assets, build scripts, and hosting integration have not been implemented.
 
 This folder plans the team's three-minute PoopVolt presentation, including demo
 time. Follow the [Italian narrative](../docs/pitch-narrative.md): an owner of an
-older plant lacks performance visibility, sees a proposed expected/observed
-comparison, and can request a technician-reviewed regeneration assessment.
+older plant lacks performance visibility. The approved strong opening leads into
+the company's use of an expected/observed comparison to propose interventions
+the owner can understand and assess. Technical review and benefit verification
+remain essential; no service conversion is guaranteed.
 
 Show an STL concept and one software case with its actual provenance and limits.
 The theoretical reference, verified string mapping, and implemented MVP scope

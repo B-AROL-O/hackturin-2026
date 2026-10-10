@@ -8,10 +8,11 @@
 ## Purpose and boundaries
 
 Explain the [owner narrative](../docs/pitch-narrative.md) in three minutes: an
-older plant still works, but its owner cannot assess production. A proposed
-theoretical reference makes scoped expected/observed comparison possible. Show
-an STL concept and one software case, then technician-reviewed regeneration and
-post-intervention verification. The model and implemented demo scope are
+older plant still works, but its owner cannot assess production. The strong
+opening introduces a company workflow: inspect a scoped expected/observed
+comparison, explain the findings, propose justified work, and let the owner
+assess it. Show an STL concept and one software case, then technical review and
+benefit verification. The theoretical reference and implemented demo scope are
 unverified.
 
 Keep the company-funded/free-device offer and independent RGB/replay paths in

@@ -1,4 +1,4 @@
-# PoopVolt — make an older plant's performance visible
+# PoopVolt — turn production gaps into understandable intervention proposals
 
 Status: Proposed product and commercial model. This PR supplies documentation,
 not an implemented MVP, validated theoretical model, field benefit, or Coesa
@@ -20,10 +20,17 @@ A deviation points to something worth inspecting. It does not alone establish a
 failure, historical degradation, or recoverable energy. String-level conclusions
 require measured coverage and a verified channel-to-string map.
 
-The owner can use that evidence to request a technical assessment from a company
-such as Coesa. Cleaning, repair, component replacement, and wider revamping are
+A photovoltaic service company can use that evidence to explain what needs
+inspection and propose a justified intervention that the owner can understand
+and assess. Cleaning, repair, component replacement, and wider revamping are
 options to evaluate. Comparable measurements after an intervention test its
-benefit.
+benefit. Increased service uptake remains a hypothesis, not a guaranteed result.
+
+The approved spoken opening is: "Il tuo impianto è sporco di merda.
+Letteralmente. Ma il problema è capire quanto sta influendo sulla produzione."
+This is an illustrative hook, not measured evidence of contamination loss. The
+central message is: "PoopVolt trasforma uno scostamento produttivo in una
+proposta di intervento comprensibile."
 
 The canonical Italian story is the [three-minute narrative](pitch-narrative.md),
 adapted from the team's `pitch-narrative2.md`.
@@ -31,9 +38,10 @@ adapted from the team's `pitch-narrative2.md`.
 ## The hackathon presentation
 
 The agreed talk is three minutes, including a software demonstration and an STL
-design view. Follow owner, problem, expected/observed comparison, physical
-concept, software case, and regeneration review. Do not lead with the
-distribution offer.
+design view. Follow the approved hook, company problem, expected/observed
+comparison, physical concept, software case, and technician-reviewed proposal.
+Explain how the company uses the product and how the owner assesses an
+intervention. Do not lead with the distribution offer.
 
 The team's MVP software and STL are presentation materials whose files and
 verified functions must be linked before making implemented claims. This

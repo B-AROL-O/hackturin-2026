@@ -52,7 +52,8 @@ details.
 ## Narrative source
 
 `pv-narrative` adapts the team-supplied `pitch-narrative2.md` into a clean
-three-minute copione. It is an authored scenario, not a customer interview or
+three-minute copione with subsequent team-approved revisions to the hook and
+company-use framing. It is an authored scenario, not a customer interview or
 proof of a working MVP. The source entry records the input filename/checksum.
 Typos, Markdown, timing, and unsupported causal wording were clarified.
 

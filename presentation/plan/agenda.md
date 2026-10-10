@@ -2,27 +2,28 @@
 
 Status: Documentation plan for the team's three-minute PoopVolt pitch. Audience
 language: Italian. The budget includes software and STL demonstrations.
-Narrative source: [Italian owner story](../../docs/pitch-narrative.md).
+Narrative source: [Italian company-use story](../../docs/pitch-narrative.md).
 
 ## Main sequence
 
-Follow an owner of an older photovoltaic plant who cannot assess its
-performance. Introduce the proposed expected/observed comparison, then the STL
-concept and one software case. End with a technician-reviewed regeneration
-assessment and post-intervention verification. Coesa is a possible service
-counterpart. The existing free-device offer is an appendix hypothesis, not the
-opening claim.
+Open with the approved "Il tuo impianto è sporco di merda. Letteralmente" hook,
+then ask how much contamination affects production. Explain how a photovoltaic
+service company uses evidence to propose an intervention the owner can
+understand and assess. Show the proposed comparison, STL, and one software case.
+End with technician review and benefit verification. Coesa is a possible
+counterpart; no partnership or guaranteed service conversion is claimed. The
+free-device distribution remains an appendix hypothesis.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide | Stable ID      | Draft title                               | Seconds | Purpose                                                                                | Source IDs                                               |
-| ----- | -------------- | ----------------------------------------- | ------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| 1     | `pv-title`     | Il tuo impianto produce quanto dovrebbe?  | 25      | Introduce the owner and the apparently working older plant                             | `pv-narrative`, `pv-pitch`                               |
-| 2     | `pv-problem`   | Funziona, ma non sai come rende           | 25      | Explain missing string visibility; dust, wear, and droppings are possible contributors | `pv-narrative`, `pv-soiling-background`                  |
-| 3     | `pv-pipeline`  | Produzione attesa e osservata a confronto | 30      | Explain the proposed theoretical reference, compatible period, and mapped scope        | `pv-narrative`, `pv-diagnostics`, `pv-data-plan`         |
-| 4     | `pv-prototype` | Il concetto fisico di PoopVolt            | 15      | Show the STL concept without presenting it as assembled or tested hardware             | `pv-narrative`, `pv-hardware`                            |
-| 5     | `pv-evidence`  | Dal dato a una verifica concreta          | 40      | Show one actual software case or labeled simulation with provenance and limitations    | `pv-narrative`, `pv-data-plan`, `pv-flow-plant`          |
-| 6     | `pv-decision`  | Dalla scoperta alla rigenerazione         | 45      | Explain owner/technician review, alternative interventions, and benefit verification   | `pv-narrative`, `pv-maintenance`, `coesa-energy-context` |
+| Slide | Stable ID      | Draft title                                      | Seconds | Purpose                                                                                    | Source IDs                                                      |
+| ----- | -------------- | ------------------------------------------------ | ------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| 1     | `pv-title`     | Il tuo impianto è sporco di merda                | 25      | Deliver the approved hook and connect immediately to the production-impact question        | `pv-narrative`, `pv-pitch`                                      |
+| 2     | `pv-problem`   | Come motivare un intervento al cliente?          | 25      | Explain the company's need for evidence a plant owner can understand and assess            | `pv-narrative`, `pv-soiling-background`, `coesa-energy-context` |
+| 3     | `pv-pipeline`  | Dai dati a una proposta comprensibile            | 30      | Explain scoped expected/observed comparison as support for a justified company proposal    | `pv-narrative`, `pv-diagnostics`, `pv-data-plan`                |
+| 4     | `pv-prototype` | Il concetto fisico di PoopVolt                   | 15      | Show the STL concept without presenting it as assembled or tested hardware                 | `pv-narrative`, `pv-hardware`                                   |
+| 5     | `pv-evidence`  | Mostrare il problema, spiegare il prossimo passo | 40      | Show one software case and distinguish software output from a technician's proposed action | `pv-narrative`, `pv-data-plan`, `pv-flow-plant`                 |
+| 6     | `pv-decision`  | Proporre, scegliere, verificare                  | 45      | Company explains options, owner assesses them, and comparable measurements verify benefit  | `pv-narrative`, `pv-maintenance`, `coesa-energy-context`        |
 
 <!-- markdownlint-enable MD013 -->
 

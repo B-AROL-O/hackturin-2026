@@ -2,11 +2,12 @@
 
 PoopVolt starts with the owner of an older photovoltaic plant who does not know
 whether it produces as expected. A proposed expected/observed comparison makes
-performance gaps visible and supports a technician-reviewed regeneration
-assessment. The three-minute story includes an MVP software case and an STL
-design concept. The theoretical model, implemented demo scope, and field
-benefits remain to verify. The company-funded/free-device offer remains a
-secondary commercial hypothesis.
+performance gaps visible. A photovoltaic service company uses the proposed
+evidence to explain interventions the owner can understand and assess. The
+three-minute story includes the approved strong opening, an MVP software case,
+an STL concept, and technician-reviewed regeneration. The theoretical model,
+implemented demo scope, and field benefits remain to verify. The
+company-funded/free-device offer remains a secondary commercial hypothesis.
 
 ## Quick links
 

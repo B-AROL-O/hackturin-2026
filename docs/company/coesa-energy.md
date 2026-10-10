@@ -152,10 +152,12 @@ applications remain possible extensions. See the [pitch](../pitch-draft.md),
 ### Suggested pitch emphasis
 
 Follow the [three-minute owner narrative](../pitch-narrative.md): an older plant
-still works, but the owner cannot assess its performance. Explain the proposed
-expected/observed comparison, STL concept, software case, and
-technician-reviewed regeneration. The theoretical reference and its inputs
-remain to define and validate.
+still works, but the owner cannot assess its performance. After the approved
+strong opening, emphasize the company's use of evidence to motivate an
+intervention the owner can understand and assess. Explain the comparison, STL,
+software case, technical review, and benefit verification without promising
+service conversion. The theoretical reference and its inputs remain to define
+and validate.
 
 The company buys/free-device proposal is a secondary commercial hypothesis for
 questions or the appendix, not the opening. Coesa is a potential service

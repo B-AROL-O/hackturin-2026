@@ -1,104 +1,109 @@
-# PoopVolt — il tuo impianto produce quanto dovrebbe?
+# PoopVolt — Il tuo impianto è sporco di merda
 
-> Copione di 3 minuti, adattato dalla bozza del team `pitch-narrative2.md`.
-> Scenario illustrativo; materiali previsti: MVP software e modello STL. Il
-> modello teorico è una proposta da definire e validare. Questa PR documenta la
-> demo: non ne implementa il software o l'hardware.
+> Copione di 3 minuti, adattato dalla bozza del team `pitch-narrative2.md` e
+> dalle successive revisioni concordate. Scenario illustrativo; materiali
+> previsti: MVP software e modello STL. L'azienda usa i dati per proporre
+> interventi che il cliente possa comprendere e valutare. Il modello teorico è
+> una proposta da definire e validare. Questa PR documenta la demo: non ne
+> implementa il software o l'hardware.
 
-## 0:00–0:25 — Un impianto che continua a funzionare
+## 0:00–0:25 — L'apertura
 
-Anni fa un cliente ha installato un impianto fotovoltaico.
+**Il tuo impianto è sporco di merda.**
 
-È ancora lì, sul tetto. Continua a produrre energia e, apparentemente, tutto
-funziona. Ma oggi il proprietario non sa quanto produce ogni parte dell'impianto
-e se le sue prestazioni siano quelle che potrebbe aspettarsi.
+_Pausa._
 
-**Il suo impianto produce. Ma sa veramente quanto dovrebbe produrre?**
+**Letteralmente. Ma il problema è capire quanto sta influendo sulla
+produzione.**
 
-## 0:25–0:50 — Il problema nascosto
+Un cliente ha un impianto fotovoltaico installato da anni. Produce ancora, ma
+lui non sa se sta rendendo quanto dovrebbe.
 
-È la domanda da cui parte PoopVolt.
+È da questa domanda che nasce PoopVolt.
 
-Il nostro protagonista è il proprietario di un impianto datato che non ha una
-visione chiara della produzione delle singole stringhe, cioè i gruppi di
-pannelli in serie che compongono l'impianto.
+## 0:25–0:50 — Il problema dell'azienda
 
-Polvere, usura e deiezioni di piccioni, da cui il nome PoopVolt, sono possibili
-problemi da approfondire. Una contaminazione localizzata può influire sulle
-prestazioni; il suo effetto elettrico va verificato nell'impianto specifico.
+Ora pensate all'azienda che installa o segue questi impianti.
+
+Come spiega al cliente perché vale la pena verificare un impianto che,
+apparentemente, funziona?
+
+Polvere, usura e deiezioni di piccioni sono possibili problemi da approfondire.
+Ma per motivare un intervento servono dati comprensibili: che cosa osserviamo,
+dove approfondire e che cosa possiamo proporre.
 
 ## 0:50–1:20 — Rendere visibile il divario
 
-La nostra proposta è mettere a confronto due informazioni: **la produzione
-osservata e quella attesa**.
+PoopVolt vuole aiutare l'azienda a proporre interventi motivati dai dati che il
+cliente possa comprendere e valutare.
 
-Puntiamo a stimare la produzione attesa attraverso un modello teorico, da
-definire in base alle caratteristiche dell'impianto e ai dati disponibili.
+La nostra proposta confronta **produzione osservata e produzione attesa**.
+Puntiamo a stimare quella attesa con un modello teorico, da definire in base
+all'impianto e ai dati disponibili.
 
-Il confronto, sullo stesso periodo e in condizioni confrontabili, vuole rendere
-visibile lo scostamento e indicare dove approfondire. Il dettaglio per stringa
-richiede misure e una mappatura adeguate.
-
-Il dato diventa così un punto di partenza per capire come e dove intervenire.
+Il confronto rende visibile lo scostamento e indica dove approfondire. Così
+l'azienda ha una base per spiegare al cliente il prossimo passo.
 
 ## 1:20–1:35 — Dimostrazione hardware
 
-Accanto al software presentiamo il modello STL che accompagna PoopVolt. È la
-proposta fisica del progetto: il disegno digitale ne illustra il concetto,
-mentre integrazione e verifica sul campo restano passaggi da completare.
+Accanto al software presentiamo il modello STL che accompagna PoopVolt. Il
+disegno digitale illustra la proposta fisica del progetto. Integrazione e
+verifica sul campo restano passaggi da completare.
 
-_Mostrare il modello e spiegare in una frase che cosa rappresenta. Se si
-mostrano componenti disponibili, distinguerli da un dispositivo collaudato._
+_Mostrare il modello e spiegarne la funzione. Distinguere il concept e i
+componenti disponibili da hardware collaudato._
 
 ## 1:35–2:15 — Dimostrazione software
 
-L'MVP software serve a mostrare il percorso dal dato alla decisione.
+Nel software mostriamo il percorso dal dato alla proposta di intervento.
 
-Qui confrontiamo produzione attesa e osservata per lo stesso periodo.
-Evidenziamo il divario e, dove i dati e la mappatura lo consentono, le
-differenze fra le stringhe.
+Confrontiamo produzione attesa e osservata per lo stesso periodo. Evidenziamo lo
+scostamento e, dove i dati lo consentono, le differenze fra stringhe con
+mappatura verificata.
 
-Il proprietario passa da «so che il mio impianto funziona» a «vedo dove sta
-rendendo meno e voglio capire perché».
+L'azienda può mostrare al cliente dove approfondire, spiegare quali verifiche
+servono e proporre il prossimo passo. Il cliente ha elementi per comprendere e
+valutare la proposta.
 
-Ora dispone di elementi per chiedere a un tecnico, o a un'azienda come Coesa,
-una verifica e una proposta di intervento.
+_Mostrare soltanto funzioni presenti nell'MVP. Dichiarare origine dei dati,
+unità, periodo, riferimento della stima e copertura. Se il modello o il
+dettaglio per stringa non sono implementati, usare una simulazione
+esplicitamente etichettata. Non descrivere una proposta manuale del tecnico come
+un output automatico del software._
 
-_Mostrare soltanto funzioni presenti nell'MVP. Dichiarare dati misurati,
-simulati o riprodotti da log storici, unità, periodo e metodo della stima. Se il
-modello o il dettaglio per stringa non sono implementati, dichiararlo e mostrare
-una simulazione esplicitamente etichettata._
+## 2:15–3:00 — Dalla proposta alla verifica del beneficio
 
-## 2:15–3:00 — Dalla scoperta alla rigenerazione
+Uno scostamento non identifica, da solo, la causa. Offre all'azienda e al
+proprietario un punto da cui partire.
 
-Uno scostamento non identifica, da solo, la causa del problema. Ma offre al
-proprietario e a Coesa un punto da cui partire.
+Un'azienda come Coesa può valutare pulizia, riparazione, sostituzione di
+componenti guasti o una rigenerazione più ampia, e spiegare al cliente perché
+propone quell'intervento.
 
-Da qui si possono valutare pulizia, riparazione, sostituzione di componenti
-guasti o una rigenerazione più ampia, secondo le evidenze raccolte. L'obiettivo
-è recuperare produzione e migliorare le prestazioni dell'impianto.
+L'obiettivo è recuperare produzione e migliorare le prestazioni. Dopo
+l'intervento, un confronto in condizioni comparabili permette di verificare il
+beneficio: non tutto il divario è recuperabile.
 
-Dopo l'intervento, un nuovo confronto in condizioni comparabili permette di
-verificare e misurare il beneficio. Non tutto il divario è necessariamente
-recuperabile.
-
-**PoopVolt: conoscere il proprio impianto datato, per decidere come farlo
-rendere meglio.**
+**PoopVolt trasforma uno scostamento produttivo in una proposta di intervento
+comprensibile.**
 
 ## Note per il team prima della presentazione
 
-- Confermare il modello teorico, gli input disponibili e le condizioni del
-  confronto.
+- L'apertura è una scena illustrativa; non attribuisce una perdita misurata allo
+  sporco.
+- Presentare l'azienda come utilizzatore del prodotto e il proprietario come
+  destinatario delle evidenze e della proposta.
+- La distribuzione gratuita resta un'ipotesi commerciale secondaria, non un
+  accordo.
+- Confermare modello teorico, input, unità, periodo e condizioni del confronto.
 - Usare dettaglio per stringa solo con mappatura e misure verificate.
-- Distinguere uno scostamento dalla stima da un calo dimostrato con dati
-  storici.
-- Tenere separati foto RGB con sporco simulato e replay storico SOLARMA: non
-  sono misure dello stesso impianto o dello stesso evento.
-- Non ricavare hotspot, perdita elettrica o kWh persi da una fotografia RGB.
-- Presentare la rigenerazione come valutazione tecnica, senza garantire
-  recuperi.
-- Chiarire la funzione del modello STL; il file e la demo software vanno
-  collegati quando disponibili, senza considerarli implementati da questa PR.
+- Distinguere lo scostamento dalla stima da un calo storico e da una diagnosi.
+- Tenere separati foto RGB con sporco simulato e replay storico SOLARMA.
+- Non ricavare hotspot o kWh persi da una fotografia RGB.
+- Non promettere richieste di intervento, benefici commerciali o recuperi
+  garantiti.
+- Chiarire quali raccomandazioni produce il software e quali formula il tecnico.
+- Collegare il modello STL e la demo software quando disponibili.
 - Provare copione e demo entro 3 minuti e preparare una registrazione di
   riserva.
 

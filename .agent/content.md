@@ -2,11 +2,13 @@
 
 ## Narrative
 
-Use the [Italian owner story](../docs/pitch-narrative.md) as the canonical
-spoken brief. Begin with an older plant that still produces but whose owner
-cannot assess performance. Follow problem, proposed expected/observed
-comparison, STL concept, one software case, and technician-reviewed
-regeneration.
+Use the [Italian company-use story](../docs/pitch-narrative.md) as the canonical
+spoken brief. Open with the approved hook: "Il tuo impianto è sporco di merda.
+Letteralmente", then ask how much it affects production. Explain how a
+photovoltaic service company proposes evidence-based interventions the owner can
+understand and assess. Follow the proposed comparison, STL concept, one software
+case, technician review, and verification of benefit. Keep the hook
+illustrative; no measured contamination loss is established.
 
 The main pitch is six slides and 180 seconds including demonstrations. Do not
 open with the company sales/free-device offer; it remains a commercial

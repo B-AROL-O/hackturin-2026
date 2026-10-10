@@ -16,19 +16,19 @@ browser review is pending, not a passed check.
 
 <!-- markdownlint-disable MD013 -->
 
-| Area          | Acceptance criterion                                                                      |
-| ------------- | ----------------------------------------------------------------------------------------- |
-| Narrative     | One claim per main slide, six planned anchors, 180 seconds including demos                |
-| Fidelity      | Owner-first story, reference assumptions, mapped scope, technical review, proposed status |
-| Sources       | Valid IDs, matching canonical hashes, local references, rights and artifact provenance    |
-| Rendering     | No clipped text, overlaps, missing figures, or unreadable labels                          |
-| Navigation    | Keyboard, touch, overview, direct links, history, and notes work                          |
-| Scenario      | Usable and missing-reference states, visible provenance, independent phone/replay paths   |
-| Motion        | Reduced motion and pause reveal all content; inactive slides stop custom motion           |
-| Accessibility | Visible focus, readable scaled text, meaningful alternatives, verified contrast           |
-| Offline       | Local HTTP bundle works without external runtime requests                                 |
-| Print         | Complete builds and scenario states, readable sources, no clipped content                 |
-| Packaging     | Audience notes removed, local assets/references present, nested host path works           |
+| Area          | Acceptance criterion                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------ |
+| Narrative     | One claim per main slide, six planned anchors, 180 seconds including demos                 |
+| Fidelity      | Company use, informed owner decision, reference assumptions, mapped scope, proposed status |
+| Sources       | Valid IDs, matching canonical hashes, local references, rights and artifact provenance     |
+| Rendering     | No clipped text, overlaps, missing figures, or unreadable labels                           |
+| Navigation    | Keyboard, touch, overview, direct links, history, and notes work                           |
+| Scenario      | Usable and missing-reference states, visible provenance, independent phone/replay paths    |
+| Motion        | Reduced motion and pause reveal all content; inactive slides stop custom motion            |
+| Accessibility | Visible focus, readable scaled text, meaningful alternatives, verified contrast            |
+| Offline       | Local HTTP bundle works without external runtime requests                                  |
+| Print         | Complete builds and scenario states, readable sources, no clipped content                  |
+| Packaging     | Audience notes removed, local assets/references present, nested host path works            |
 
 <!-- markdownlint-enable MD013 -->
 
