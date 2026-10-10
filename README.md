@@ -8,8 +8,9 @@
 ## The Team
 
 - <https://github.com/giacolees>
-- <https://github.com/gmacario>
+- <https://github.com/gmacario> - Telegram: gmacario
 - <https://github.com/lorenzopalloni>
+- [Federico Nebuloni](https://www.linkedin.com/in/federico-nebuloni-770641246) - Telegram: Foxtrot
 - Telegram: younglees
 
 ## hackTurin 2026 at a glance
