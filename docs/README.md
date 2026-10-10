@@ -4,6 +4,8 @@
 
 - [Architecture index](architecture/README.md): overview, context, components,
   deployment, and runtime flows.
+- [Prototype electrical wiring](hardware-connections.md): as-built USB power,
+  Grove connections, and connector pinouts from the Arduino bring-up.
 
 - [Three-minute narrative](pitch-narrative.md): owner story, expected/observed
   comparison, software case, STL concept, and regeneration review.

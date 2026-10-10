@@ -9,6 +9,24 @@ an STL concept, and technician-reviewed regeneration. The theoretical model,
 implemented demo scope, and field benefits remain to verify. The
 company-funded/free-device offer remains a secondary commercial hypothesis.
 
+## Challenge
+
+We are tackling the **Beyond Solar** challenge with **PoopVolt**, an Edge AI
+predictive maintenance system for off-grid photovoltaic installations. See the
+[project pitch](docs/pitch-draft.md) for the idea description.
+
+## Repository layout
+
+- `docs/`: architecture, pitch and reference documentation.
+- `presentation/`: HTML presentation draft.
+- `poopvolt/`: Python package, managed with [uv](https://docs.astral.sh/uv/).
+- `firmware/`: code for the Arduino UNO Q (placeholder).
+- [hardware/](hardware/README.md): available parts and substitutions; schematics,
+  wiring diagrams, and 3D-printable parts are planned.
+- `data/`: measurements and fixtures (placeholder).
+
+Set up the Python environment with `uv sync`.
+
 ## Quick links
 
 - [Three-minute Italian narrative](docs/pitch-narrative.md) — owner, production

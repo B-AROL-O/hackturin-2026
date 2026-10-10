@@ -72,6 +72,10 @@ Power supply, enclosure, network provisioning, MCU/Linux split, resource budget,
 and installation cost remain open. Battery-aware operation is only relevant to
 future off-grid deployments. No arrows specify wiring or voltage compatibility.
 
+The [prototype electrical wiring](../hardware-connections.md) records the
+USB-powered assembly reported in PR #49, including selected Grove interfaces.
+It does not establish the battery/solar supply or the full deployment above.
+
 ## Related Views
 
 [UNO Q references](../references.md) · [Data plan](../data-plan.md) ·

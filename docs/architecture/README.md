@@ -25,6 +25,8 @@ Media Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate power
 components. The current prototype uses a phone RGB camera in place of the
 unavailable Grove thermal camera. Thermal acquisition is deferred; hardware
 availability does not establish tested integration.
+The electrical wiring view separately records the prototype connections reported
+in PR #49.
 
 ## Diagram Registry
 
@@ -34,6 +36,7 @@ availability does not establish tested integration.
 | `pv-context`          | [System context](context.md)                                      | Operator, installation, and system boundary            |
 | `pv-architecture`     | [Application architecture](architecture.md)                       | Application modules, storage, and information flow     |
 | `pv-deployment`       | [Physical deployment](deployment.md)                              | Intended devices and execution environments            |
+| `pv-wiring`           | [Prototype electrical wiring](../hardware-connections.md)         | As-built USB power, Grove ports, and module pinouts    |
 | `pv-acquisition`      | [Acquisition](components/acquisition.md)                          | Input normalization, quality checks, and alignment     |
 | `pv-diagnostics`      | [Diagnostics](components/diagnostics.md)                          | Soiling, thermal, electrical, and degradation analysis |
 | `pv-maintenance`      | [Maintenance](components/maintenance.md)                          | Evidence assessment and operator recommendations       |
@@ -52,8 +55,11 @@ pages to actual code and their parent component.
 
 ## Diagram Conventions
 
-- Keep one canonical Mermaid source per diagram in its Markdown page. Link from
-  pitches and other documents; generate exports from that source.
+- Keep one canonical Mermaid source per logical diagram in its Markdown page.
+  The electrical schematic `pv-wiring` uses the native
+  [`hardware/poopvolt.kicad_sch`](../../hardware/poopvolt.kicad_sch) source instead;
+  regenerate its exports with the documented KiCad workflow. Link from pitches
+  and other documents; do not edit generated exports independently.
 - Preserve stable diagram IDs and component names across levels. Update this
   registry when a view is added or moved.
 - State scope, status, and a text explanation on each page. Use proposed,
@@ -81,6 +87,9 @@ dataset versions. Consult the canonical source before relying on specifications
 or example code.
 
 ## Open Decisions
+
+The [prototype wiring](../hardware-connections.md) records selected and
+reported-tested sensor/display interfaces.
 
 - Field logger compatibility, channel/string topology, image-to-panel mapping,
   phone transfer, secured-part interfaces, power, and MCU/Linux

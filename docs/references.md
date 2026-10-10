@@ -87,6 +87,34 @@ camera in the current prototype.
 - Search keywords: Arduino, UNO Q, UNO Q 4GB, user manual, hardware, setup, sensors, Edge AI, PoopVolt.
 - Retrieval note: Fetch the canonical URL when needed. If the page requires JavaScript, open it in a browser; do not infer specifications from this entry.
 
+## arduino-uno-q-pinout
+
+- Title: Arduino UNO Q full pinout
+- Publisher: Arduino
+- Canonical URL: <https://docs.arduino.cc/resources/pinouts/ABX00162-full-pinout.pdf>
+- Source type: Official hardware pinout
+- Project relevance: MCU/header signal mapping for the [prototype wiring](hardware-connections.md).
+- Search keywords: UNO Q, PB10, PB11, PB6, PB7, PA4, SDA, SCL, UART, A0.
+
+## seeed-grove-connectors
+
+- Title: Grove Ecosystem Introduction — Interface of Grove modules
+- Publisher: Seeed Studio
+- Canonical URL: <https://wiki.seeedstudio.com/Grove_System/#interface-of-grove-modules>
+- Source type: Official connector documentation
+- Project relevance: Four-wire cable colors, pin numbering, and host-side UART convention for the [prototype wiring](hardware-connections.md).
+- Search keywords: Grove, connector, yellow, white, red, black, VCC, GND, I2C, UART, analog.
+
+## kicad-schematic-workflow
+
+- Title: KiCad schematic editor and command-line interface
+- Publisher: KiCad
+- Canonical URLs: <https://docs.kicad.org/10.0/en/eeschema/eeschema.html>, <https://docs.kicad.org/10.0/en/cli/cli.html>
+- Source type: Official EDA documentation
+- Project relevance: Editable module/connector schematic, electrical rules checking, netlist export, and SVG/PDF rendering for `pv-wiring`.
+- Search keywords: KiCad, schematic, custom symbol, ERC, kicad-cli, sch export, SVG, PDF.
+- Retrieval note: Exports and checks were validated with KiCad 10.0.6. The local schematic is the source; published images are generated artifacts.
+
 ## arduino-uno-q-apps
 
 - Title: Arduino Uno Q Apps
