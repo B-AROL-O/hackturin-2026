@@ -22,7 +22,9 @@ import msgpack
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "station"
 
-Reading = collections.namedtuple("Reading", "seq uptime_ms temp_c rh_pct light_raw pv_ma pv_mv")
+Reading = collections.namedtuple(
+    "Reading", "seq uptime_ms temp_c rh_pct light_raw pv_ma pv_mv"
+)
 FIELDS = ("rx_unix_s",) + Reading._fields
 
 
@@ -38,12 +40,17 @@ def register(sock, unpacker):
 
 
 def process(reading):
-    """Placeholder: replace with the real processing (alerts, fusion with CV results...)."""
+    """Placeholder: replace with the real processing.
+
+    Examples: alerts, fusion with CV results.
+    """
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--csv", help="append readings to this CSV file instead of stdout")
+    parser.add_argument(
+        "--csv", help="append readings to this CSV file instead of stdout"
+    )
     args = parser.parse_args()
 
     if args.csv:
