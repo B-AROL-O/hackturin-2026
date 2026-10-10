@@ -33,9 +33,10 @@ Measured: 100 Hz, no gaps or drops. Arrival jitter is about 0.6 ms, with peaks u
 
 - The MCU↔Linux UART runs at 115200 baud, about 11 KB/s. One sample is about 50 B, so 100 Hz uses about 45% of the link. For higher rates, batch samples.
 - Sketch threads get their stacks from a pool of 2 × 1024 B, and the Bridge already uses one. A larger `k_thread_stack_alloc` fails silently and the sketch hangs.
+- The laptop Monitor (`/dev/ttyACM0`) can go silent while the MCU keeps running; only one reader can hold the port. To read the Monitor on the board instead: `$ADB shell 'python3 -c "import socket,sys;s=socket.create_connection((\"127.0.0.1\",7500));[sys.stdout.write(s.recv(4096).decode(errors=\"replace\")) for _ in iter(int,1)]"'`.
 - `SCHED_FIFO` on Linux needs root (`sudo python3 imu_rx.py`).
 - The board has no network until Wi-Fi is configured. The Edge Impulse runner image (`ei-models-runner`) is already on the board.
 
 ## Grove sensor diagnostic (`firmware/sensor_diag`)
 
-This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38, 16x2 LCD at 0x3E, PN532 at 0x24 or on the shield UART port (D0/D1 = `Serial1`; the Bridge uses `Serial2`), and the light sensor on A0. Libraries: `arduino-cli lib install "Adafruit AHTX0" "Adafruit PN532" "Grove - LCD RGB Backlight"`. Create `Adafruit_PN532` at runtime with `new`. A global or function-local `static` instance hangs the MCU before `setup()`.
+This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38, 16x2 LCD at 0x3E, PN532 at 0x24 or on the shield UART port (D0/D1 = `Serial1`; the Bridge uses `Serial2`), and the light sensor on A0. Libraries: `arduino-cli lib install "Adafruit AHTX0" "Adafruit PN532" "Grove - LCD RGB Backlight"`. Create `Adafruit_PN532` at runtime with `new`. A global instance seemed to hang the MCU before `setup()`. Verified: AHT20, LCD and light sensor all OK, PN532 OK over UART (firmware 1.6).

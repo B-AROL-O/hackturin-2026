@@ -20,8 +20,7 @@ constexpr uint8_t ADDR_PN532 = 0x24;
 constexpr uint8_t NO_PIN = 0xFF;  // Grove NFC does not wire IRQ/RESET
 
 Adafruit_AHTX0 aht;
-// Created at runtime: constructing Adafruit_PN532 statically (global or function-local
-// static) hangs the sketch before setup() prints anything.
+// Created at runtime: a global Adafruit_PN532 appeared to hang the sketch before setup().
 Adafruit_PN532* nfc = nullptr;  // whichever of the two below answered
 Adafruit_PN532* nfc_i2c = nullptr;
 Adafruit_PN532* nfc_uart = nullptr;
