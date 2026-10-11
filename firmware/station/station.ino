@@ -23,6 +23,8 @@ constexpr float PV_NOISE_MA = 10.0f;  // zero drift (temperature) + ADC steps; b
 constexpr size_t NFC_STACK_SIZE = 1024;  // = CONFIG_DYNAMIC_THREAD_STACK_SIZE (pool slot)
 constexpr int NFC_PRIORITY = 2;          // preempts loop() so taps are answered quickly
 constexpr uint32_t PERF_STALE_MS = 5000;  // drop the index if Linux stops sending it
+constexpr uint32_t NFC_FIRST_TRY_MS = 2000;
+constexpr uint32_t NFC_RETRY_MS = 5000;
 
 Adafruit_AHTX0 aht;
 rgb_lcd lcd;
@@ -56,6 +58,17 @@ static void nfc_thread(void*, void*, void*) {
   }
 }
 
+// Starts the PN532 tag and its thread; false if the PN532 does not answer yet.
+bool start_nfc() {
+  if (!tag.begin()) return false;
+  k_thread_stack_t* stack = k_thread_stack_alloc(NFC_STACK_SIZE, 0);
+  if (stack == nullptr) return false;
+  k_tid_t tid = k_thread_create(&nfc_data, stack, NFC_STACK_SIZE, nfc_thread,
+                                nullptr, nullptr, nullptr, NFC_PRIORITY, 0, K_NO_WAIT);
+  k_thread_name_set(tid, "nfc_tag");
+  return true;
+}
+
 void setup() {
   Bridge.begin();
   Bridge.provide("set_perf", set_perf);
@@ -65,25 +78,25 @@ void setup() {
   has_aht = aht.begin(&Wire);
   lcd.begin(16, 2);
 
-  has_nfc = tag.begin();
-  if (has_nfc) {
-    k_thread_stack_t* stack = k_thread_stack_alloc(NFC_STACK_SIZE, 0);
-    if (stack == nullptr) {
-      has_nfc = false;
-    } else {
-      k_tid_t tid = k_thread_create(&nfc_data, stack, NFC_STACK_SIZE, nfc_thread,
-                                    nullptr, nullptr, nullptr, NFC_PRIORITY, 0, K_NO_WAIT);
-      k_thread_name_set(tid, "nfc_tag");
-    }
-  }
+  // Serial1 (D0/D1) is also the Zephyr boot console: give it time to go quiet
+  // before talking to the PN532. loop() keeps retrying if it still fails.
+  delay(NFC_FIRST_TRY_MS);
+  has_nfc = start_nfc();
 
   Monitor.print("station started: AHT20=");
   Monitor.print(has_aht ? "ok" : "missing");
   Monitor.print(" NFC=");
-  Monitor.println(has_nfc ? "ok" : "missing");
+  Monitor.println(has_nfc ? "ok" : "missing, retrying");
 }
 
 void loop() {
+  static uint32_t last_nfc_try = 0;
+  if (!has_nfc && millis() - last_nfc_try > NFC_RETRY_MS) {
+    last_nfc_try = millis();
+    has_nfc = start_nfc();
+    if (has_nfc) Monitor.println("NFC: PN532 found");
+  }
+
   float temp_c = NAN;
   float hum_pct = NAN;
   if (has_aht) {

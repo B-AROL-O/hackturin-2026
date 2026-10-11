@@ -25,12 +25,22 @@ bool Pn532Tag::begin() {
   serial_port.begin(115200);
   static const uint8_t wakeup[] = {0x55, 0x55, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-  serial_port.write(wakeup, sizeof(wakeup));
-  delay(10);
-  while (serial_port.available()) serial_port.read();
-
+  // An ACK frame from the host aborts the PN532's pending command. Needed when
+  // only the MCU restarted: the PN532 keeps power and is still waiting in
+  // TgInitAsTarget from the previous run, ignoring new commands.
+  static const uint8_t abort_ack[] = {0x00, 0x00, 0xFF, 0x00, 0xFF, 0x00};
   const uint8_t sam[] = {CMD_SAM_CONFIGURATION, 0x01, 0x14, 0x01};  // normal mode
-  if (!command(sam, sizeof(sam), 500)) return false;
+  bool configured = false;
+  for (int attempt = 0; attempt < 3 && !configured; attempt++) {
+    serial_port.write(wakeup, sizeof(wakeup));
+    delay(10);
+    serial_port.write(abort_ack, sizeof(abort_ack));
+    delay(50);
+    while (serial_port.available()) serial_port.read();
+    rx_len = 0;
+    configured = command(sam, sizeof(sam), 500);
+  }
+  if (!configured) return false;
 
   const uint8_t ver[] = {CMD_GET_FIRMWARE_VERSION};
   if (!command(ver, sizeof(ver), 500) || frame_len < 6) return false;
