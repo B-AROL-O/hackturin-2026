@@ -19,12 +19,12 @@ canonical electrical diagram its dedicated scene.
 3. [Design and sound](design.md): brand, typography, motion, captions, audio.
 4. [Asset inventory](assets/README.md): logo, photographs, illustrations,
    electrical schematic, replay chart, rights, and reproduction.
-5. [Implementation](implementation.md): implemented Remotion structure, build
-   contracts, implementation order, and acceptance criteria.
+5. [Implementation](implementation.md): implemented Remotion structure,
+   commands, reproduction steps, and editorial decisions.
 6. [Coding-agent task](agent-task.md): ready-to-use implementation instruction.
 
-[Handoff review](handoff-review.md) records completed checks and remaining
-production work.
+[Handoff review](handoff-review.md) records the pre-production handoff checks;
+[delivery review](review.md) records the implemented film's verification.
 
 ## The story
 

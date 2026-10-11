@@ -19,5 +19,5 @@ This records documentation and supplied-media checks, not a completed film.
 Remaining production work: Remotion scaffolding, font acquisition, reviewed
 brand chart export, English voice recording, caption alignment, animation,
 full-video rendering, and visual/audio review. No final MP4 or voiceover is
-delivered by this handoff. Follow the
-[implementation acceptance criteria](implementation.md#acceptance-criteria).
+delivered by this handoff. That work has since been implemented; see the
+[implementation](implementation.md) and the [delivery review](review.md).

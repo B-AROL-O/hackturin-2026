@@ -65,6 +65,8 @@ The existing repository-root `.gitignore` was preserved.
 - `src/art.ts`: extracted authored illustration layers; rebuild with
   `node scripts/art.mjs`. Original assets remain byte-identical.
 - `scripts/prepare.mjs`: verifies supplied hashes, then stages local media.
+- `scripts/captions.mjs`: caption display text (written numerals, typographic
+  apostrophes, phrase-aware two-line breaks) and the SRT, keeping aligned timing.
 - `scripts/check.mjs`: timeline, provenance IDs, exact script, captions and assets.
 - `scripts/render.mjs`: settled layouts, beat/boundary stills, and both MP4s.
 - `audio/`: six takes, mastered voice, original score, final mix and provenance.
@@ -91,9 +93,18 @@ suggestion to progressively reveal original series. An external inspection flag
 enters at 93 seconds. The eight-second 85–93 reading hold is preserved exactly.
 
 The V04 source viewport masks only the selected crop; original symbols and nets
-are unchanged. The complete sheet appears at 50–55 and 72–75. Grove focuses
-occupy 55–65; solar branch and A1 occupy 65–72, with the return movement finishing
-at 72. The outdoor photograph shows the laptop USB connection.
+are unchanged. Each focus follows its narration phrase: the complete sheet at
+50–53.3 and 69.5–75, Grove I2C then UART/A0/A1 at 53.3–58, the current sensor in
+series and the Waveshare charger at 58–64, and A1 at 64–69.5. Zoom interpolates
+size geometrically; the viewport resizes with the same easing, and photos leave
+before it grows and arrive after it settles. The outdoor photograph shows the
+laptop USB connection.
+
+The supplied logo PNG has a noisy near-white ground (250–254) that showed as a
+box on the white canvas. At render time an SVG filter whitens only pixels whose
+three channels are all at least 250, the treatment documented for the dashboard
+copy in `assets/brand/README.md`. The PNG bytes and all other pixels, including
+the brand navy and yellow, are unchanged.
 
 ## Local voice and score reproduction
 
@@ -110,6 +121,7 @@ provenance into `.voice-model/`, then run:
 ```sh
 python scripts/voice.py
 python scripts/retake-hook.py
+node scripts/captions.mjs
 sh scripts/mix.sh
 npm run prepare:assets
 ```
@@ -118,7 +130,10 @@ The hook has a separate timed retake for the deadpan pause. Overlong takes are
 re-synthesized at adjusted model speed, not stretched into a changed scene window.
 Caption cues are sample-aligned to each actual synthesized phrase, including
 pronunciation-only substitutions for PoopVolt, UNO Q, NFC and SOLARMA. Written
-narration remains exactly the storyboard text.
+narration remains exactly the storyboard text. Captions then show dates and
+quantities as numerals (for example **1 August to 17 September 2019** and
+**292 kWh**); `check.mjs` compares them with the narration after the same
+documented substitutions in `scripts/captions.mjs`.
 
 The original instrumental bed uses `OfflineAudioContext` in headless Chromium,
 with sine oscillators on the half-second grid, sparse scene accents, voice
