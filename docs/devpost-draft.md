@@ -12,16 +12,28 @@ to change.
 
 ## Fields to fill in
 
-| Devpost field | Value                                                                                                                            |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Project name  | PoopVolt                                                                                                                         |
-| Tagline       | Edge AI maintenance evidence for older solar plants                                                                              |
-| Challenge     | **Beyond Solar**                                                                                                                 |
-| Built with    | Arduino UNO Q, Arduino Bridge, Seeed Grove (AHT20, light, ACS70331 current, LCD, PN532 NFC), Python, FastAPI, uv, pytest, KiCad  |
-| GitHub        | <https://github.com/B-AROL-O/hackturin-2026>, release <https://github.com/B-AROL-O/hackturin-2026/releases/tag/v0.2.0>           |
-| Video         | Link to the 2-minute video (issue #37)                                                                                           |
-| Team          | Giacomo Lisita, Gianpaolo Macario, Lorenzo Palloni, Federico Nebuloni; team name Suncheckers (per the brand guidelines, confirm) |
-| Images        | Wiring schematic (`docs/architecture/diagrams/pv-wiring.svg`), system diagram (from the readme), a photo of the prototype        |
+| Devpost field | Value                                                                                                                                         |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Project name  | PoopVolt                                                                                                                                      |
+| Tagline       | Edge AI maintenance evidence for older solar plants                                                                                           |
+| Challenge     | **Beyond Solar**                                                                                                                              |
+| Built with    | Arduino UNO Q, Arduino Bridge, Seeed Grove (AHT20, light, ACS70331 current, LCD, PN532 NFC), Python, FastAPI, OpenCV, ONNX, uv, pytest, KiCad |
+| GitHub        | <https://github.com/B-AROL-O/hackturin-2026>, release <https://github.com/B-AROL-O/hackturin-2026/releases/tag/v0.2.0>                        |
+| Video         | Link to the 2-minute video (issue #37); script and cards in [docs/video](video/README.md)                                                     |
+| Team          | Giacomo Lisita, Gianpaolo Macario, Lorenzo Palloni, Federico Nebuloni; team name Suncheckers (per the brand guidelines, confirm)              |
+| Images        | Wiring schematic (`docs/architecture/diagrams/pv-wiring.svg`), system diagram (from the readme), a photo of the prototype                     |
+
+## Short fields (paste into Devpost)
+
+Devpost's elevator pitch field is limited to 200 characters; check the count
+in the form.
+
+- **Elevator pitch (181 characters):** Is your old solar plant producing
+  what it should? PoopVolt compares expected and observed output on an Arduino
+  UNO Q, so a service company can show the owner why to clean or repair.
+- **Shorter alternative (94 characters):** Edge AI on an Arduino UNO Q
+  that turns a gap in solar output into evidence an owner can judge.
+- **Tagline:** Edge AI maintenance evidence for older solar plants.
 
 ## Description (paste into Devpost)
 
@@ -88,6 +100,13 @@ lower it just like dirt does, so we do not claim it measures soiling.
   it, a comparison fits each inverter's typical ratio to its peers on the first
   part of the season and checks it on the later part (never overlapping), with
   an uncertainty band.
+- **Phone inspection:** a FastAPI service takes a JPEG from a phone over the
+  local network, validates and stores it with bounded retention, runs an OpenCV
+  ONNX detection adapter on the CPU, and shows the original beside an annotated
+  view on an inspection page. The trained model is a placeholder: the adapter
+  stays unavailable until a model passes a startup check, no result is mocked,
+  and the home-page demo is labelled and never saved as inference. Tests use a
+  synthetic untrained graph, so they check the plumbing, not accuracy.
 - **Evidence we measured or replayed:**
   - CPU-only inference on the UNO Q: NanoDet-Plus at 416x416 in 258 ms and
     YOLOX-S at 640x640 in 2.27 s (reference models, not our own).
@@ -121,6 +140,8 @@ materials. Working as a software slice: the phone inspection service and page,
 whose home page is a labelled "illustrative demo" on a generated sample
 picture with no model run. Working as a scoped demo on replayed data: the peer
 comparison with its uncertainty band, plus a labelled synthetic-loss test.
+Working in software: the phone upload API, local image store and inspection
+page.
 
 Not implemented at the time of writing: a weather-adjusted theoretical
 expected production (the replayed data has no irradiance), a trained
@@ -157,11 +178,12 @@ a technician-reviewed output.
 
 ### Built with and reuse
 
-We built the firmware, the importer and replay, the wiring record, the
-schematic and the documentation during the hackathon. We reuse the Arduino UNO
-Q tooling and libraries, the Adafruit and Grove drivers, SOLARMA's MIT-licensed
-data (notice kept in `data/solarma/NOTICE.md`), and open tools such as KiCad,
-uv and pytest. The full list is in [project status](project-status.md). The
+We built the firmware, the importer and replay, the peer comparison, the phone
+inspection service and page, the wiring record, the schematic and the
+documentation during the hackathon. We reuse the Arduino UNO Q tooling and
+libraries, the Adafruit and Grove drivers, SOLARMA's MIT-licensed data (notice
+kept in `data/solarma/NOTICE.md`), and open tools such as FastAPI, OpenCV,
+ONNX, KiCad, uv and pytest. The full list is in [project status](project-status.md). The
 repository is MIT licensed.
 
 ## Beyond Solar requirements check
@@ -206,7 +228,8 @@ Hard deadline: Sunday 11 October 2026, 16:00 CEST; aim for 15:30.
       calibrated in clear sun before the deadline, say so and give the result;
       otherwise keep "implemented, not calibrated".
 - [ ] Add the video link, and check it opens in a logged-out browser.
-- [ ] Add a photo of the prototype and the two diagrams.
+- [ ] Add a photo of the prototype and the two diagrams; a screenshot of the
+      inspection page is optional and must keep its "demo" label.
 - [ ] Re-run `uv run python -m poopvolt.report` if the comparison changes, and
       re-copy the numbers into the evidence list (issue #35); keep each one
       labelled as measured, replayed or simulated.
