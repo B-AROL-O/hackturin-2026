@@ -95,12 +95,12 @@ The preprocessing/output distinctions follow the
 
 ## API and storage
 
-| Endpoint | Behavior |
-| --- | --- |
-| `POST /api/inspect` | Exactly one multipart `image` file; 201 with persisted metadata and predictions |
-| `GET /api/inspections/{id}` | Metadata, model name/capabilities, pixel boxes, confidence and latency |
-| `GET /api/inspections/{id}/image` | Stored JPEG photograph |
-| `GET /api/health` | API/model readiness, model error, busy state and supported categories |
+| Endpoint                          | Behavior                                                                        |
+| --------------------------------- | ------------------------------------------------------------------------------- |
+| `POST /api/inspect`               | Exactly one multipart `image` file; 201 with persisted metadata and predictions |
+| `GET /api/inspections/{id}`       | Metadata, model name/capabilities, pixel boxes, confidence and latency          |
+| `GET /api/inspections/{id}/image` | Stored JPEG photograph                                                          |
+| `GET /api/health`                 | API/model readiness, model error, busy state and supported categories           |
 
 API smoke check once the actual model is configured:
 
