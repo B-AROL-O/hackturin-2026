@@ -123,7 +123,7 @@ class PerformanceIndex:
             "tilt": self.args.tilt,
             "azimuth": self.args.azimuth,
         }
-        with open(self.args.baseline, "w") as f:
+        with open(self.args.baseline, "w", encoding="utf-8") as f:
             json.dump(record, f, indent=2)
         print(
             f"calibrated: clean ratio {self.baseline:.4f} mA per W/m2 from "
@@ -213,7 +213,7 @@ def main():
         )
 
     if args.csv:
-        with open(args.csv, "a", newline="") as out:
+        with open(args.csv, "a", newline="", encoding="utf-8") as out:
             receive(out, out.tell() == 0, index, clock_offset, args.latest)
     else:
         receive(sys.stdout, True, index, clock_offset, args.latest)
@@ -226,7 +226,7 @@ def write_latest(path, record):
         for k, v in record.items()
     }
     tmp = f"{path}.tmp"
-    with open(tmp, "w") as f:
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(clean, f)
     os.replace(tmp, path)
 
