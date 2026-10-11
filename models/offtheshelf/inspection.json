@@ -1,0 +1,16 @@
+{
+  "name": "Off-the-shelf YOLOv8n solar defects (mtahajawad, MIT, mAP50 0.27)",
+  "output_format": "yolov8",
+  "input_size": 640,
+  "classes": [
+    { "label": "Bird-Drop", "kind": "bird_dropping" },
+    { "label": "Clean", "kind": "panel" },
+    { "label": "Defective", "kind": "visible_damage" },
+    { "label": "Dusty", "kind": "dust" },
+    { "label": "Electrical-Damage", "kind": "visible_damage" },
+    { "label": "Physical-Damage", "kind": "visible_damage" },
+    { "label": "Snow", "kind": "other" }
+  ],
+  "confidence_threshold": 0.25,
+  "nms_threshold": 0.45
+}

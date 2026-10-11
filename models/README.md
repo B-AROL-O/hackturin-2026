@@ -9,3 +9,7 @@ YOLOv8 detection contract in [the setup guide](../docs/phone-inspection.md).
 Actual class order, input size, preprocessing and output layout must come from
 the trained exporter. Map only real supported classes to dashboard categories.
 Restart the API after providing/changing the model/configuration.
+
+For a pipeline test before the trained model exists, see the
+[off-the-shelf test model](offtheshelf/README.md): a public MIT YOLOv8n solar-defect
+detector, with config and export script. It is weak and does not detect our staged soiling.
