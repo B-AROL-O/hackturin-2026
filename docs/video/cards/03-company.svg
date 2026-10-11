@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Source Sans 3', 'DejaVu Sans', sans-serif">
+  <title>The service company</title>
+  <rect width="1920" height="1080" fill="#F7F4EC"/>
+  <text x="140" y="300" font-size="34" font-weight="600" fill="#176B63" letter-spacing="4">THE SERVICE COMPANY</text>
+  <text x="140" y="420" font-size="84" font-weight="600" fill="#172A2A">“How do we justify inspecting</text>
+  <text x="140" y="520" font-size="84" font-weight="600" fill="#172A2A">a plant that seems to work?”</text>
+  <rect x="140" y="600" width="120" height="8" fill="#E9AD35"/>
+  <text x="140" y="700" font-size="42" fill="#4D605D">An intervention needs evidence</text>
+  <text x="140" y="760" font-size="42" fill="#4D605D">the owner can understand and judge.</text>
+</svg>

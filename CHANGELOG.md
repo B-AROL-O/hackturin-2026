@@ -6,6 +6,27 @@ All notable changes to this project are documented in this file. The format
 follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the
 project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.0 - 2026-10-11
+
+Material for the Devpost submission and the demo video.
+
+### Added
+
+- Demo video kit in [docs/video](docs/video/README.md): two-minute script with
+  timeline and shot list, 1920x1080 cards and label overlays, English
+  subtitles, a card build script and a read-only script that prints the
+  comparison for the screen recording (#66).
+- Chart of inverter 1 on the SOLARMA replay, the clearest replayed case (#66).
+- Replayed improvement in the readme and the Devpost draft: inverter 1 produced
+  nothing for 75 days, about 550 kWh short of its peers, and a daily peer check
+  points at it on the first day (#64, #65).
+- Beyond Solar requirements check in the Devpost draft (#64).
+
+### Fixed
+
+- The last date on the comparison charts' time axis was clipped (#66).
+- Removed a dead seller link from the bill of materials (#65).
+
 ## 0.1.0 - 2026-10-11
 
 First PoopVolt prototype from the hackTurin 2026 hackathon. See the

@@ -124,6 +124,13 @@ Numbers we have, with their origin:
   4 to 6 %, and mostly not at 2 %. The flag threshold was chosen after seeing
   the data, so this is not an independent validation. Details, method and
   charts: [comparison results](docs/comparison-results.md).
+- **Replayed, the improvement over today:** inverter 1 kept logging but
+  produced nothing from 21 July to the end of the record on 3 October 2019,
+  except on one day. Nothing in the data shows the output being restored in
+  those 75 days. On the 30 days with a peer reference, it fell about 550 kWh
+  short of its peers (a lower bound, because days without a reference are not
+  counted). A daily peer check puts it below 70 % of its expected output on 21
+  July, its first day without production.
 
 Not yet available: soiling classifier accuracy, a weather-adjusted expected
 production (the replay has no irradiance), and inference time of a PoopVolt

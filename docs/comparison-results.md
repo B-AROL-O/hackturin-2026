@@ -59,6 +59,9 @@ inspection, not a diagnosis. What the data shows about them:
 The data does not say why they produce less, and capacity, orientation and
 shading are unknown.
 
+![Inverter 1: observed versus expected daily energy,
+replayed](images/comparison-inverter-1-replayed.svg)
+
 ![Inverter 9: observed versus expected daily energy,
 replayed](images/comparison-inverter-9-replayed.svg)
 
