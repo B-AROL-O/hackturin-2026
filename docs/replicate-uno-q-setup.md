@@ -22,8 +22,8 @@ Field test 2026-10-11 (outdoors, then by a window), findings:
 
 Before the next session:
 
-- **Delete the invalid baseline on the board** (it was calibrated on noise by the window): `$ADB shell rm ~/station/baseline.json`.
-- Field logs are on the board in `~/station/` (`field_nocharge.csv`, `field_outdoor.csv`, `field_window.csv`), not in the repo. They're mostly "sun, no current".
+- The invalid baseline calibrated by the window has been deleted from the board, so calibrate again (`--calibrate 60`) with a panel that delivers real current.
+- Field logs are in [`data/field-2026-10-11/`](../data/field-2026-10-11/README.md): sensor noise and drift, no usable panel current.
 
 Still pending:
 
