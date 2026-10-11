@@ -1,0 +1,13 @@
+Source Component,Source Pin / Wire,Destination Component,Destination Pin / Terminal,Notes
+Arduino Uno Q,USB-C Port,Laptop,USB Port,"Current power source (5V) plus ADB and USB serial; development setup"
+Seeed Base Shield,Stacking Header Pins,Arduino Uno Q,UNO Headers (all),"Shield stacked on the board; VCC switch must be 3.3V"
+Grove AHT20 Temp/Humidity Sensor,Grove Data Cable,Seeed Base Shield,I2C Port,"I2C address 0x38; SCL = PB10, SDA = PB11 (MCU I2C2, Wire)"
+Grove 16x2 LCD (White on Blue),Grove Data Cable,Seeed Base Shield,I2C Port,"I2C address 0x3E; same bus as AHT20 (shield I2C ports are in parallel)"
+Grove NFC Reader (PN532),Grove Data Cable,Seeed Base Shield,UART Port,"UART (HSU) mode, 115200 baud; PN532 TX -> D0 = MCU RX (PB7), PN532 RX <- D1 = MCU TX (PB6) (Serial1)"
+Grove Light Sensor (P) v1.1,Grove Data Cable,Seeed Base Shield,A0 Port,"Signal on A0 (PA4); the cable's 2nd signal wire (A1) lands on an unused sensor pin"
+Mini Solar Panel R1123,Positive (+) Wire,Grove 2.5A DC Current Sensor (ACS70331),IN+ (Screw Terminal),"Series high-side measurement of panel current"
+Grove 2.5A DC Current Sensor (ACS70331),IN- (Screw Terminal),Waveshare Solar Power Manager (5V/1A version),SOLAR IN + (Screw Terminal),"Completes the series measurement; SOLAR IN accepts 6-24V"
+Mini Solar Panel R1123,Negative (-) Wire,Waveshare Solar Power Manager (5V/1A version),SOLAR IN - (Screw Terminal),
+Grove 2.5A DC Current Sensor (ACS70331),Grove Data Cable,Seeed Base Shield,A1 Port,"Signal on A1; zero offset 266.5 mV, 800 mV/A; Shield VCC switch must be 3.3V"
+1000mAh LiPo Battery 3.7V,JST PH2.0 Connector,Waveshare Solar Power Manager (5V/1A version),Battery PH2.0 Socket,"Battery switch ON; MPPT SET switch on 6V"
+Waveshare Solar Power Manager (5V/1A version),USB OUT (5V 1A),-,Not connected,"UNO Q stays on laptop USB-C; 1A may be too little for the UNO Q (untested)"

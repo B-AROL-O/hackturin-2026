@@ -1,6 +1,6 @@
 [project]
 name = "PoopVolt"
-version = "0.0.1"
+version = "0.1.0"
 description = "PoopVolt edge diagnostics for off-grid photovoltaic installations"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -12,3 +12,12 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-root = ""
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

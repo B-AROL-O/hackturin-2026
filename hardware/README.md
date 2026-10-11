@@ -48,6 +48,7 @@ are in the [connection record](../docs/hardware-connections.md).
 | Grove Light Sensor (P) v1.1                 | Secured                                          | Relative light context; not an established calibrated irradiance measurement.                          |
 | Grove 2.5A DC Current Sensor (ACS70331)     | Secured                                          | Current observations on a compatible small test circuit; range and integration to verify.              |
 | Grove 16x2 LCD (White on Blue)              | Secured                                          | Proposed local status/findings display; connection and software to verify.                             |
+| Grove NFC Reader (PN532)                    | Secured                                          | Shows the latest finding as NFC tag text (UART mode); wired and verified in PR #49.                    |
 | 1000mAh LiPo battery with JST 2mm           | Secured                                          | Candidate prototype power component; runtime and connector compatibility unmeasured.                   |
 | Solar Charger HRS1358                       | Secured                                          | Candidate charging component selected in place of the unavailable Waveshare solar charger.             |
 | Mini Solar Panel R1123 (90x60)              | Secured                                          | Small-panel test fixture and candidate charging input; electrical specifications to verify.            |
@@ -57,14 +58,15 @@ are in the [connection record](../docs/hardware-connections.md).
 
 Names, versions, capacities, and dimensions above follow the team's inventory.
 Availability does not establish a tested connection, model, or power budget.
+See the [bill of materials](bom.md) for quantities, status and approximate cost.
 
 ## Missing or unavailable
 
-| Item                         | Reported status         | Prototype decision                                                                     |
-| ---------------------------- | ----------------------- | -------------------------------------------------------------------------------------- |
-| Breadboards                  | Completely out of stock | Plan assembly around shield/connector connections; confirm needed cables and adapters. |
-| Grove Thermal Imaging Camera | Unavailable             | Replace image acquisition with a phone RGB camera.                                     |
-| Waveshare Solar Charger      | Unavailable             | Use the secured HRS1358 as the charging candidate; integration remains to verify.      |
+| Item                         | Reported status                                           | Prototype decision                                                                     |
+| ---------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Breadboards                  | Completely out of stock                                   | Plan assembly around shield/connector connections; confirm needed cables and adapters. |
+| Grove Thermal Imaging Camera | Unavailable                                               | Replace image acquisition with a phone RGB camera.                                     |
+| Waveshare Solar Charger      | Found 2026-10-10 (Solar Power Manager, 5 V / 1 A version) | Now the charger in the as-built solar path; HRS1358 and LM2596 are no longer used.     |
 
 ## Camera substitution
 
@@ -82,10 +84,26 @@ Neither the AHT20 nor the light sensor replaces thermal imaging.
 
 ## Integration work still required
 
+- Record the correct date, time, and location for every measurement, so the sun's
+  position can be estimated. That means latitude and longitude, plus the panel's
+  tilt and azimuth (compass direction). The UNO Q's clock is currently wrong (it
+  reads December 2025) until the board gets network time over Wi-Fi. With these
+  values, the sun's position and the expected clear-sky irradiance can be
+  computed with published models (for example the NOAA solar position
+  algorithm and the Ineichen clear-sky model, both available in `pvlib`).
+  Comparing that expected value with the measured panel current and light level
+  gives an efficiency or soiling estimate. Power, not only current, also needs
+  the panel voltage, which requires a voltage divider (not wired yet). The light
+  sensor is uncalibrated.
 - Use the recorded USB prototype connections for the active Grove modules.
   Verify interfaces and cables for additional devices, including the unused
   Media Carrier, before extending the assembly.
 - Build a breadboard-free connection plan from the available parts.
+- **Supply blocker (checked 2026-10-10):** the "HAS4966" step-down module uses an
+  LM2596HV (buck, about 1.5–2 V dropout), so it cannot make 5 V from the 3.0–4.2 V
+  LiPo behind the CN3065-based HRS1358. Do not wire HRS1358 → LM2596 → UNO Q 5V.
+  Options: power the UNO Q from USB-C and keep solar → current sensor → charger →
+  LiPo as a measured subsystem, or use a 3.7→5 V boost converter rated ≥2–3 A.
 - Verify the panel, charger, battery, converter, and device supply requirements.
   The parts list does not establish that this assembly can power the UNO Q
   continuously or provide a measured battery runtime.

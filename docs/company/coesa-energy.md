@@ -125,64 +125,84 @@ personally judge PoopVolt or has approved an integration.
 
 ## PoopVolt fit — team hypotheses to validate
 
-The following are proposed connections between the company context above and the
-[PoopVolt pitch](../pitch-draft.md). None is a confirmed Coesa partnership,
-product requirement or pilot commitment.
+The renewed team proposal is to **sell edge devices to Coesa, which can offer
+them free to its plant-owner customers**. The company uses the resulting
+evidence to prioritize maintenance and explain when revamping could improve
+profitability. This is a team commercial hypothesis, not a Coesa requirement,
+partnership, integration agreement, or commitment to distribute devices.
+
+The primary scope now includes grid-connected customer plants, single-string
+visual diagnosis, and multi-channel plant monitoring. Off-grid and second-life
+applications remain possible extensions. See the [pitch](../pitch-draft.md),
+[architecture](../architecture/README.md), and [data plan](../data-plan.md).
 
 <!-- markdownlint-disable MD013 -->
 
-| Company context                        | Proposed PoopVolt contribution                                                                   | Evidence to bring to a discussion                                                                                        |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| JuaKit and second-life off-grid panels | Assess panel condition and recommend useful local maintenance despite intermittent connectivity. | A disconnected demonstration, representative used-panel data, and a measured power budget.                               |
-| Existing O&M activities                | Help distinguish a cleaning opportunity from a fault requiring inspection.                       | Labeled examples, false-alert rates, intervention cost, and performance before/after cleaning.                           |
-| Panel reuse and circular economy       | Support decisions about continued use, targeted repair or replacement.                           | A defensible baseline and decision rule; distinguish short-term soiling detection from long-term degradation prediction. |
-| Small-system monitoring constraints    | Offer a device whose cost, energy use and usability fit a small installation.                    | Bill of materials, installation steps, standby/inference consumption and an understandable alert.                        |
-| MVP and market validation process      | Present a working subsystem and a practical next experiment.                                     | What works today, what remains proposed, the pilot owner, success criteria and required data.                            |
+| Company context                            | Proposed PoopVolt contribution                                                                           | Evidence needed                                                                                                      |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Existing monitoring and O&M                | Connect mapped findings to cleaning, inspection, repair, and follow-up services.                         | Comparison with current monitoring, useful localization, false alerts, and verified outcomes.                        |
+| Industrial and customer-plant services     | Provide an edge device that Coesa can distribute at no upfront device cost to the owner.                 | Device, installation, connectivity, and support costs versus incremental service margin; agreed ownership and terms. |
+| Maintenance and module replacement         | Explain continued operation, targeted maintenance, and revamping alternatives with explicit assumptions. | Production baseline, technical assessment, intervention quotes, energy-use/value assumptions, and uncertainty.       |
+| Local analytics already discussed by Coesa | Add a tested evidence-to-service workflow rather than claim Edge AI alone is new to Coesa.               | Measured local inference, mapped scope, synchronization freshness, and practical technician feedback.                |
+| JuaKit and second-life panels              | Explore later off-grid or reuse pilots where hardware and power budgets fit.                             | Representative field data and an appropriate deployment budget; no assumed JuaKit integration.                       |
+| MVP and market validation process          | Show phone-based contamination localization separately from historical telemetry replay.                 | Reproducible prototype scope, clear provenance, held-out evaluation, pilot owner, and next data requirements.        |
 
 <!-- markdownlint-enable MD013 -->
 
 ### Suggested pitch emphasis
 
-Frame PoopVolt as a proposed maintenance decision aid for small off-grid and
-second-life photovoltaic systems. Show a concrete path from sensor evidence to
-an action, such as cleaning or technician inspection, and explain the
-uncertainty in that recommendation. Connect the proposed benefits to energy
-availability, intervention cost and continued panel use.
+Follow the [three-minute owner narrative](../pitch-narrative.md): an older plant
+still works, but the owner cannot assess its performance. After the approved
+strong opening, emphasize the company's use of evidence to motivate an
+intervention the owner can understand and assess. Explain the comparison, STL,
+software case, technical review, and benefit verification without promising
+service conversion. The theoretical reference and its inputs remain to define
+and validate.
 
-Describe the Arduino UNO Q as an implementation choice and support that choice
-with measurements. Treat lifetime extension, avoided replacement, recovered
-energy and savings as hypotheses until field evidence supports them. A short
-hackathon demonstration can establish detection and local operation; it cannot
-by itself establish a multi-year degradation forecast.
+The company buys/free-device proposal is a secondary commercial hypothesis for
+questions or the appendix, not the opening. Coesa is a potential service
+counterpart, not an agreed partner. Mention droppings as a possible inspection
+issue and keep phone imagery separate from multi-channel replay. Phone RGB
+images do not confirm a hotspot, lost kWh, or an electrical interruption.
+Whole-plant coverage depends on mapped channel access.
+
+Describe maintenance and revamping as alternatives to assess for the owner.
+Device distribution must have viable economics for Coesa; customer profitability
+needs measured production and explicit costs, not invented savings. Generic AI
+dashboards and offline analysis do not establish differentiation from Coesa's
+existing activities. Test whether the proposed workflow makes service decisions
+more useful, specific, and economical.
 
 ### Suggested pilot measurements
 
-These are team-proposed evaluation dimensions, not Coesa's judging criteria:
+These are team-proposed dimensions, not Coesa's judging criteria:
 
-- Detection quality: precision/recall on representative contamination and fault
-  examples, including false alarms caused by shade or changing weather.
-- Decision value: whether a recommended action restores useful energy relative
-  to its labor and travel cost.
-- Offline behavior: decision latency, data retained during disconnection and
-  recovery after reconnection.
-- Deployment burden: total hardware cost, installation effort and measured
-  device energy consumption.
-- Lifecycle evidence: condition observations over time and the limits of any
-  replacement recommendation.
+- Single-string image classification and localization on held-out capture
+  sessions, including shade, reflections, blur, and uncertain mapping.
+- Multi-channel anomaly quality against a baseline, operating context, and
+  verified events; later predictive evaluation with outcomes and a warning
+  horizon.
+- Service usefulness: technician assessment, avoided unnecessary work, and
+  comparable production observations after intervention.
+- Device/distribution economics: hardware, installation, operation, and support
+  costs versus incremental service margin; no assumed conversion rate.
+- Customer review: understandable maintenance/revamping scenarios, their cost
+  assumptions, and whether the expected benefit is supported.
+- Offline and remote behavior: local operation, queue recovery, coverage,
+  last-seen timestamps, and company/own-plant access separation.
 
 ### Questions for Coesa or a mentor
 
-1. Is the best first pilot a JuaKit installation, another off-grid system, or an
-   industrial maintenance case?
-2. What panel-condition, inverter, battery or maintenance-history data can be
-   made available?
-3. What monitoring already exists, and which decisions still require expensive
-   site visits?
-4. What device cost and energy budget are acceptable for the target
-   installation?
-5. Who receives recommendations, and what evidence is required before cleaning,
-   repair or replacement?
-6. What integrations and field-validation access would be available for a pilot?
+1. Which customer segment and existing O&M workflow should host the first pilot?
+2. What would justify paying for devices and providing them free to owners?
+3. Which inverter/loggers expose useful channels, and is a string/panel map
+   available?
+4. What failure, cleaning, repair, revamping, and production history can be
+   shared?
+5. Which monitoring decisions still require site visits, and what improvement
+   would be useful compared with the tools already used?
+6. What ownership, installation/support responsibilities, integration options,
+   and evidence are required before quoting customer work?
 
 ## Source register
 

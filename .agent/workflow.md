@@ -30,7 +30,10 @@ Do not hand-edit generated HTML, diagram exports, or release directories.
 
 The future build must run from the repository root, verify source records, render
 diagrams and slides, validate local dependencies, and package an audience bundle.
-Use deterministic source inputs. Exclude speaker notes from the audience bundle
+Use deterministic source inputs. Verify explicit working-tree hashes without
+pretending the edited bytes exist at their base revision; resolve provisional
+source records to an immutable revision when available.
+Exclude speaker notes from the audience bundle
 through a tested build profile, rather than hiding them visually.
 
 Put generated previews and release bundles in separate ignored directories.

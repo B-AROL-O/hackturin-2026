@@ -35,13 +35,13 @@ bool Pn532Tag::begin() {
   k_mutex_init(&ndef_mutex);
   setText("");
 
-  ser.begin(115200);
+  serial_port.begin(115200);
   static const uint8_t wakeup[] = {0x55, 0x55, 0x00, 0x00, 0x00, 0x00,
                                    0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                    0x00, 0x00, 0x00, 0x00};
-  ser.write(wakeup, sizeof(wakeup));
+  serial_port.write(wakeup, sizeof(wakeup));
   delay(10);
-  while (ser.available()) ser.read();
+  while (serial_port.available()) serial_port.read();
 
   const uint8_t sam[] = {CMD_SAM_CONFIGURATION, 0x01, 0x14,
                          0x01};  // normal mode
@@ -166,8 +166,10 @@ void Pn532Tag::handleApdu(const uint8_t* apdu, uint8_t len) {
   } else if (apdu[1] == 0xA4) {  // SELECT
     uint8_t lc = len > 4 ? apdu[4] : 0;
     const uint8_t* data = apdu + 5;
-    if (apdu[2] == 0x04 && lc == sizeof(NDEF_AID) &&
-        memcmp(data, NDEF_AID, lc) == 0) {
+    if (len < 5u + lc) {
+      sw(0x67, 0x00);  // Lc claims more data than was received
+    } else if (apdu[2] == 0x04 && lc == sizeof(NDEF_AID) &&
+               memcmp(data, NDEF_AID, lc) == 0) {
       app_selected = true;
       sw(0x90, 0x00);
     } else if (apdu[2] == 0x00 && app_selected && lc == 2 && data[0] == 0xE1 &&
@@ -186,16 +188,16 @@ void Pn532Tag::handleApdu(const uint8_t* apdu, uint8_t len) {
     size_t le = len > 4 ? apdu[4] : 0;
     if (le == 0 || le > 0x3B) le = 0x3B;  // MLe from the CC file
     if (selected == File::Cc && offset <= sizeof(CC_FILE)) {
-      size_t count = min(
-          le, sizeof(CC_FILE) - offset);  // NOLINT(build/include_what_you_use)
+      size_t count = min(le, sizeof(CC_FILE) - offset);
       memcpy(out + n, CC_FILE + offset, count);
       n += count;
       sw(0x90, 0x00);
     } else if (selected == File::Ndef) {
       k_mutex_lock(&ndef_mutex, K_FOREVER);
       if (offset <= ndef_file_len) {
-        size_t count = min(
-            le, ndef_file_len - offset);  // NOLINT(build/include_what_you_use)
+        // min is the Arduino macro; <algorithm> must not be included.
+        // NOLINTNEXTLINE(build/include_what_you_use)
+        size_t count = min(le, ndef_file_len - offset);
         memcpy(out + n, ndef_file + offset, count);
         n += count;
         if (offset + count >= ndef_file_len) ndef_reads++;
@@ -223,9 +225,9 @@ void Pn532Tag::send(const uint8_t* cmd, uint8_t len) {
       0x00,    0x00, 0xFF, frame_len_byte, (uint8_t)(0x100 - frame_len_byte),
       TFI_HOST};
   const uint8_t trailer[] = {(uint8_t)(0x100 - sum), 0x00};
-  ser.write(header, sizeof(header));
-  ser.write(cmd, len);
-  ser.write(trailer, sizeof(trailer));
+  serial_port.write(header, sizeof(header));
+  serial_port.write(cmd, len);
+  serial_port.write(trailer, sizeof(trailer));
 }
 
 void Pn532Tag::consume(size_t n) {
@@ -239,7 +241,8 @@ void Pn532Tag::consume(size_t n) {
 
 // Parses at most one information frame from the UART into `frame`; skips ACKs.
 bool Pn532Tag::readFrame() {
-  while (ser.available() && rx_len < sizeof(rx)) rx[rx_len++] = ser.read();
+  while (serial_port.available() && rx_len < sizeof(rx))
+    rx[rx_len++] = serial_port.read();
 
   while (true) {
     while (rx_len >= 3 && !(rx[0] == 0x00 && rx[1] == 0x00 && rx[2] == 0xFF))

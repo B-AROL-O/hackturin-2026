@@ -16,7 +16,7 @@ import threading
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor"))
-import msgpack  # noqa: E402, RUF100  # pylint: disable=wrong-import-position
+import msgpack  # pylint: disable=wrong-import-position
 
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "imu"
@@ -25,13 +25,13 @@ RT_PRIORITY = 50  # SCHED_FIFO priority, applied only when permitted (root)
 
 Sample = collections.namedtuple("Sample", "seq t_us ax ay az gx gy gz rx_ns")
 
-queue: collections.deque = collections.deque(maxlen=QUEUE_MAX)
+queue: collections.deque[Sample] = collections.deque(maxlen=QUEUE_MAX)
 ready = threading.Semaphore(0)
 stats = {"rx": 0, "dropped": 0, "seq_gaps": 0}
 
 
 def try_realtime():
-    """Switch the calling thread to SCHED_FIFO; return False if not permitted."""
+    """Switch the calling thread to SCHED_FIFO; return False without root."""
     try:
         os.sched_setscheduler(0, os.SCHED_FIFO, os.sched_param(RT_PRIORITY))
         return True
@@ -40,7 +40,7 @@ def try_realtime():
 
 
 def register(sock, unpacker):
-    """Register the "imu" method on arduino-router and wait for the reply."""
+    """Register METHOD on arduino-router and wait for the acknowledgement."""
     sock.sendall(msgpack.packb([0, 1, "$/register", [METHOD]]))
     while True:
         unpacker.feed(sock.recv(4096))
@@ -52,7 +52,7 @@ def register(sock, unpacker):
 
 
 def reader(sock, unpacker):
-    """Receive samples from the router and enqueue them for the worker."""
+    """Queue each sample from the router and wake the worker."""
     try_realtime()
     last_seq = None
     while True:
@@ -75,13 +75,12 @@ def reader(sock, unpacker):
             ready.release()
 
 
-def process(sample):
+def process(sample):  # pylint: disable=unused-argument
     """Placeholder: replace with the real per-sample processing."""
-    del sample
 
 
 def worker():
-    """Wake once per sample, process it, and print one stats line per second."""
+    """Process queued samples and print rate and jitter once per second."""
     rt = try_realtime()
     print(f"worker started (SCHED_FIFO={'yes' if rt else 'no, run as root to enable'})")
     prev = None
@@ -117,10 +116,8 @@ def worker():
 
 
 def main():
-    """Connect to arduino-router, register the method, and run the threads."""
-    sock = socket.socket(  # pylint: disable=consider-using-with
-        socket.AF_UNIX, socket.SOCK_STREAM
-    )
+    """Connect to arduino-router, start the worker and run the reader."""
+    sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     sock.connect(ROUTER_SOCKET)
     unpacker = msgpack.Unpacker(raw=False)
     register(sock, unpacker)

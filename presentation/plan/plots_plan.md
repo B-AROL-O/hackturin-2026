@@ -1,61 +1,59 @@
 # Visual and asset plan
 
-Status: Proposed visuals. No images, figures, or charts have been produced.
-Apply [visual guidelines](../../.agent/visual-design.md) when implementing.
+Status: Proposed visuals for the three-minute company-use story. Apply
+[visual guidelines](../../.agent/visual-design.md) during implementation.
 
 ## Main visuals
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID        | Primary visual                                                                | Source or provenance                                             | Visible qualification                                     |
-| --------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
-| `pv-title`      | Same panel with a restrained pigeon cue on a graphite title canvas            | Original, licensed photograph, or labeled generated illustration | Proposed system in subtitle                               |
-| `pv-problem`    | Pigeon-droppings detail; small dust and hail examples with distinct labels    | Verified image with rights, or clearly illustrative image        | No claimed production-loss value                          |
-| `pv-context`    | Operator, installation, and PoopVolt boundary                                 | Canonical `pv-context` diagram                                   | Proposed architecture                                     |
-| `pv-pipeline`   | Horizontal edge flow and `Local storage` connection                           | `pv-architecture` with canonical names                           | Proposed architecture, intended platform                  |
-| `pv-quality`    | Valid observation contrasted with a missing or stale observation              | `pv-acquisition` and `pv-flow-soiling`                           | Illustrative observations                                 |
-| `pv-evidence`   | Same deposit in RGB; illustrative thermal hotspot; electrical/history context | `pv-diagnostics`; actual assets still needed                     | Illustrative modalities, history required for degradation |
-| `pv-decision`   | Evidence, finding, recommendation, and operator review                        | `pv-maintenance`, `pv-flow-maintenance`                          | Illustrative recommendation                               |
-| `pv-validation` | Compact integration and evaluation roadmap                                    | Open decisions in `pv-index` and `pv-deployment`                 | Work planned, results pending                             |
-| `pv-close`      | Simple return to the operator decision loop                                   | `pv-context` and `pv-maintenance`                                | Intended benefit                                          |
+| Slide ID       | Primary visual                                                                | Source or provenance                                              | Visible qualification                                   |
+| -------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------- |
+| `pv-title`     | Approved typographic hook with a restrained panel/pigeon cue                  | Original/licensed image and `pv-narrative`                        | Illustrative scene                                      |
+| `pv-problem`   | Company, older plant, and owner: the missing evidence that motivates a review | `pv-narrative`, `pv-soiling-background`                           | Possible contributors; no established cause             |
+| `pv-pipeline`  | Observed and expected production, same period and units                       | `pv-diagnostics`, `pv-data-plan`                                  | Proposed reference; unknown inputs visible              |
+| `pv-prototype` | STL viewport or labeled design export                                         | Team STL when supplied; `pv-hardware` for secured kit             | Design concept, not working hardware                    |
+| `pv-evidence`  | One software case followed by a clearly attributed technician proposal        | Executed MVP evidence when linked; otherwise illustrative fixture | Measured, simulated, or replayed status; mapping limits |
+| `pv-decision`  | Company proposal, informed owner choice, intervention, and reassessment       | `pv-maintenance`, `coesa-energy-context`                          | Options to evaluate; benefit unmeasured                 |
 
 <!-- markdownlint-enable MD013 -->
 
-## Canonical diagram exports
+## Chart and evidence rules
 
-Keep the same panel and deposit location across the cover, problem, evidence,
-and decision visuals. Show a pigeon or its droppings as the narrative cue, then
-align the RGB view with a separately labeled illustrative thermal hotspot view.
-Use small dust and hail examples to connect the story to broader maintenance;
-represent hail as damage requiring inspection, not another cleaning scenario.
-Background sources are recorded in the [source registry](../sources/README.md).
+Label the theoretical reference as estimated. Keep observed values, estimated
+values, and illustrative values visually distinct with text and line patterns,
+not color alone. Use common periods and units. Never fabricate a quantitative
+gap. Show missing reference inputs as unavailable rather than drawing an
+invented curve.
 
-Build a full export from each Mermaid page used in the appendix. For the main
-pitch, create concise excerpts from `pv-context`, `pv-architecture`, and the two
-runtime flows. Export names should include the diagram ID. Label an excerpt as
-a presentation view derived from its parent and explain omitted detail in notes.
+String labels require verified topology. An unknown mapping stays an inverter or
+channel view. The SOLARMA replay has its own plant/time identity and lacks
+populated irradiance; phone images cannot supply its missing weather baseline.
 
-The extraction tool should read the canonical fenced block, apply presentation
-theme configuration, render a static asset, and retain a source hash. It should
-fail if the page has no unique expected diagram. Keep the complete source and
-diagram text available as a readable alternative in the bundled references.
+The pigeon cue explains the name and a possible inspection issue. It is not the
+recurring protagonist. Keep phone RGB capture separate from electrical plots and
+never represent RGB as measured thermal imagery.
 
-Use consistent module positions across pipeline and decision slides. Emphasize
-the stage being discussed with a label and optional short reveal. Avoid dense
-nested diagrams on the main canvas. Put unverified physical interfaces in the
-deployment appendix with their existing TBD status.
+## STL and hardware
 
-## Image and data acquisition
+Record the STL's filename, creator, revision, intended function, and actual
+status when supplied. A viewport shows a proposed design, not proof of
+fabrication. Use `pv-hardware` to distinguish secured parts, unavailable
+equipment, and integration work. The phone replaces the unavailable thermal
+camera for visible inspection.
 
-Create `assets/README.md` during implementation. For every image or font, record
-its source, creator, license, retrieval date, modifications, and intended use.
-Keep original rights information next to locally bundled assets. Sponsor listing
-in the repository readme does not itself establish usable logo artwork or rights.
+## Appendix and asset acquisition
 
-No quantitative results are currently available for a performance chart.
-The first deck can use conceptual diagrams and illustrative observation examples.
-Later plots require recorded data, units, evaluation scope, uncertainty, and
-reproducible generation. Avoid decorative pseudo-charts and invented KPI tiles.
+Use canonical Mermaid exports with parent IDs and proposed status. Put full
+company distribution, local architecture, synchronization, and independent
+phone/replay paths in the appendix when they exceed the main story.
 
-The optional scenario needs two fixture cases. Default to the static adequate
-evidence view, with both cases rendered in the handout and print layout.
+Create `assets/README.md` during implementation with source, creator, license,
+modifications, and intended use. Record data/figure generation and source
+hashes. Phone capture provenance follows the
+[data plan](../../docs/data-plan.md).
+
+Economic figures require explicit inputs. No measured savings, recovered kWh,
+accuracy, or conversion rate currently supports a benefit chart. The optional
+comparison scenario has usable-input and missing-input states; both need a
+complete static and print fallback.

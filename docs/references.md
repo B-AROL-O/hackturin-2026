@@ -18,8 +18,8 @@ the company context entry also provides a dated local research summary.
 - Project relevance: Company identified by the user as evaluating our idea;
   background for PoopVolt's pitch and pilot design.
 - Retrieve when: Preparing the Coesa pitch, comparing existing monitoring
-  capabilities, or exploring second-life panel and off-grid maintenance use
-  cases.
+  capabilities, or exploring company-funded devices, maintenance services,
+  customer profitability, revamping, and later second-life/off-grid use cases.
 - Search keywords: Coesa, COESA Srl, evaluator, hackTurin, Federico Sandrone,
   Matteo Stoppa, ESCo, EPC, O&M, KeepTheSun, JuaKit, SPARC, off-grid, soiling,
   predictive maintenance, circular economy, PoopVolt.
@@ -27,7 +27,55 @@ the company context entry also provides a dated local research summary.
   suggested product fit as hypotheses, and refresh changing company facts before
   external use.
 
+## pv-data-plan
+
+- Title: PoopVolt data and demonstration plan
+- Local source: [Data plan](data-plan.md)
+- Source type: Proposed ingestion/evaluation design and inspected external inventory
+- Reviewed on: 2026-10-10
+- Retrieve when: Planning phone capture, SOLARMA replay, string/channel mapping,
+  anomaly evaluation, or predictive-maintenance data requirements.
+- Search keywords: phone RGB, simulated dust, pigeon droppings, SOLARMA, string,
+  inverter channel, provenance, localization, held-out evaluation, predictive maintenance.
+
+## pv-hardware
+
+- Title: PoopVolt hardware availability
+- Local source: [Hardware inventory](hardware.md)
+- Source type: Team-reported secured/unavailable parts and prototype substitutions
+- Updated on: 2026-10-10
+- Retrieve when: Planning prototype assembly or describing what hardware is available.
+- Search keywords: UNO Q 4GB, Media Carrier, Seeed Studio Base Shield, AHT20,
+  Light Sensor P v1.1, ACS70331, Grove LCD, LiPo, HRS1358, R1123, HAS4966,
+  breadboards, Waveshare, phone RGB, unavailable thermal camera.
+- Limits: Availability is reported by the team. Interfaces, power, assembly,
+  phone transfer, and sensor acquisition are not validated by this inventory.
+
+## solarma-pv-analysis-tools
+
+- Title: PV analysis tools and SOLPEV inverter logs
+- Publisher: SOLARMA snc
+- Canonical URL: <https://github.com/SOLARMA/pv-analysis-tools>
+- Inspected revision: `fc96313e453978fc89211322a8afb966b85f7913`
+- Pinned data: <https://github.com/SOLARMA/pv-analysis-tools/tree/fc96313e453978fc89211322a8afb966b85f7913/data>
+- Source type: Historical Danfoss Comlynx Weblogger exports and plotting notebook
+- Inspected on: 2026-10-10, through GitHub API and raw files
+- License: Repository-level MIT; retain the notice when reusing files.
+- Project relevance: Proposed multi-channel/whole-plant replay source.
+- Retrieve when: Building a telemetry importer or assessing inverter input coverage.
+- Search keywords: SOLARMA, SOLPEV, Danfoss, Comlynx, details.txt, summary.txt,
+  events.txt, inverter, DC channel, telemetry, historical replay.
+- Limits: One plant, overlapping exports, no panel map or contamination/thermal
+  labels, missing values, and empty irradiance fields in the larger summary.
+  Event codes need interpretation. See the [data plan](data-plan.md) for the
+  parsed inventory and evaluation constraints.
+
 ## arduino-uno-q-user-manual
+
+The [hardware inventory](hardware.md) records the secured UNO Q 4GB with Media
+Carrier and supporting parts. It is a team availability report, not a hardware
+compatibility assessment. The phone RGB camera replaces the unavailable thermal
+camera in the current prototype.
 
 - Title: Arduino UNO Q User Manual
 - Publisher: Arduino

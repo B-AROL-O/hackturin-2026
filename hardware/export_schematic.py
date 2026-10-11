@@ -15,17 +15,23 @@ EXPORTS = ROOT / "docs" / "architecture" / "diagrams"
 EXPECTED_NETS = {
     "+5V_USB": {("P1", "VBUS"), ("U1", "USB_VBUS")},
     "+3V3": {("U1", "3V3")}
-    | {(f"J{i}", "3") for i in range(1, 5)}
-    | {(f"U{i}", "3") for i in range(2, 6)},
+    | {(f"J{i}", "3") for i in range(1, 6)}
+    | {(f"U{i}", "3") for i in range(2, 7)},
     "GND": {("P1", "GND"), ("U1", "USB_GND")}
-    | {(f"J{i}", "4") for i in range(1, 5)}
-    | {(f"U{i}", "4") for i in range(2, 6)},
+    | {(f"J{i}", "4") for i in range(1, 6)}
+    | {(f"U{i}", "4") for i in range(2, 7)},
     "SCL": {("U1", "SCL"), ("J1", "1"), ("J2", "1"), ("U2", "1"), ("U3", "1")},
     "SDA": {("U1", "SDA"), ("J1", "2"), ("J2", "2"), ("U2", "2"), ("U3", "2")},
     "D0_RX": {("U1", "D0"), ("J3", "1"), ("U4", "1")},
     "D1_TX": {("U1", "D1"), ("J3", "2"), ("U4", "2")},
     "LIGHT_A0": {("U1", "A0"), ("J4", "1"), ("U5", "1")},
-    "SPARE_A1": {("U1", "A1"), ("J4", "2"), ("U5", "2")},
+    "PV_ISENSE_A1": {("U1", "A1"), ("J4", "2"), ("U5", "2"), ("J5", "1"), ("U6", "1")},
+    "SPARE_A2": {("U1", "A2"), ("J5", "2"), ("U6", "2")},
+    "PV_POS": {("PV1", "POS"), ("U6", "IP+")},
+    "PV_TO_CHARGER": {("U6", "IP-"), ("U7", "SOL+")},
+    "PV_NEG": {("PV1", "NEG"), ("U7", "SOL-")},
+    "BAT_POS": {("BT1", "POS"), ("U7", "BAT+")},
+    "BAT_NEG": {("BT1", "NEG"), ("U7", "BAT-")},
 }
 
 
