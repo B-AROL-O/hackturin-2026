@@ -4,7 +4,19 @@ version = "0.2.0"
 description = "PoopVolt edge diagnostics for off-grid photovoltaic installations"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+    "python-multipart>=0.0.20,<1",
+    "pillow>=11,<13",
+]
+
+[project.optional-dependencies]
+# UNO Q already supplies cv2 and numpy. Install this extra only on a laptop.
+desktop = ["opencv-python-headless==4.12.0.88", "numpy>=2,<3"]
+
+[project.scripts]
+poopvolt-inspect = "poopvolt.server:main"
 
 [build-system]
 requires = ["uv_build>=0.8,<0.12"]
@@ -15,7 +27,9 @@ module-root = ""
 
 [dependency-groups]
 dev = [
-    "pytest>=9.1.1",
+    "pytest>=9.1.1,<10",
+    "httpx>=0.28,<1",
+    "onnx>=1.17,<2",
 ]
 
 [tool.pytest.ini_options]

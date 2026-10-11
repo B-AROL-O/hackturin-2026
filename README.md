@@ -1,4 +1,9 @@
-# Team response to hackTurin 2026
+# PoopVolt (hackTurin 2026)
+
+<img src="assets/brand/Logo_PoopVolt.png" alt="PoopVolt logo: pigeon on a photovoltaic panel beside the product name" width="640" />
+
+Brand resources: [brand guidelines](brand-guidelines.md) and
+[logo provenance and available variants](assets/brand/README.md).
 
 PoopVolt starts with the owner of an older photovoltaic plant who does not know
 whether it produces as expected. A proposed expected/observed comparison makes
@@ -71,15 +76,15 @@ More views are in the [architecture index](docs/architecture/README.md).
 
 ## What works today
 
-| Area                                                | State              |
-| --------------------------------------------------- | ------------------ |
-| Grove sensors, LCD and NFC on the UNO Q             | Working (bring-up) |
-| Readings streamed to the Linux side over the Bridge | Working (bring-up) |
-| SOLARMA inverter log importer and replay            | Working            |
-| Expected-versus-observed comparison (peers, replay) | Working (scoped)   |
-| Phone RGB soiling detection                         | Not implemented    |
-| Operator UI and maintenance output                  | Not implemented    |
-| STL enclosure concept                               | Not delivered      |
+| Area                                                | State                                   |
+| --------------------------------------------------- | --------------------------------------- |
+| Grove sensors, LCD and NFC on the UNO Q             | Working (bring-up)                      |
+| Readings streamed to the Linux side over the Bridge | Working (bring-up)                      |
+| SOLARMA inverter log importer and replay            | Working                                 |
+| Expected-versus-observed comparison (peers, replay) | Working (scoped)                        |
+| Phone RGB inspection upload / CPU adapter           | Implemented; trained model pending      |
+| Inspection UI; broader maintenance output           | Implemented UI; broader design proposed |
+| STL enclosure concept                               | Not delivered                           |
 
 [Project status and reuse disclosure](docs/project-status.md) has the evidence
 and limits for every row, and separates what the team built from what it reuses.
@@ -156,6 +161,24 @@ licensed and its notice is kept in [`data/solarma/NOTICE.md`](data/solarma/NOTIC
 
 Set up the Python environment with `uv sync`.
 
+## Phone-to-edge inspection
+
+The UNO Q Linux service accepts mobile phone photographs and serves the inspection
+dashboard at the same URL. Start locally with:
+
+```sh
+uv sync --extra desktop
+uv run --extra desktop poopvolt-inspect
+```
+
+Open `http://localhost:8000/`. The trained ONNX artifact and export/class
+configuration remain placeholders; the API reports model-not-ready until supplied
+and never substitutes demo predictions in the API. The home page opens a labeled
+visual demo for layout review. See [phone inspection setup](docs/phone-inspection.md)
+for exact UNO Q commands, API details, model contract, and phone/laptop workflow.
+The board reuses its existing OpenCV 4.12/numpy; the desktop extra is for laptops.
+See [project status](docs/project-status.md) for implementation and testing limits.
+
 ## Quick links
 
 - [Three-minute Italian narrative](docs/pitch-narrative.md) — owner, production
@@ -172,6 +195,8 @@ Set up the Python environment with `uv sync`.
   what is incomplete, what we built and what we reuse.
 - [HTML presentation draft](presentation/README.md) — architecture, narrative,
   and implementation plan.
+- [Remotion video handoff](presentation/video/README.md) — 120-second English
+  narration, storyboard, brand/logo, photos, schematic, and coding-agent task.
 - [Presentation guidelines](.agent/README.md) — contributor and agent guidance.
 - [Architecture index](docs/architecture/README.md) — diagram hierarchy and
   system design.

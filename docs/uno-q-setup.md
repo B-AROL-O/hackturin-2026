@@ -16,15 +16,16 @@ Your user must be in `uucp` for `/dev/ttyACM0`. Always pass `-p /dev/ttyACM0`: `
 The Modulino Movement module is on Qwiic (Wire1). On the MCU, a `k_timer` ISR runs at 100 Hz and gives a semaphore. A sampler thread then sends `Bridge.notify("imu", seq, t_us, ax, ay, az, gx, gy, gz)` to `arduino-router`. On Linux, `linux/imu_rx.py` reads from the router socket and posts a semaphore for each sample, which wakes the `process()` worker.
 
 ```sh
+# adb shell starts in /, so use ~/ or /home/arduino/ paths on the board
 # MCU
 arduino-cli compile -b arduino:zephyr:unoq --upload -p /dev/ttyACM0 firmware/imu_bridge
 arduino-cli monitor -p /dev/ttyACM0 --config baudrate=9600   # Monitor heartbeat
 
 # Linux side (board has no pip: vendor an aarch64 cp313 msgpack wheel)
 uvx pip download msgpack --only-binary=:all: --platform manylinux2014_aarch64 --python-version 3.13 -d /tmp/wh
-$ADB shell mkdir -p imu_bridge
-$ADB push firmware/imu_bridge/linux/imu_rx.py /tmp/wh/msgpack-*.whl imu_bridge/
-$ADB shell 'cd imu_bridge && python3 -m zipfile -e msgpack-*.whl vendor && python3 -u imu_rx.py'
+$ADB shell mkdir -p /home/arduino/imu_bridge
+$ADB push firmware/imu_bridge/linux/imu_rx.py /tmp/wh/msgpack-*.whl /home/arduino/imu_bridge/
+$ADB shell 'cd ~/imu_bridge && python3 -m zipfile -e msgpack-*.whl vendor && python3 -u imu_rx.py'
 ```
 
 Measured: 100 Hz, no gaps or drops. Arrival jitter is about 0.6 ms, with peaks up to about 3 ms (not using `SCHED_FIFO`).
@@ -43,18 +44,31 @@ This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38
 
 ## Station sketch (`firmware/station`)
 
-Reads the sensors (including the solar panel current on A1, zero offset 266.5 mV) and shows them on the LCD.
-The PN532 (on the UART port) emulates a read-only NFC Forum Type 4 tag.
-Its NDEF Text record holds the current readings and is refreshed every second, so a phone tap (Android, for example with NFC Tools) shows the data when the LCD can't be read.
-In this mode the PN532 does not read cards.
-Verified: a full NDEF read from a phone (Monitor shows `nfc_reads` increasing).
+Reads the sensors (including the solar panel current on A1, zero offset 266.5 mV) and shows them on the LCD. The PN532 (on the UART port) emulates a read-only NFC Forum Type 4 tag.
+Its NDEF Text record holds the current readings and is refreshed every second, so a phone tap (Android, for example with NFC Tools) shows the data when the LCD can't be read. In this mode the PN532 does not read cards. Verified: a full NDEF read from a phone (Monitor shows `nfc_reads` increasing).
 
-It also streams the readings to the Linux side once per second with `Bridge.notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma, pv_mv)`. On the board, `linux/station_rx.py` receives them, calls a `process()` placeholder, and writes CSV (it uses the same vendored msgpack as the IMU receiver):
+It also streams the readings to the Linux side once per second with `Bridge.notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma, pv_mv)`.
+On the board, `linux/station_rx.py` receives them, computes the panel **performance index**, sends it back to the MCU (`set_perf`, shown as `P…%` on the LCD and `perf=` in the NFC text), and writes CSV. It uses the same vendored msgpack as the IMU receiver:
 
 ```sh
-$ADB shell mkdir -p station
-$ADB push firmware/station/linux/station_rx.py /tmp/wh/msgpack-*.whl station/
-$ADB shell 'cd station && python3 -m zipfile -e msgpack-*.whl vendor && python3 station_rx.py --csv station.csv'
+$ADB shell mkdir -p /home/arduino/station
+$ADB push firmware/station/linux/station_rx.py firmware/station/linux/solar_model.py /tmp/wh/msgpack-*.whl /home/arduino/station/
+$ADB shell 'cd ~/station && python3 -m zipfile -e msgpack-*.whl vendor'
+
+# once, with the panel clean and in clear sun (sun above 25 deg): record the baseline
+$ADB shell "cd ~/station && python3 station_rx.py --now $(date +%s) --calibrate 30"
+# then
+$ADB shell "cd ~/station && python3 station_rx.py --now $(date +%s) --csv station.csv"
 ```
 
-The `rx_unix_s` column uses the board's clock, which is wrong until the board has network time.
+How the index works:
+
+- `ratio = panel current (mA) / expected clear-sky irradiance on the panel (W/m²)`, and `perf = ratio / clean ratio` (100 % means as good as when calibrated). The clean ratio is saved in `baseline.json` next to the script.
+- The expected irradiance comes from `solar_model.py`. It uses the sun position (NOAA equations), Kasten–Young air mass, the Meinel direct-beam model, and 10 % diffuse, for the given place and time. Defaults: Turin, panel flat (`--lat`, `--lon`, `--tilt`, `--azimuth` to change).
+- `--now $(date +%s)` passes the laptop's UTC time, because the board clock is wrong without network time.
+- Checked against `pvlib`: sun position within 0.02°. Irradiance is about 9 % above the Ineichen clear-sky model on average, but calibration cancels a constant offset. What remains is drift with sun height: about 8 % with the sun above 25° (`--min-elevation`, default), which in October-November means roughly 10:00–17:00. So the index flags losses of roughly 10–15 % or more.
+- Limits: clouds lower the index just like soiling; a full battery stops the charger drawing current (keep a load such as a phone on the Waveshare USB OUT); the light sensor saturates (about 640) and is not used; no panel voltage yet, so this is a relative index, not efficiency in %.
+
+With `--latest latest.json`, the receiver also keeps the latest reading in a small JSON file, which the [inspection dashboard](phone-inspection.md) shows live.
+
+CSV columns: `utc` (corrected), the reading fields, `sun_elev_deg`, `sun_az_deg`, `poa_clear_wm2`, `ratio`, `perf_pct` (`nan` when not computed: sun too low, or no panel current). The sketch reports currents below 10 mA as 0: the sensor's zero drifts by about ±10 mA with temperature (in the sun it read 257–260 mV instead of 266.5 mV), and `pv_mv` keeps the raw value.

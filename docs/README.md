@@ -9,8 +9,8 @@
 
 - [Project status and reuse disclosure](project-status.md): working versus
   incomplete features, team-built versus pre-existing components.
-- [Three-minute narrative](pitch-narrative.md): owner story, expected/observed
-  comparison, software case, STL concept, and regeneration review.
+- [Two-minute motion graphics narrative](pitch-narrative.md): timed Italian
+  voice-over, electrical schematic, historical replay, and intervention review.
 - [PoopVolt project pitch](pitch-draft.md): proposed product, reference model,
   and secondary commercial hypothesis.
 - [Expected versus observed on the SOLARMA replay](comparison-results.md): peer

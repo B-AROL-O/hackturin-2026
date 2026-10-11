@@ -1,5 +1,11 @@
 # Engineering workflow guidelines
 
+The user-selected Remotion film has an independent
+[implementation contract](../presentation/video/implementation.md).
+Keep its code, local images/fonts/audio, dependencies, and exports inside
+`presentation/video/`. Preserve shared source provenance and the brand rules.
+The Quarto workflow below applies to the HTML deck.
+
 ## Boundaries
 
 Keep slide sources, presentation assets, and build helpers inside `presentation/`.

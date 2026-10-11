@@ -1,113 +1,159 @@
 # PoopVolt — Il tuo impianto è sporco di merda
 
-> Copione di 3 minuti, adattato dalla bozza del team `pitch-narrative2.md` e
-> dalle successive revisioni concordate. Scenario illustrativo; materiali
-> previsti: MVP software e modello STL. L'azienda usa i dati per proporre
-> interventi che il cliente possa comprendere e valutare. Il modello teorico è
-> una proposta da definire e validare. Questa PR documenta la demo: non ne
-> implementa il software o l'hardware.
+> Copione italiano per un video motion graphics di **2 minuti**: sei scene, voce
+> fuori campo e schema elettrico in primo piano. Leggere soltanto i blocchi
+> **Voce**. Il gancio è illustrativo; il confronto software usa un replay
+> storico; l'hardware è un prototipo di bring-up. Il modello teorico e i
+> benefici sul campo restano da validare. Questo documento pianifica il video,
+> non ne produce il montaggio.
 
-## 0:00–0:25 — L'apertura
+## 0:00–0:12 — Il gancio
 
-**Il tuo impianto è sporco di merda.**
+**Voce:**
 
-_Pausa._
+Il tuo impianto è sporco di merda. Letteralmente.
 
-**Letteralmente. Ma il problema è capire quanto sta influendo sulla
-produzione.**
+Ma quanto sta influendo sulla produzione? È da questa domanda che nasce
+PoopVolt.
 
-Un cliente ha un impianto fotovoltaico installato da anni. Produce ancora, ma
-lui non sa se sta rendendo quanto dovrebbe.
+**A schermo:** «Quanto sta producendo davvero?» · «Scena illustrativa».
 
-È da questa domanda che nasce PoopVolt.
+**Movimento:** un piccione entra nell'inquadratura di un pannello stilizzato;
+compare una deiezione. Pausa breve su «Letteralmente». Il pannello si riduce
+accanto alla domanda. Nessun numero di perdita associato allo sporco.
 
-## 0:25–0:50 — Il problema dell'azienda
+## 0:12–0:30 — Il problema dell'azienda
 
-Ora pensate all'azienda che installa o segue questi impianti.
+**Voce:**
 
-Come spiega al cliente perché vale la pena verificare un impianto che,
-apparentemente, funziona?
+Un impianto installato da anni produce ancora. Il proprietario non sa se rende
+quanto dovrebbe. L'azienda che lo segue deve spiegare perché vale la pena
+verificarlo. Per proporre un intervento servono evidenze comprensibili.
 
-Polvere, usura e deiezioni di piccioni sono possibili problemi da approfondire.
-Ma per motivare un intervento servono dati comprensibili: che cosa osserviamo,
-dove approfondire e che cosa possiamo proporre.
+**A schermo:** «Funziona. Ma rende quanto dovrebbe?».
 
-## 0:50–1:20 — Rendere visibile il divario
+**Movimento:** lo stesso pannello diventa un impianto; ai lati entrano
+proprietario e tecnico. Una linea collega la domanda del proprietario alla
+verifica del tecnico. Mantenere i due ruoli nelle scene successive.
 
-PoopVolt vuole aiutare l'azienda a proporre interventi motivati dai dati che il
-cliente possa comprendere e valutare.
+## 0:30–0:50 — Rendere visibile il divario
 
-La nostra proposta confronta **produzione osservata e produzione attesa**.
-Puntiamo a stimare quella attesa con un modello teorico, da definire in base
-all'impianto e ai dati disponibili.
+**Voce:**
 
-Il confronto rende visibile lo scostamento e indica dove approfondire. Così
-l'azienda ha una base per spiegare al cliente il prossimo passo.
+PoopVolt confronta produzione osservata e riferimento atteso, nello stesso
+periodo. Oggi abbiamo un confronto con gli altri inverter; il modello teorico,
+corretto per le condizioni ambientali, è il prossimo passo. Lo scostamento
+indica dove approfondire, non identifica la causa.
 
-## 1:20–1:35 — Dimostrazione hardware
+**A schermo:** «Osservata / Attesa» · «Confronto fra inverter: disponibile» ·
+«Modello teorico: da sviluppare».
 
-Accanto al software presentiamo il modello STL che accompagna PoopVolt. Il
-disegno digitale illustra la proposta fisica del progetto. Integrazione e
-verifica sul campo restano passaggi da completare.
+**Movimento:** entrano due etichette, poi la cornice del confronto. Evidenziare
+il passaggio «Scostamento → Verifica». Il risultato numerico arriva nella scena
+del replay; qui non disegnare una curva teorica inventata.
 
-_Mostrare il modello e spiegarne la funzione. Distinguere il concept e i
-componenti disponibili da hardware collaudato._
+## 0:50–1:15 — Mostrare lo schema elettrico
 
-## 1:35–2:15 — Dimostrazione software
+**Voce:**
 
-Nel software mostriamo il percorso dal dato alla proposta di intervento.
+Il prototipo usa Arduino UNO Q: temperatura, umidità, luce, display e NFC. Lo
+schema mostra anche il sensore di corrente sul percorso pannello, caricatore e
+batteria. La corrente sotto luce resta da verificare. La scheda è alimentata via
+USB; il ramo solare è separato.
 
-Confrontiamo produzione attesa e osservata per lo stesso periodo. Evidenziamo lo
-scostamento e, dove i dati lo consentono, le differenze fra stringhe con
-mappatura verificata.
+**A schermo:** «Schema elettrico del prototipo» · «UNO Q: alimentazione USB» ·
+«Corrente: zero verificato, misura sotto luce da validare».
 
-L'azienda può mostrare al cliente dove approfondire, spiegare quali verifiche
-servono e proporre il prossimo passo. Il cliente ha elementi per comprendere e
-valutare la proposta.
+**Movimento:** taglio sullo
+[schema elettrico completo](#schema-elettrico-da-mostrare). Da 0:50 a 0:55
+mostrare l'intera tavola. Da 0:55 a 1:05 avvicinare UNO Q e Grove: evidenziare
+I2C per AHT20/LCD, A0 per la luce e UART per NFC. Da 1:05 a 1:12 spostare il
+fuoco sul percorso pannello → sensore di corrente → Waveshare → LiPo e sulla
+lettura A1. Chiudere tornando alla tavola completa fino a 1:15. Usare contorni
+ed etichette sovrapposti, lasciando intatti simboli e reti. Non animare un
+collegamento dal caricatore all'alimentazione UNO Q: USB OUT non è collegata.
 
-_Mostrare soltanto funzioni presenti nell'MVP. Dichiarare origine dei dati,
-unità, periodo, riferimento della stima e copertura. Se il modello o il
-dettaglio per stringa non sono implementati, usare una simulazione
-esplicitamente etichettata. Non descrivere una proposta manuale del tecnico come
-un output automatico del software._
+## 1:15–1:40 — Una prova software concreta
 
-## 2:15–3:00 — Dalla proposta alla verifica del beneficio
+**Voce:**
 
-Uno scostamento non identifica, da solo, la causa. Offre all'azienda e al
-proprietario un punto da cui partire.
+Nel replay dei dati SOLARMA confrontiamo tredici inverter. Nel periodo mostrato,
+l'inverter uno registra zero energia, contro circa duecentonovantadue
+kilowattora attesi dal confronto con i suoi pari. Il software lo segnala per
+ispezione. È un dato storico riprodotto, non una misura del nostro pannello né
+una diagnosi di sporco.
 
-Un'azienda come Coesa può valutare pulizia, riparazione, sostituzione di
-componenti guasti o una rigenerazione più ampia, e spiegare al cliente perché
-propone quell'intervento.
+**A schermo:** «REPLAY STORICO · SOLARMA · 13 inverter» · «1 agosto–17 settembre
+2019 · Inverter 1» · «Osservata: 0 kWh · Attesa dai pari: 292 kWh» · «Candidato
+per ispezione».
 
-L'obiettivo è recuperare produzione e migliorare le prestazioni. Dopo
-l'intervento, un confronto in condizioni comparabili permette di verificare il
-beneficio: non tutto il divario è recuperabile.
+**Movimento:** taglio netto dal circuito al
+[grafico del replay](images/comparison-inverter-1-replayed.svg). Mostrare assi,
+unità, legenda e periodo fin dall'inizio; rivelare insieme le serie originali,
+poi evidenziare il divario e la segnalazione. Tenere il grafico fermo per almeno
+otto secondi. Non trasformare il pannello illustrato nel grafico: sono fonti
+indipendenti. Fonte e limiti: [risultati del confronto](comparison-results.md).
 
-**PoopVolt trasforma uno scostamento produttivo in una proposta di intervento
-comprensibile.**
+## 1:40–2:00 — Dalla verifica alla proposta
 
-## Note per il team prima della presentazione
+**Voce:**
 
-- L'apertura è una scena illustrativa; non attribuisce una perdita misurata allo
-  sporco.
-- Presentare l'azienda come utilizzatore del prodotto e il proprietario come
-  destinatario delle evidenze e della proposta.
-- La distribuzione gratuita resta un'ipotesi commerciale secondaria, non un
-  accordo.
-- Confermare modello teorico, input, unità, periodo e condizioni del confronto.
-- Usare dettaglio per stringa solo con mappatura e misure verificate.
-- Distinguere lo scostamento dalla stima da un calo storico e da una diagnosi.
-- Tenere separati foto RGB con sporco simulato e replay storico SOLARMA.
-- Non ricavare hotspot o kWh persi da una fotografia RGB.
-- Non promettere richieste di intervento, benefici commerciali o recuperi
-  garantiti.
-- Chiarire quali raccomandazioni produce il software e quali formula il tecnico.
-- Collegare il modello STL e la demo software quando disponibili.
-- Provare copione e demo entro 3 minuti e preparare una registrazione di
-  riserva.
+Il tecnico approfondisce e propone pulizia, riparazione o sostituzione, quando
+serve. Il proprietario valuta. Dopo l'intervento, misure comparabili verificano
+il beneficio: non tutto il divario è recuperabile.
 
-La [scaletta](../presentation/plan/agenda.md) e il
-[piano del parlato](../presentation/plan/speech_plan.md) seguono questo copione.
-Il [pitch di progetto](pitch-draft.md) conserva il contesto commerciale
-proposto.
+PoopVolt trasforma uno scostamento produttivo in una proposta di intervento
+comprensibile.
+
+**A schermo:** «Verificare → Proporre → Scegliere → Misurare» · «PoopVolt ·
+Evidenze per la manutenzione fotovoltaica».
+
+**Movimento:** ritorno a tecnico e proprietario. Le quattro fasi entrano una
+alla volta; la scelta resta al proprietario. Chiudere sul logo e sul messaggio
+finale, fermi per gli ultimi tre secondi. Nessuna curva di recupero o promessa
+di risparmio.
+
+## Schema elettrico da mostrare
+
+![Schema elettrico PoopVolt: UNO Q alimentata via USB, moduli Grove e ramo solare separato](architecture/diagrams/pv-wiring.svg)
+
+[Apri SVG](architecture/diagrams/pv-wiring.svg) ·
+[Scarica PDF](architecture/diagrams/pv-wiring.pdf) ·
+[Connessioni e stato delle verifiche](hardware-connections.md) ·
+[Sorgente KiCad](../hardware/poopvolt.kicad_sch)
+
+Il diagramma `pv-wiring` registra le connessioni del prototipo riportate dal
+team. Conservare il ramo solare separato dall'alimentazione USB della scheda.
+Ritagli e zoom sono scelte di montaggio, non nuovi schemi. Le modifiche
+elettriche partono dal sorgente KiCad e dal suo workflow di esportazione; non
+modificare SVG e PDF generati a mano.
+
+## Indicazioni di montaggio
+
+- Durata totale: **120 secondi**, pause e chiusura comprese. Registrare soltanto
+  la voce, poi adattare i movimenti ai sei intervalli; provare il parlato prima
+  del montaggio definitivo.
+- Usare formato 16:9, 1920 × 1080, e la palette blu scuro, giallo solare, bianco
+  e grigi delle [linee guida di brand](../brand-guidelines.md).
+- Una composizione per scena; frasi brevi a schermo, sottotitoli del parlato,
+  transizioni di 200–300 ms. Preferire ingressi, evidenziazioni e zoom motivati
+  dalla spiegazione; mantenere fermi i contenuti durante la lettura.
+- Tenere leggibili etichette di stato, fonti e unità anche durante il movimento.
+  Niente contatori animati, dashboard fittizie o effetti di energia in transito
+  che sembrino misurazioni dal vivo.
+- Lo schema sostituisce l'STL nella sequenza principale: nessun modello STL è
+  consegnato nel repository. Inserirlo solo in materiale aggiuntivo quando
+  disponibile e identificarlo come concept.
+- Modello teorico, rilevamento validato dello sporco e benefici sul campo
+  restano lavoro futuro. La
+  [pipeline di ispezione da telefono](phone-inspection.md) ha upload, adattatore
+  ONNX e interfaccia implementati; modello addestrato e verifica su UNO Q sono
+  ancora da completare. Le proposte qui attribuite al tecnico non sono un output
+  automatico del replay.
+
+La [scaletta](../presentation/plan/agenda.md), il
+[piano del parlato](../presentation/plan/speech_plan.md) e il
+[piano visuale](../presentation/plan/plots_plan.md) seguono questi tempi. Il
+[pitch di progetto](pitch-draft.md) conserva il contesto commerciale. Il
+[video Devpost in inglese](video/README.md) ha un copione e materiali distinti:
+sottotitoli e card esistenti non sono il montaggio di questa versione.

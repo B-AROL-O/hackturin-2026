@@ -1,0 +1,282 @@
+[
+  {
+    "scene": "V01",
+    "start": 0.5,
+    "end": 2.8224583333333335,
+    "text": "Your solar plant is covered in shit.",
+    "speechEnd": 2.6224583333333333
+  },
+  {
+    "scene": "V01",
+    "start": 3.05,
+    "end": 4.047916666666667,
+    "text": "Literally.",
+    "speechEnd": 3.8479166666666664
+  },
+  {
+    "scene": "V01",
+    "start": 4.5,
+    "end": 7.203041666666667,
+    "text": "But how much is that affecting production?",
+    "speechEnd": 7.003041666666666
+  },
+  {
+    "scene": "V01",
+    "start": 8.25,
+    "end": 10.930291666666665,
+    "text": "That is the question behind PoopVolt.",
+    "speechEnd": 10.730291666666666
+  },
+  {
+    "scene": "V02",
+    "start": 12.5,
+    "end": 15.3704,
+    "text": "An older solar plant still works.",
+    "speechEnd": 15.1704
+  },
+  {
+    "scene": "V02",
+    "start": 15.6204,
+    "end": 19.0324,
+    "text": "But its owner cannot tell whether it\nproduces",
+    "speechEnd": 18.8324
+  },
+  {
+    "scene": "V02",
+    "start": 19.2824,
+    "end": 21.0822,
+    "text": "as much as it should.",
+    "speechEnd": 20.8822
+  },
+  {
+    "scene": "V02",
+    "start": 21.3323,
+    "end": 24.9048,
+    "text": "The maintenance company needs clear\nevidence",
+    "speechEnd": 24.7048
+  },
+  {
+    "scene": "V02",
+    "start": 25.1548,
+    "end": 29.33,
+    "text": "to explain why an inspection is worth\nconsidering.",
+    "speechEnd": 29.13
+  },
+  {
+    "scene": "V03",
+    "start": 30.5,
+    "end": 32.8132,
+    "text": "PoopVolt compares observed production",
+    "speechEnd": 32.6132
+  },
+  {
+    "scene": "V03",
+    "start": 33.0632,
+    "end": 35.9284,
+    "text": "with an expected reference over the same\nperiod.",
+    "speechEnd": 35.7284
+  },
+  {
+    "scene": "V03",
+    "start": 36.1784,
+    "end": 39.1245,
+    "text": "Today, we have a comparison between\ninverters.",
+    "speechEnd": 38.9245
+  },
+  {
+    "scene": "V03",
+    "start": 39.3745,
+    "end": 43.4752,
+    "text": "A theoretical reference adjusted for\nenvironmental conditions",
+    "speechEnd": 43.2752
+  },
+  {
+    "scene": "V03",
+    "start": 43.7252,
+    "end": 44.995,
+    "text": "is the next step.",
+    "speechEnd": 44.795
+  },
+  {
+    "scene": "V03",
+    "start": 45.245,
+    "end": 48.0373,
+    "text": "A deviation tells us where to investigate,",
+    "speechEnd": 47.8373
+  },
+  {
+    "scene": "V03",
+    "start": 48.2873,
+    "end": 49.5,
+    "text": "not what caused it.",
+    "speechEnd": 49.4329
+  },
+  {
+    "scene": "V04",
+    "start": 50.5,
+    "end": 53.53,
+    "text": "The prototype uses Arduino UNO Q",
+    "speechEnd": 53.33
+  },
+  {
+    "scene": "V04",
+    "start": 53.78,
+    "end": 57.7313,
+    "text": "with temperature, humidity, light, a\ndisplay, and NFC.",
+    "speechEnd": 57.5313
+  },
+  {
+    "scene": "V04",
+    "start": 57.9813,
+    "end": 60.8354,
+    "text": "The schematic also shows the current\nsensor",
+    "speechEnd": 60.6354
+  },
+  {
+    "scene": "V04",
+    "start": 61.0854,
+    "end": 63.8055,
+    "text": "between the panel and the charging system.",
+    "speechEnd": 63.6055
+  },
+  {
+    "scene": "V04",
+    "start": 64.0555,
+    "end": 66.0059,
+    "text": "Zero current has been checked;",
+    "speechEnd": 65.8059
+  },
+  {
+    "scene": "V04",
+    "start": 66.2559,
+    "end": 69.252,
+    "text": "measurements under light still need\nvalidation.",
+    "speechEnd": 69.052
+  },
+  {
+    "scene": "V04",
+    "start": 69.502,
+    "end": 71.8418,
+    "text": "The board runs on USB power,",
+    "speechEnd": 71.6418
+  },
+  {
+    "scene": "V04",
+    "start": 72.0918,
+    "end": 73.9903,
+    "text": "separate from the solar branch.",
+    "speechEnd": 73.7903
+  },
+  {
+    "scene": "V05",
+    "start": 75.5,
+    "end": 78.3565,
+    "text": "In a replay of SOLARMA's historical data,",
+    "speechEnd": 78.1565
+  },
+  {
+    "scene": "V05",
+    "start": 78.5215,
+    "end": 80.4374,
+    "text": "we compare thirteen inverters.",
+    "speechEnd": 80.2374
+  },
+  {
+    "scene": "V05",
+    "start": 80.6025,
+    "end": 84.048,
+    "text": "From August first to September\nseventeenth, twenty nineteen,",
+    "speechEnd": 83.848
+  },
+  {
+    "scene": "V05",
+    "start": 84.2131,
+    "end": 86.6617,
+    "text": "inverter one reports zero energy",
+    "speechEnd": 86.4617
+  },
+  {
+    "scene": "V05",
+    "start": 86.8268,
+    "end": 90.1574,
+    "text": "against roughly two hundred and ninety-two\nkilowatt-hours",
+    "speechEnd": 89.9574
+  },
+  {
+    "scene": "V05",
+    "start": 90.3224,
+    "end": 91.9745,
+    "text": "expected from its peers.",
+    "speechEnd": 91.7745
+  },
+  {
+    "scene": "V05",
+    "start": 92.1395,
+    "end": 94.2258,
+    "text": "The software flags it for inspection.",
+    "speechEnd": 94.0258
+  },
+  {
+    "scene": "V05",
+    "start": 94.3908,
+    "end": 96.2447,
+    "text": "This is historical replay,",
+    "speechEnd": 96.0447
+  },
+  {
+    "scene": "V05",
+    "start": 96.4097,
+    "end": 99.5,
+    "text": "not our panel's measurement or a soiling\ndiagnosis.",
+    "speechEnd": 99.5
+  },
+  {
+    "scene": "V06",
+    "start": 100.5,
+    "end": 102.9475,
+    "text": "The technician investigates and proposes",
+    "speechEnd": 102.7952
+  },
+  {
+    "scene": "V06",
+    "start": 102.9475,
+    "end": 105.5517,
+    "text": "cleaning, repair, or replacement where\nneeded.",
+    "speechEnd": 105.3995
+  },
+  {
+    "scene": "V06",
+    "start": 105.5517,
+    "end": 106.8075,
+    "text": "The owner decides.",
+    "speechEnd": 106.6552
+  },
+  {
+    "scene": "V06",
+    "start": 106.8075,
+    "end": 110.2127,
+    "text": "Afterward, comparable measurements must\nverify the benefit;",
+    "speechEnd": 110.0605
+  },
+  {
+    "scene": "V06",
+    "start": 110.2127,
+    "end": 112.3495,
+    "text": "the full gap may not be recoverable.",
+    "speechEnd": 112.1973
+  },
+  {
+    "scene": "V06",
+    "start": 112.3495,
+    "end": 114.0185,
+    "text": "PoopVolt turns a production gap",
+    "speechEnd": 113.8662
+  },
+  {
+    "scene": "V06",
+    "start": 114.0185,
+    "end": 116.5,
+    "text": "into an understandable intervention\nproposal.",
+    "speechEnd": 116.5
+  }
+]

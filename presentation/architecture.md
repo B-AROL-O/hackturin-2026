@@ -7,13 +7,15 @@
 
 ## Purpose and boundaries
 
-Explain the [owner narrative](../docs/pitch-narrative.md) in three minutes: an
+Explain the [owner narrative](../docs/pitch-narrative.md) in two minutes: an
 older plant still works, but its owner cannot assess production. The strong
 opening introduces a company workflow: inspect a scoped expected/observed
 comparison, explain the findings, propose justified work, and let the owner
-assess it. Show an STL concept and one software case, then technical review and
-benefit verification. The theoretical reference and implemented demo scope are
-unverified.
+assess it. Show prototype electrical wiring and one historical peer-comparison
+case, then technical review and benefit verification. The theoretical reference
+remains proposed; the available replay and wiring have limited recorded scope.
+The narrative also serves as a timed motion graphics storyboard; video rendering
+is separate from the planned HTML stack.
 
 Keep the company-funded/free-device offer and independent RGB/replay paths in
 supporting context or the appendix. Give engineers details from canonical
@@ -40,8 +42,9 @@ The site runs on an audience browser independently of the intended UNO Q system.
 <!-- markdownlint-enable MD013 -->
 
 Source pages remain authoritative. Presentation excerpts must carry the parent
-diagram ID and proposed status. Keep wiring details and unsupported hardware
-specifications out of the main deck.
+diagram ID and proposed status. Use the canonical electrical schematic for the
+main hardware scene, with focused views and readable connection labels. Keep
+unsupported hardware specifications out of the main deck.
 
 The proposed company platform is part of the product architecture, not this
 static presentation. Illustrative company/customer screens are fixtures only;
@@ -51,10 +54,19 @@ Hardware availability comes from [the team inventory](../docs/hardware.md),
 source ID `pv-hardware`. Show the UNO Q 4GB with Media Carrier and selected Base
 Shield as secured parts with integration pending. The supporting
 visible-inspection path uses phone RGB instead of the unavailable thermal
-camera; thermal diagnosis is deferred. The main physical segment is an STL
-concept, not a working acquisition device.
+camera; thermal diagnosis is deferred. The main physical segment is the
+[prototype wiring](../docs/hardware-connections.md), with USB board power and a
+separate solar branch. Current under illumination remains pending. The STL
+concept is outside the main sequence until delivered.
 
 ## Stack decision
+
+The user selected Remotion for a 120-second English motion graphic adaptation
+of the current six-scene narrative. Follow its
+[production brief](video/README.md) and [implementation contract](video/implementation.md).
+The video uses `video/timing.json`, local `video/assets/`, the original logo, and
+the brand guidelines. The Quarto proposal below remains the HTML deck stack.
+Both media share canonical claims and source IDs, with independent builds.
 
 Propose Quarto with Reveal.js, following the reference's authoring workflow.
 Markdown keeps slides and speaker notes reviewable. Reveal.js supplies
@@ -171,8 +183,9 @@ interactive scenario enriches a complete static default, rather than gating it.
 Each future main slide has a stable ID from the agenda, an integer duration in
 seconds, source IDs, and claim status. Store these as Quarto heading attributes
 and validate the rendered metadata as well as the authored source. The six-slide
-total is 180 seconds, including software and STL demonstration time. Appendix
-IDs start with `pv-a-` and are excluded from the main timing and counter.
+total is 120 seconds, including diagram holds, transitions, and closing.
+Appendix IDs start with `pv-a-` and are excluded from the main timing and
+counter.
 
 The source manifest records repository-relative paths, source state, revision
 when committed, SHA-256, scope, and upstream URL when available. A reviewed
@@ -234,9 +247,10 @@ Strip private notes in the audience profile and verify their absence from the
 bundle. A presenter profile retains notes for local rehearsal. Print includes
 complete static content.
 
-The team requests a three-minute pitch; the event's official requirement is not
-independently verified here. The draft leaves the host, public path, final slide
-language, actual image assets, exact tool versions, and font acquisition open.
-The defaults above allow drafting without making those choices into product
-facts. Review them before implementation or publication. A host connection is
-unnecessary to build and evaluate the local presentation.
+The team requests a two-minute pitch and motion graphics storyboard; the event's
+official requirement is not independently verified here. The draft leaves the
+host, public path, final slide language, actual image assets, exact tool
+versions, and font acquisition open. The defaults above allow drafting without
+making those choices into product facts. Review them before implementation or
+publication. A host connection is unnecessary to build and evaluate the local
+presentation.

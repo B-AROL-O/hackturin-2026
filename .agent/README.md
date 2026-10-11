@@ -2,6 +2,18 @@
 
 Status: Draft guidelines for the planned PoopVolt web presentation.
 
+Use the repository's [brand guidelines](../brand-guidelines.md) for shared logo,
+palette, typography and voice proposals. Presentation-specific guidance adds
+layout and interaction rules; legacy exported cards have not yet been migrated.
+
+For the implemented 120-second English Remotion adaptation, read the
+[video production brief](../presentation/video/README.md). Shared evidence,
+brand, and provenance rules apply; its frame/audio/caption contracts replace
+deck-only navigation and Quarto packaging requirements for that film.
+Working commands and actual review status live in `presentation/video/implementation.md`
+and `presentation/video/review.md`. The original technical chart is preserved under
+the latest production direction.
+
 This corpus gives contributors and coding agents a common brief. The
 [presentation architecture](../presentation/architecture.md) defines the proposed
 application. The [implementation plan](../presentation/plan/implementation.md)

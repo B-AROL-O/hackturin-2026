@@ -1,5 +1,16 @@
 # Interaction and accessibility guidelines
 
+Video implementation status: the local Remotion project and English audio now
+exist. The earlier draft-only statements below describe their original handoff;
+use [video implementation](../presentation/video/implementation.md) and
+[video review](../presentation/video/review.md) for current commands and checks.
+
+For the prerecorded Remotion adaptation, follow
+[video motion and caption rules](../presentation/video/design.md).
+The keyboard controls, presenter builds, and browser preference handling below
+govern the HTML deck. The film uses deterministic frame-driven choreography,
+visible qualifications, and captions within its fixed 120-second duration.
+
 ## Presentation controls
 
 Delegate slide navigation, overview, URL hashes, and speaker notes to Reveal.js.
@@ -34,6 +45,13 @@ Failure to load a fixture must retain the static explanation and show a concise
 unavailable-state message. Switching scenarios must never change slides.
 
 ## Motion
+
+The two-minute video uses the timed cues in the
+[Italian storyboard](../docs/pitch-narrative.md): brief entrances, explanatory
+highlights, focused schematic zooms, and holds for reading. Keep wiring and
+chart labels legible. Video scene timing includes transitions and the final
+hold. Provide synchronized subtitles. The following controls apply to an HTML
+adaptation; no video player or deck implementation exists yet.
 
 Use a short crossfade of roughly 200 to 300 ms. Permit at most two or three
 presenter-controlled builds to explain a causal relationship. Keep axes, source

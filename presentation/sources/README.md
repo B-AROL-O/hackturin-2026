@@ -13,34 +13,48 @@ file's checksum. The base does not contain those new bytes. Replace provisional
 records with the immutable revision containing the reviewed bytes once
 available.
 
-Paths are relative to the repository root. Canonical documents stay under
-`docs/`; no snapshot copies are made. The future source checker must support
+Paths are relative to the repository root. Canonical technical documents stay
+under `docs/`; brand sources stay at the root and `assets/brand/`. The video
+package keeps faithful media copies with a separate asset manifest. The future
+source checker must support
 explicit working-tree state, verify hashes, and reject fabricated revision
 links.
+
+The user selected a [120-second English Remotion adaptation](../video/README.md)
+of the current six-scene narrative and explicitly selected the brand guidelines
+and original logo. Its [asset registry](../video/assets/manifest.json) tracks
+local image copies, source revisions, rights status, and illustrative artwork.
 
 ## Source map
 
 <!-- markdownlint-disable MD013 -->
 
-| Source ID              | Canonical page                                                             | Presentation use                                                         |
-| ---------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `pv-narrative`         | [Three-minute narrative](../../docs/pitch-narrative.md)                    | Owner story, proposed theoretical comparison, MVP and STL scope          |
-| `pv-pitch`             | [Project pitch](../../docs/pitch-draft.md)                                 | Problem and intended value                                               |
-| `pv-index`             | [Architecture index](../../docs/architecture/README.md)                    | View hierarchy, conventions, and open decisions                          |
-| `pv-overview`          | [System overview](../../docs/architecture/overview.md)                     | Intended processing stages and goals                                     |
-| `pv-context`           | [System context](../../docs/architecture/context.md)                       | Operator responsibility and system boundary                              |
-| `pv-architecture`      | [Application architecture](../../docs/architecture/architecture.md)        | Logical modules and `Local storage`                                      |
-| `pv-deployment`        | [Physical deployment](../../docs/architecture/deployment.md)               | Intended platform and unresolved interfaces                              |
-| `pv-acquisition`       | [Acquisition](../../docs/architecture/components/acquisition.md)           | Normalization, quality, and alignment                                    |
-| `pv-diagnostics`       | [Diagnostics](../../docs/architecture/components/diagnostics.md)           | Modality analysis, history, and uncertainty                              |
-| `pv-maintenance`       | [Maintenance](../../docs/architecture/components/maintenance.md)           | Evidence checks and operator recommendation                              |
-| `pv-flow-soiling`      | [Soiling flow](../../docs/architecture/flows/detect-soiling.md)            | Valid and unreliable input branches                                      |
-| `pv-flow-maintenance`  | [Maintenance flow](../../docs/architecture/flows/recommend-maintenance.md) | Operator review, intervention, and reassessment                          |
-| `pv-data-plan`         | [Data plan](../../docs/data-plan.md)                                       | Independent phone/replay paths and source limits                         |
-| `pv-flow-plant`        | [Whole-plant flow](../../docs/architecture/flows/monitor-plant.md)         | Multi-channel analysis, coverage, synchronization                        |
-| `coesa-energy-context` | [Company context](../../docs/company/coesa-energy.md)                      | Existing services and proposed buyer/distribution fit                    |
-| `pv-hardware`          | [Hardware inventory](../../docs/hardware.md)                               | Secured/unavailable parts, phone-camera substitution, integration limits |
-| `pv-references`        | [Reference index](../../docs/references.md)                                | Candidate datasets and links for hardware verification                   |
+| Source ID              | Canonical page                                                             | Presentation use                                                                     |
+| ---------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `pv-narrative`         | [Two-minute motion graphics narrative](../../docs/pitch-narrative.md)      | Timed voice-over, wiring scene, replay, technician review                            |
+| `pv-brand`             | [Brand guidelines](../../brand-guidelines.md)                              | User-selected palette, voice, team name, typography, and logo treatments             |
+| `pv-logo`              | [Original logo](../../assets/brand/Logo_PoopVolt.png)                      | Exact team-supplied composition on white in opening and closing                      |
+| `pv-pitch`             | [Project pitch](../../docs/pitch-draft.md)                                 | Problem and intended value                                                           |
+| `pv-index`             | [Architecture index](../../docs/architecture/README.md)                    | View hierarchy, conventions, and open decisions                                      |
+| `pv-overview`          | [System overview](../../docs/architecture/overview.md)                     | Intended processing stages and goals                                                 |
+| `pv-context`           | [System context](../../docs/architecture/context.md)                       | Operator responsibility and system boundary                                          |
+| `pv-architecture`      | [Application architecture](../../docs/architecture/architecture.md)        | Logical modules and `Local storage`                                                  |
+| `pv-deployment`        | [Physical deployment](../../docs/architecture/deployment.md)               | Intended platform and unresolved interfaces                                          |
+| `pv-acquisition`       | [Acquisition](../../docs/architecture/components/acquisition.md)           | Normalization, quality, and alignment                                                |
+| `pv-diagnostics`       | [Diagnostics](../../docs/architecture/components/diagnostics.md)           | Modality analysis, history, and uncertainty                                          |
+| `pv-maintenance`       | [Maintenance](../../docs/architecture/components/maintenance.md)           | Evidence checks and operator recommendation                                          |
+| `pv-flow-soiling`      | [Soiling flow](../../docs/architecture/flows/detect-soiling.md)            | Valid and unreliable input branches                                                  |
+| `pv-flow-maintenance`  | [Maintenance flow](../../docs/architecture/flows/recommend-maintenance.md) | Operator review, intervention, and reassessment                                      |
+| `pv-data-plan`         | [Data plan](../../docs/data-plan.md)                                       | Independent phone/replay paths and source limits                                     |
+| `pv-flow-plant`        | [Whole-plant flow](../../docs/architecture/flows/monitor-plant.md)         | Multi-channel analysis, coverage, synchronization                                    |
+| `coesa-energy-context` | [Company context](../../docs/company/coesa-energy.md)                      | Existing services and proposed buyer/distribution fit                                |
+| `pv-hardware`          | [Hardware inventory](../../docs/hardware.md)                               | Secured/unavailable parts, phone-camera substitution, integration limits             |
+| `pv-wiring`            | [Prototype wiring](../../docs/hardware-connections.md)                     | Reported connections, USB supply, separate solar branch, current-check limits        |
+| `pv-wiring-svg`        | [Electrical schematic SVG](../../docs/architecture/diagrams/pv-wiring.svg) | Existing KiCad export for the 25-second hardware scene                               |
+| `pv-comparison`        | [Comparison results](../../docs/comparison-results.md)                     | Historical peer replay, inverter 1, window, units, and limits                        |
+| `pv-comparison-chart`  | [Inverter 1 chart](../../docs/images/comparison-inverter-1-replayed.svg)   | Existing replay plot; no redrawn or invented data                                    |
+| `pv-phone-inspection`  | [Phone inspection](../../docs/phone-inspection.md)                         | Implemented upload, ONNX adapter, and UI; trained model and UNO Q validation pending |
+| `pv-references`        | [Reference index](../../docs/references.md)                                | Candidate datasets and links for hardware verification                               |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -51,17 +65,49 @@ details.
 
 ## Narrative source
 
+The [English Remotion storyboard](../video/storyboard.md) translates the canonical
+Italian narrative while preserving all six timings and source scopes. It is the
+user-selected production script for that film. The older English Devpost cut is
+separate; its subtitles and extended-window figures must not be substituted.
+
+## Video implementation references
+
+Official Remotion documentation inspected on 2026-10-11 is registered as
+`pv-remotion-*` under `external_sources`. These pages justify composition,
+timing, frame animation, local media/fonts, audio, transition accounting, render
+commands, and review stills; they establish no product capability. The
+[implementation handoff](../video/implementation.md) links each relevant API
+beside its contract. Recheck mutable docs against the pinned release during
+implementation. Brand asset permissions remain as recorded in the canonical
+brand asset record; MIT code licensing does not itself license the trademark.
+
+## Canonical narrative status
+
 `pv-narrative` adapts the team-supplied `pitch-narrative2.md` into a clean
-three-minute copione with subsequent team-approved revisions to the hook and
-company-use framing. It is an authored scenario, not a customer interview or
+two-minute motion graphics copione, retaining the approved hook and company-use
+framing. Six scenes total 120 seconds, with narration, screen text, and
+animation cues separated. The electrical schematic replaces the undelivered STL
+in the main sequence. It is an authored scenario, not a customer interview or
 proof of a working MVP. The source entry records the input filename/checksum.
 Typos, Markdown, timing, and unsupported causal wording were clarified.
 
 The theoretical production reference is proposed; its inputs and validation are
-unresolved. MVP code, executed output, and the STL artifact must be linked
-separately. Do not treat planned demonstrations as implemented evidence.
+unresolved. The implemented peer comparison is a separate, scoped historical
+replay. Prototype wiring is a bring-up record, not proof of the full proposed
+deployment. The film is implemented separately in `presentation/video/`. Its QA record
+establishes export checks, not field-performance evidence.
 
 ## Demonstration sources
+
+The wiring and chart entries pin the existing exports. `pv-wiring-svg` also
+records its canonical KiCad source path/hash; do not edit it independently.
+`pv-comparison` and its chart describe replayed history, not measurements from
+our prototype. The inspected data plan now records the available importer and
+peer comparison, while the hardware inventory records the separate Waveshare
+charging branch. These committed source baselines are refreshed after reviewing
+those changes. Narrative, pitch, and index entries now pin the committed
+revision containing their reviewed bytes. The latest phone-inspection software
+slice is implemented; its trained model and UNO Q validation remain pending.
 
 - `pv-hardware`: [Team hardware inventory](../../docs/hardware.md), reported on
   2026-10-10. Availability is team-reported; compatibility and operation are
@@ -123,3 +169,16 @@ validation into model-performance evidence.
   assets, provenance records, generated previews, and portable release.
 - Scope: organization and workflow only. Its research content and visual
   identity supply no PoopVolt claim or design assets.
+
+## Implemented video production
+
+The 120-second English Remotion film is implemented in
+[video/](../video/README.md), with local synthesized narration and source-aligned
+caption cues. Production records are `pv-video-implementation`, `pv-video-beats`,
+and `pv-video-voice`; they describe communication artifacts, not new photovoltaic
+measurements. See [the QA record](../video/review.md) for actual export checks.
+
+The current direction preserves the original canonical replay chart, including
+its technical colors and typography; it supersedes the older plan for a branded
+re-export. The chart, its generator, and source data are unchanged. All newly
+authored typography uses the bundled Source Sans 3 regular/semibold under SIL OFL.

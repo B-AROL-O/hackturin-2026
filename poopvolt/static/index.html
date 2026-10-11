@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>PoopVolt · A clearer view</title>
+    <link rel="icon" href="/static/logo-poopvolt.png" type="image/png" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="PoopVolt home">
+        <img
+          src="/static/logo-poopvolt.png"
+          alt="PoopVolt"
+          width="200"
+          height="56"
+        />
+      </a>
+      <span id="health" class="edge-status">Connecting to edge</span>
+    </header>
+    <main>
+      <section id="station" class="station" aria-label="UNO Q station readings">
+        <div class="station-head">
+          <p class="eyebrow">UNO Q STATION · LIVE</p>
+          <span id="station-age" class="station-age">Waiting for station</span>
+        </div>
+        <dl class="station-grid">
+          <div>
+            <dt>Temperature</dt>
+            <dd id="st-temp">–</dd>
+          </div>
+          <div>
+            <dt>Humidity</dt>
+            <dd id="st-rh">–</dd>
+          </div>
+          <div>
+            <dt>Light</dt>
+            <dd id="st-light">–</dd>
+            <small>raw, uncalibrated</small>
+          </div>
+          <div>
+            <dt>Panel current</dt>
+            <dd id="st-current">–</dd>
+            <small>below 10 mA shown as 0</small>
+          </div>
+          <div class="station-perf">
+            <dt>Performance</dt>
+            <dd id="st-perf">–</dd>
+            <small id="st-perf-note">relative to a clean panel</small>
+          </div>
+        </dl>
+      </section>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">
+            <span class="tiny-spark">✳</span> A LITTLE CARE. MORE SOLAR.
+          </p>
+          <h1>A clearer view.<br /><span>A cleaner panel.</span></h1>
+          <p class="intro-note">
+            One photo. A closer look at what needs your attention.
+          </p>
+        </div>
+        <div class="intro-actions">
+          <div class="mode-switch" aria-label="Inspection view">
+            <button id="demo" class="active" aria-pressed="true">Demo</button>
+            <button id="new" aria-pressed="false">Your photo</button>
+          </div>
+          <div class="upload-actions">
+            <label class="file-button primary"
+              >↗ Choose photo
+              <input
+                id="library"
+                type="file"
+                accept="image/*"
+                aria-label="Choose an existing photograph"
+              />
+            </label>
+            <label class="file-button camera-button" title="Take a photograph"
+              >Camera
+              <input
+                id="camera"
+                type="file"
+                accept="image/*"
+                capture="environment"
+                aria-label="Take a photograph with the camera"
+              />
+            </label>
+          </div>
+        </div>
+      </section>
+      <div class="view-note">
+        <span id="view-label" class="view-label">Visual demo</span>
+        <p id="view-description">
+          Sample photograph · illustrative annotations · no model run
+        </p>
+      </div>
+      <section
+        id="workspace"
+        class="comparison"
+        aria-label="Original and processed image comparison"
+      >
+        <article class="image-card original-card">
+          <div class="card-heading">
+            <h2><span>01</span> From your phone</h2>
+            <span id="source-tag" class="image-tag">Sample photo</span>
+          </div>
+          <div class="image-stage">
+            <img
+              id="original"
+              alt="Original solar-panel photograph without annotations"
+            />
+            <div id="original-empty" class="empty-state" hidden>
+              <span class="empty-symbol">↗</span
+              ><strong>Start with a photo.</strong>
+              <p>Capture a panel or choose a photograph.</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span id="filename">solar-panels-demo.jpg</span
+            ><span id="dimensions"></span>
+          </div>
+        </article>
+        <article class="image-card processed-card">
+          <div class="card-heading">
+            <h2><span>02</span> Processed view</h2>
+            <button
+              id="overlay-toggle"
+              class="image-tag overlay-toggle"
+              aria-pressed="true"
+            >
+              Annotations on
+            </button>
+          </div>
+          <div class="image-stage">
+            <img
+              id="photo"
+              alt="Solar-panel photograph with inspection annotations"
+            />
+            <svg
+              id="overlay"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Inspection annotations"
+            ></svg>
+            <div id="processed-empty" class="empty-state" hidden>
+              <span class="empty-symbol">⌁</span
+              ><strong>A closer look, right here.</strong>
+              <p>Results appear after you run an inspection.</p>
+            </div>
+            <span id="demo-watermark" class="demo-watermark"
+              >ILLUSTRATIVE DEMO</span
+            >
+          </div>
+          <div class="card-footer">
+            <span id="processed-caption">Illustrative overlays</span
+            ><span id="latency">No inference run</span>
+          </div>
+        </article>
+      </section>
+      <section id="results" class="results" aria-label="Inspection findings">
+        <div class="findings-top">
+          <div>
+            <p class="eyebrow">THE CLOSER LOOK</p>
+            <h2 id="findings-title">Two areas worth a look.</h2>
+          </div>
+          <div class="panel-picker">
+            <label for="panel-select">Focus</label
+            ><select id="panel-select">
+              <option value="">All panels</option>
+            </select>
+          </div>
+        </div>
+        <div id="capabilities" class="capabilities"></div>
+        <div class="next-step">
+          <span class="next-step-icon">↗</span>
+          <div>
+            <p class="eyebrow">NEXT STEP · WHOLE PHOTO</p>
+            <p id="recommendation"></p>
+            <small id="recommendation-note"></small>
+          </div>
+        </div>
+        <details id="details">
+          <summary>Inspection details <span>+</span></summary>
+          <p id="model" class="muted"></p>
+          <div id="predictions" class="predictions"></div>
+          <p id="association-note" class="muted"></p>
+        </details>
+        <div id="share" class="share" hidden>
+          <label for="share-url">Open on another device</label
+          ><input id="share-url" readonly aria-label="Inspection link" /><button
+            id="copy"
+          >
+            Copy link
+          </button>
+          <button id="delete-inspection" type="button" class="danger">
+            Delete inspection
+          </button>
+        </div>
+      </section>
+      <div id="capture-tools" class="capture-tools" hidden>
+        <p>JPEG, PNG or WebP · max. 12 MiB / 24 MP</p>
+        <button id="run" class="primary" disabled>Run inspection ↗</button>
+      </div>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div class="board-tools">
+        <button id="clear-all" type="button" class="danger">
+          Clear all photos on the board
+        </button>
+      </div>
+      <footer>
+        <span>Small observations. Better care.</span
+        ><span>PoopVolt / Phone → Edge</span>
+      </footer>
+    </main>
+  </body>
+</html>

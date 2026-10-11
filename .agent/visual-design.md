@@ -1,12 +1,18 @@
 # Visual design guidelines
 
+For the user-selected Remotion film, use
+[video design](../presentation/video/design.md) and
+[the local asset inventory](../presentation/video/assets/README.md).
+Its 1920 × 1080 layout follows `brand-guidelines.md`, the complete original logo
+on white, natural prototype photographs, and faithful technical source inserts.
+
 ## Direction
 
 Build a calm, editorial presentation about photovoltaic field maintenance. Use
 generous whitespace, clear technical drawings, and close views of a panel when a
 photograph supplies useful context. Let the sensing and decision flow provide
-the recurring visual structure. The title slide can use a dark graphite canvas
-with one panel image and a large PoopVolt wordmark.
+the recurring visual structure. The title slide can use a dark blue canvas with
+one panel image and a large PoopVolt wordmark.
 
 Use the older plant and its owner's question as the recurring visual context.
 The pigeon cue explains the name and remains secondary. The central visual is
@@ -14,26 +20,22 @@ expected versus observed production over matching periods, with estimates,
 observations, and simulations distinguished by labels and line patterns. Unknown
 reference inputs must remain visibly unavailable.
 
-Show the STL as a design concept and the software case with provenance. Keep
+Show the prototype electrical schematic as a dedicated scene and the replay
+chart with provenance. The undelivered STL is outside the main sequence. Keep
 SOLARMA channels distinct from verified strings and phone imagery separate from
 replay. A company-to-owner offer belongs in supporting context or the appendix.
 Thermal illustrations are risk context only, never current measured output.
 
-These are proposed tokens to evaluate on a projector, not an inherited brand.
+## Brand palette
 
-| Role      | Draft value | Use                                          |
-| --------- | ----------- | -------------------------------------------- |
-| Canvas    | `#F7F4EC`   | Warm background for content slides           |
-| Ink       | `#172A2A`   | Headings, body copy, diagram labels          |
-| Teal      | `#176B63`   | Processing stages and selected state         |
-| Amber     | `#E9AD35`   | Solar context and highlighted evidence       |
-| Rust      | `#A5432C`   | Anomaly emphasis with an explicit text label |
-| Muted ink | `#4D605D`   | Secondary copy and source captions           |
-| Rule      | `#CED5CE`   | Dividers and diagram connections             |
+Use the palette in [brand-guidelines.md](../brand-guidelines.md): dark blue,
+solar yellow, white and neutral greys. It replaces the earlier teal, rust, amber
+and ivory proposal for new materials. Existing video cards and charts remain
+legacy exports and require a separate coordinated migration.
 
-Use ink on amber. Check every final foreground/background pairing. Color is
-supporting information: labels, shapes, and line patterns must communicate
-stage, status, or anomaly without it.
+Use blue text on yellow. Check final contrast and communicate status through
+labels, symbols and line patterns as well as color. Do not introduce extra brand
+accents or reinterpret measured evidence through decorative color.
 
 ## Type and geometry
 

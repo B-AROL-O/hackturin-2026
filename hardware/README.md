@@ -92,7 +92,9 @@ Neither the AHT20 nor the light sensor replaces thermal imaging.
   computed with published models (for example the NOAA solar position
   algorithm and the Ineichen clear-sky model, both available in `pvlib`).
   Comparing that expected value with the measured panel current and light level
-  gives an efficiency or soiling estimate. Power, not only current, also needs
+  gives an efficiency or soiling estimate. A first relative version (current
+  vs. clear-sky model, with a clean-panel baseline) is in
+  `firmware/station/linux/station_rx.py`; see `docs/uno-q-setup.md`. Power, not only current, also needs
   the panel voltage, which requires a voltage divider (not wired yet). The light
   sensor is uncalibrated.
 - Use the recorded USB prototype connections for the active Grove modules.

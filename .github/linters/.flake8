@@ -7,3 +7,5 @@ per-file-ignores =
     tests/*:E501
     # sys.path is extended before importing the vendored msgpack.
     firmware/*/linux/*.py:E402
+    # The station tests add the firmware folder to the path before importing.
+    tests/test_station_perf.py:E402

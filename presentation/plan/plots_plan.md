@@ -1,59 +1,67 @@
 # Visual and asset plan
 
-Status: Proposed visuals for the three-minute company-use story. Apply
-[visual guidelines](../../.agent/visual-design.md) during implementation.
+Status: Proposed motion graphics storyboard for the two-minute company-use
+pitch. Existing wiring and replay exports are available; the new video,
+illustrations, overlays, and HTML deck have not been produced. Apply
+[visual guidelines](../../.agent/visual-design.md).
+
+The [Remotion handoff](../video/README.md) now supplies brand-aligned illustrative
+assets and faithful local copies of the existing logo, three prototype photos,
+electrical schematic, and replay chart. Its
+[asset inventory](../video/assets/README.md) and [storyboard](../video/storyboard.md)
+assign each to the same six beats. Audio and animated scenes remain future work.
 
 ## Main visuals
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID       | Primary visual                                                                | Source or provenance                                              | Visible qualification                                   |
-| -------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------- |
-| `pv-title`     | Approved typographic hook with a restrained panel/pigeon cue                  | Original/licensed image and `pv-narrative`                        | Illustrative scene                                      |
-| `pv-problem`   | Company, older plant, and owner: the missing evidence that motivates a review | `pv-narrative`, `pv-soiling-background`                           | Possible contributors; no established cause             |
-| `pv-pipeline`  | Observed and expected production, same period and units                       | `pv-diagnostics`, `pv-data-plan`                                  | Proposed reference; unknown inputs visible              |
-| `pv-prototype` | STL viewport or labeled design export                                         | Team STL when supplied; `pv-hardware` for secured kit             | Design concept, not working hardware                    |
-| `pv-evidence`  | One software case followed by a clearly attributed technician proposal        | Executed MVP evidence when linked; otherwise illustrative fixture | Measured, simulated, or replayed status; mapping limits |
-| `pv-decision`  | Company proposal, informed owner choice, intervention, and reassessment       | `pv-maintenance`, `coesa-energy-context`                          | Options to evaluate; benefit unmeasured                 |
+| Scene ID       | Primary visual                                     | Source or provenance                     | Visible qualification                               |
+| -------------- | -------------------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
+| `pv-title`     | Typographic hook, panel, restrained pigeon cue     | Original illustration and `pv-narrative` | Illustrative scene                                  |
+| `pv-problem`   | Same installation with owner and technician        | `pv-narrative`, `pv-pitch`               | Question, no established cause                      |
+| `pv-pipeline`  | Comparison labels and deviation-to-inspection flow | `pv-comparison`, `pv-data-plan`          | Peer comparison available; theoretical model future |
+| `pv-prototype` | Full electrical schematic with two focused views   | `pv-wiring`, `pv-wiring-svg`             | Prototype; USB supply; current-under-light pending  |
+| `pv-evidence`  | Original inverter 1 chart and inspection flag      | `pv-comparison`, `pv-comparison-chart`   | Historical replay, period, units, inverter scope    |
+| `pv-decision`  | Technician, owner, four-step review sequence       | `pv-narrative`, `pv-maintenance`         | Proposed workflow; benefit unmeasured               |
 
 <!-- markdownlint-enable MD013 -->
 
-## Chart and evidence rules
+## Motion and timing
 
-Label the theoretical reference as estimated. Keep observed values, estimated
-values, and illustrative values visually distinct with text and line patterns,
-not color alone. Use common periods and units. Never fabricate a quantitative
-gap. Show missing reference inputs as unavailable rather than drawing an
-invented curve.
+Use the exact scene cues in the [script](../../docs/pitch-narrative.md), on a
+1920 × 1080 video canvas. Keep role positions stable and use the brand's dark
+blue, solar yellow, white, and greys. Prefer short entrances, highlights, and
+200–300 ms transitions; hold each composition while it is read.
 
-String labels require verified topology. An unknown mapping stays an inverter or
-channel view. The SOLARMA replay has its own plant/time identity and lacks
-populated irradiance; phone images cannot supply its missing weather baseline.
+The 25-second wiring scene uses 5 seconds for the full sheet, 10 seconds for UNO
+Q/Grove interfaces, 7 seconds for the solar branch and A1, and 3 seconds for the
+complete sheet. Ensure labels are readable in the close views. Overlay outlines
+and captions without altering the canonical export. Never draw a power
+connection from Waveshare USB OUT to UNO Q: it is not connected.
 
-The pigeon cue explains the name and a possible inspection issue. It is not the
-recurring protagonist. Keep phone RGB capture separate from electrical plots and
-never represent RGB as measured thermal imagery.
+Keep the replay chart static for at least eight seconds, with axes, legend,
+period, source, and units continuously visible. Cut between hardware and replay
+rather than morphing one into the other. The final logo/message hold occupies
+the last three seconds; it does not extend the 120-second budget.
 
-## STL and hardware
+## Evidence and asset rules
 
-Record the STL's filename, creator, revision, intended function, and actual
-status when supplied. A viewport shows a proposed design, not proof of
-fabrication. Use `pv-hardware` to distinguish secured parts, unavailable
-equipment, and integration work. The phone replaces the unavailable thermal
-camera for visible inspection.
+Use the existing `pv-wiring` SVG/PDF generated from
+[`hardware/poopvolt.kicad_sch`](../../hardware/poopvolt.kicad_sch). Crops retain
+the parent diagram ID and connection semantics; electrical edits must follow the
+[KiCad export workflow](../../docs/hardware-connections.md).
 
-## Appendix and asset acquisition
+Use the original inverter 1 chart from the
+[comparison results](../../docs/comparison-results.md). Do not redraw its data,
+animate KPI counts, invent a theoretical curve, or show a recovered-energy plot.
+The replay is not prototype telemetry, a mapped-string result, or a diagnosis.
 
-Use canonical Mermaid exports with parent IDs and proposed status. Put full
-company distribution, local architecture, synchronization, and independent
-phone/replay paths in the appendix when they exceed the main story.
+An STL concept can join appendix material only when its actual file and function
+are supplied. Phone RGB, soiling detection, theoretical modeling, and measured
+field benefits must retain their own source and implementation status.
 
-Create `assets/README.md` during implementation with source, creator, license,
-modifications, and intended use. Record data/figure generation and source
-hashes. Phone capture provenance follows the
-[data plan](../../docs/data-plan.md).
-
-Economic figures require explicit inputs. No measured savings, recovered kWh,
-accuracy, or conversion rate currently supports a benefit chart. The optional
-comparison scenario has usable-input and missing-input states; both need a
-complete static and print fallback.
+Record creator, source, rights, modifications, and intended use for new assets.
+Keep subtitles synchronized with the final cut. The existing English Devpost
+cards and subtitles remain separate; do not label them as this Italian video's
+finished assets. HTML adaptations must provide complete static content, reduced
+motion, and readable print output.
