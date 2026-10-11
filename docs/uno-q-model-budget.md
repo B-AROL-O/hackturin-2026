@@ -24,3 +24,12 @@ That's roughly 4 GFLOPS effective. Estimate latency as model GFLOPs ÷ 4. For ex
 - Model file size is not the constraint (anything under about 100 MB is fine); latency is.
 - Panels change slowly, so one frame every few seconds is enough. A nano/small detector at 320–640 fits.
 - Edge Impulse's runner image is already on the board (`ei-models-runner`), so an EI-exported model needs no extra install.
+
+## Phone inspection slice
+
+The [inspection service](phone-inspection.md) uses one CPU OpenCV DNN model with
+four threads and rejects overlapping uploads/inference. Its trained artifact and
+configuration remain placeholders. The dashboard reports measured per-inspection
+preprocessing/forward/postprocessing latency; actual UNO Q latency for that model
+still needs testing. Setup reuses existing cv2/numpy and adds only the HTTP/image
+handling dependencies, with no continuous inference or extra services.

@@ -160,3 +160,7 @@ cython_debug/
 
 # Downloaded SOLARMA replay data (see data/solarma/NOTICE.md)
 data/solarma/raw/
+
+# Local inspection runtime
+.venv-uno/
+data/inspections/
