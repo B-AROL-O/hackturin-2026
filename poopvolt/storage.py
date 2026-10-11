@@ -47,6 +47,23 @@ class InspectionStore:
         record, _ = self.paths(inspection_id)
         return json.loads(record.read_text())
 
+    def delete(self, inspection_id: UUID) -> bool:
+        """Remove one inspection; False if it did not exist."""
+        record, image = self.paths(inspection_id)
+        existed = record.exists()
+        # Metadata first: once it is gone the inspection no longer exists.
+        record.unlink(missing_ok=True)
+        image.unlink(missing_ok=True)
+        return existed
+
+    def clear(self) -> int:
+        """Remove every inspection; return how many were removed."""
+        records = list(self.root.glob("*.json"))
+        for record in records:
+            record.unlink(missing_ok=True)
+            record.with_suffix(".jpg").unlink(missing_ok=True)
+        return len(records)
+
     def prune(self):
         records = sorted(
             self.root.glob("*.json"), key=lambda path: path.stat().st_mtime_ns

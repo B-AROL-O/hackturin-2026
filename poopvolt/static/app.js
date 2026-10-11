@@ -382,6 +382,42 @@ async function runInspection() {
   }
 }
 
+async function deleteInspection() {
+  if (!inspection) return;
+  if (!confirm("Delete this inspection (photo and results) from the board?"))
+    return;
+  try {
+    const response = await fetch(`/api/inspections/${inspection.id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok && response.status !== 404) await readResponse(response);
+    newInspection();
+    status("Inspection deleted from the board.");
+  } catch (error) {
+    status(error.message, true);
+  }
+}
+
+async function clearAll() {
+  if (
+    !confirm(
+      "Delete ALL photos and results stored on the board? This cannot be undone.",
+    )
+  )
+    return;
+  try {
+    const result = await readResponse(
+      await fetch("/api/inspections", { method: "DELETE" }),
+    );
+    if (inspection) newInspection();
+    status(`Removed ${result.removed} inspection(s) from the board.`);
+  } catch (error) {
+    status(error.message, true);
+  }
+}
+
+$("delete-inspection").addEventListener("click", deleteInspection);
+$("clear-all").addEventListener("click", clearAll);
 $("demo").addEventListener("click", showDemo);
 $("new").addEventListener("click", newInspection);
 $("camera").addEventListener("change", chooseFile);

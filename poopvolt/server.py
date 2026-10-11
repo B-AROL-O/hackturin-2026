@@ -296,6 +296,32 @@ def create_app(settings: Settings | None = None, detector_factory=Detector):
             data, media_type="image/jpeg", headers={"Cache-Control": "no-store"}
         )
 
+    def exclusive(operation, *args):
+        """Run a storage change only while no inspection is being saved."""
+        if not busy.acquire(blocking=False):
+            raise HTTPException(
+                429,
+                "An inspection is running; retry when it finishes",
+                headers={"Retry-After": "2"},
+            )
+        try:
+            return operation(*args)
+        finally:
+            busy.release()
+
+    @app.delete("/api/inspections/{inspection_id}", status_code=204)
+    async def delete_inspection(inspection_id: UUID):
+        if not await run_in_threadpool(
+            exclusive, app.state.store.delete, inspection_id
+        ):
+            raise HTTPException(404, "Inspection not found or already removed")
+        return Response(status_code=204)
+
+    @app.delete("/api/inspections")
+    async def clear_inspections():
+        removed = await run_in_threadpool(exclusive, app.state.store.clear)
+        return {"removed": removed}
+
     app.mount("/static", StaticFiles(directory=STATIC), name="static")
 
     @app.get("/")

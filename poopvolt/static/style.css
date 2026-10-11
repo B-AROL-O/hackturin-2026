@@ -722,3 +722,19 @@ footer {
     padding-top: 24px;
   }
 }
+.danger {
+  background: #fff;
+  color: #a4553e;
+  border: 1px solid #a4553e;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+.danger:hover {
+  background: #a4553e0d;
+}
+.board-tools {
+  display: flex;
+  justify-content: flex-end;
+  margin: 8px 0 20px;
+}

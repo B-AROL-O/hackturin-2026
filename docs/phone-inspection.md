@@ -107,6 +107,12 @@ endpoint returns `{"available", "age_s", "reading"}` from the JSON file that
 `station_rx.py --latest` rewrites once per second (`POOPVOLT_STATION`). The
 reading is reported unavailable when it is older than 10 s.
 
+Stored inspections can be removed from the dashboard: **Delete inspection** on a
+saved result (`DELETE /api/inspections/{id}`), or **Clear all photos on the
+board** (`DELETE /api/inspections`, returns `{"removed": n}`). Both ask for
+confirmation and are refused with 429 while an inspection is running. Without
+them, storage still prunes the oldest inspections beyond 100 or 250 MB.
+
 ## Supply the actual trained model
 
 `models/inspection.onnx` and `models/inspection.json` are placeholders and are
