@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Source Sans 3', 'DejaVu Sans', sans-serif">
+  <title>PoopVolt</title>
+  <rect width="1920" height="1080" fill="#172A2A"/>
+  <text x="140" y="400" font-size="160" font-weight="600" fill="#E9AD35">PoopVolt</text>
+  <text x="140" y="500" font-size="50" fill="#F7F4EC">turns a production gap into a proposal</text>
+  <text x="140" y="565" font-size="50" fill="#F7F4EC">an owner can understand.</text>
+  <rect x="140" y="640" width="120" height="8" fill="#E9AD35"/>
+  <text x="140" y="740" font-size="38" fill="#F7F4EC">Giacomo Lisita · Gianpaolo Macario · Lorenzo Palloni · Federico Nebuloni</text>
+  <text x="140" y="800" font-size="34" fill="#CED5CE">Team B-AROL-O · hackTurin 2026 · Beyond Solar challenge</text>
+  <text x="140" y="940" font-size="38" font-weight="600" fill="#E9AD35">github.com/B-AROL-O/hackturin-2026</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Source Sans 3', 'DejaVu Sans', sans-serif">
+  <title>Not built yet</title>
+  <rect width="1920" height="1080" fill="#F7F4EC"/>
+  <text x="140" y="260" font-size="34" font-weight="600" fill="#A5432C" letter-spacing="4">NOT BUILT YET</text>
+  <text x="140" y="370" font-size="84" font-weight="600" fill="#172A2A">Next steps</text>
+  <g font-size="48" fill="#172A2A">
+    <rect x="140" y="470" width="24" height="24" fill="#E9AD35"/><text x="200" y="494">Weather-adjusted expected production</text>
+    <rect x="140" y="580" width="24" height="24" fill="#E9AD35"/><text x="200" y="604">Soiling detection from a phone photo</text>
+    <rect x="140" y="690" width="24" height="24" fill="#E9AD35"/><text x="200" y="714">Operator UI with a technician-reviewed proposal</text>
+  </g>
+  <text x="140" y="900" font-size="30" fill="#4D605D">What works today and what does not: docs/project-status.md</text>
+</svg>

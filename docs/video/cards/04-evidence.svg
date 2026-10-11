@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" font-family="'Source Sans 3', 'DejaVu Sans', sans-serif">
+  <title>Evidence: inverter 1, replayed</title>
+  <rect width="1920" height="1080" fill="#F7F4EC"/>
+  <rect x="86" y="70" width="1060" height="64" rx="8" fill="#A5432C"/>
+  <text x="116" y="114" font-size="32" font-weight="600" fill="#FFFFFF">REPLAYED · SOLARMA open data · 13 inverters · 2019</text>
+  <rect x="86" y="180" width="1180" height="528" fill="#FFFFFF"/>
+  <image x="96" y="190" width="1160" height="519" xlink:href="chart-inverter-1.svg"/>
+  <text x="1340" y="250" font-size="96" font-weight="600" fill="#A5432C">75 days</text>
+  <text x="1340" y="305" font-size="32" fill="#172A2A">with no output except one day,</text>
+  <text x="1340" y="347" font-size="32" fill="#172A2A">21 July → 3 October</text>
+  <text x="1340" y="480" font-size="80" font-weight="600" fill="#172A2A">≈ 550 kWh</text>
+  <text x="1340" y="535" font-size="32" fill="#172A2A">short of its peers</text>
+  <text x="1340" y="577" font-size="32" fill="#172A2A">on 30 comparable days</text>
+  <text x="1340" y="710" font-size="96" font-weight="600" fill="#176B63">Day 1</text>
+  <text x="1340" y="765" font-size="32" fill="#172A2A">a daily peer check</text>
+  <text x="1340" y="807" font-size="32" fill="#172A2A">points at it</text>
+  <text x="86" y="800" font-size="44" font-weight="600" fill="#172A2A">A flag is a place to look, not a diagnosis.</text>
+  <text x="86" y="980" font-size="26" fill="#4D605D">Peer-relative comparison, not a weather-adjusted model. Lower bound: days without a peer reference are not counted.</text>
+  <text x="86" y="1020" font-size="26" fill="#4D605D">Source: github.com/B-AROL-O/hackturin-2026, docs/comparison-results.md</text>
+</svg>

@@ -2,7 +2,7 @@
 
 Run ``uv run python -m poopvolt.report`` after downloading the pinned data
 (``poopvolt.solarma.fetch``), then ``npx prettier --write
-docs/comparison-results.md``. It rewrites ``docs/comparison-results.md`` and two
+docs/comparison-results.md``. It rewrites ``docs/comparison-results.md`` and the
 SVG charts under ``docs/images/``. Every chart says in the picture itself
 whether it shows replayed history or a simulated loss.
 """
@@ -19,7 +19,7 @@ from poopvolt.comparison import Comparison
 LOSSES = [0.02, 0.04, 0.06, 0.08, 0.10, 0.15]
 SIMULATED_DEVICE = 10
 SIMULATED_LOSS = 0.10
-REPLAYED_DEVICE = 9
+REPLAYED_DEVICES = (1, 9)
 
 WIDTH, HEIGHT = 760, 340
 LEFT, RIGHT, TOP, BOTTOM = 56, 16, 54, 44
@@ -94,9 +94,14 @@ def chart(
         f'<text x="14" y="{TOP + plot_h / 2:.0f}" transform="rotate(-90 14'
         f' {TOP + plot_h / 2:.0f})" text-anchor="middle">kWh per day</text>'
     )
-    for d in (days[0], result.eval_days[0], days[-1]):
+    # The outer dates sit on the plot edges; anchor them inwards so they fit.
+    for d, anchor in (
+        (days[0], "start"),
+        (result.eval_days[0], "middle"),
+        (days[-1], "end"),
+    ):
         parts.append(
-            f'<text x="{x(d):.1f}" y="{HEIGHT - 22}" text-anchor="middle">'
+            f'<text x="{x(d):.1f}" y="{HEIGHT - 22}" text-anchor="{anchor}">'
             f"{d.isoformat()}</text>"
         )
     parts.append(
@@ -183,6 +188,15 @@ def flagged_notes(records: list[solarma.Record], result: Comparison) -> str:
     return "\n".join(notes)
 
 
+def replayed_charts() -> str:
+    """Markdown images of the replayed charts, one per inverter."""
+    return "\n\n".join(
+        f"![Inverter {device}: observed versus expected daily energy,\n"
+        f"replayed](images/comparison-inverter-{device}-replayed.svg)"
+        for device in REPLAYED_DEVICES
+    )
+
+
 def page(
     records: list[solarma.Record],
     result: Comparison,
@@ -245,8 +259,7 @@ inspection, not a diagnosis. What the data shows about them:
 The data does not say why they produce less, and capacity, orientation and
 shading are unknown.
 
-![Inverter {REPLAYED_DEVICE}: observed versus expected daily energy,
-replayed](images/comparison-inverter-{REPLAYED_DEVICE}-replayed.svg)
+{replayed_charts()}
 
 ## Synthetic loss test (simulated)
 
@@ -297,17 +310,18 @@ def main(data_dir: str = "data/solarma/raw", docs_dir: str = "docs") -> None:
 
     out = Path(docs_dir)
     (out / "images").mkdir(parents=True, exist_ok=True)
-    (out / "images" / f"comparison-inverter-{REPLAYED_DEVICE}-replayed.svg").write_text(
-        chart(
-            comparison.daily_series(records, REPLAYED_DEVICE),
-            result,
-            f"Inverter {REPLAYED_DEVICE}: observed vs expected daily energy",
-            "REPLAYED HISTORY (SOLARMA 2019), not a measurement of ours",
-            "observed (replayed)",
-            BLUE,
-        ),
-        encoding="utf-8",
-    )
+    for device in REPLAYED_DEVICES:
+        (out / "images" / f"comparison-inverter-{device}-replayed.svg").write_text(
+            chart(
+                comparison.daily_series(records, device),
+                result,
+                f"Inverter {device}: observed vs expected daily energy",
+                "REPLAYED HISTORY (SOLARMA 2019), not a measurement of ours",
+                "observed (replayed)",
+                BLUE,
+            ),
+            encoding="utf-8",
+        )
     (out / "images" / "comparison-simulated-loss.svg").write_text(
         chart(
             comparison.daily_series(injected, SIMULATED_DEVICE),
