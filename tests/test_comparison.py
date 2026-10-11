@@ -34,7 +34,10 @@ def _records(
                 continue
             energy = factor * _daily_base(index)
             for hour, share in ((12, 0.5), (late_hour, 1.0)):
-                values = {"power_w": 1000.0, "energy_today_kwh": energy * share}
+                values: dict[str, float | None] = {
+                    "power_w": 1000.0,
+                    "energy_today_kwh": energy * share,
+                }
                 records.append(
                     Record(day.replace(hour=hour), device, values, serial=None)
                 )

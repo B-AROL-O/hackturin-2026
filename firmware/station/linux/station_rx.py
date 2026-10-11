@@ -17,7 +17,7 @@ import sys
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor"))
-import msgpack
+import msgpack  # pylint: disable=wrong-import-position
 
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "station"
@@ -29,6 +29,7 @@ FIELDS = ("rx_unix_s",) + Reading._fields
 
 
 def register(sock, unpacker):
+    """Register METHOD on arduino-router and wait for the acknowledgement."""
     sock.sendall(msgpack.packb([0, 1, "$/register", [METHOD]]))
     while True:
         unpacker.feed(sock.recv(4096))
@@ -39,7 +40,7 @@ def register(sock, unpacker):
                 return
 
 
-def process(reading):
+def process(reading):  # pylint: disable=unused-argument
     """Placeholder: replace with the real processing.
 
     Examples: alerts, fusion with CV results.
@@ -47,6 +48,7 @@ def process(reading):
 
 
 def main():
+    """Parse arguments and write readings to a CSV file or stdout."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--csv", help="append readings to this CSV file instead of stdout"
@@ -54,13 +56,14 @@ def main():
     args = parser.parse_args()
 
     if args.csv:
-        with open(args.csv, "a", newline="") as out:
+        with open(args.csv, "a", encoding="utf-8", newline="") as out:
             receive(out, write_header=out.tell() == 0)
     else:
         receive(sys.stdout, write_header=True)
 
 
 def receive(out, write_header):
+    """Register with arduino-router and write each reading as a CSV row."""
     writer = csv.writer(out)
     if write_header:
         writer.writerow(FIELDS)
