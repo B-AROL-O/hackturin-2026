@@ -12,6 +12,7 @@
 - [Coesa Energy context](/company/coesa-energy.md)
 - [Architecture index](/architecture/README.md)
 - [Phone inspection setup](/phone-inspection.md)
+- [Demo runbook (UNO Q prototype)](/demo-runbook.md)
 - [Prototype electrical wiring](/hardware-connections.md)
 - [Replicate the UNO Q prototype](/replicate-uno-q-setup.md)
 - [Reference index](/references.md)
