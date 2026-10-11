@@ -1,0 +1,5 @@
+line-length = 88
+
+[lint.per-file-ignores]
+# SOLARMA timestamps are naive local time; solarma.localize() attaches the zone.
+"tests/*" = ["DTZ001"]

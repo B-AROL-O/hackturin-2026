@@ -1,22 +1,111 @@
-# Project Pitch
+# PoopVolt — turn production gaps into understandable intervention proposals
 
-**PoopVolt is an Edge AI-powered predictive maintenance system designed to maximize the efficiency, reliability, and operational lifetime of off-grid photovoltaic installations.**
+Status: Proposed product and commercial model. This PR supplies documentation,
+not an implemented MVP, validated theoretical model, field benefit, or Coesa
+partnership.
 
-Photovoltaic systems progressively lose efficiency due to dust accumulation, environmental contamination, electrical faults, and component aging.
-Conventional monitoring systems often detect performance losses only after they occur, making it difficult to distinguish recoverable inefficiencies from irreversible degradation. This can lead to unnecessary maintenance, premature component replacement, and costly revamping.
+## The story: a working plant with unknown performance
 
-PoopVolt addresses this challenge by combining **real-time electrical monitoring, environmental sensing, and thermal imaging** within a unified intelligent platform.
+An owner installed a photovoltaic plant years ago. It still produces
+electricity, but the owner cannot see how each mapped string performs or whether
+the plant produces as expected. Dust, wear, and pigeon droppings are possible
+contributors to investigate, not causes proved by a chart or a visible deposit.
 
-At its core, the **Arduino UNO Q 4GB** acts as an autonomous Edge AI processing unit, acquiring sensor measurements and executing lightweight machine-learning and computer-vision models locally, without relying on continuous cloud connectivity.
+PoopVolt proposes a comparison between observed and expected production. The
+intended theoretical reference must be defined using plant characteristics and
+adequate operating/environmental inputs. Compare the same period and compatible
+conditions, reporting missing inputs and uncertainty.
 
-The system aims to identify contamination, detect thermal anomalies, estimate photovoltaic performance degradation, and predict maintenance requirements before energy availability is compromised.
+A deviation points to something worth inspecting. It does not alone establish a
+failure, historical degradation, or recoverable energy. String-level conclusions
+require measured coverage and a verified channel-to-string map.
 
-Beyond traditional predictive maintenance, PoopVolt introduces **intelligent revamping avoidance**: using degradation forecasts and component health assessments to determine whether an installation requires cleaning, targeted repair, operational optimization, or component replacement.
+A photovoltaic service company can use that evidence to explain what needs
+inspection and propose a justified intervention that the owner can understand
+and assess. Cleaning, repair, component replacement, and wider revamping are
+options to evaluate. Comparable measurements after an intervention test its
+benefit. Increased service uptake remains a hypothesis, not a guaranteed result.
 
-By integrating these capabilities with battery-aware energy management, the platform aims to extend asset lifetime, minimize unnecessary interventions, reduce lifecycle costs, and maintain reliable energy production in remote or isolated environments.
+The approved spoken opening is: "Il tuo impianto è sporco di merda.
+Letteralmente. Ma il problema è capire quanto sta influendo sulla produzione."
+This is an illustrative hook, not measured evidence of contamination loss. The
+central message is: "PoopVolt trasforma uno scostamento produttivo in una
+proposta di intervento comprensibile."
 
-**The ultimate goal is to transform off-grid photovoltaic maintenance from reactive intervention into intelligent, autonomous, and lifecycle-aware decision-making.**
+The canonical Italian story is the [two-minute narrative](pitch-narrative.md),
+adapted from the team's `pitch-narrative2.md`.
 
-## High-Level System Diagram
+## The hackathon presentation
 
-See the [system overview](architecture/overview.md) for the canonical diagram and the [architecture index](architecture/README.md) for deeper views.
+The talk is two minutes, planned as six motion graphics scenes. Follow the
+approved hook, company problem, available peer comparison and future theoretical
+reference, prototype electrical schematic, historical replay, and
+technician-reviewed proposal. Explain how the company uses the product and how
+the owner assesses an intervention. Do not lead with the distribution offer.
+
+The [peer comparison](comparison-results.md) supplies a scoped historical
+replay, and the [electrical schematic](hardware-connections.md) records
+prototype connections. Neither proves the full proposed system. An STL artifact
+is not delivered and stays outside the main sequence.
+
+If the theoretical reference, mapped strings, or software comparison are not
+available, use a clearly labeled simulation or narrow the demonstration. State
+provenance, period, units, reference method, and actual coverage.
+
+## Proposed system and separate evidence paths
+
+Acquisition, Diagnostics, and Maintenance remain local logical modules with
+`Local storage` and an Operator interface on the intended Arduino UNO Q
+platform. The [hardware inventory](hardware.md) records secured components;
+availability does not establish assembly, compatible measurements, or successful
+inference.
+
+- **Production review:** Telemetry and a proposed expected-production reference
+  support deviation review. The theoretical model, inputs, and calibration
+  remain decisions, not an established baseline.
+- **Visible inspection:** Phone RGB with simulated deposits can illustrate
+  visible contamination on a declared panel/string. It cannot measure hotspots
+  or lost kWh.
+- **Historical replay:** SOLARMA inverter logs are a separate source for channel
+  plots and anomaly development. They lack verified string mapping and populated
+  irradiance, so they do not validate the theoretical model or the phone scene.
+
+Keep these evidence scopes separate. Thermal acquisition remains deferred.
+Predictive maintenance requires longitudinal outcomes and evaluation beyond a
+current deviation. The [data plan](data-plan.md) records input and source
+limits.
+
+The proposed company platform supplies portfolio and own-plant views through
+queued synchronization. Remote freshness depends on connection and record
+synchronization; the static presentation is not that service platform.
+
+## Coesa and the commercial hypothesis
+
+The existing business proposal remains a hypothesis: sell an edge device to a
+photovoltaic service company, which could offer it to customers at no upfront
+device charge. Pricing, ownership, installation, support, and recurring fees are
+open. The two-minute narrative emphasizes owner value; explain the distribution
+model in questions or the appendix rather than treating it as an agreed
+partnership.
+
+Coesa is a potential technical/service counterpart. Its existing monitoring and
+O&M activities provide context; Edge AI alone is not an established
+differentiator. Read the [company context](company/coesa-energy.md) for sources
+and hypotheses.
+
+Revamping is one option beside cleaning, repair, and continued operation. No
+measured savings, payback, service conversion, or full recovery of the
+production gap is established. Economic estimates need costs, baseline
+production, incremental energy, energy value, and uncertainty.
+
+## Next validation
+
+Define and evaluate the expected-production reference, verify channel mapping,
+and run a reproducible software case with clear provenance. Link the STL concept
+and implemented MVP separately from this architecture draft.
+
+A field pilot should record operating conditions, intervention details,
+comparable before/after production, and technician usefulness. Off-grid,
+second-life, forecasting, and battery scheduling remain possible extensions.
+
+See the [architecture index](architecture/README.md) for proposed system views.

@@ -3,11 +3,12 @@
 Status: Proposed backlog. This change implements the architecture documentation,
 planning corpus, and source registry only.
 
-The pigeon-droppings narrative is selected: carry one illustrative panel case
-through contamination, a possible hotspot, and operator review. Include dust as
-another soiling example and hail as a separate damage-inspection example.
-Implement this story in the static deck before enhancing its evidence-quality
-branches. Follow the revised speaking and visual plans without changing timing.
+Follow the [owner narrative](../../docs/pitch-narrative.md): an older plant,
+unknown performance, available peer comparison, future theoretical reference,
+electrical schematic, historical replay, and technician review. Implement the
+static two-minute story before enhancing the comparison scenario. Keep company
+distribution and separate phone/replay sources as appendix context. Preserve the
+revised agenda's six anchors.
 
 ## Ordered work
 
@@ -16,9 +17,9 @@ branches. Follow the revised speaking and visual plans without changing timing.
 | Step | Work                                                                               | Depends on    | Reviewable result and acceptance                                               |
 | ---- | ---------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------ |
 | P0   | Review audience language, time budget, evidence status, and visual direction       | Current draft | Updated agenda and accepted defaults recorded                                  |
-| P1   | Add `talk.qmd`, `_quarto.yml`, initial theme, and local preview instructions       | P0            | Nine stable main anchors, four appendix anchors, notes, one local render       |
+| P1   | Add `talk.qmd`, `_quarto.yml`, initial theme, and local preview instructions       | P0            | Six stable main anchors, four appendix anchors, notes, one local render        |
 | P2   | Render canonical diagrams and acquire local images and fonts with provenance       | P1            | Readable figures, recorded licenses, matching source hashes                    |
-| P3   | Compose every slide and notes using the speaking and visual plans                  | P1, P2        | Complete static narrative, readable at 1280 by 720, 300-second budget          |
+| P3   | Compose every slide and notes using the speaking and visual plans                  | P1, P2        | Complete static narrative, readable at 1280 by 720, 120-second budget          |
 | P4   | Add reduced-motion handling, print/reading layouts, and optional scenario controls | P3            | Complete static fallback, usable keyboard controls, both scenario states       |
 | P5   | Implement source, timing, rendered-link, and packaging checks                      | P3            | Meaningful failures for stale sources, duplicate anchors, missing dependencies |
 | P6   | Build portable audience and presenter bundles                                      | P4, P5        | Local assets and references, audience notes absent, network-free HTTP preview  |
@@ -27,8 +28,9 @@ branches. Follow the revised speaking and visual plans without changing timing.
 <!-- markdownlint-enable MD013 -->
 
 Complete a good static deck before adding the scenario enhancement. The scenario
-is useful only if it makes evidence quality and operator review easier to explain.
-The deck remains suitable for a pitch when that optional feature is omitted.
+is useful only if it makes evidence quality and operator review easier to
+explain. The deck remains suitable for a pitch when that optional feature is
+omitted.
 
 ## Rendering configuration to implement
 
@@ -49,7 +51,7 @@ Record the exact tested Quarto and diagram-rendering versions in build guidance.
 | Planned helper          | Contract                                                                                                                  |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `render_diagrams.py`    | Extract named canonical Mermaid blocks, render figures, retain text alternatives and provenance                           |
-| `check_presentation.py` | Check manifest hashes, source IDs, main/appendix anchors, 300-second timing, local links, assets, and note-exclusion mode |
+| `check_presentation.py` | Check manifest hashes, source IDs, main/appendix anchors, 120-second timing, local links, assets, and note-exclusion mode |
 | `build_share.py`        | Package validated output with assets, fixture, and complete referenced documentation; verify copied links                 |
 
 <!-- markdownlint-enable MD013 -->
@@ -58,30 +60,59 @@ A render-stage checker must inspect the generated HTML, not merely match strings
 in the source. A packaging-stage check must inspect the portable bundle after
 copying. Avoid hardcoding reference slide counts or deployment identifiers.
 
-Future local build sequence: verify sources, generate figures, render the selected
-profile, validate HTML, package, and serve the output over HTTP. Detailed commands
-belong in the readme when the helpers exist. Quarto render by itself will not
-establish that the planned portable packaging or source checks are implemented.
+Future local build sequence: verify sources, generate figures, render the
+selected profile, validate HTML, package, and serve the output over HTTP.
+Detailed commands belong in the readme when the helpers exist. Quarto render by
+itself will not establish that the planned portable packaging or source checks
+are implemented.
 
 ## Product prototype work that can supply later evidence
 
 These are proposed PoopVolt engineering steps, separate from the deck build.
 Track implementation status against actual code and hardware artifacts.
 
-1. Select and verify sensors, cameras, power, and the MCU/Linux responsibilities.
-2. Define observation units, timestamps, quality flags, alignment, and retention.
-3. Implement acquisition and a replayable local observation record.
-4. Evaluate an initial soiling detector on pinned data and installation samples.
-5. Produce findings with evidence references and uncertainty handling.
-6. Add a maintenance policy and operator intervention history.
-7. Test the observation-to-recommendation chain, including missing/stale input.
-8. Measure defined detection, latency, resource, and energy-use outcomes on the
-   intended hardware, with a baseline and reproducible protocol.
+Start from the [reported hardware inventory](../../docs/hardware.md). The UNO Q
+4GB with Media Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate
+power components are secured. Use phone RGB instead of the unavailable thermal
+camera. Use the Base Shield and the recorded Waveshare charging branch; HRS1358
+and LM2596 are not used. UNO Q is USB-powered, independently of that branch.
+Follow the canonical wiring record rather than inferring integration from
+availability.
 
-Thermal fusion, long-term degradation forecasting, and battery-aware scheduling
-need separate validation. A mocked UI or example dataset does not complete those
-steps. Incorporate measured outcomes into the presentation only when the source
-registry can link them to an evaluated implementation and recorded results.
+Before these supporting data paths, select and document the proposed theoretical
+production reference, required plant/weather inputs, missing-data behavior,
+comparison scope, and evaluation. Use the linked peer-comparison results and
+prototype wiring within their reported scope. The STL is outside the main
+sequence until delivered. The inspected replay alone cannot validate the
+expected-production model.
+
+1. Pin the inspected SOLARMA revision and downloaded file hashes; implement a
+   replay importer with units, missing values, observation time, and coverage.
+2. Capture phone scenes with clean, simulated dust/droppings, and controls;
+   annotate visible regions and declare demo plant/string/panel mapping.
+3. Define scoped observation/finding contracts, source identity, topology, and
+   retention. Keep phone simulation and historical plant data separate.
+4. Select an initial visible-contamination detector and a telemetry anomaly
+   baseline; evaluate separately on held-out capture sessions and time periods.
+5. Verify secured-part interfaces, phone transfer, the local LCD status path,
+   and device supply. Run the paths on the UNO Q and measure quality,
+   localization scope, latency, memory, and power draw. Keep any small-panel
+   sensor test distinct from phone simulation and historical replay.
+6. Add maintenance review and intervention history, with explicit unknown inputs
+   for economic scenarios and no unsupported hotspot/loss claim.
+7. Prototype queued synchronization and company/own-plant views; test outages,
+   freshness, duplicate records, and plant access boundaries.
+8. Agree a field pilot with mapped logger channels, production/environment data,
+   verified interventions, costs, and buyer/owner responsibilities.
+9. Validate predictive maintenance using outcomes and a warning horizon;
+   evaluate customer maintenance/revamping benefit and company free-device
+   economics.
+
+Thermal acquisition and confirmation are deferred because the thermal camera is
+unavailable. Multi-year degradation needs separate measurements and validation.
+Battery-aware scheduling is a later off-grid extension. A replay anomaly, phone
+simulation, or mocked platform does not complete these steps. Only recorded
+evaluations can supply measured presentation claims.
 
 ## Draft completion and implementation completion
 

@@ -1,42 +1,44 @@
 # Speaking storyboard
 
-Status: Proposed speaker outline. Times match the [agenda](agenda.md).
-These notes guide authoring and rehearsal; they are not implemented slide notes.
+Status: Voice-over plan for the two-minute company-use narrative. Read only the
+**Voce** blocks in the [Italian script](../../docs/pitch-narrative.md). Times
+match the [agenda](agenda.md), including pauses and closing holds.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide | Seconds | Start | End   | Main spoken point                                                                                            | Bridge to next slide                              |
-| ----- | ------- | ----- | ----- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
-| 1     | 20      | 00:00 | 00:20 | Introduce the pigeon story and PoopVolt as proposed local maintenance support                                | Introduce the decision an operator faces          |
-| 2     | 35      | 00:20 | 00:55 | Follow the deposit to a suspected hotspot; widen the problem to dust and hail                                | Identify who acts on the diagnosis                |
-| 3     | 30      | 00:55 | 01:25 | The system observes and advises, while the operator reviews and performs maintenance                         | Open the local processing boundary                |
-| 4     | 45      | 01:25 | 02:10 | Acquisition produces usable observations, Diagnostics produces findings, Maintenance proposes action         | Explain what makes an observation usable          |
-| 5     | 40      | 02:10 | 02:50 | Timestamp and quality checks prevent unreliable input from becoming a confident finding                      | Show what each modality can contribute            |
-| 6     | 45      | 02:50 | 03:35 | Compare deposit imagery and an illustrative thermal hotspot; history supports reassessment                   | Turn the evidence into an operator recommendation |
-| 7     | 40      | 03:35 | 04:15 | Return to the same panel: adequate evidence prompts cleaning review; missing input prompts inspection        | Explain what needs to become real next            |
-| 8     | 25      | 04:15 | 04:40 | State the current design status and the next acquisition, inference, and recommendation validation steps     | Return to the operator's goal                     |
-| 9     | 20      | 04:40 | 05:00 | Close on proportionate maintenance and propose validating the evidence chain on an instrumented installation | Move to questions and technical appendix          |
+| Scene | Seconds | Start | End   | Main spoken point                                                | Visual transition                      |
+| ----- | ------- | ----- | ----- | ---------------------------------------------------------------- | -------------------------------------- |
+| 1     | 12      | 00:00 | 00:12 | Strong hook, brief pause, question about production              | Panel becomes the owner's installation |
+| 2     | 18      | 00:12 | 00:30 | Company needs evidence the owner can understand                  | Owner's question becomes a comparison  |
+| 3     | 20      | 00:30 | 00:50 | Peer comparison exists; theoretical reference remains future     | Cut to the electrical schematic        |
+| 4     | 25      | 00:50 | 01:15 | UNO Q connections, current-check limit, separate USB/solar paths | Cut to independent historical replay   |
+| 5     | 25      | 01:15 | 01:40 | Replay flags inverter 1; it does not diagnose dirt               | Evidence becomes a technician review   |
+| 6     | 20      | 01:40 | 02:00 | Technician proposes, owner chooses, later measurements verify    | Hold the closing message for 3 seconds |
 
 <!-- markdownlint-enable MD013 -->
 
-## Required notes when authoring
+## Required production notes
 
-Introduce the pigeon as a memorable story device on slide 1 and its deposit on
-slide 2. Explain that dust is another soiling example, while hail can cause
-physical damage requiring inspection. On slide 6, connect localized soiling and
-partial shading to a possible hotspot using separate RGB and illustrative thermal
-observations; a visible deposit does not establish thermal detection. On slide 7,
-return to the same panel for cleaning review or a request for better observations.
-Do not present the story as measured project evidence or claim that dust and hail
-account for most interruptions without field data.
+Keep the hook illustrative. Do not attach a loss value from SOLARMA to the
+illustrated deposit or prototype panel. The available software compares peers;
+it is not the proposed weather-adjusted theoretical model.
 
-Each slide's notes should state its claim status, source IDs, essential limitation,
-and transition. Keep details of sensor selection, model evaluation, and wiring in
-appendix notes. On slide 6, explicitly say that a single image cannot establish
-irreversible degradation. On slide 7, identify both cases as illustrative.
-On slide 8, say that no end-to-end prototype or measured benefit is established
-by the repository's current documentation.
+The hardware segment shows `pv-wiring`, not an undelivered STL. State that UNO Q
+uses USB power and the solar charging branch is separate. Current-sensor zero is
+reported verified; current under illumination remains pending. The schematic and
+bring-up record do not establish a field-ready, self-powered installation.
 
-Rehearse the full talk with static slides first. Interaction must fit the
-40-second scenario budget and must remain optional if the presenter needs to
-continue without it. Do not spend the pitch explaining deck controls or build tools.
+Use the replay's actual window, 1 August–17 September 2019, and inverter scope.
+Inverter 1 reports 0 kWh against approximately 292 kWh expected from peers. A
+candidate flag asks for inspection; it is not a cause or guaranteed recovery.
+Keep historical plots independent of phone RGB observations.
+
+Attribute intervention proposals to the technician. Owners assess work; benefit
+requires later comparable measurements. Coesa and free-device distribution
+remain supporting hypotheses, not confirmed partners or offers.
+
+Rehearse voice-over within each scene, leaving room for pauses and the
+three-second closing hold. Cut wording before accelerating delivery. A timed
+read and final export check must confirm the 120-second limit; word count alone
+is insufficient. The existing English Devpost video script and subtitles are
+separate materials.

@@ -1,0 +1,89 @@
+1
+00:00:00,500 --> 00:00:04,000
+Your plant is covered in shit.
+
+2
+00:00:04,500 --> 00:00:06,500
+Literally.
+
+3
+00:00:07,000 --> 00:00:11,500
+But the real question is: how much is it costing you?
+
+4
+00:00:12,500 --> 00:00:18,000
+Owners of older solar plants can't tell
+whether they still produce what they should.
+
+5
+00:00:18,500 --> 00:00:22,500
+The companies that maintain them have the mirror problem:
+
+6
+00:00:22,500 --> 00:00:28,000
+how do you convince an owner
+to inspect a plant that apparently works?
+
+7
+00:00:28,000 --> 00:00:31,500
+They need evidence the owner can understand.
+
+8
+00:00:32,500 --> 00:00:38,000
+PoopVolt compares what each inverter produced
+with what its peers say it should have produced.
+
+9
+00:00:38,500 --> 00:00:44,000
+We replayed a real plant's 2019 logs:
+thirteen inverters, about fifty-nine thousand records.
+
+10
+00:00:44,500 --> 00:00:51,000
+Inverter one kept reporting, but produced nothing
+from 21 July until the record ends in October:
+
+11
+00:00:51,000 --> 00:00:57,500
+seventy-five days, about 550 kWh short of its peers.
+
+12
+00:00:58,000 --> 00:01:02,500
+A daily peer check points at it on day one.
+
+13
+00:01:03,000 --> 00:01:11,000
+A flag is not a diagnosis;
+it tells the technician where to look.
+
+14
+00:01:12,500 --> 00:01:20,000
+On site, an Arduino UNO Q reads temperature,
+humidity, light and panel current,
+
+15
+00:01:20,000 --> 00:01:27,000
+shows them on a display, and hands them
+to a technician's phone over NFC,
+
+16
+00:01:27,000 --> 00:01:30,000
+with no network needed.
+
+17
+00:01:35,500 --> 00:01:41,500
+Next: a weather-adjusted expected production,
+and soiling detection from a phone photo.
+
+18
+00:01:42,000 --> 00:01:45,000
+We have not built those yet.
+
+19
+00:01:50,500 --> 00:01:56,000
+PoopVolt turns a production gap
+into a proposal an owner can understand.
+
+20
+00:01:56,000 --> 00:01:59,500
+Team B-AROL-O, hackTurin 2026.

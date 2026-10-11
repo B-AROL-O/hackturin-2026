@@ -1,0 +1,24 @@
+# Pylint settings for super-linter. Black, flake8 and ruff already enforce
+# formatting and line length.
+
+[MASTER]
+jobs=0
+
+[MESSAGES CONTROL]
+disable=
+    import-error,
+    # The Linux receivers are standalone scripts copied to the board.
+    duplicate-code,
+    line-too-long,
+    # pytest injects fixtures by parameter name.
+    redefined-outer-name
+
+[BASIC]
+# Test names describe the behavior under test.
+no-docstring-rgx=^(_|test_)
+
+[DESIGN]
+max-args=6
+max-positional-arguments=6
+max-attributes=8
+max-locals=25

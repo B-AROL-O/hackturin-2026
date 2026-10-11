@@ -1,61 +1,61 @@
 # Visual and asset plan
 
-Status: Proposed visuals. No images, figures, or charts have been produced.
-Apply [visual guidelines](../../.agent/visual-design.md) when implementing.
+Status: Proposed motion graphics storyboard for the two-minute company-use
+pitch. Existing wiring and replay exports are available; the new video,
+illustrations, overlays, and HTML deck have not been produced. Apply
+[visual guidelines](../../.agent/visual-design.md).
 
 ## Main visuals
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide ID        | Primary visual                                                                | Source or provenance                                             | Visible qualification                                     |
-| --------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
-| `pv-title`      | Same panel with a restrained pigeon cue on a graphite title canvas            | Original, licensed photograph, or labeled generated illustration | Proposed system in subtitle                               |
-| `pv-problem`    | Pigeon-droppings detail; small dust and hail examples with distinct labels    | Verified image with rights, or clearly illustrative image        | No claimed production-loss value                          |
-| `pv-context`    | Operator, installation, and PoopVolt boundary                                 | Canonical `pv-context` diagram                                   | Proposed architecture                                     |
-| `pv-pipeline`   | Horizontal edge flow and `Local storage` connection                           | `pv-architecture` with canonical names                           | Proposed architecture, intended platform                  |
-| `pv-quality`    | Valid observation contrasted with a missing or stale observation              | `pv-acquisition` and `pv-flow-soiling`                           | Illustrative observations                                 |
-| `pv-evidence`   | Same deposit in RGB; illustrative thermal hotspot; electrical/history context | `pv-diagnostics`; actual assets still needed                     | Illustrative modalities, history required for degradation |
-| `pv-decision`   | Evidence, finding, recommendation, and operator review                        | `pv-maintenance`, `pv-flow-maintenance`                          | Illustrative recommendation                               |
-| `pv-validation` | Compact integration and evaluation roadmap                                    | Open decisions in `pv-index` and `pv-deployment`                 | Work planned, results pending                             |
-| `pv-close`      | Simple return to the operator decision loop                                   | `pv-context` and `pv-maintenance`                                | Intended benefit                                          |
+| Scene ID       | Primary visual                                     | Source or provenance                     | Visible qualification                               |
+| -------------- | -------------------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
+| `pv-title`     | Typographic hook, panel, restrained pigeon cue     | Original illustration and `pv-narrative` | Illustrative scene                                  |
+| `pv-problem`   | Same installation with owner and technician        | `pv-narrative`, `pv-pitch`               | Question, no established cause                      |
+| `pv-pipeline`  | Comparison labels and deviation-to-inspection flow | `pv-comparison`, `pv-data-plan`          | Peer comparison available; theoretical model future |
+| `pv-prototype` | Full electrical schematic with two focused views   | `pv-wiring`, `pv-wiring-svg`             | Prototype; USB supply; current-under-light pending  |
+| `pv-evidence`  | Original inverter 1 chart and inspection flag      | `pv-comparison`, `pv-comparison-chart`   | Historical replay, period, units, inverter scope    |
+| `pv-decision`  | Technician, owner, four-step review sequence       | `pv-narrative`, `pv-maintenance`         | Proposed workflow; benefit unmeasured               |
 
 <!-- markdownlint-enable MD013 -->
 
-## Canonical diagram exports
+## Motion and timing
 
-Keep the same panel and deposit location across the cover, problem, evidence,
-and decision visuals. Show a pigeon or its droppings as the narrative cue, then
-align the RGB view with a separately labeled illustrative thermal hotspot view.
-Use small dust and hail examples to connect the story to broader maintenance;
-represent hail as damage requiring inspection, not another cleaning scenario.
-Background sources are recorded in the [source registry](../sources/README.md).
+Use the exact scene cues in the [script](../../docs/pitch-narrative.md), on a
+1920 × 1080 video canvas. Keep role positions stable and use the brand's dark
+blue, solar yellow, white, and greys. Prefer short entrances, highlights, and
+200–300 ms transitions; hold each composition while it is read.
 
-Build a full export from each Mermaid page used in the appendix. For the main
-pitch, create concise excerpts from `pv-context`, `pv-architecture`, and the two
-runtime flows. Export names should include the diagram ID. Label an excerpt as
-a presentation view derived from its parent and explain omitted detail in notes.
+The 25-second wiring scene uses 5 seconds for the full sheet, 10 seconds for UNO
+Q/Grove interfaces, 7 seconds for the solar branch and A1, and 3 seconds for the
+complete sheet. Ensure labels are readable in the close views. Overlay outlines
+and captions without altering the canonical export. Never draw a power
+connection from Waveshare USB OUT to UNO Q: it is not connected.
 
-The extraction tool should read the canonical fenced block, apply presentation
-theme configuration, render a static asset, and retain a source hash. It should
-fail if the page has no unique expected diagram. Keep the complete source and
-diagram text available as a readable alternative in the bundled references.
+Keep the replay chart static for at least eight seconds, with axes, legend,
+period, source, and units continuously visible. Cut between hardware and replay
+rather than morphing one into the other. The final logo/message hold occupies
+the last three seconds; it does not extend the 120-second budget.
 
-Use consistent module positions across pipeline and decision slides. Emphasize
-the stage being discussed with a label and optional short reveal. Avoid dense
-nested diagrams on the main canvas. Put unverified physical interfaces in the
-deployment appendix with their existing TBD status.
+## Evidence and asset rules
 
-## Image and data acquisition
+Use the existing `pv-wiring` SVG/PDF generated from
+[`hardware/poopvolt.kicad_sch`](../../hardware/poopvolt.kicad_sch). Crops retain
+the parent diagram ID and connection semantics; electrical edits must follow the
+[KiCad export workflow](../../docs/hardware-connections.md).
 
-Create `assets/README.md` during implementation. For every image or font, record
-its source, creator, license, retrieval date, modifications, and intended use.
-Keep original rights information next to locally bundled assets. Sponsor listing
-in the repository readme does not itself establish usable logo artwork or rights.
+Use the original inverter 1 chart from the
+[comparison results](../../docs/comparison-results.md). Do not redraw its data,
+animate KPI counts, invent a theoretical curve, or show a recovered-energy plot.
+The replay is not prototype telemetry, a mapped-string result, or a diagnosis.
 
-No quantitative results are currently available for a performance chart.
-The first deck can use conceptual diagrams and illustrative observation examples.
-Later plots require recorded data, units, evaluation scope, uncertainty, and
-reproducible generation. Avoid decorative pseudo-charts and invented KPI tiles.
+An STL concept can join appendix material only when its actual file and function
+are supplied. Phone RGB, soiling detection, theoretical modeling, and measured
+field benefits must retain their own source and implementation status.
 
-The optional scenario needs two fixture cases. Default to the static adequate
-evidence view, with both cases rendered in the handout and print layout.
+Record creator, source, rights, modifications, and intended use for new assets.
+Keep subtitles synchronized with the final cut. The existing English Devpost
+cards and subtitles remain separate; do not label them as this Italian video's
+finished assets. HTML adaptations must provide complete static content, reduced
+motion, and readable print output.

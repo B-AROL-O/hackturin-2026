@@ -1,0 +1,8 @@
+{
+  "name": "REPLACE_WITH_TRAINED_MODEL_NAME",
+  "output_format": "yolov8",
+  "input_size": 640,
+  "classes": [{ "label": "REPLACE_WITH_ACTUAL_CLASS_0", "kind": "panel" }],
+  "confidence_threshold": 0.4,
+  "nms_threshold": 0.45
+}

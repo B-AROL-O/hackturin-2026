@@ -2,32 +2,34 @@
 
 ## Direction
 
-Build a calm, editorial presentation about photovoltaic field maintenance.
-Use generous whitespace, clear technical drawings, and close views of a panel
-when a photograph supplies useful context. Let the sensing and decision flow
-provide the recurring visual structure. The title slide can use a dark graphite
-canvas with one panel image and a large PoopVolt wordmark.
+Build a calm, editorial presentation about photovoltaic field maintenance. Use
+generous whitespace, clear technical drawings, and close views of a panel when a
+photograph supplies useful context. Let the sensing and decision flow provide
+the recurring visual structure. The title slide can use a dark blue canvas with
+one panel image and a large PoopVolt wordmark.
 
-Use the pigeon and its deposit as a restrained recurring cue on the same panel.
-Carry that location into separately labeled RGB and illustrative thermal views.
-Use dust and hail examples to show the wider maintenance scope. Keep the pigeon
-cue subordinate to the evidence and operator decision.
+Use the older plant and its owner's question as the recurring visual context.
+The pigeon cue explains the name and remains secondary. The central visual is
+expected versus observed production over matching periods, with estimates,
+observations, and simulations distinguished by labels and line patterns. Unknown
+reference inputs must remain visibly unavailable.
 
-These are proposed tokens to evaluate on a projector, not an inherited brand.
+Show the prototype electrical schematic as a dedicated scene and the replay
+chart with provenance. The undelivered STL is outside the main sequence. Keep
+SOLARMA channels distinct from verified strings and phone imagery separate from
+replay. A company-to-owner offer belongs in supporting context or the appendix.
+Thermal illustrations are risk context only, never current measured output.
 
-| Role      | Draft value | Use                                          |
-| --------- | ----------- | -------------------------------------------- |
-| Canvas    | `#F7F4EC`   | Warm background for content slides           |
-| Ink       | `#172A2A`   | Headings, body copy, diagram labels          |
-| Teal      | `#176B63`   | Processing stages and selected state         |
-| Amber     | `#E9AD35`   | Solar context and highlighted evidence       |
-| Rust      | `#A5432C`   | Anomaly emphasis with an explicit text label |
-| Muted ink | `#4D605D`   | Secondary copy and source captions           |
-| Rule      | `#CED5CE`   | Dividers and diagram connections             |
+## Brand palette
 
-Use ink on amber. Check every final foreground/background pairing. Color is
-supporting information: labels, shapes, and line patterns must communicate
-stage, status, or anomaly without it.
+Use the palette in [brand-guidelines.md](../brand-guidelines.md): dark blue,
+solar yellow, white and neutral greys. It replaces the earlier teal, rust, amber
+and ivory proposal for new materials. Existing video cards and charts remain
+legacy exports and require a separate coordinated migration.
+
+Use blue text on yellow. Check final contrast and communicate status through
+labels, symbols and line patterns as well as color. Do not introduce extra brand
+accents or reinterpret measured evidence through decorative color.
 
 ## Type and geometry
 
@@ -45,10 +47,13 @@ shrinking text. Use a consistent baseline grid and at most two content columns.
 
 - Cover: large title, one-line purpose, panel visual, team attribution.
 - Problem: one field image with a localized, labeled observation.
-- Architecture: one generous horizontal flow with a clearly marked edge boundary.
+- Architecture: one generous horizontal flow with a clearly marked edge
+  boundary.
 - Diagnostics: aligned evidence views with readable labels and a common legend.
-- Decision: observation, finding, and operator recommendation in a stable sequence.
-- Roadmap: current design state and the next validation steps, with honest status.
+- Decision: observation, finding, and operator recommendation in a stable
+  sequence.
+- Roadmap: current design state and the next validation steps, with honest
+  status.
 
 Use flat compositions for explanations. Reserve UI panels for the illustrative
 operator interface, where they demonstrate an actual interaction. Avoid turning
@@ -64,7 +69,8 @@ diagram ID and extraction rule. Adapt colors during generation, without changing
 the original system semantics or hand-editing generated files.
 
 For photographs, preserve provenance and avoid crops that remove the evidence.
-Show RGB and thermal observations as separate modalities. Label synthetic thermal
-overlays as illustrations. Do not imply a photograph came from PoopVolt hardware.
-Use diagram rendering or native chart tools for technical figures, and image
-search or image generation for photographic or decorative assets when needed.
+Show RGB and thermal observations as separate modalities. Label synthetic
+thermal overlays as illustrations. Do not imply a photograph came from PoopVolt
+hardware. Use diagram rendering or native chart tools for technical figures, and
+image search or image generation for photographic or decorative assets when
+needed.

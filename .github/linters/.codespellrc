@@ -1,3 +1,5 @@
 [codespell]
-# Ignore URLs, e.g. the "fo" path segment in Dropbox share links
+# Ignore URLs (e.g. the "fo" path segment in Dropbox links) and Italian words
+# that collide with English misspellings in the pitch, tests and column names.
 ignore-regex = https?://\S+
+ignore-words-list = ser,cliente,visibile,rende,foto,allo,serie,limite,fase
