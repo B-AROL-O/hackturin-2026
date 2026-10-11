@@ -16,15 +16,16 @@ Your user must be in `uucp` for `/dev/ttyACM0`. Always pass `-p /dev/ttyACM0`: `
 The Modulino Movement module is on Qwiic (Wire1). On the MCU, a `k_timer` ISR runs at 100 Hz and gives a semaphore. A sampler thread then sends `Bridge.notify("imu", seq, t_us, ax, ay, az, gx, gy, gz)` to `arduino-router`. On Linux, `linux/imu_rx.py` reads from the router socket and posts a semaphore for each sample, which wakes the `process()` worker.
 
 ```sh
+# adb shell starts in /, so use ~/ or /home/arduino/ paths on the board
 # MCU
 arduino-cli compile -b arduino:zephyr:unoq --upload -p /dev/ttyACM0 firmware/imu_bridge
 arduino-cli monitor -p /dev/ttyACM0 --config baudrate=9600   # Monitor heartbeat
 
 # Linux side (board has no pip: vendor an aarch64 cp313 msgpack wheel)
 uvx pip download msgpack --only-binary=:all: --platform manylinux2014_aarch64 --python-version 3.13 -d /tmp/wh
-$ADB shell mkdir -p imu_bridge
-$ADB push firmware/imu_bridge/linux/imu_rx.py /tmp/wh/msgpack-*.whl imu_bridge/
-$ADB shell 'cd imu_bridge && python3 -m zipfile -e msgpack-*.whl vendor && python3 -u imu_rx.py'
+$ADB shell mkdir -p /home/arduino/imu_bridge
+$ADB push firmware/imu_bridge/linux/imu_rx.py /tmp/wh/msgpack-*.whl /home/arduino/imu_bridge/
+$ADB shell 'cd ~/imu_bridge && python3 -m zipfile -e msgpack-*.whl vendor && python3 -u imu_rx.py'
 ```
 
 Measured: 100 Hz, no gaps or drops. Arrival jitter is about 0.6 ms, with peaks up to about 3 ms (not using `SCHED_FIFO`).
@@ -48,14 +49,14 @@ Reads the sensors (including the solar panel current on A1, zero offset 266.5 mV
 It also streams the readings to the Linux side once per second with `Bridge.notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma, pv_mv)`. On the board, `linux/station_rx.py` receives them, computes the panel **performance index**, sends it back to the MCU (`set_perf`, shown as `P…%` on the LCD and `perf=` in the NFC text), and writes CSV. It uses the same vendored msgpack as the IMU receiver:
 
 ```sh
-$ADB shell mkdir -p station
-$ADB push firmware/station/linux/station_rx.py firmware/station/linux/solar_model.py /tmp/wh/msgpack-*.whl station/
-$ADB shell 'cd station && python3 -m zipfile -e msgpack-*.whl vendor'
+$ADB shell mkdir -p /home/arduino/station
+$ADB push firmware/station/linux/station_rx.py firmware/station/linux/solar_model.py /tmp/wh/msgpack-*.whl /home/arduino/station/
+$ADB shell 'cd ~/station && python3 -m zipfile -e msgpack-*.whl vendor'
 
 # once, with the panel clean and in clear sun (sun above 25 deg): record the baseline
-$ADB shell "cd station && python3 station_rx.py --now $(date +%s) --calibrate 30"
+$ADB shell "cd ~/station && python3 station_rx.py --now $(date +%s) --calibrate 30"
 # then
-$ADB shell "cd station && python3 station_rx.py --now $(date +%s) --csv station.csv"
+$ADB shell "cd ~/station && python3 station_rx.py --now $(date +%s) --csv station.csv"
 ```
 
 How the index works:
