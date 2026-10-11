@@ -36,7 +36,7 @@ The board has two halves, and the prototype uses each for what it is good at:
 2. **Wi-Fi on the board** (once; the board remembers it, no sudo): `adb shell nmcli device wifi connect "<SSID>" password "<password>"`, then `adb shell hostname -I`. Never commit Wi-Fi passwords.
 3. **Copy the software to the board** and **start the services**: station receiver with `--latest`, then the `poopvolt` Docker container. See [phone inspection: tested route](phone-inspection.md#tested-route-on-our-uno-q-arduinos-python-image-no-sudo). The container restarts by itself after a reboot; the station receiver does not yet.
 4. **Model:** until the team model is ready, use the [off-the-shelf test model](../models/offtheshelf/README.md) (`export.sh`, then copy to the board's `models/` and run `docker restart poopvolt`).
-5. **Demo on the phone:** join the same Wi-Fi, then open `http://<board-ip>:8000/`. On Android, take the photo with the Camera app and use **Choose photo**: the in-page **Camera** button can lose the photo when Android reloads the tab. Then tap **Run inspection**.
+5. **Demo on the phone:** join the same Wi-Fi (or use the phone's hotspot for the board), then open `http://<board-ip>:8000/`. Don't know the IP? Tap the phone on the NFC reader: the tag text ends with `dashboard: http://<board-ip>:8000`. On Android, take the photo with the Camera app and use **Choose photo**: the in-page **Camera** button can lose the photo when Android reloads the tab. Then tap **Run inspection**.
 6. **Clean up:** **Delete inspection** or **Clear all photos on the board** in the page.
 
 ## Known issues
