@@ -1,4 +1,4 @@
-# Team response to hackTurin 2026
+# PoopVolt (hackTurin 2026)
 
 PoopVolt starts with the owner of an older photovoltaic plant who does not know
 whether it produces as expected. A proposed expected/observed comparison makes
