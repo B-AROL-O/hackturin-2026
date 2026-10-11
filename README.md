@@ -1,5 +1,10 @@
 # PoopVolt (hackTurin 2026)
 
+<img src="assets/brand/Logo_PoopVolt.png" alt="PoopVolt logo: pigeon on a photovoltaic panel beside the product name" width="640" />
+
+Brand resources: [brand guidelines](brand-guidelines.md) and
+[logo provenance and available variants](assets/brand/README.md).
+
 PoopVolt starts with the owner of an older photovoltaic plant who does not know
 whether it produces as expected. A proposed expected/observed comparison makes
 performance gaps visible. A photovoltaic service company uses the proposed
