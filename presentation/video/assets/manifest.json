@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-10-11",
+  "generator": "build_illustrations.py",
+  "rasterizer": "rsvg-convert version 2.61.2",
+  "brandGuidelines": "brand-guidelines.md",
+  "panelGeometry": {
+    "viewBox": "0 0 1200 760",
+    "evidenceAnchor": {
+      "x": 743,
+      "y": 292
+    }
+  },
+  "assets": [
+    {
+      "path": "panel-rgb.svg",
+      "source": "presentation/video/assets/build_illustrations.py",
+      "status": "illustrative",
+      "creator": "Original artwork authored for PoopVolt with Codex",
+      "rights": "Repository MIT license; not official brand artwork",
+      "modifications": "Original SVG",
+      "sha256": "ccbd2f4615999ea5892db5e0eacb5f547976cd4f6e13050b1c5905ff9392dc2c"
+    },
+    {
+      "path": "panel-rgb.png",
+      "source": "presentation/video/assets/build_illustrations.py",
+      "status": "illustrative",
+      "creator": "Original artwork authored for PoopVolt with Codex",
+      "rights": "Repository MIT license; not official brand artwork",
+      "modifications": "PNG export",
+      "sha256": "d63cdff7d5a74aa8fbf521b221066e9a8c44a3091a6026d22660e88214c3c998"
+    },
+    {
+      "path": "pigeon.svg",
+      "source": "presentation/video/assets/build_illustrations.py",
+      "status": "illustrative",
+      "creator": "Original artwork authored for PoopVolt with Codex",
+      "rights": "Repository MIT license; not official brand artwork",
+      "modifications": "Original SVG",
+      "sha256": "ceccbdcc514a0998ffbf32932483a96dd19f65ae6748003fe787e6d0b83244b0"
+    },
+    {
+      "path": "pigeon.png",
+      "source": "presentation/video/assets/build_illustrations.py",
+      "status": "illustrative",
+      "creator": "Original artwork authored for PoopVolt with Codex",
+      "rights": "Repository MIT license; not official brand artwork",
+      "modifications": "PNG export",
+      "sha256": "9f42bd56d3f23f706ff6950422cd2b56ffc849a0659030b38edf616c0cf361e7"
+    },
+    {
+      "path": "plant-owner.svg",
+      "source": "presentation/video/assets/build_illustrations.py",
+      "status": "illustrative",
+      "creator": "Original artwork authored for PoopVolt with Codex",
+      "rights": "Repository MIT license; not official brand artwork",
+      "modifications": "Original SVG",
+      "sha256": "5b549f91684f7bcf9c74f182c6f4b84081b7fbadc68a388ebe451e91e2fa5ffc"
+    },
+    {
+      "path": "plant-owner.png",
+      "source": "presentation/video/assets/build_illustrations.py",
+      "status": "illustrative",
+      "creator": "Original artwork authored for PoopVolt with Codex",
+      "rights": "Repository MIT license; not official brand artwork",
+      "modifications": "PNG export",
+      "sha256": "c10cd40671743acfd375785a2d4789110967daf0e92f5c74859c63da5a620f02"
+    },
+    {
+      "path": "Logo_PoopVolt.png",
+      "source": "assets/brand/Logo_PoopVolt.png",
+      "revision": "f56dc6007d6807cd8ffb4461c96481cd57cc443b",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f56dc6007d6807cd8ffb4461c96481cd57cc443b/assets/brand/Logo_PoopVolt.png",
+      "status": "brand_original",
+      "creator": "Supplied by GitHub user fedenebu; creator unconfirmed",
+      "rights": "Team-supplied brand asset; creator and brand permissions pending in assets/brand/README.md",
+      "modifications": "None; byte-identical local copy",
+      "sha256": "9c643e44209b2d18f3f01cf981d3a90a7cf2a2de94aeaeb38458af0a19f6d370"
+    },
+    {
+      "path": "prototype-bench-01.jpg",
+      "source": "docs/video/assets/prototype-bench-01.jpg",
+      "revision": "bac761aaf3770fe220be409f9adf5d5d7b82ac85",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/bac761aaf3770fe220be409f9adf5d5d7b82ac85/docs/video/assets/prototype-bench-01.jpg",
+      "status": "prototype_photo",
+      "creator": "Repository-supplied prototype photograph; author unrecorded",
+      "rights": "Existing repository prototype photo; author and explicit usage permission not recorded",
+      "modifications": "None; byte-identical local copy",
+      "sha256": "51dcee97fe85318ae89c212bb326f7c4834dc26f2dbacd39c9cd4a20a44adec5"
+    },
+    {
+      "path": "prototype-bench-02.jpg",
+      "source": "docs/video/assets/prototype-bench-02.jpg",
+      "revision": "bac761aaf3770fe220be409f9adf5d5d7b82ac85",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/bac761aaf3770fe220be409f9adf5d5d7b82ac85/docs/video/assets/prototype-bench-02.jpg",
+      "status": "prototype_photo",
+      "creator": "Repository-supplied prototype photograph; author unrecorded",
+      "rights": "Existing repository prototype photo; author and explicit usage permission not recorded",
+      "modifications": "None; byte-identical local copy",
+      "sha256": "6bd9ae3128e0c76a4bc1aabd93fe8d5fc49712102e7dd337e402420985c3c3cb"
+    },
+    {
+      "path": "prototype-outdoor.jpg",
+      "source": "docs/video/assets/prototype-outdoor.jpg",
+      "revision": "7a7d73edbddf42978b13848b99b4c8cf3e41ec75",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/7a7d73edbddf42978b13848b99b4c8cf3e41ec75/docs/video/assets/prototype-outdoor.jpg",
+      "status": "prototype_photo",
+      "creator": "Repository-supplied prototype photograph; author unrecorded",
+      "rights": "Existing repository prototype photo; author and explicit usage permission not recorded",
+      "modifications": "None; byte-identical local copy",
+      "sha256": "09bc9c824fa99d2a8f3de14085704b95a30c3026129834721f51d28af39882ea"
+    },
+    {
+      "path": "pv-wiring.svg",
+      "source": "docs/architecture/diagrams/pv-wiring.svg",
+      "revision": "ca62431226e06451d569172caa98b66a6e2bd383",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/ca62431226e06451d569172caa98b66a6e2bd383/docs/architecture/diagrams/pv-wiring.svg",
+      "status": "reported_prototype_wiring",
+      "creator": "Repository source; see canonical document",
+      "rights": "Repository material; retain its source and license notices",
+      "modifications": "None; byte-identical local copy",
+      "sha256": "e24df8bc6290c2f7923bcbdd6ec521bf4369c092bc74515cc4e9c67c14b3f4d6"
+    },
+    {
+      "path": "pv-wiring.png",
+      "source": "docs/architecture/diagrams/pv-wiring.svg",
+      "revision": "ca62431226e06451d569172caa98b66a6e2bd383",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/ca62431226e06451d569172caa98b66a6e2bd383/docs/architecture/diagrams/pv-wiring.svg",
+      "status": "reported_prototype_wiring",
+      "creator": "Repository source; see canonical document",
+      "rights": "Repository material; retain its source and license notices",
+      "modifications": "Faithful PNG export",
+      "sha256": "577f85941036fd88938187bb7d9a044ce724d238c17eca79f20e794a05bf05d7"
+    },
+    {
+      "path": "comparison-inverter-1-replayed.svg",
+      "source": "docs/images/comparison-inverter-1-replayed.svg",
+      "revision": "cdd3625373e0e3c5079cb429d21dfed68e1e3095",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/cdd3625373e0e3c5079cb429d21dfed68e1e3095/docs/images/comparison-inverter-1-replayed.svg",
+      "status": "historical_replay",
+      "creator": "Repository source; see canonical document",
+      "rights": "Repository material; retain its source and license notices",
+      "modifications": "None; byte-identical local copy",
+      "sha256": "11dfe9fe817255ca16d3d8abb9f6d7236b4debbdf55c5c247025846757cc6f5e"
+    },
+    {
+      "path": "comparison-inverter-1-replayed.png",
+      "source": "docs/images/comparison-inverter-1-replayed.svg",
+      "revision": "cdd3625373e0e3c5079cb429d21dfed68e1e3095",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/cdd3625373e0e3c5079cb429d21dfed68e1e3095/docs/images/comparison-inverter-1-replayed.svg",
+      "status": "historical_replay",
+      "creator": "Repository source; see canonical document",
+      "rights": "Repository material; retain its source and license notices",
+      "modifications": "Faithful PNG export",
+      "sha256": "efdb375f8fa75bf84589a4af17a6f7454031c83dc0c35a88ab5b702670604b72"
+    }
+  ]
+}

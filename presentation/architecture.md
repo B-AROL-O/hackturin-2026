@@ -61,6 +61,13 @@ concept is outside the main sequence until delivered.
 
 ## Stack decision
 
+The user selected Remotion for a 120-second English motion graphic adaptation
+of the current six-scene narrative. Follow its
+[production brief](video/README.md) and [implementation contract](video/implementation.md).
+The video uses `video/timing.json`, local `video/assets/`, the original logo, and
+the brand guidelines. The Quarto proposal below remains the HTML deck stack.
+Both media share canonical claims and source IDs, with independent builds.
+
 Propose Quarto with Reveal.js, following the reference's authoring workflow.
 Markdown keeps slides and speaker notes reviewable. Reveal.js supplies
 navigation, overview, deep links, and presentation controls. SCSS defines an
