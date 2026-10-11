@@ -125,6 +125,7 @@ class Coverage:
 
     @property
     def total(self) -> int:
+        """Samples expected for the field, present or not."""
         return self.present + self.missing
 
 
@@ -182,7 +183,10 @@ def _convert(rows: list[dict[str, str]], key: str) -> list[Record]:
                 continue
             values[name] = _parse_number(raw)
         serial = row.get("serial", "").strip() or None
-        timestamp = datetime.strptime(row["timestamp"].strip(), TIMESTAMP_FORMAT)
+        # Naive local time by design; localize() attaches the zone.
+        timestamp = datetime.strptime(  # noqa: DTZ007
+            row["timestamp"].strip(), TIMESTAMP_FORMAT
+        )
         device = int(row[key])
         if (device, timestamp) in seen:
             raise ValueError(f"duplicate record for device {device} at {timestamp}")
@@ -245,6 +249,7 @@ class Gap:
 
     @property
     def duration(self) -> timedelta:
+        """Length of the outage."""
         return self.end - self.start
 
 
@@ -327,6 +332,7 @@ def replay(
 
 
 def sha256_of(path: str | Path) -> str:
+    """Hex SHA-256 digest of a file, for pinning exports."""
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 

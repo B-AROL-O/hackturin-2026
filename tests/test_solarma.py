@@ -23,6 +23,7 @@ ROW_3 = "2019-07-01 12:10:00\t2\t101802N182\t9747\t1.023\t57\t240\t40.503\t49.99
 
 @pytest.fixture
 def details(tmp_path: Path) -> Path:
+    """A details export with rows out of order across two inverters."""
     path = tmp_path / "details.txt"
     path.write_bytes((DETAILS_HEADER + ROW_1 + ROW_2 + ROW_3).encode("latin-1"))
     return path
@@ -71,7 +72,7 @@ def test_summary_without_irradiance(tmp_path: Path) -> None:
             "2019-07-01 12:10:00\t0\t121186\t11.542\t\t\t\n"
         ).encode("latin-1")
     )
-    (record,) = solarma.load_summary(path)
+    (record,) = solarma.load_summary(path)  # pylint: disable=unbalanced-tuple-unpacking
     assert record.values["power_w"] == 121186.0
     assert record.values["irradiance_w_m2"] is None
 
@@ -129,7 +130,7 @@ def test_irradiance_unit_mojibake_is_repaired(tmp_path: Path) -> None:
             "Energia di irradiamento odierna [kWh]\n"
         ).encode("latin-1")
     )
-    assert solarma.load_summary(path) == []
+    assert not solarma.load_summary(path)
 
 
 def test_rejects_duplicate_timestamp_for_a_device(tmp_path: Path) -> None:
@@ -151,7 +152,7 @@ def test_localize_marks_the_assumed_timezone() -> None:
 def test_gaps_report_outages_without_filling(tmp_path: Path) -> None:
     rows = [_row(0), _row(10), _row(20), _row(55), _row(5, device=2)]
     records = solarma.load_details(_details_file(tmp_path, *rows))
-    (gap,) = solarma.gaps(records)
+    (gap,) = solarma.gaps(records)  # pylint: disable=unbalanced-tuple-unpacking
     assert gap.device == 1
     assert (gap.start.minute, gap.end.minute) == (20, 55)
     assert gap.duration == timedelta(minutes=35)
@@ -178,7 +179,7 @@ def test_observed_windows_use_positive_power_only(tmp_path: Path) -> None:
     records = solarma.load_details(_details_file(tmp_path, *rows))
     first, last = solarma.observed_windows(records, 1)["2019-07-01"]
     assert (first.minute, last.minute) == (10, 20)
-    assert solarma.observed_windows(records, 2) == {}
+    assert not solarma.observed_windows(records, 2)
 
 
 def test_replay_steps_in_time_order_without_zero_filling(tmp_path: Path) -> None:

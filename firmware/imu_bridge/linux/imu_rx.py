@@ -16,7 +16,7 @@ import threading
 import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "vendor"))
-import msgpack
+import msgpack  # pylint: disable=wrong-import-position
 
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "imu"
@@ -25,12 +25,13 @@ RT_PRIORITY = 50  # SCHED_FIFO priority, applied only when permitted (root)
 
 Sample = collections.namedtuple("Sample", "seq t_us ax ay az gx gy gz rx_ns")
 
-queue = collections.deque(maxlen=QUEUE_MAX)
+queue: collections.deque[Sample] = collections.deque(maxlen=QUEUE_MAX)
 ready = threading.Semaphore(0)
 stats = {"rx": 0, "dropped": 0, "seq_gaps": 0}
 
 
 def try_realtime():
+    """Switch the calling thread to SCHED_FIFO; return False without root."""
     try:
         os.sched_setscheduler(0, os.SCHED_FIFO, os.sched_param(RT_PRIORITY))
         return True
@@ -39,6 +40,7 @@ def try_realtime():
 
 
 def register(sock, unpacker):
+    """Register METHOD on arduino-router and wait for the acknowledgement."""
     sock.sendall(msgpack.packb([0, 1, "$/register", [METHOD]]))
     while True:
         unpacker.feed(sock.recv(4096))
@@ -50,6 +52,7 @@ def register(sock, unpacker):
 
 
 def reader(sock, unpacker):
+    """Queue each sample from the router and wake the worker."""
     try_realtime()
     last_seq = None
     while True:
@@ -72,11 +75,12 @@ def reader(sock, unpacker):
             ready.release()
 
 
-def process(sample):
+def process(sample):  # pylint: disable=unused-argument
     """Placeholder: replace with the real per-sample processing."""
 
 
 def worker():
+    """Process queued samples and print rate and jitter once per second."""
     rt = try_realtime()
     print(f"worker started (SCHED_FIFO={'yes' if rt else 'no, run as root to enable'})")
     prev = None
@@ -84,7 +88,7 @@ def worker():
     n = 0
     max_rx_jitter_ms = 0.0
     while True:
-        ready.acquire()
+        ready.acquire()  # pylint: disable=consider-using-with
         try:
             sample = queue.popleft()
         except IndexError:  # dropped by deque overflow
@@ -112,6 +116,7 @@ def worker():
 
 
 def main():
+    """Connect to arduino-router, start the worker and run the reader."""
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
     sock.connect(ROUTER_SOCKET)
     unpacker = msgpack.Unpacker(raw=False)
