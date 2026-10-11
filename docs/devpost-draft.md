@@ -13,7 +13,7 @@ end lists what is likely to change.
 | Tagline       | Edge AI maintenance evidence for older solar plants                                                                       |
 | Challenge     | **Beyond Solar**                                                                                                          |
 | Built with    | Arduino UNO Q, Arduino Bridge, Seeed Grove (AHT20, light, ACS70331 current, LCD, PN532 NFC), Python, uv, pytest, KiCad    |
-| GitHub        | <https://github.com/B-AROL-O/hackturin-2026> (check it opens logged out)                                                  |
+| GitHub        | <https://github.com/B-AROL-O/hackturin-2026>, release <https://github.com/B-AROL-O/hackturin-2026/releases/tag/v0.1.0>    |
 | Video         | Link to the 2-minute video (issue #37)                                                                                    |
 | Team          | Giacomo Lisita, Gianpaolo Macario, Lorenzo Palloni, Federico Nebuloni                                                     |
 | Images        | Wiring schematic (`docs/architecture/diagrams/pv-wiring.svg`), system diagram (from the readme), a photo of the prototype |
@@ -132,10 +132,39 @@ data (notice kept in `data/solarma/NOTICE.md`), and open tools such as KiCad,
 uv and pytest. The full list is in [project status](project-status.md). The
 repository is MIT licensed.
 
+## Beyond Solar requirements check
+
+Each challenge requirement, the evidence in this draft, and what is still weak.
+Adapted from the requirement mapping of the earlier SunCheck work breakdown.
+
+- **A PV panel with at least one other component.** Covered: mini panel, solar
+  manager and LiPo, with panel current read by the ACS70331 on A1. The charging
+  path is not yet verified in sunlight.
+- **Collect data from the system or the environment.** Covered: temperature,
+  humidity, light and panel current on the UNO Q, plus the replayed SOLARMA
+  inverter logs.
+- **Interpret data locally and produce a concrete response.** Partly covered.
+  The board shows readings on the LCD and as NFC tag text, but does not
+  interpret them yet. The peer comparison uses only the Python standard
+  library, so it can run on the board's Linux side, but it has not been run
+  there. Its response is a list of inverters to inspect. Run it on the board
+  before submitting, or say in the description where it runs.
+- **Start from a well-defined user, context and problem.** Covered: the owner
+  of an older plant and the service company that maintains it. Validation with
+  the Coesa mentor (issue #13) is still open.
+- **Show the improvement with a practical test and numbers.** Weak. The
+  evidence list gives detection results, but not the improvement over today's
+  practice, where nobody checks production against an expectation. Issue #35
+  should state it, for example how long the stopped inverter went unnoticed in
+  the replay and when the comparison would have flagged it, labelled as
+  replayed.
+
 ## Before you submit
 
 Hard deadline: Sunday 11 October 2026, 16:00 CEST; aim for 15:30.
 
+- [ ] Close the two gaps in the requirements check above: where the
+      comparison runs, and the improvement over today's practice (issue #35).
 - [ ] Update "What works" and "Not implemented" to match
       [project status](project-status.md) on the day.
 - [ ] Add the video link, and check it opens in a logged-out browser.
