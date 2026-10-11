@@ -76,6 +76,12 @@ type, evidence references, quality, and localization scope. A phone scene and
 historical replay cannot be fused as simultaneous evidence from one plant. See
 the [data plan](../data-plan.md) for the proposed observation contract.
 
+The narrower [phone inspection slice](phone-inspection.md) implements HTTP image
+acquisition, an OpenCV ONNX adapter, local JPEG/JSON storage, and a same-origin
+static dashboard in one Python process. The trained model/configuration and
+hardware validation are pending. It does not implement sensor fusion or the
+wider maintenance/history design above.
+
 ## Related Views
 
 [Acquisition](components/acquisition.md) ·

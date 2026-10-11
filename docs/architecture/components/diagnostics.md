@@ -64,6 +64,13 @@ a panel hotspot. Unsupported classification or mapping yields
 unknown/review-required. Models, thresholds, calibration, edge resource budgets,
 and metrics remain open.
 
+The [phone inspection implementation](../phone-inspection.md) now supplies the
+RGB detector adapter and browser review path. Model artifacts/class metadata
+remain placeholders. Dust, bird-dropping and visible-damage categories are exposed
+only if present in the delivered model; unsupported categories are labeled.
+Detection confidences and conservative review rules do not establish thermal,
+electrical, degradation or fused maintenance findings.
+
 ## Related Views
 
 [Data plan](../../data-plan.md) · [Maintenance](maintenance.md) ·

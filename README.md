@@ -82,8 +82,8 @@ More views are in the [architecture index](docs/architecture/README.md).
 | Readings streamed to the Linux side over the Bridge | Working (bring-up) |
 | SOLARMA inverter log importer and replay            | Working            |
 | Expected-versus-observed comparison (peers, replay) | Working (scoped)   |
-| Phone RGB soiling detection                         | Not implemented    |
-| Operator UI and maintenance output                  | Not implemented    |
+| Phone RGB inspection upload / CPU adapter           | Implemented; trained model pending |
+| Inspection UI; broader maintenance output          | Implemented UI; broader design proposed |
 | STL enclosure concept                               | Not delivered      |
 
 [Project status and reuse disclosure](docs/project-status.md) has the evidence
@@ -160,6 +160,24 @@ licensed and its notice is kept in [`data/solarma/NOTICE.md`](data/solarma/NOTIC
 - `tests/`: Python tests, run with `uv run pytest`.
 
 Set up the Python environment with `uv sync`.
+
+## Phone-to-edge inspection
+
+The UNO Q Linux service accepts smartphone photographs and serves the inspection
+dashboard at the same URL. Start locally with:
+
+```sh
+uv sync --extra desktop
+uv run --extra desktop poopvolt-inspect
+```
+
+Open `http://localhost:8000/`. The trained ONNX artifact and export/class
+configuration remain placeholders; the API reports model-not-ready until supplied
+and never substitutes demo predictions in the API. The home page opens a labeled
+visual demo for layout review. See [phone inspection setup](docs/phone-inspection.md)
+for exact UNO Q commands, API details, model contract, and phone/laptop workflow.
+The board reuses its existing OpenCV 4.12/numpy; the desktop extra is for laptops.
+See [project status](docs/project-status.md) for implementation and testing limits.
 
 ## Quick links
 

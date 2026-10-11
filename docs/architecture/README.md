@@ -2,8 +2,10 @@
 
 This is the entry point for architectural questions about PoopVolt. The views
 follow a C4-inspired hierarchy with additional physical deployment and runtime
-views. All views are proposed drafts. They describe intended behavior, not a
-verified implementation or measured performance.
+views. The system-design views are proposed drafts. They describe intended
+behavior, not a verified implementation or measured performance. The
+[phone inspection implementation](phone-inspection.md) records the implemented
+software slice; its trained model and UNO Q validation are pending.
 
 The [three-minute owner narrative](../pitch-narrative.md) starts with an older
 plant whose performance is unclear to its owner. It proposes an
@@ -43,6 +45,7 @@ in PR #49.
 | `pv-flow-soiling`     | [Soiling detection flow](flows/detect-soiling.md)                 | Observation-to-finding sequence                        |
 | `pv-flow-maintenance` | [Maintenance recommendation flow](flows/recommend-maintenance.md) | Finding-to-intervention sequence                       |
 | `pv-flow-plant`       | [Whole-plant monitoring flow](flows/monitor-plant.md)             | Multi-channel analysis, coverage, and synchronization  |
+| `pv-phone-inspection` | [Phone inspection implementation](phone-inspection.md) | Implemented HTTP upload, CPU inference adapter, storage and dashboard |
 
 ## How to Navigate
 
@@ -106,6 +109,10 @@ reported-tested sensor/display interfaces.
 The [data plan](../data-plan.md) identifies which demo data exist and which
 additional measurements are needed. Battery-aware scheduling is a later off-grid
 extension rather than a requirement of the primary commercial proposal.
+
+Phone inspection selects LAN HTTP operator access and bounded JPEG/JSON
+retention for that software slice. Secure deployment, wider-system storage,
+trained-model evaluation and plant/string mapping still need validation.
 
 ## Method References
 
