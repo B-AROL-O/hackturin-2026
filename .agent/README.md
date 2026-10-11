@@ -2,6 +2,10 @@
 
 Status: Draft guidelines for the planned PoopVolt web presentation.
 
+Use the repository's [brand guidelines](../brand-guidelines.md) for shared logo,
+palette, typography and voice proposals. Presentation-specific guidance adds
+layout and interaction rules; legacy exported cards have not yet been migrated.
+
 This corpus gives contributors and coding agents a common brief. The
 [presentation architecture](../presentation/architecture.md) defines the proposed
 application. The [implementation plan](../presentation/plan/implementation.md)
