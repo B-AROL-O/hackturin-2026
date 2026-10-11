@@ -47,7 +47,7 @@ YOLOv8 detection contract documented in
 a configured model passes a startup execution/shape check. No results are mocked.
 
 Software tests use a synthetic, untrained ONNX graph with real OpenCV 4.12;
-they verify API/storage/decoder behavior, not trained-model accuracy. Smartphone
+they verify API/storage/decoder behavior, not trained-model accuracy. Mobile phone
 capture, delivered-model accuracy, actual UNO Q deployment and inference latency
 are pending hardware validation. Existing board benchmark measurements remain
 in [UNO Q model budget](uno-q-model-budget.md).
