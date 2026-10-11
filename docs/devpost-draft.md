@@ -13,7 +13,7 @@ end lists what is likely to change.
 | Tagline       | Edge AI maintenance evidence for older solar plants                                                                       |
 | Challenge     | **Beyond Solar**                                                                                                          |
 | Built with    | Arduino UNO Q, Arduino Bridge, Seeed Grove (AHT20, light, ACS70331 current, LCD, PN532 NFC), Python, uv, pytest, KiCad    |
-| GitHub        | <https://github.com/B-AROL-O/hackturin-2026> (check it opens logged out)                                                  |
+| GitHub        | <https://github.com/B-AROL-O/hackturin-2026>, release <https://github.com/B-AROL-O/hackturin-2026/releases/tag/v0.1.0>    |
 | Video         | Link to the 2-minute video (issue #37)                                                                                    |
 | Team          | Giacomo Lisita, Gianpaolo Macario, Lorenzo Palloni, Federico Nebuloni                                                     |
 | Images        | Wiring schematic (`docs/architecture/diagrams/pv-wiring.svg`), system diagram (from the readme), a photo of the prototype |
@@ -79,6 +79,13 @@ text that a technician's phone can read without any network.
     producing unusually little compared with their peers (one stopped
     producing in late July; one fell about 25 % below its peers). Why is not
     in the data.
+  - **Replayed, the improvement over today:** inverter 1 kept logging but
+    produced nothing from 21 July to the end of the record on 3 October,
+    except on one day. Nothing in the data shows the output being restored in
+    those 75 days. On the 30 days with a peer reference, it fell about 550 kWh
+    short of its peers (a lower bound, because days without a reference are
+    not counted). A daily peer check puts it below 70 % of its expected output
+    on 21 July, its first day without production.
   - **Simulated:** injecting a synthetic loss into the other inverters, it is
     flagged in all 10 tested cases from 8 % upwards, in 4 of 10 at 4 to 6 %,
     and mostly not at 2 %. We chose the flag threshold after seeing the data,
@@ -132,10 +139,40 @@ data (notice kept in `data/solarma/NOTICE.md`), and open tools such as KiCad,
 uv and pytest. The full list is in [project status](project-status.md). The
 repository is MIT licensed.
 
+## Beyond Solar requirements check
+
+Each challenge requirement, the evidence in this draft, and what is still weak.
+Adapted from the requirement mapping of the earlier SunCheck work breakdown.
+
+- **A PV panel with at least one other component.** Covered: mini panel, solar
+  manager and LiPo, with panel current read by the ACS70331 on A1. The charging
+  path is not yet verified in sunlight.
+- **Collect data from the system or the environment.** Covered: temperature,
+  humidity, light and panel current on the UNO Q, plus the replayed SOLARMA
+  inverter logs.
+- **Interpret data locally and produce a concrete response.** Partly covered.
+  The board shows readings on the LCD and as NFC tag text, but does not
+  interpret them yet. The peer comparison uses only the Python standard
+  library, so it can run on the board's Linux side, but it has not been run
+  there. Its response is a list of inverters to inspect. Run it on the board
+  before submitting, or say in the description where it runs.
+- **Start from a well-defined user, context and problem.** Covered: the owner
+  of an older plant and the service company that maintains it. Validation with
+  the Coesa mentor (issue #13) is still open.
+- **Show the improvement with a practical test and numbers.** Covered on replayed data. The
+  evidence list now states it for the replay: inverter 1 produced nothing for
+  75 days without being restored, and a daily peer check points at it on the
+  first day. It is still one inverter in one plant, and the 70 % rule was
+  chosen after seeing the data. Issue #35 should carry the same number.
+
 ## Before you submit
 
 Hard deadline: Sunday 11 October 2026, 16:00 CEST; aim for 15:30.
 
+- [ ] Run `python3 -m poopvolt.report` on the UNO Q (the package needs only
+      the standard library), or say in the description where the comparison
+      runs.
+- [ ] Copy the improvement number into the headline summary (issue #35).
 - [ ] Update "What works" and "Not implemented" to match
       [project status](project-status.md) on the day.
 - [ ] Add the video link, and check it opens in a logged-out browser.
