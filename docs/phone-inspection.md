@@ -61,6 +61,58 @@ browser streaming-camera permission. **Choose photo** uses a separate input
 without the capture hint. Browser/OS camera behavior varies; HEIC needs conversion
 to JPEG, PNG, or WebP before upload.
 
+## Tested route on our UNO Q: Arduino's Python image, no sudo
+
+On our board the system Python has neither OpenCV nor numpy, and `python3-venv`
+needs sudo, so the venv route above does not work as written. Arduino's
+preinstalled image `ghcr.io/arduino/app-bricks/python-apps-base:0.5.0` already
+has Python 3.13, OpenCV 4.12, numpy, FastAPI, uvicorn and Pillow. Only
+`python-multipart` is missing, and it is a pure-Python wheel. The `arduino` user
+can run Docker without sudo. Tested 2026-10-11 over the venue Wi-Fi.
+
+1. Join the board to Wi-Fi (no sudo needed). Keep passwords out of the repository.
+   `nmcli device wifi connect "<SSID>" password "<password>"`, then `hostname -I`.
+2. From the laptop, copy the package (`ADB` is the adb bundled with the Arduino core):
+
+   ```sh
+   uvx pip download "python-multipart>=0.0.20,<1" --only-binary=:all: --no-deps -d /tmp/wh
+   $ADB shell mkdir -p /home/arduino/hackturin-2026/data/inspections
+   $ADB push poopvolt models /tmp/wh/python_multipart-*.whl /home/arduino/hackturin-2026/
+   $ADB shell 'cd ~/hackturin-2026 && python3 -m zipfile -e python_multipart-*.whl vendor-web'
+   ```
+
+3. On the board, start the station receiver so the dashboard gets live
+   readings (see [UNO Q setup](uno-q-setup.md)), then the server:
+
+   ```sh
+   cd ~/station && setsid nohup python3 -u station_rx.py --csv station.csv \
+     --latest latest.json > station_rx.log 2>&1 < /dev/null &
+   docker run -d --name poopvolt --restart unless-stopped -p 8000:8000 \
+     -v /home/arduino/hackturin-2026:/app -v /home/arduino/station:/station:ro \
+     -w /app -e PYTHONPATH=/app:/app/vendor-web \
+     -e POOPVOLT_STATION=/station/latest.json \
+     -e POOPVOLT_STORAGE=/app/data/inspections \
+     -e POOPVOLT_MODEL=/app/models/inspection.onnx \
+     -e POOPVOLT_MODEL_CONFIG=/app/models/inspection.json \
+     --entrypoint python3 ghcr.io/arduino/app-bricks/python-apps-base:0.5.0 \
+     -m poopvolt.server
+   ```
+
+4. Open `http://<board-ip>:8000/` on the phone. `docker logs poopvolt` shows the
+   server log; `docker rm -f poopvolt` stops it. The container restarts with the
+   board.
+
+The dashboard's **UNO Q station** strip polls `GET /api/station` every 2 s. The
+endpoint returns `{"available", "age_s", "reading"}` from the JSON file that
+`station_rx.py --latest` rewrites once per second (`POOPVOLT_STATION`). The
+reading is reported unavailable when it is older than 10 s.
+
+Stored inspections can be removed from the dashboard: **Delete inspection** on a
+saved result (`DELETE /api/inspections/{id}`), or **Clear all photos on the
+board** (`DELETE /api/inspections`, returns `{"removed": n}`). Both ask for
+confirmation and are refused with 429 while an inspection is running. Without
+them, storage still prunes the oldest inspections beyond 100 or 250 MB.
+
 ## Supply the actual trained model
 
 `models/inspection.onnx` and `models/inspection.json` are placeholders and are
