@@ -76,7 +76,7 @@ More views are in the [architecture index](docs/architecture/README.md).
 | Grove sensors, LCD and NFC on the UNO Q             | Working (bring-up) |
 | Readings streamed to the Linux side over the Bridge | Working (bring-up) |
 | SOLARMA inverter log importer and replay            | Working            |
-| Expected-versus-observed comparison                 | Not implemented    |
+| Expected-versus-observed comparison (peers, replay) | Working (scoped)   |
 | Phone RGB soiling detection                         | Not implemented    |
 | Operator UI and maintenance output                  | Not implemented    |
 | STL enclosure concept                               | Not delivered      |
@@ -116,10 +116,19 @@ Numbers we have, with their origin:
   list prices ([bill of materials](hardware/bom.md)). It is not a production
   cost.
 
-Not yet available: soiling classifier accuracy, the expected-versus-observed
-deviation with its uncertainty, and inference time of a PoopVolt model on the
-board. They will be added here, each labelled as measured, replayed or
-simulated.
+- **Replayed and simulated (peer comparison):** on the SOLARMA replay, each of
+  the 12 inverters with a baseline is compared with its peers; 2 are flagged as
+  producing unusually little (one stopped producing in late July, one fell
+  about 25 % below its peers). A **simulated** loss injected into the other
+  inverters is flagged in all 10 tested cases from 8 % upwards, in 4 of 10 at
+  4 to 6 %, and mostly not at 2 %. The flag threshold was chosen after seeing
+  the data, so this is not an independent validation. Details, method and
+  charts: [comparison results](docs/comparison-results.md).
+
+Not yet available: soiling classifier accuracy, a weather-adjusted expected
+production (the replay has no irradiance), and inference time of a PoopVolt
+model on the board. They will be added here, each labelled as measured,
+replayed or simulated.
 
 ## Licence and reuse
 
@@ -146,6 +155,8 @@ Set up the Python environment with `uv sync`.
   comparison, software demo, STL concept, and regeneration.
 - [Project pitch](docs/pitch-draft.md) — proposed product and commercial
   context.
+- [Expected versus observed on the SOLARMA replay](docs/comparison-results.md)
+  — peer comparison, results and charts (replayed and simulated).
 - [Data and demonstration plan](docs/data-plan.md) — phone-camera simulation and
   separate historical SOLARMA replay.
 - [Hardware availability](docs/hardware.md) — secured prototype parts and phone

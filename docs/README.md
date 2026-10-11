@@ -13,6 +13,8 @@
   comparison, software case, STL concept, and regeneration review.
 - [PoopVolt project pitch](pitch-draft.md): proposed product, reference model,
   and secondary commercial hypothesis.
+- [Expected versus observed on the SOLARMA replay](comparison-results.md): peer
+  comparison, results and charts.
 - [Data and demonstration plan](data-plan.md): phone RGB simulation and
   independent SOLARMA telemetry replay.
 - [Hardware availability](hardware.md): secured parts, unavailable items, and

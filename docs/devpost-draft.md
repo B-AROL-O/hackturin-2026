@@ -37,9 +37,11 @@ can understand and judge for themselves.
 PoopVolt is a proposed maintenance aid built around an Arduino UNO Q. It turns
 a gap in production into a proposal an owner can understand:
 
-- **Expected versus observed production.** Compare what a plant produced with a
-  theoretical reference over the same period and show the gap with its
-  uncertainty. The gap is a place to look, not a diagnosis, and not guaranteed
+- **Expected versus observed production.** Compare what a plant produced with an
+  expectation over the same period and show the gap with its uncertainty. Today
+  we demonstrate a peer-relative version on replayed data (each inverter against
+  its peers); a weather-adjusted theoretical reference is the proposed next
+  step. The gap is a place to look, not a diagnosis, and not guaranteed
   recoverable energy.
 - **Visible soiling from a phone photo.** Classify clean, dust or droppings on a
   panel and mark the affected region. A phone RGB camera replaces the thermal
@@ -64,12 +66,24 @@ text that a technician's phone can read without any network.
 - **Software:** a Python package (`poopvolt`) imports and replays historical
   inverter logs from SOLARMA's open data (MIT licence): units checked, missing
   values kept missing (never turned into zero), outages reported rather than
-  filled, and a replay that steps through the history in time order.
+  filled, and a replay that steps through the history in time order. On top of
+  it, a comparison fits each inverter's typical ratio to its peers on the first
+  part of the season and checks it on the later part (never overlapping), with
+  an uncertainty band.
 - **Evidence we measured or replayed:**
   - CPU-only inference on the UNO Q: NanoDet-Plus at 416x416 in 258 ms and
     YOLOX-S at 640x640 in 2.27 s (reference models, not our own).
   - The SOLARMA export loads as 58,687 detail rows from 13 inverters, with
     1,157 communication outages and no irradiance values.
+  - **Replayed:** of the 12 inverters with a baseline, 2 are flagged as
+    producing unusually little compared with their peers (one stopped
+    producing in late July; one fell about 25 % below its peers). Why is not
+    in the data.
+  - **Simulated:** injecting a synthetic loss into the other inverters, it is
+    flagged in all 10 tested cases from 8 % upwards, in 4 of 10 at 4 to 6 %,
+    and mostly not at 2 %. We chose the flag threshold after seeing the data,
+    so this is a demonstration of the method, not an independent validation.
+    Charts and method: [comparison results](comparison-results.md).
   - Approximate prototype cost: about 145, from single-unit list prices. This
     is a prototype cost, not a production cost.
 
@@ -77,12 +91,13 @@ text that a technician's phone can read without any network.
 
 Working at bring-up level: sensors, LCD and NFC on the UNO Q; readings
 streamed to the Linux side; the SOLARMA importer and replay; the schematic and
-bill of materials.
+bill of materials. Working as a scoped demo on replayed data: the peer
+comparison with its uncertainty band, plus a labelled synthetic-loss test.
 
-Not implemented at the time of writing: the expected-versus-observed
-comparison, phone-photo soiling detection, the operator UI and the 3D-printable
-enclosure. Where the video or the demo shows these, they are labelled as
-simulations. The solar charging path is wired but not yet verified in
+Not implemented at the time of writing: a weather-adjusted theoretical
+expected production (the replayed data has no irradiance), phone-photo soiling
+detection, the operator UI and the 3D-printable enclosure. Where the video or
+the demo shows these, they are labelled as simulations. The solar charging path is wired but not yet verified in
 sunlight.
 
 ### Challenges
@@ -103,10 +118,10 @@ choice.
 
 ### What is next
 
-Define the expected-production reference with a service company, run the
-comparison on replayed data and on our own panel, train and evaluate a soiling
-classifier on a labelled phone photo set, and add a technician-reviewed output
-to the operator UI.
+Define a weather-adjusted expected-production reference with a service
+company, run the comparison on our own panel as well as on replayed data, train
+and evaluate a soiling classifier on a labelled phone photo set, and add a
+technician-reviewed output to the operator UI.
 
 ### Built with and reuse
 
@@ -125,8 +140,11 @@ Hard deadline: Sunday 11 October 2026, 16:00 CEST; aim for 15:30.
       [project status](project-status.md) on the day.
 - [ ] Add the video link, and check it opens in a logged-out browser.
 - [ ] Add a photo of the prototype and the two diagrams.
-- [ ] Replace the evidence numbers with the final ones, each labelled as
-      measured, replayed or simulated (issue #35).
+- [ ] Re-run `uv run python -m poopvolt.report` if the comparison changes, and
+      re-copy the numbers into the evidence list (issue #35); keep each one
+      labelled as measured, replayed or simulated.
+- [ ] If the video shows the comparison, show the chart with its "replayed" or
+      "simulated" label visible.
 - [ ] Confirm that every link, including the GitHub repository, opens logged
       out.
 - [ ] Select the challenge **Beyond Solar** and add all four team members.
