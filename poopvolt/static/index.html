@@ -29,9 +29,13 @@
           </p>
         </div>
         <div class="intro-actions">
-          <div class="mode-switch" aria-label="Inspection view">
-            <button id="demo" class="active" aria-pressed="true">Demo</button>
-            <button id="new" aria-pressed="false">Your photo</button>
+          <div class="mode-switch">
+            <button type="button" id="demo" class="active" aria-pressed="true">
+              Demo
+            </button>
+            <button type="button" id="new" aria-pressed="false">
+              Your photo
+            </button>
           </div>
           <div class="upload-actions">
             <label class="file-button primary"
@@ -92,6 +96,7 @@
           <div class="card-heading">
             <h2><span>02</span> Processed view</h2>
             <button
+              type="button"
               id="overlay-toggle"
               class="image-tag overlay-toggle"
               aria-pressed="true"
@@ -155,6 +160,7 @@
         <div id="share" class="share" hidden>
           <label for="share-url">Open on another device</label
           ><input id="share-url" readonly aria-label="Inspection link" /><button
+            type="button"
             id="copy"
           >
             Copy link
@@ -163,7 +169,9 @@
       </section>
       <div id="capture-tools" class="capture-tools" hidden>
         <p>JPEG, PNG or WebP · max. 12 MiB / 24 MP</p>
-        <button id="run" class="primary" disabled>Run inspection ↗</button>
+        <button type="button" id="run" class="primary" disabled>
+          Run inspection ↗
+        </button>
       </div>
       <p id="status" role="status" aria-live="polite"></p>
       <footer>

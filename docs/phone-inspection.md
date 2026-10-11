@@ -149,7 +149,7 @@ The SVG is a provisional inspection-UI concept mark; the supplied team logo in
 `assets/brand/` and its [provenance](../assets/brand/README.md) remain intact.
 The sample photo is `poopvolt/static/demo-panel.png`, created with the built-in
 image-generation
-tool from this prompt: a natural smartphone photo of two rooftop photovoltaic
+tool from this prompt: a natural mobile phone photo of two rooftop photovoltaic
 panels, with dust on the lower left panel and a small bird dropping on the right,
 daylight, visible cells, and no text, labels, boxes, or logos. The exact prompt is
 saved in [demo-panel.prompt.txt](../poopvolt/static/demo-panel.prompt.txt).

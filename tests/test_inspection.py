@@ -84,7 +84,7 @@ def test_model_placeholder_still_serves_ui_and_no_predictions(tmp_path):
         assert client.get("/").status_code == 200
         assert client.get(f"/api/inspections/{uuid4()}").status_code == 404
         assert client.get("/api/inspections/../../secret").status_code != 200
-        assert list(settings.storage.iterdir()) == []
+        assert not list(settings.storage.iterdir())
 
 
 def test_invalid_model_contract_not_ready(model_settings):
@@ -210,7 +210,7 @@ def test_inference_failure_disables_model(model_settings):
         assert upload(client).status_code == 503
         assert client.get("/api/health").status_code == 503
         assert upload(client).status_code == 503
-        assert list(model_settings.storage.iterdir()) == []
+        assert not list(model_settings.storage.iterdir())
 
 
 def test_storage_byte_budget_and_interrupted_write_cleanup(tmp_path):
@@ -241,11 +241,12 @@ def test_rgb_normalization_padding_and_extreme_aspect_ratio(model_settings):
     class CaptureInput:
         def __init__(self, net):
             self.net = net
+            self.blob = None
 
         def __getattr__(self, name):
             return getattr(self.net, name)
 
-        def setInput(self, blob):
+        def setInput(self, blob):  # pylint: disable=invalid-name
             self.blob = blob.copy()
             self.net.setInput(blob)
 

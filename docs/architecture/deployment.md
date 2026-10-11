@@ -79,7 +79,7 @@ It does not establish the battery/solar supply or the full deployment above.
 The [phone inspection software](phone-inspection.md) selects a single FastAPI
 process on the Linux side, serving phone/laptop browsers over local Wi-Fi HTTP.
 CPU ONNX inference uses the board's OpenCV runtime; bounded JPEG/JSON files live
-on local storage. Trained model delivery and deployment validation are pending.
+in the service data directory. Trained model delivery and deployment validation are pending.
 This path does not involve the MCU or establish the full deployment diagram.
 
 ## Related Views

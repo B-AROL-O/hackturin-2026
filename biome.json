@@ -1,5 +1,18 @@
 {
   "files": {
     "includes": ["**", "!**/*.svg"]
+  },
+  "linter": {
+    "rules": {
+      "complexity": {
+        "noImportantStyles": "off"
+      },
+      "style": {
+        "noDescendingSpecificity": "off"
+      },
+      "suspicious": {
+        "noRedundantUseStrict": "off"
+      }
+    }
   }
 }

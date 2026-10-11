@@ -138,6 +138,7 @@ def create_app(settings: Settings | None = None, detector_factory=Detector):
             app.state.detector = await run_in_threadpool(
                 detector_factory, settings.model, settings.config
             )
+        # pylint: disable-next=broad-exception-caught
         except Exception as exc:  # noqa: BLE001
             # Model startup failures must not hide saved inspections.
             LOGGER.warning("Inspection model not ready: %s", exc)
@@ -218,6 +219,7 @@ def create_app(settings: Settings | None = None, detector_factory=Detector):
             raise HTTPException(
                 503, "Model not ready; configure the trained ONNX model and restart"
             )
+        # pylint: disable-next=consider-using-with
         if not busy.acquire(blocking=False):
             raise HTTPException(
                 429,
@@ -278,6 +280,7 @@ def create_app(settings: Settings | None = None, detector_factory=Detector):
 
     @app.get("/")
     @app.get("/inspections/{inspection_id}")
+    # pylint: disable-next=unused-argument
     async def dashboard(inspection_id: UUID | None = None):
         return FileResponse(
             STATIC / "index.html", headers={"Cache-Control": "no-store"}
