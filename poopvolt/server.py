@@ -1,8 +1,10 @@
 """Single-process phone-to-edge inspection service."""
 
 import io
+import json
 import logging
 import os
+import time
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -33,6 +35,9 @@ class Settings:
     max_pixels: int = 24_000_000
     max_count: int = 100
     max_storage_bytes: int = 250 * 1024 * 1024
+    # Latest station reading, written by firmware/station/linux/station_rx.py --latest.
+    station: Path = Path("data/station/latest.json")
+    station_max_age_s: float = 10.0
 
     @classmethod
     def from_env(cls):
@@ -40,6 +45,7 @@ class Settings:
             model=Path(os.getenv("POOPVOLT_MODEL", "models/inspection.onnx")),
             config=Path(os.getenv("POOPVOLT_MODEL_CONFIG", "models/inspection.json")),
             storage=Path(os.getenv("POOPVOLT_STORAGE", "data/inspections")),
+            station=Path(os.getenv("POOPVOLT_STATION", "data/station/latest.json")),
         )
 
 
@@ -165,6 +171,22 @@ def create_app(settings: Settings | None = None, detector_factory=Detector):
                 ),
             },
             status_code=200 if detector else 503,
+        )
+
+    @app.get("/api/station")
+    async def station():
+        """Latest UNO Q station reading; unavailable when missing or stale."""
+        try:
+            age = time.time() - settings.station.stat().st_mtime
+            reading = json.loads(settings.station.read_text())
+        except (OSError, ValueError):
+            return JSONResponse({"available": False, "age_s": None, "reading": None})
+        return JSONResponse(
+            {
+                "available": age <= settings.station_max_age_s,
+                "age_s": round(age, 1),
+                "reading": reading,
+            }
         )
 
     def process(data):

@@ -421,7 +421,44 @@ for (const id of ["original", "photo"])
     ),
   );
 
+const fmt = (value, digits, unit) =>
+  value === null || value === undefined || Number.isNaN(value)
+    ? "–"
+    : `${Number(value).toFixed(digits)} ${unit}`;
+
+async function pollStation() {
+  let data = { available: false };
+  try {
+    data = await (await fetch("/api/station", { cache: "no-store" })).json();
+  } catch {
+    data = { available: false };
+  }
+  const r = data.reading;
+  $("station").classList.toggle("stale", !data.available);
+  $("station-age").textContent = !r
+    ? "No station data"
+    : data.available
+      ? `Updated ${data.age_s}s ago`
+      : `Stale · last update ${Math.round(data.age_s)}s ago`;
+  $("st-temp").textContent = fmt(r?.temp_c, 1, "°C");
+  $("st-rh").textContent = fmt(r?.rh_pct, 0, "%");
+  $("st-light").textContent = r ? String(r.light_raw) : "–";
+  $("st-current").textContent = fmt(r?.pv_ma, 0, "mA");
+  $("st-perf").textContent = fmt(r?.perf_pct, 0, "%");
+  $("st-perf-note").textContent = !r
+    ? "relative to a clean panel"
+    : !r.calibrated
+      ? "not calibrated yet"
+      : r.perf_pct === null
+        ? r.sun_elev_deg < 25
+          ? "sun too low for the model"
+          : "no panel current"
+        : "vs. clean panel · clear-sky model";
+}
+
 async function start() {
+  pollStation();
+  setInterval(pollStation, 2000);
   await checkHealth();
   const match = location.pathname.match(/^\/inspections\/([0-9a-f-]+)$/i);
   if (match) {

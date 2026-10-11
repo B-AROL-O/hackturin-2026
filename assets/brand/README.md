@@ -17,6 +17,18 @@ monochrome and vector variants are not supplied in this change.
 
 Record creator, source, permissions and modifications for each future variant.
 
+## Dashboard web copy
+
+- File: [`poopvolt/static/logo-poopvolt.png`](../../poopvolt/static/logo-poopvolt.png).
+- Source: derived from `Logo_PoopVolt.png` on 11 October 2026 for the
+  inspection dashboard header and favicon.
+- Modifications: white margins trimmed (4 % padding kept), resized to 640 px
+  wide, and the near-white background (all channels ≥ 245) made transparent so
+  it sits cleanly on the white page. No change to shapes, colours or proportions.
+- Why: the original is 1.5 MB, too heavy to serve over a phone hotspot on every
+  page load; the copy is about 120 KB.
+- Licence and permissions: as for the original.
+
 ## Inspection UI concept mark
 
 - File: [`poopvolt/static/logo.svg`](../../poopvolt/static/logo.svg).
@@ -27,8 +39,8 @@ Record creator, source, permissions and modifications for each future variant.
   version of `Logo_PoopVolt.png` or a replacement for the supplied team logo.
 - Licence: repository MIT terms; brand adoption and trademark permissions remain
   subject to team review.
-- The demo's green/lime palette is retained from the user-requested UI concept,
-  separate from the proposed blue/yellow identity in the brand guidelines.
-  Brand alignment is pending review; the original logo and its provenance remain
-  intact. Generated sample-photo provenance and prompt are recorded in
+- Status: no longer used. On 11 October 2026 the dashboard switched to the team
+  logo (dashboard web copy above) and the blue/yellow/grey palette from the
+  brand guidelines, replacing the green/lime concept palette. Functional colours
+  for findings and status were kept. The file stays for reference. Generated sample-photo provenance and prompt are recorded in
   [phone inspection setup](../../docs/phone-inspection.md).

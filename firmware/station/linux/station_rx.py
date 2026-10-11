@@ -167,6 +167,11 @@ def parse_args():
         default=os.path.join(HERE, "baseline.json"),
         help="clean-panel baseline file",
     )
+    p.add_argument(
+        "--latest",
+        metavar="PATH",
+        help="also keep the latest reading in this JSON file (read by the dashboard)",
+    )
     return p.parse_args()
 
 
@@ -187,12 +192,24 @@ def main():
 
     if args.csv:
         with open(args.csv, "a", newline="") as out:
-            receive(out, out.tell() == 0, index, clock_offset)
+            receive(out, out.tell() == 0, index, clock_offset, args.latest)
     else:
-        receive(sys.stdout, True, index, clock_offset)
+        receive(sys.stdout, True, index, clock_offset, args.latest)
 
 
-def receive(out, write_header, index, clock_offset):
+def write_latest(path, record):
+    """Atomically replace PATH with RECORD as JSON (NaN becomes null)."""
+    clean = {
+        k: None if isinstance(v, float) and math.isnan(v) else v
+        for k, v in record.items()
+    }
+    tmp = f"{path}.tmp"
+    with open(tmp, "w") as f:
+        json.dump(clean, f)
+    os.replace(tmp, path)
+
+
+def receive(out, write_header, index, clock_offset, latest=None):
     writer = csv.writer(out)
     if write_header:
         writer.writerow(FIELDS)
@@ -224,6 +241,19 @@ def receive(out, write_header, index, clock_offset):
                 + [round(v, 4) if isinstance(v, float) else v for v in values]
             )
             out.flush()
+
+            if latest:
+                write_latest(
+                    latest,
+                    {
+                        "utc": iso_utc(now),
+                        **reading._asdict(),
+                        "sun_elev_deg": elev,
+                        "poa_clear_wm2": poa,
+                        "perf_pct": perf,
+                        "calibrated": index.baseline is not None,
+                    },
+                )
 
 
 if __name__ == "__main__":
