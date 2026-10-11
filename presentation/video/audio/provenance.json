@@ -1,0 +1,124 @@
+{
+  "createdOn": "2026-10-11",
+  "creator": "Original synthesized narration and instrumental composition authored for PoopVolt with Codex",
+  "voice": {
+    "engine": "kokoro-onnx 0.4.7",
+    "model": "Kokoro v1.0 / 82M",
+    "voice": "af_heart",
+    "modelLicense": "Apache-2.0",
+    "wrapperLicense": "MIT",
+    "source": "https://huggingface.co/hexgrad/Kokoro-82M",
+    "implementation": "https://github.com/thewh1teagle/kokoro-onnx",
+    "modelFiles": [
+      {
+        "name": "kokoro-v1.0.onnx",
+        "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx",
+        "sha256": "7d5df8ecf7d4b1878015a32686053fd0eebe2bc377234608764cc0ef3636a6c5"
+      },
+      {
+        "name": "voices-v1.0.bin",
+        "url": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin",
+        "sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d"
+      }
+    ]
+  },
+  "music": {
+    "creator": "Original programmatic composition",
+    "source": "scripts/music.mjs",
+    "license": "Repository MIT",
+    "bpm": 120,
+    "engine": "OfflineAudioContext in Remotion Chromium",
+    "modifications": "Phrase ducking; 85\u201393 second rest; fade to silence"
+  },
+  "takes": [
+    {
+      "scene": "V01",
+      "voice": "af_heart",
+      "speed": [
+        0.92,
+        0.92,
+        0.81,
+        0.84
+      ],
+      "speechEnd": 10.730291666666666,
+      "sampleRate": 24000
+    },
+    {
+      "scene": "V02",
+      "voice": "af_heart",
+      "speed": 0.73,
+      "speechEnd": 29.13,
+      "sampleRate": 24000
+    },
+    {
+      "scene": "V03",
+      "voice": "af_heart",
+      "speed": 0.96,
+      "speechEnd": 49.4329,
+      "sampleRate": 24000
+    },
+    {
+      "scene": "V04",
+      "voice": "af_heart",
+      "speed": 0.86,
+      "speechEnd": 73.7903,
+      "sampleRate": 24000
+    },
+    {
+      "scene": "V05",
+      "voice": "af_heart",
+      "speed": 1.02,
+      "speechEnd": 99.5,
+      "sampleRate": 24000
+    },
+    {
+      "scene": "V06",
+      "voice": "af_heart",
+      "speed": 1.03,
+      "speechEnd": 116.5,
+      "sampleRate": 24000
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/V01.wav",
+      "sha256": "4f8b5c7dcca18de31d4016a29f878088fc60117abcb2d1e0c91c0b19d783b3e3"
+    },
+    {
+      "path": "audio/V02.wav",
+      "sha256": "2aeb7e0a6a90ab4b5bb9efb81e87e53d035b107ee123e7f701f5ff33d5e721d3"
+    },
+    {
+      "path": "audio/V03.wav",
+      "sha256": "457b637f9acdd91f833df93ff70c341fbf215f13474b7590f899d791f3b50344"
+    },
+    {
+      "path": "audio/V04.wav",
+      "sha256": "4f5d16daea178ac09c5c08b462ee9fa6343718bad84737c94a5c4668c588237f"
+    },
+    {
+      "path": "audio/V05.wav",
+      "sha256": "e586dde36ea02fabca85918eaafa3575da6bf236c2cd1f6a60e254fe9259ab3a"
+    },
+    {
+      "path": "audio/V06.wav",
+      "sha256": "564864b5122d528490f317c65402c128b36a4c978a0a52317a33da662901992c"
+    },
+    {
+      "path": "audio/music.wav",
+      "sha256": "3acf20ee8dd5ab5e12231b3b9336e91e4b8e6bc1b628b21493be1a4ffc73361a"
+    },
+    {
+      "path": "audio/narration-raw.wav",
+      "sha256": "c3c62f1b978076c0b7c5d1b1c56539c01e679e067ba85b6eba68d0181588a0b6"
+    },
+    {
+      "path": "audio/narration.wav",
+      "sha256": "bfa0286376f28d3f1a1426ee6f1842c4ac86b043af8751608425711350b7c704"
+    },
+    {
+      "path": "audio/voice-master.wav",
+      "sha256": "f5c1d8a038adf6b656b7a3e63036eccc2d350580daf3dd0df389a09a3e94a075"
+    }
+  ]
+}

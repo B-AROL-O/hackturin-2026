@@ -4,6 +4,11 @@ Status: Voice-over plan for the two-minute company-use narrative. Read only the
 **Voce** blocks in the [Italian script](../../docs/pitch-narrative.md). Times
 match the [agenda](agenda.md), including pauses and closing holds.
 
+For the user-selected English Remotion film, record the complete English
+[video narration](../video/storyboard.md). It adapts the current Italian story,
+retaining the six intervals and evidence scope. Do not reuse the older English
+Devpost narration or SRT: their sequence and replay window differ.
+
 <!-- markdownlint-disable MD013 -->
 
 | Scene | Seconds | Start | End   | Main spoken point                                                | Visual transition                      |

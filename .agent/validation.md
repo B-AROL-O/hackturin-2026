@@ -1,5 +1,16 @@
 # Validation guidelines
 
+Video implementation status: the local Remotion project and English audio now
+exist. The earlier draft-only statements below describe their original handoff;
+use [video implementation](../presentation/video/implementation.md) and
+[video review](../presentation/video/review.md) for current commands and checks.
+
+For the Remotion film, use the
+[video acceptance criteria](../presentation/video/implementation.md#acceptance-criteria):
+exact 120-second timing, English narration, selected brand/logo, all supplied
+photos, dedicated schematic scene, scoped replay, captions, and full render
+review. The navigation and HTML bundle checks below apply to the deck.
+
 ## Checks for this architecture draft
 
 Check Markdown with the CI versions and rules for Markdownlint, Prettier, and

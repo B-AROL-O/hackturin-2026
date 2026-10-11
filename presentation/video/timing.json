@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "production_plan",
+  "compositionId": "PoopVoltPitch120",
+  "language": "en",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "durationInFrames": 3600,
+  "intervalConvention": "start_inclusive_end_exclusive",
+  "scenes": [
+    {
+      "id": "V01",
+      "pitchAnchor": "pv-title",
+      "from": 0,
+      "durationInFrames": 360,
+      "sourceIds": ["pv-narrative", "pv-brand", "pv-logo"]
+    },
+    {
+      "id": "V02",
+      "pitchAnchor": "pv-problem",
+      "from": 360,
+      "durationInFrames": 540,
+      "sourceIds": ["pv-narrative", "pv-pitch", "pv-context"]
+    },
+    {
+      "id": "V03",
+      "pitchAnchor": "pv-pipeline",
+      "from": 900,
+      "durationInFrames": 600,
+      "sourceIds": ["pv-narrative", "pv-comparison", "pv-data-plan"]
+    },
+    {
+      "id": "V04",
+      "pitchAnchor": "pv-prototype",
+      "from": 1500,
+      "durationInFrames": 750,
+      "sourceIds": ["pv-narrative", "pv-wiring", "pv-wiring-svg"]
+    },
+    {
+      "id": "V05",
+      "pitchAnchor": "pv-evidence",
+      "from": 2250,
+      "durationInFrames": 750,
+      "sourceIds": ["pv-narrative", "pv-comparison", "pv-comparison-chart"]
+    },
+    {
+      "id": "V06",
+      "pitchAnchor": "pv-decision",
+      "from": 3000,
+      "durationInFrames": 600,
+      "sourceIds": ["pv-narrative", "pv-maintenance", "pv-brand", "pv-logo"]
+    }
+  ]
+}

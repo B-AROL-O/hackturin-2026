@@ -5,6 +5,12 @@ pitch. Existing wiring and replay exports are available; the new video,
 illustrations, overlays, and HTML deck have not been produced. Apply
 [visual guidelines](../../.agent/visual-design.md).
 
+The [Remotion handoff](../video/README.md) now supplies brand-aligned illustrative
+assets and faithful local copies of the existing logo, three prototype photos,
+electrical schematic, and replay chart. Its
+[asset inventory](../video/assets/README.md) and [storyboard](../video/storyboard.md)
+assign each to the same six beats. Audio and animated scenes remain future work.
+
 ## Main visuals
 
 <!-- markdownlint-disable MD013 -->

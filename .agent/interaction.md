@@ -1,5 +1,16 @@
 # Interaction and accessibility guidelines
 
+Video implementation status: the local Remotion project and English audio now
+exist. The earlier draft-only statements below describe their original handoff;
+use [video implementation](../presentation/video/implementation.md) and
+[video review](../presentation/video/review.md) for current commands and checks.
+
+For the prerecorded Remotion adaptation, follow
+[video motion and caption rules](../presentation/video/design.md).
+The keyboard controls, presenter builds, and browser preference handling below
+govern the HTML deck. The film uses deterministic frame-driven choreography,
+visible qualifications, and captions within its fixed 120-second duration.
+
 ## Presentation controls
 
 Delegate slide navigation, overview, URL hashes, and speaker notes to Reveal.js.

@@ -1,0 +1,174 @@
+1
+00:00:00,500 --> 00:00:02,822
+Your solar plant is covered in shit.
+
+2
+00:00:03,050 --> 00:00:04,048
+Literally.
+
+3
+00:00:04,500 --> 00:00:07,203
+But how much is that affecting production?
+
+4
+00:00:08,250 --> 00:00:10,930
+That is the question behind PoopVolt.
+
+5
+00:00:12,500 --> 00:00:15,370
+An older solar plant still works.
+
+6
+00:00:15,620 --> 00:00:19,032
+But its owner cannot tell whether it
+produces
+
+7
+00:00:19,282 --> 00:00:21,082
+as much as it should.
+
+8
+00:00:21,332 --> 00:00:24,905
+The maintenance company needs clear
+evidence
+
+9
+00:00:25,155 --> 00:00:29,330
+to explain why an inspection is worth
+considering.
+
+10
+00:00:30,500 --> 00:00:32,813
+PoopVolt compares observed production
+
+11
+00:00:33,063 --> 00:00:35,928
+with an expected reference over the same
+period.
+
+12
+00:00:36,178 --> 00:00:39,124
+Today, we have a comparison between
+inverters.
+
+13
+00:00:39,374 --> 00:00:43,475
+A theoretical reference adjusted for
+environmental conditions
+
+14
+00:00:43,725 --> 00:00:44,995
+is the next step.
+
+15
+00:00:45,245 --> 00:00:48,037
+A deviation tells us where to investigate,
+
+16
+00:00:48,287 --> 00:00:49,500
+not what caused it.
+
+17
+00:00:50,500 --> 00:00:53,530
+The prototype uses Arduino UNO Q
+
+18
+00:00:53,780 --> 00:00:57,731
+with temperature, humidity, light, a
+display, and NFC.
+
+19
+00:00:57,981 --> 00:01:00,835
+The schematic also shows the current
+sensor
+
+20
+00:01:01,085 --> 00:01:03,806
+between the panel and the charging system.
+
+21
+00:01:04,055 --> 00:01:06,006
+Zero current has been checked;
+
+22
+00:01:06,256 --> 00:01:09,252
+measurements under light still need
+validation.
+
+23
+00:01:09,502 --> 00:01:11,842
+The board runs on USB power,
+
+24
+00:01:12,092 --> 00:01:13,990
+separate from the solar branch.
+
+25
+00:01:15,500 --> 00:01:18,356
+In a replay of SOLARMA's historical data,
+
+26
+00:01:18,522 --> 00:01:20,437
+we compare thirteen inverters.
+
+27
+00:01:20,602 --> 00:01:24,048
+From August first to September
+seventeenth, twenty nineteen,
+
+28
+00:01:24,213 --> 00:01:26,662
+inverter one reports zero energy
+
+29
+00:01:26,827 --> 00:01:30,157
+against roughly two hundred and ninety-two
+kilowatt-hours
+
+30
+00:01:30,322 --> 00:01:31,974
+expected from its peers.
+
+31
+00:01:32,140 --> 00:01:34,226
+The software flags it for inspection.
+
+32
+00:01:34,391 --> 00:01:36,245
+This is historical replay,
+
+33
+00:01:36,410 --> 00:01:39,500
+not our panel's measurement or a soiling
+diagnosis.
+
+34
+00:01:40,500 --> 00:01:42,948
+The technician investigates and proposes
+
+35
+00:01:42,948 --> 00:01:45,552
+cleaning, repair, or replacement where
+needed.
+
+36
+00:01:45,552 --> 00:01:46,808
+The owner decides.
+
+37
+00:01:46,808 --> 00:01:50,213
+Afterward, comparable measurements must
+verify the benefit;
+
+38
+00:01:50,213 --> 00:01:52,350
+the full gap may not be recoverable.
+
+39
+00:01:52,350 --> 00:01:54,018
+PoopVolt turns a production gap
+
+40
+00:01:54,018 --> 00:01:56,500
+into an understandable intervention
+proposal.

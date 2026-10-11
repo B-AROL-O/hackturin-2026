@@ -1,5 +1,11 @@
 # Visual design guidelines
 
+For the user-selected Remotion film, use
+[video design](../presentation/video/design.md) and
+[the local asset inventory](../presentation/video/assets/README.md).
+Its 1920 × 1080 layout follows `brand-guidelines.md`, the complete original logo
+on white, natural prototype photographs, and faithful technical source inserts.
+
 ## Direction
 
 Build a calm, editorial presentation about photovoltaic field maintenance. Use
