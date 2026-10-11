@@ -1,7 +1,9 @@
 # PoopVolt data and demonstration plan
 
 Status: Proposed ingestion and evaluation plan. External files were inspected on
-2026-10-10; no importer, trained model, or phone dataset is implemented here.
+2026-10-10. Since then the SOLARMA importer, replay and a scoped peer comparison
+have been implemented ([comparison results](comparison-results.md)); no trained
+model or phone dataset exists yet.
 
 ## Expected-production reference for the owner narrative
 
