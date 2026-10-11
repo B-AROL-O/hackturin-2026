@@ -1,5 +1,11 @@
 # PoopVolt HTML presentation
 
+For the user-selected **120-second English Remotion film**, start with the
+[video handoff](video/README.md) and [coding-agent task](video/agent-task.md).
+That package follows the current six-scene pitch, includes local copies of the
+original logo, three prototype photos, electrical schematic, and replay chart,
+and applies the brand guidelines. Remotion code and final audio are future work.
+
 Status: Architecture and planning draft. The HTML deck, theme, JavaScript,
 assets, build scripts, and hosting integration have not been implemented.
 

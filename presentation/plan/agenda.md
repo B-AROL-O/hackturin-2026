@@ -5,6 +5,11 @@ language: Italian. Narration, diagram holds, transitions, and closing fit inside
 120 seconds. Source: [Italian company-use story](../../docs/pitch-narrative.md).
 No video or HTML deck is implemented by this plan.
 
+The user-selected [English Remotion adaptation](../video/storyboard.md) preserves
+these six anchors and durations. Its [frame schedule](../video/timing.json)
+totals 3600 frames at 30 fps. Use the same technical scope, with translated
+English copy, supplied media, original logo, and the selected brand rules.
+
 ## Main sequence
 
 Keep the approved opening and company/owner framing. Show the available peer

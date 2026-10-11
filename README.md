@@ -195,6 +195,8 @@ See [project status](docs/project-status.md) for implementation and testing limi
   what is incomplete, what we built and what we reuse.
 - [HTML presentation draft](presentation/README.md) — architecture, narrative,
   and implementation plan.
+- [Remotion video handoff](presentation/video/README.md) — 120-second English
+  narration, storyboard, brand/logo, photos, schematic, and coding-agent task.
 - [Presentation guidelines](.agent/README.md) — contributor and agent guidance.
 - [Architecture index](docs/architecture/README.md) — diagram hierarchy and
   system design.

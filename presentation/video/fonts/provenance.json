@@ -1,0 +1,21 @@
+{
+  "family": "Source Sans 3",
+  "source": "https://github.com/adobe-fonts/source-sans/tree/release",
+  "acquiredOn": "2026-10-11",
+  "license": "SIL Open Font License 1.1",
+  "modifications": "None",
+  "files": [
+    {
+      "path": "LICENSE.md",
+      "sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328"
+    },
+    {
+      "path": "SourceSans3-Regular.otf",
+      "sha256": "08df266400933d3178d081a45f94a08814c3e55b4b7dd2e0ff69cb1329f13ab6"
+    },
+    {
+      "path": "SourceSans3-Semibold.otf",
+      "sha256": "36f1cd2c344aa3109e64429bce41a41e4b2b923beb2db19b8dbf9bb56f05a4f9"
+    }
+  ]
+}
