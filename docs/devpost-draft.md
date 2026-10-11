@@ -1,22 +1,25 @@
 # Devpost submission draft
 
-Status: Draft of 2026-10-10 for issue #39 (WBS 6.4). The description was written
-from [project status](project-status.md) and the repository readme. Re-check
-every claim against the repository on the day you submit; the checklist at the
-end lists what is likely to change.
+Status: Draft for issue #39 (WBS 6.4), updated at the M3 checkpoint of
+2026-10-11 (13:00 CEST) against `develop` at v0.2.0. The description was written
+from [project status](project-status.md) and the repository readme. Every number
+in it was recomputed from the pinned SOLARMA files and matches
+[comparison results](comparison-results.md). Re-check every claim against the
+repository on the day you submit; the checklist at the end lists what is likely
+to change.
 
 ## Fields to fill in
 
-| Devpost field | Value                                                                                                                     |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Project name  | PoopVolt                                                                                                                  |
-| Tagline       | Edge AI maintenance evidence for older solar plants                                                                       |
-| Challenge     | **Beyond Solar**                                                                                                          |
-| Built with    | Arduino UNO Q, Arduino Bridge, Seeed Grove (AHT20, light, ACS70331 current, LCD, PN532 NFC), Python, uv, pytest, KiCad    |
-| GitHub        | <https://github.com/B-AROL-O/hackturin-2026>, release <https://github.com/B-AROL-O/hackturin-2026/releases/tag/v0.1.0>    |
-| Video         | Link to the 2-minute video (issue #37)                                                                                    |
-| Team          | Giacomo Lisita, Gianpaolo Macario, Lorenzo Palloni, Federico Nebuloni                                                     |
-| Images        | Wiring schematic (`docs/architecture/diagrams/pv-wiring.svg`), system diagram (from the readme), a photo of the prototype |
+| Devpost field | Value                                                                                                                            |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Project name  | PoopVolt                                                                                                                         |
+| Tagline       | Edge AI maintenance evidence for older solar plants                                                                              |
+| Challenge     | **Beyond Solar**                                                                                                                 |
+| Built with    | Arduino UNO Q, Arduino Bridge, Seeed Grove (AHT20, light, ACS70331 current, LCD, PN532 NFC), Python, uv, pytest, KiCad           |
+| GitHub        | <https://github.com/B-AROL-O/hackturin-2026>, release <https://github.com/B-AROL-O/hackturin-2026/releases/tag/v0.2.0>           |
+| Video         | Link to the 2-minute video (issue #37)                                                                                           |
+| Team          | Giacomo Lisita, Gianpaolo Macario, Lorenzo Palloni, Federico Nebuloni; team name Suncheckers (per the brand guidelines, confirm) |
+| Images        | Wiring schematic (`docs/architecture/diagrams/pv-wiring.svg`), system diagram (from the readme), a photo of the prototype        |
 
 ## Description (paste into Devpost)
 
@@ -43,11 +46,13 @@ a gap in production into a proposal an owner can understand:
   its peers); a weather-adjusted theoretical reference is the proposed next
   step. The gap is a place to look, not a diagnosis, and not guaranteed
   recoverable energy.
-- **Visible soiling from a phone photo.** Classify clean, dust or droppings on a
-  panel and mark the affected region. A phone RGB camera replaces the thermal
-  camera we could not get, so we make no claim about hotspots or lost energy.
-- **A technician-reviewed proposal.** A short evidence summary a service
-  company can use to explain a cleaning, a repair or a replacement.
+- **Visible soiling from a phone photo (proposed, not built yet).** Classify
+  clean, dust or droppings on a panel and mark the affected region. A phone RGB
+  camera replaces the thermal camera we could not get, so we make no claim
+  about hotspots or lost energy.
+- **A technician-reviewed proposal (proposed, not built yet).** A short evidence
+  summary a service company can use to explain a cleaning, a repair or a
+  replacement.
 
 On the device itself, the UNO Q reads temperature, humidity, light and panel
 current, shows the latest values on a small LCD, and exposes them as NFC tag
@@ -79,10 +84,10 @@ text that a technician's phone can read without any network.
     producing unusually little compared with their peers (one stopped
     producing in late July; one fell about 25 % below its peers). Why is not
     in the data.
-  - **Replayed, the improvement over today:** inverter 1 kept logging but
-    produced nothing from 21 July to the end of the record on 3 October,
-    except on one day. Nothing in the data shows the output being restored in
-    those 75 days. On the 30 days with a peer reference, it fell about 550 kWh
+  - **Replayed, the improvement over today:** inverter 1 kept logging but, on
+    every complete daily record from 21 July to the end of the record on 3
+    October (65 days), it logged no output except on 26 July. Nothing in the
+    data shows the output being restored in those 75 days. On the 30 days with a peer reference, it fell about 550 kWh
     short of its peers (a lower bound, because days without a reference are
     not counted). A daily peer check puts it below 70 % of its expected output
     on 21 July, its first day without production.
@@ -103,9 +108,11 @@ comparison with its uncertainty band, plus a labelled synthetic-loss test.
 
 Not implemented at the time of writing: a weather-adjusted theoretical
 expected production (the replayed data has no irradiance), phone-photo soiling
-detection, the operator UI and the 3D-printable enclosure. Where the video or
-the demo shows these, they are labelled as simulations. The solar charging path is wired but not yet verified in
-sunlight.
+detection, the operator UI and the 3D-printable enclosure. At the 13:00
+checkpoint there was no labelled photo set, no soiling classifier and no STL
+file in the repository, so we do not claim them. Where the video or the demo
+shows these, they are labelled as simulations or design concepts. The solar
+charging path is wired but not yet verified in sunlight.
 
 ### Challenges
 
@@ -173,8 +180,10 @@ Hard deadline: Sunday 11 October 2026, 16:00 CEST; aim for 15:30.
       the standard library), or say in the description where the comparison
       runs.
 - [ ] Copy the improvement number into the headline summary (issue #35).
-- [ ] Update "What works" and "Not implemented" to match
-      [project status](project-status.md) on the day.
+- [ ] Re-check "What works" and "Not implemented" against
+      [project status](project-status.md) on the day. They were updated at the
+      13:00 checkpoint. If the open PR #69 (solar path and performance index)
+      merges, add it only for what is verified on the hardware.
 - [ ] Add the video link, and check it opens in a logged-out browser.
 - [ ] Add a photo of the prototype and the two diagrams.
 - [ ] Re-run `uv run python -m poopvolt.report` if the comparison changes, and
