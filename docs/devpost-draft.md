@@ -24,10 +24,10 @@ end lists what is likely to change.
 Devpost's elevator pitch field is limited to 200 characters; check the count
 in the form.
 
-- **Elevator pitch (about 190 characters):** Is your old solar plant producing
+- **Elevator pitch (181 characters):** Is your old solar plant producing
   what it should? PoopVolt compares expected and observed output on an Arduino
   UNO Q, so a service company can show the owner why to clean or repair.
-- **Shorter alternative (about 120 characters):** Edge AI on an Arduino UNO Q
+- **Shorter alternative (94 characters):** Edge AI on an Arduino UNO Q
   that turns a gap in solar output into evidence an owner can judge.
 - **Tagline:** Edge AI maintenance evidence for older solar plants.
 
