@@ -191,6 +191,24 @@ These are team-proposed dimensions, not Coesa's judging criteria:
 - Offline and remote behavior: local operation, queue recovery, coverage,
   last-seen timestamps, and company/own-plant access separation.
 
+### Mentor feedback
+
+Reported by Gianpaolo Macario on 2026-10-11 (issue #13). The team met Matteo
+Stoppa (Coesa) on Saturday 2026-10-10 and Sunday 2026-10-11 and showed him the
+progress so far. Only the points below were relayed; this is a paraphrase, not
+a transcript, and it is not Coesa's position on PoopVolt or an approval of it.
+
+- **Evidence available today:** Stoppa said that, at the moment, they have no
+  data at all. Read this with care: Coesa's public pages describe monitoring
+  and an app for some of its plants, so it is not yet clear whether this means
+  the older customer plants in PoopVolt's scenario, or Coesa as a whole.
+
+What this means for the team (analysis, not mentor feedback): the owner problem
+in the pitch is supported, since there is nothing today to show an owner. It
+also means the SOLARMA replay is the only plant history we can point to, and the
+claim of a ready "multi-channel plant history" must not be presented as
+available from Coesa.
+
 ### Questions for Coesa or a mentor
 
 1. Which customer segment and existing O&M workflow should host the first pilot?
