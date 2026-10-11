@@ -80,7 +80,7 @@ are per unit, excluding VAT where the listing shows it.
 - Mini solar panel R1123: no listing found. A
   [comparable 6 V, 110x60 mm panel at Jameco](https://www.jameco.com/z/ALI-MVPWR-Jameco-ValuePro-Mini-Solar-Panel-Module-for-Cell-Phone-Battery-Chargers-6V-160mA-110x60mm_2282559.html)
   is 5.95 dollars.
-- LiPo 1000 mAh: [Grobotronics](https://grobotronics.com/polymer-lithium-ion-battery-3.7v-1000mah-jst-ph.html)
-  lists it; currency unclear, so about 5 is a rough estimate.
+- LiPo 1000 mAh: no current listing (the Grobotronics page used earlier is
+  gone), so about 5 is a rough estimate.
 
 <!-- EOF -->
