@@ -34,13 +34,15 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "vendor"))
-import msgpack  # noqa: E402
-import solar_model  # noqa: E402
+import msgpack
+import solar_model
 
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "station"
 MCU_PERF_METHOD = "set_perf"  # provided by the sketch: perf in tenths of %, -1 = none
 MIN_PANEL_MA = 5.0  # below this the current is ADC noise (about 4 mA per step)
+# A baseline only applies to the place and panel orientation it was made for.
+GEOMETRY = ("lat", "lon", "tilt", "azimuth")
 
 Reading = collections.namedtuple(
     "Reading", "seq uptime_ms temp_c rh_pct light_raw pv_ma pv_mv"
@@ -63,8 +65,24 @@ class PerformanceIndex:
         if args.calibrate:
             self.calibrate_until = time.monotonic() + args.calibrate
         elif os.path.exists(args.baseline):
-            with open(args.baseline) as f:
-                self.baseline = json.load(f)["ratio"]
+            with open(args.baseline, encoding="utf-8") as f:
+                record = json.load(f)
+            self.baseline = record["ratio"]
+            if not self._geometry_matches(record):
+                self.baseline = None
+
+    def _geometry_matches(self, record):
+        """False, with a message, if the baseline was made for another setup."""
+        made_for = {k: record[k] for k in GEOMETRY if k in record}
+        now = {k: getattr(self.args, k) for k in GEOMETRY}
+        if all(math.isclose(v, now[k], abs_tol=1e-9) for k, v in made_for.items()):
+            return True
+        print(
+            f"ignoring {self.args.baseline}: it was made for {made_for} but this "
+            f"run uses {now}; run once with --calibrate to make a new baseline",
+            file=sys.stderr,
+        )
+        return False
 
     def update(self, unix_s, pv_ma):
         """Return (elevation, azimuth, poa, ratio, perf_pct); NaN where not valid."""
@@ -139,7 +157,10 @@ def parse_args():
     p.add_argument(
         "--now",
         type=float,
-        help="current UTC time as Unix seconds (from the laptop: $(date +%%s)); corrects the board clock",
+        help=(
+            "current UTC time as Unix seconds (from the laptop: $(date +%%s)); "
+            "corrects the board clock"
+        ),
     )
     p.add_argument("--lat", type=float, default=45.07, help="latitude (default Turin)")
     p.add_argument("--lon", type=float, default=7.69, help="longitude (default Turin)")
@@ -186,7 +207,8 @@ def main():
     index = PerformanceIndex(args)
     if index.baseline is None and not args.calibrate:
         print(
-            "no baseline yet: run once with --calibrate 30 while the panel is clean in clear sun",
+            "no baseline yet: run once with --calibrate 30 while the panel is "
+            "clean in clear sun",
             file=sys.stderr,
         )
 

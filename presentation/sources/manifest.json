@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "description": "Two-minute Italian motion graphics narrative: six timed scenes, prototype electrical schematic, scoped historical peer replay, and technician-reviewed intervention proposals. No measured field benefit.",
+  "description": "Canonical six-scene pitch with user-selected 120-second English Remotion adaptation, brand/logo, prototype media, electrical schematic, and scoped historical replay. No measured field benefit.",
   "inspected_on": "2026-10-11",
   "path_base": "repository_root",
   "sources": [
@@ -205,6 +205,54 @@
       "status": "implemented_software_model_hardware_validation_pending",
       "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4534fb3e402bc198ec91a71853809bec937e2568/docs/phone-inspection.md",
       "source_state": "committed"
+    },
+    {
+      "id": "pv-brand",
+      "path": "brand-guidelines.md",
+      "revision": "1a9eaef81ad4194e5f2aebad942a05e66c75cbc0",
+      "sha256": "e2029929cd4195bbf1ea3eed8a590311a63da24a6058563c39cc14d7cd392360",
+      "status": "user_selected_brand_guidelines",
+      "source_state": "committed",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/1a9eaef81ad4194e5f2aebad942a05e66c75cbc0/brand-guidelines.md"
+    },
+    {
+      "id": "pv-logo",
+      "path": "assets/brand/Logo_PoopVolt.png",
+      "revision": "f56dc6007d6807cd8ffb4461c96481cd57cc443b",
+      "sha256": "9c643e44209b2d18f3f01cf981d3a90a7cf2a2de94aeaeb38458af0a19f6d370",
+      "status": "team_supplied_brand_asset",
+      "source_state": "committed",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/f56dc6007d6807cd8ffb4461c96481cd57cc443b/assets/brand/Logo_PoopVolt.png"
+    },
+    {
+      "id": "pv-video-implementation",
+      "path": "presentation/video/implementation.md",
+      "status": "implemented_communication_artifact",
+      "source_state": "working_tree",
+      "revision": null,
+      "upstream_url": null,
+      "base_revision": "395658583554c4d8054d94c2cc024ab72197f943",
+      "sha256": "a459e94b3ca105db44821a52f5a0cfa242661fc1b37064fe51824caaaeab5803"
+    },
+    {
+      "id": "pv-video-beats",
+      "path": "presentation/video/beat-map.json",
+      "status": "implemented_editorial_timing",
+      "source_state": "working_tree",
+      "revision": null,
+      "upstream_url": null,
+      "base_revision": "395658583554c4d8054d94c2cc024ab72197f943",
+      "sha256": "7dba31870a2d49f88115ccd6a35760bffbb2706cd3e258cae24a1d18bb8a4af0"
+    },
+    {
+      "id": "pv-video-voice",
+      "path": "presentation/video/audio/provenance.json",
+      "status": "synthesized_english_narration",
+      "source_state": "working_tree",
+      "revision": null,
+      "upstream_url": null,
+      "base_revision": "395658583554c4d8054d94c2cc024ab72197f943",
+      "sha256": "98418eab6c99e7b885efb1b9f6f5139ff3564c7b488c7744eecdd52d1d65922b"
     }
   ],
   "external_sources": [
@@ -255,6 +303,69 @@
           "sha256": "281027d74419a0b52b952e620e284bc03f86b8c09a3f5c8a25938df6b2154628"
         }
       ]
+    },
+    {
+      "id": "pv-remotion-fundamentals",
+      "upstream_url": "https://www.remotion.dev/docs/the-fundamentals",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Composition metadata and frame dimensions."
+    },
+    {
+      "id": "pv-remotion-sequence",
+      "upstream_url": "https://www.remotion.dev/docs/sequence",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Supported timing wrappers and local frame offsets."
+    },
+    {
+      "id": "pv-remotion-animation",
+      "upstream_url": "https://www.remotion.dev/docs/animating-properties",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Frame-driven animation."
+    },
+    {
+      "id": "pv-remotion-assets",
+      "upstream_url": "https://www.remotion.dev/docs/assets",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Bundled local assets and staticFile paths."
+    },
+    {
+      "id": "pv-remotion-fonts",
+      "upstream_url": "https://www.remotion.dev/docs/fonts-api/load-font",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Local font readiness."
+    },
+    {
+      "id": "pv-remotion-audio",
+      "upstream_url": "https://www.remotion.dev/docs/media/audio",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Local audio placement and mixing."
+    },
+    {
+      "id": "pv-remotion-transitions",
+      "upstream_url": "https://www.remotion.dev/docs/transitions/transitionseries",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Scene transition overlap."
+    },
+    {
+      "id": "pv-remotion-render",
+      "upstream_url": "https://www.remotion.dev/docs/cli/render",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "CLI arguments and props files."
+    },
+    {
+      "id": "pv-remotion-stills",
+      "upstream_url": "https://www.remotion.dev/docs/stills",
+      "inspected_on": "2026-10-11",
+      "status": "implementation_reference",
+      "scope": "Review still rendering."
     }
   ],
   "review_note": "Canonical source files are pinned to an immutable commit and verified by SHA-256. Later uncommitted edits must use explicit working-tree state until committed."

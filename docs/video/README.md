@@ -1,5 +1,12 @@
 # Demo video (issue #37)
 
+For the user's new English Remotion film following the current pitch narrative,
+use the [production handoff](../../presentation/video/README.md).
+It uses this folder's prototype photos, the canonical electrical schematic,
+the 292 kWh evaluation-window replay, and the selected brand guidelines.
+The script, cards, extended-window figures, and subtitles below are a distinct
+older Devpost cut; do not substitute them for the new six-scene storyboard.
+
 Status: Script and assets for the two-minute Devpost video, agreed on
 2026-10-11. English narration; the opening line stays in Italian with an
 English subtitle. Every scene shows only what exists today and labels whether

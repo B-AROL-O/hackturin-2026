@@ -1,7 +1,16 @@
 # Implementation sequence
 
+Video scope update (2026-10-11): the independent 120-second Remotion film is now
+implemented. See [working commands](../video/implementation.md) and
+[actual QA](../video/review.md). This document continues to plan the HTML deck.
+
 Status: Proposed backlog. This change implements the architecture documentation,
 planning corpus, and source registry only.
+
+For the user-selected English Remotion film, follow the independent
+[video implementation plan](../video/implementation.md). Production documentation
+and local images are supplied; rendering and final voiceover remain future work.
+The Quarto backlog below is not a prerequisite for producing the video.
 
 Follow the [owner narrative](../../docs/pitch-narrative.md): an older plant,
 unknown performance, available peer comparison, future theoretical reference,

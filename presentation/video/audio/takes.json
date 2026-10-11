@@ -1,0 +1,49 @@
+[
+  {
+    "scene": "V01",
+    "voice": "af_heart",
+    "speed": [
+      0.92,
+      0.92,
+      0.81,
+      0.84
+    ],
+    "speechEnd": 10.730291666666666,
+    "sampleRate": 24000
+  },
+  {
+    "scene": "V02",
+    "voice": "af_heart",
+    "speed": 0.73,
+    "speechEnd": 29.13,
+    "sampleRate": 24000
+  },
+  {
+    "scene": "V03",
+    "voice": "af_heart",
+    "speed": 0.96,
+    "speechEnd": 49.4329,
+    "sampleRate": 24000
+  },
+  {
+    "scene": "V04",
+    "voice": "af_heart",
+    "speed": 0.86,
+    "speechEnd": 73.7903,
+    "sampleRate": 24000
+  },
+  {
+    "scene": "V05",
+    "voice": "af_heart",
+    "speed": 1.02,
+    "speechEnd": 99.5,
+    "sampleRate": 24000
+  },
+  {
+    "scene": "V06",
+    "voice": "af_heart",
+    "speed": 1.03,
+    "speechEnd": 116.5,
+    "sampleRate": 24000
+  }
+]

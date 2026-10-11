@@ -76,15 +76,15 @@ More views are in the [architecture index](docs/architecture/README.md).
 
 ## What works today
 
-| Area                                                | State              |
-| --------------------------------------------------- | ------------------ |
-| Grove sensors, LCD and NFC on the UNO Q             | Working (bring-up) |
-| Readings streamed to the Linux side over the Bridge | Working (bring-up) |
-| SOLARMA inverter log importer and replay            | Working            |
-| Expected-versus-observed comparison (peers, replay) | Working (scoped)   |
-| Phone RGB inspection upload / CPU adapter           | Implemented; trained model pending |
-| Inspection UI; broader maintenance output          | Implemented UI; broader design proposed |
-| STL enclosure concept                               | Not delivered      |
+| Area                                                | State                                   |
+| --------------------------------------------------- | --------------------------------------- |
+| Grove sensors, LCD and NFC on the UNO Q             | Working (bring-up)                      |
+| Readings streamed to the Linux side over the Bridge | Working (bring-up)                      |
+| SOLARMA inverter log importer and replay            | Working                                 |
+| Expected-versus-observed comparison (peers, replay) | Working (scoped)                        |
+| Phone RGB inspection upload / CPU adapter           | Implemented; trained model pending      |
+| Inspection UI; broader maintenance output           | Implemented UI; broader design proposed |
+| STL enclosure concept                               | Not delivered                           |
 
 [Project status and reuse disclosure](docs/project-status.md) has the evidence
 and limits for every row, and separates what the team built from what it reuses.
@@ -163,7 +163,7 @@ Set up the Python environment with `uv sync`.
 
 ## Phone-to-edge inspection
 
-The UNO Q Linux service accepts smartphone photographs and serves the inspection
+The UNO Q Linux service accepts mobile phone photographs and serves the inspection
 dashboard at the same URL. Start locally with:
 
 ```sh
@@ -195,6 +195,8 @@ See [project status](docs/project-status.md) for implementation and testing limi
   what is incomplete, what we built and what we reuse.
 - [HTML presentation draft](presentation/README.md) — architecture, narrative,
   and implementation plan.
+- [Remotion video handoff](presentation/video/README.md) — 120-second English
+  narration, storyboard, brand/logo, photos, schematic, and coding-agent task.
 - [Presentation guidelines](.agent/README.md) — contributor and agent guidance.
 - [Architecture index](docs/architecture/README.md) — diagram hierarchy and
   system design.

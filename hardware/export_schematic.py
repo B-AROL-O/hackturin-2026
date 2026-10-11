@@ -51,7 +51,8 @@ def check_connections(netlist):
             got = actual.get(name, set())
             if expected != got:
                 differences.append(
-                    f"{name}: missing={sorted(expected - got)}, extra={sorted(got - expected)}"
+                    f"{name}: missing={sorted(expected - got)}, "
+                    f"extra={sorted(got - expected)}"
                 )
         raise ValueError(
             "Schematic differs from bring-up wiring:\n" + "\n".join(differences)

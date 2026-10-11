@@ -43,9 +43,11 @@ This uses the Base Shield at 3.3 V on the header I2C bus (`Wire`): AHT20 at 0x38
 
 ## Station sketch (`firmware/station`)
 
-Reads the sensors (including the solar panel current on A1, zero offset 266.5 mV) and shows them on the LCD. The PN532 (on the UART port) emulates a read-only NFC Forum Type 4 tag. Its NDEF Text record holds the current readings and is refreshed every second, so a phone tap (Android, for example with NFC Tools) shows the data when the LCD can't be read. In this mode the PN532 does not read cards. Verified: a full NDEF read from a phone (Monitor shows `nfc_reads` increasing).
+Reads the sensors (including the solar panel current on A1, zero offset 266.5 mV) and shows them on the LCD. The PN532 (on the UART port) emulates a read-only NFC Forum Type 4 tag.
+Its NDEF Text record holds the current readings and is refreshed every second, so a phone tap (Android, for example with NFC Tools) shows the data when the LCD can't be read. In this mode the PN532 does not read cards. Verified: a full NDEF read from a phone (Monitor shows `nfc_reads` increasing).
 
-It also streams the readings to the Linux side once per second with `Bridge.notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma, pv_mv)`. On the board, `linux/station_rx.py` receives them, computes the panel **performance index**, sends it back to the MCU (`set_perf`, shown as `P…%` on the LCD and `perf=` in the NFC text), and writes CSV. It uses the same vendored msgpack as the IMU receiver:
+It also streams the readings to the Linux side once per second with `Bridge.notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma, pv_mv)`.
+On the board, `linux/station_rx.py` receives them, computes the panel **performance index**, sends it back to the MCU (`set_perf`, shown as `P…%` on the LCD and `perf=` in the NFC text), and writes CSV. It uses the same vendored msgpack as the IMU receiver:
 
 ```sh
 $ADB shell mkdir -p station

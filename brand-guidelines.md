@@ -54,12 +54,12 @@ pitch concordato. Non diventa automaticamente il tono di report, documentazione
 o messaggi dell'interfaccia. Il piccione introduce il nome; le evidenze guidano
 il resto della storia.
 
-| Preferire | Evitare |
-| --- | --- |
+| Preferire                                                    | Evitare                                                        |
+| ------------------------------------------------------------ | -------------------------------------------------------------- |
 | «Questo inverter produce meno dei suoi pari: va verificato.» | «Abbiamo diagnosticato lo sporco» senza una diagnosi validata. |
-| «Confronto su dati storici riprodotti.» | Presentare un replay come una misura del prototipo. |
-| «Il tecnico valuta il prossimo intervento.» | Attribuire al software una proposta formulata manualmente. |
-| «Il beneficio va verificato dopo l'intervento.» | Promettere recuperi energetici o risparmi garantiti. |
+| «Confronto su dati storici riprodotti.»                      | Presentare un replay come una misura del prototipo.            |
+| «Il tecnico valuta il prossimo intervento.»                  | Attribuire al software una proposta formulata manualmente.     |
+| «Il beneficio va verificato dopo l'intervento.»              | Promettere recuperi energetici o risparmi garantiti.           |
 
 ## 3. Logo
 
@@ -86,19 +86,19 @@ tipografico su ciascun lato della composizione visibile. È una regola iniziale
 da verificare sulle applicazioni reali.
 
 La dimensione minima non è ancora fissata. Prima di definirla, verificare logo
-nel README, su una slide proiettata e su uno schermo mobile: nome, piccione e
+nel readme, su una slide proiettata e su uno schermo mobile: nome, piccione e
 separazioni del pannello devono rimanere distinguibili.
 
 ### Varianti da preparare
 
-| Variante | Uso previsto | Stato |
-| --- | --- | --- |
-| PNG originale completo | Archivio e prima integrazione su bianco | Integrato |
-| Composizione con margini ridotti | Header e copertine | Da preparare |
-| Versione trasparente | Fondi chiari compatibili | Da preparare e verificare |
-| Versione monocromatica e inversa | Stampa e fondi scuri | Da progettare |
-| Simbolo compatto | Avatar e icone | Da progettare e verificare in piccolo |
-| Originale vettoriale | Stampa e ridimensionamento | Disponibilità da verificare |
+| Variante                         | Uso previsto                            | Stato                                 |
+| -------------------------------- | --------------------------------------- | ------------------------------------- |
+| PNG originale completo           | Archivio e prima integrazione su bianco | Integrato                             |
+| Composizione con margini ridotti | Header e copertine                      | Da preparare                          |
+| Versione trasparente             | Fondi chiari compatibili                | Da preparare e verificare             |
+| Versione monocromatica e inversa | Stampa e fondi scuri                    | Da progettare                         |
+| Simbolo compatto                 | Avatar e icone                          | Da progettare e verificare in piccolo |
+| Originale vettoriale             | Stampa e ridimensionamento              | Disponibilità da verificare           |
 
 Un SVG che incorpora il PNG non equivale a un originale vettoriale.
 Non usare varianti finché non sono disponibili e revisionate.
@@ -119,14 +119,14 @@ La palette proposta si concentra su blu scuro e giallo, coerenti con il logo,
 accompagnati da bianco e grigi neutri. I valori di blu e giallo sono proposte
 operative, non un campionamento certificato del file originale.
 
-| Nome | Valore proposto | Ruolo |
-| --- | --- | --- |
-| Blu PoopVolt | `#0D2D44` | Titoli, testo principale, copertine scure |
-| Giallo solare | `#F5C329` | Accenti, richiamo al pannello, evidenze selezionate |
-| Bianco | `#FFFFFF` | Fondo del logo originale e superfici di supporto |
-| Grigio chiaro | `#F4F5F7` | Superfici secondarie e fasce di incertezza |
-| Grigio testo | `#52606D` | Didascalie, fonti e serie di riferimento su bianco |
-| Grigio separatore | `#D8DEE4` | Linee e divisori non essenziali |
+| Nome              | Valore proposto | Ruolo                                               |
+| ----------------- | --------------- | --------------------------------------------------- |
+| Blu PoopVolt      | `#0D2D44`       | Titoli, testo principale, copertine scure           |
+| Giallo solare     | `#F5C329`       | Accenti, richiamo al pannello, evidenze selezionate |
+| Bianco            | `#FFFFFF`       | Fondo del logo originale e superfici di supporto    |
+| Grigio chiaro     | `#F4F5F7`       | Superfici secondarie e fasce di incertezza          |
+| Grigio testo      | `#52606D`       | Didascalie, fonti e serie di riferimento su bianco  |
+| Grigio separatore | `#D8DEE4`       | Linee e divisori non essenziali                     |
 
 Usare soprattutto fondi chiari e testo scuro; riservare il giallo a pochi
 accenti. Sul giallo usare testo blu scuro. Non usare il giallo come testo
@@ -180,13 +180,13 @@ l'evidenza.
 Grafici e card devono usare la stessa tipografia e palette. Adattare il
 generatore dei grafici, evitando modifiche manuali ai soli file esportati.
 
-| Informazione | Convenzione proposta |
-| --- | --- |
-| Produzione osservata | Blu, linea continua e punti pieni |
-| Riferimento atteso | Grigio testo, linea tratteggiata e indicazione della stima |
-| Intervallo di incertezza | Fascia grigio chiaro con legenda esplicita |
+| Informazione              | Convenzione proposta                                           |
+| ------------------------- | -------------------------------------------------------------- |
+| Produzione osservata      | Blu, linea continua e punti pieni                              |
+| Riferimento atteso        | Grigio testo, linea tratteggiata e indicazione della stima     |
+| Intervallo di incertezza  | Fascia grigio chiaro con legenda esplicita                     |
 | Scostamento da verificare | Richiamo giallo con testo blu, simbolo e annotazione esplicita |
-| Dato simulato | Etichetta visibile «SIMULATO» e trattamento distinguibile |
+| Dato simulato             | Etichetta visibile «SIMULATO» e trattamento distinguibile      |
 
 Ogni figura quantitativa deve indicare unità, periodo, fonte e origine dei dati:
 **misurati**, **replay storico**, **simulati** oppure **stimati**. Una serie può
@@ -202,7 +202,7 @@ su un altro impianto. Non presentare energia mancante come energia recuperata.
 
 ## 8. Applicazioni e fonti di riferimento
 
-- **README:** logo, descrizione breve e accesso evidente a stato del progetto e demo.
+- **Readme:** logo, descrizione breve e accesso evidente a stato del progetto e demo.
 - **Presentazione:** identità comune, una storia centrata sull'utente e fonti leggibili.
 - **Video:** card coerenti, qualificazioni visibili e testo verificato su mobile.
 - **Documentazione:** priorità a lettura, navigazione e precisione tecnica.
@@ -229,5 +229,5 @@ allo stato di implementazione e alle evidenze disponibili.
 - [ ] Pianificare l'aggiornamento coerente di card e grafici.
 
 La prima PR può introdurre asset originale, provenienza, questo documento e
-logo nel README. L'adozione della palette e della tipografia negli altri
+logo nel readme. L'adozione della palette e della tipografia negli altri
 materiali va verificata con confronti visivi prima/dopo.
