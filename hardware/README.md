@@ -48,7 +48,6 @@ are in the [connection record](../docs/hardware-connections.md).
 | Grove Light Sensor (P) v1.1                 | Secured                                          | Relative light context; not an established calibrated irradiance measurement.                          |
 | Grove 2.5A DC Current Sensor (ACS70331)     | Secured                                          | Current observations on a compatible small test circuit; range and integration to verify.              |
 | Grove 16x2 LCD (White on Blue)              | Secured                                          | Proposed local status/findings display; connection and software to verify.                             |
-| Grove NFC Reader (PN532)                    | Secured                                          | Shows the latest finding as NFC tag text (UART mode); wired and verified in PR #49.                    |
 | 1000mAh LiPo battery with JST 2mm           | Secured                                          | Candidate prototype power component; runtime and connector compatibility unmeasured.                   |
 | Solar Charger HRS1358                       | Secured                                          | Candidate charging component selected in place of the unavailable Waveshare solar charger.             |
 | Mini Solar Panel R1123 (90x60)              | Secured                                          | Small-panel test fixture and candidate charging input; electrical specifications to verify.            |
@@ -58,7 +57,6 @@ are in the [connection record](../docs/hardware-connections.md).
 
 Names, versions, capacities, and dimensions above follow the team's inventory.
 Availability does not establish a tested connection, model, or power budget.
-See the [bill of materials](bom.md) for quantities, status and approximate cost.
 
 ## Missing or unavailable
 
@@ -92,7 +90,9 @@ Neither the AHT20 nor the light sensor replaces thermal imaging.
   computed with published models (for example the NOAA solar position
   algorithm and the Ineichen clear-sky model, both available in `pvlib`).
   Comparing that expected value with the measured panel current and light level
-  gives an efficiency or soiling estimate. Power, not only current, also needs
+  gives an efficiency or soiling estimate. A first relative version (current
+  vs. clear-sky model, with a clean-panel baseline) is in
+  `firmware/station/linux/station_rx.py`; see `docs/uno-q-setup.md`. Power, not only current, also needs
   the panel voltage, which requires a voltage divider (not wired yet). The light
   sensor is uncalibrated.
 - Use the recorded USB prototype connections for the active Grove modules.

@@ -2,7 +2,8 @@
 // 16x2 LCD, exposes the same readings as an NFC tag (a phone tap shows them when
 // the display is not readable) and streams them to the Linux side over the
 // Bridge as notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma,
-// pv_mv); see linux/station_rx.py.
+// pv_mv); see linux/station_rx.py. Linux sends back the panel performance index
+// with set_perf (tenths of %, -1 = not available), shown on the LCD and NFC text.
 //
 // I2C (Wire): AHT20 0x38, LCD 0x3E. A0: light sensor. A1: Grove 2.5A DC current
 // sensor (ACS70331) in series with the solar panel. PN532 on the shield
@@ -18,8 +19,12 @@ constexpr uint32_t SENSOR_PERIOD_MS = 1000;
 constexpr float ADC_REF_MV = 3300.0f;      // 10-bit ADC, 3.3 V reference
 constexpr float PV_ZERO_MV = 266.5f;       // sensor output at 0 A, measured in the dark 2026-10-10
 constexpr float PV_MA_PER_MV = 1000.0f / 800.0f;  // ACS70331 module: 800 mV/A
+constexpr float PV_NOISE_MA = 10.0f;  // zero drift (temperature) + ADC steps; below = 0
 constexpr size_t NFC_STACK_SIZE = 1024;  // = CONFIG_DYNAMIC_THREAD_STACK_SIZE (pool slot)
 constexpr int NFC_PRIORITY = 2;          // preempts loop() so taps are answered quickly
+constexpr uint32_t PERF_STALE_MS = 5000;  // drop the index if Linux stops sending it
+constexpr uint32_t NFC_FIRST_TRY_MS = 2000;
+constexpr uint32_t NFC_RETRY_MS = 5000;
 
 Adafruit_AHTX0 aht;
 rgb_lcd lcd;
@@ -28,6 +33,8 @@ Pn532Tag tag(Serial1);
 bool has_aht = false;
 bool has_nfc = false;
 uint32_t seq = 0;
+volatile int perf_x10 = -1;
+volatile uint32_t perf_at_ms = 0;
 static struct k_thread nfc_data;
 
 float read_pv_mv() {
@@ -39,6 +46,11 @@ float read_pv_mv() {
   return sum / 10.0f * ADC_REF_MV / 1024.0f;
 }
 
+void set_perf(int x10) {
+  perf_x10 = x10;
+  perf_at_ms = millis();
+}
+
 static void nfc_thread(void*, void*, void*) {
   while (true) {
     tag.poll();
@@ -46,33 +58,45 @@ static void nfc_thread(void*, void*, void*) {
   }
 }
 
+// Starts the PN532 tag and its thread; false if the PN532 does not answer yet.
+bool start_nfc() {
+  if (!tag.begin()) return false;
+  k_thread_stack_t* stack = k_thread_stack_alloc(NFC_STACK_SIZE, 0);
+  if (stack == nullptr) return false;
+  k_tid_t tid = k_thread_create(&nfc_data, stack, NFC_STACK_SIZE, nfc_thread,
+                                nullptr, nullptr, nullptr, NFC_PRIORITY, 0, K_NO_WAIT);
+  k_thread_name_set(tid, "nfc_tag");
+  return true;
+}
+
 void setup() {
   Bridge.begin();
+  Bridge.provide("set_perf", set_perf);
   Monitor.begin();
   Wire.begin();
 
   has_aht = aht.begin(&Wire);
   lcd.begin(16, 2);
 
-  has_nfc = tag.begin();
-  if (has_nfc) {
-    k_thread_stack_t* stack = k_thread_stack_alloc(NFC_STACK_SIZE, 0);
-    if (stack == nullptr) {
-      has_nfc = false;
-    } else {
-      k_tid_t tid = k_thread_create(&nfc_data, stack, NFC_STACK_SIZE, nfc_thread,
-                                    nullptr, nullptr, nullptr, NFC_PRIORITY, 0, K_NO_WAIT);
-      k_thread_name_set(tid, "nfc_tag");
-    }
-  }
+  // Serial1 (D0/D1) is also the Zephyr boot console: give it time to go quiet
+  // before talking to the PN532. loop() keeps retrying if it still fails.
+  delay(NFC_FIRST_TRY_MS);
+  has_nfc = start_nfc();
 
   Monitor.print("station started: AHT20=");
   Monitor.print(has_aht ? "ok" : "missing");
   Monitor.print(" NFC=");
-  Monitor.println(has_nfc ? "ok" : "missing");
+  Monitor.println(has_nfc ? "ok" : "missing, retrying");
 }
 
 void loop() {
+  static uint32_t last_nfc_try = 0;
+  if (!has_nfc && millis() - last_nfc_try > NFC_RETRY_MS) {
+    last_nfc_try = millis();
+    has_nfc = start_nfc();
+    if (has_nfc) Monitor.println("NFC: PN532 found");
+  }
+
   float temp_c = NAN;
   float hum_pct = NAN;
   if (has_aht) {
@@ -84,12 +108,18 @@ void loop() {
   int light_raw = analogRead(A0);
   float pv_mv = read_pv_mv();
   float pv_ma = (pv_mv - PV_ZERO_MV) * PV_MA_PER_MV;
+  if (pv_ma < PV_NOISE_MA) pv_ma = 0.0f;  // no negative or drift-only current
   uint32_t uptime_ms = millis();
   uint32_t uptime_s = uptime_ms / 1000;
 
+  int perf = (perf_x10 >= 0 && millis() - perf_at_ms < PERF_STALE_MS) ? perf_x10 : -1;
+  char perf_str[8] = "-";
+  if (perf >= 0) snprintf(perf_str, sizeof(perf_str), "%d%%", (perf + 5) / 10);
+
   char text[Pn532Tag::MAX_TEXT];
-  snprintf(text, sizeof(text), "PoopVolt: T=%.1fC RH=%.0f%% light=%d Ipv=%.0fmA up=%lus",
-           (double)temp_c, (double)hum_pct, light_raw, (double)pv_ma, (unsigned long)uptime_s);
+  snprintf(text, sizeof(text), "PoopVolt: T=%.1fC RH=%.0f%% light=%d Ipv=%.0fmA perf=%s up=%lus",
+           (double)temp_c, (double)hum_pct, light_raw, (double)pv_ma, perf_str,
+           (unsigned long)uptime_s);
   tag.setText(text);
   Bridge.notify("station", seq++, uptime_ms, temp_c, hum_pct, light_raw, pv_ma, pv_mv);
 
@@ -100,11 +130,10 @@ void loop() {
   lcd.print(hum_pct, 0);
   lcd.print("% L");
   lcd.print(light_raw);
+  char line2[17];
+  snprintf(line2, sizeof(line2), "I%.0fmA P%s%s", (double)pv_ma, perf_str, has_nfc ? " NFC" : "");
   lcd.setCursor(0, 1);
-  lcd.print("Ipv ");
-  lcd.print(pv_ma, 0);
-  lcd.print("mA");
-  lcd.print(has_nfc ? " NFC" : "");
+  lcd.print(line2);
 
   Monitor.print(text);
   Monitor.print(" pv_mv=");
