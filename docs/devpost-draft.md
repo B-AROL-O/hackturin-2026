@@ -79,6 +79,13 @@ text that a technician's phone can read without any network.
     producing unusually little compared with their peers (one stopped
     producing in late July; one fell about 25 % below its peers). Why is not
     in the data.
+  - **Replayed, the improvement over today:** inverter 1 kept logging but
+    produced nothing from 21 July to the end of the record on 3 October,
+    except on one day. Nothing in the data shows the output being restored in
+    those 75 days. On the 30 days with a peer reference, it fell about 550 kWh
+    short of its peers (a lower bound, because days without a reference are
+    not counted). A daily peer check puts it below 70 % of its expected output
+    on 21 July, its first day without production.
   - **Simulated:** injecting a synthetic loss into the other inverters, it is
     flagged in all 10 tested cases from 8 % upwards, in 4 of 10 at 4 to 6 %,
     and mostly not at 2 %. We chose the flag threshold after seeing the data,
@@ -152,19 +159,20 @@ Adapted from the requirement mapping of the earlier SunCheck work breakdown.
 - **Start from a well-defined user, context and problem.** Covered: the owner
   of an older plant and the service company that maintains it. Validation with
   the Coesa mentor (issue #13) is still open.
-- **Show the improvement with a practical test and numbers.** Weak. The
-  evidence list gives detection results, but not the improvement over today's
-  practice, where nobody checks production against an expectation. Issue #35
-  should state it, for example how long the stopped inverter went unnoticed in
-  the replay and when the comparison would have flagged it, labelled as
-  replayed.
+- **Show the improvement with a practical test and numbers.** Covered on replayed data. The
+  evidence list now states it for the replay: inverter 1 produced nothing for
+  75 days without being restored, and a daily peer check points at it on the
+  first day. It is still one inverter in one plant, and the 70 % rule was
+  chosen after seeing the data. Issue #35 should carry the same number.
 
 ## Before you submit
 
 Hard deadline: Sunday 11 October 2026, 16:00 CEST; aim for 15:30.
 
-- [ ] Close the two gaps in the requirements check above: where the
-      comparison runs, and the improvement over today's practice (issue #35).
+- [ ] Run `python3 -m poopvolt.report` on the UNO Q (the package needs only
+      the standard library), or say in the description where the comparison
+      runs.
+- [ ] Copy the improvement number into the headline summary (issue #35).
 - [ ] Update "What works" and "Not implemented" to match
       [project status](project-status.md) on the day.
 - [ ] Add the video link, and check it opens in a logged-out browser.
