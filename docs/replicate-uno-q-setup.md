@@ -2,21 +2,32 @@
 
 How to rebuild Lorenzo's working bench setup from scratch: UNO Q, Grove sensors, LCD, NFC tag, and the solar charging path with the current sensor. Wiring diagram: [hardware connections](hardware-connections.md) ([PDF](architecture/diagrams/pv-wiring.pdf)). Background and gotchas: [UNO Q setup](uno-q-setup.md).
 
-## Status (2026-10-11)
+## Status (frozen 2026-10-11, handover)
+
+The software pipeline works end to end. The solar measurement does not yet produce usable data: today's mini panel delivers no real current through this charger. Everything is merged in `develop`.
 
 What works, verified on the hardware:
 
-- `station` sketch: AHT20 temperature and humidity, light sensor (A0), LCD, and the solar current sensor (A1).
-- NFC: tapping an Android phone reads the live readings as tag text.
-- Current sensor zero offset calibrated in the dark: 266.5 mV, meaning 0 ± 3 mA.
-- Readings stream once per second to the board's Linux side over the Bridge, received by `station_rx.py` as CSV.
-- Panel performance index (relative, clear-sky model + clean baseline) computed on the board's Linux side and shown on the LCD and NFC text. The model is checked against pvlib and the return path to the MCU works.
-- Solar path wired: panel → current sensor → Waveshare Solar Power Manager → 1000 mAh LiPo. The Waveshare's ON LED and all four battery LEDs are lit.
+- `station` sketch: AHT20 temperature and humidity, light sensor (A0), LCD (`T RH L` / `I…mA P…% NFC`), and the solar current sensor (A1). Currents below 10 mA are shown as 0 (sensor zero drift).
+- NFC: tapping an Android phone reads the live readings as tag text. Start-up is now reliable: the sketch waits 2 s and retries every 5 s if the PN532 doesn't answer.
+- Readings stream once per second to the board's Linux side over the Bridge (`station_rx.py`, CSV).
+- Performance index pipeline: clear-sky sun model (checked against pvlib) → `perf` → back to the MCU (LCD and NFC text). The clock correction (`--now`) works, and so does the round trip to the MCU.
+
+Field test 2026-10-11 (outdoors, then by a window), findings:
+
+- **The mini panel can't drive the Waveshare.** In full sun, with the battery at 3 of 4 LEDs (not full), the **Solar Charge** LED stayed off and the current stayed at 0. The charger needs at least 6 V; this panel reached 4.55 V open-circuit at dusk.
+- **The short-circuit test also gave 0 mA.** With SOLAR IN+ and SOLAR IN− jumpered, so the panel was shorted through the sensor, there was no current either. That points to something in the panel or its wiring loop. **Check with a multimeter** (panel open-circuit voltage in sun, and continuity of the loop through the sensor) before the next test.
+- **The current sensor's zero drifts with temperature:** 257–260 mV in the sun versus 266.5 mV calibrated indoors, which is about ±10 mA. Hence the 10 mA noise floor. A useful index needs well above 50 mA.
+- **The board dropped off USB four times.** Check the USB-C cable and connector; every drop reboots the board and stops the logger.
+
+Before the next session:
+
+- The invalid baseline calibrated by the window has been deleted from the board, so calibrate again (`--calibrate 60`) with a panel that delivers real current.
+- Field logs are in [`data/field-2026-10-11/`](../data/field-2026-10-11/README.md): sensor noise and drift, no usable panel current.
 
 Still pending:
 
-- Calibrating the performance index in clear sun, then the demo (partly cover or soil the panel, and watch `P…%` drop). Waiting for Gianpaolo's solar panel; the mini panel may be too weak for the Waveshare's 6 V input.
-- Current reading and Solar Charge LED under real sunlight. The panel showed only 4.55 V open-circuit at dusk, below the Waveshare's 6 V input, and its rating isn't known.
+- A panel that delivers real current (waiting for Gianpaolo's), then calibrate in clear sun (`--calibrate 60`) and demo: cover or soil part of the panel and watch `P…%` drop.
 - Whether the Waveshare's USB OUT (5 V / 1 A) can run the UNO Q. Arduino recommends a 5 V / 3 A supply.
 - The phone camera and CV model: owned by Giacomo (see [model budget](uno-q-model-budget.md)).
 - Panel voltage (resistor divider into A2) for absolute power and efficiency: optional, later.
@@ -24,7 +35,7 @@ Still pending:
 
 Decisions taken:
 
-- The UNO Q is powered from USB-C. The solar side is a separate, measured subsystem with no shared wire.
+- The UNO Q is powered from USB-C. The solar side is a separate, measured subsystem with no shared wire. The wiring is back to the original configuration, which matches the [schematic](hardware-connections.md).
 - The HRS1358 charger and the LM2596 step-down sold as "HAS4966" are not used. A step-down can't make 5 V from a 3.7 V LiPo.
 - The PN532 runs in UART mode on the shield's UART port, and the sketch makes it act as an NFC tag. In that mode it doesn't read cards.
 
@@ -102,7 +113,7 @@ Expected Monitor output, about once per second:
 PoopVolt: T=24.4C RH=48% light=633 Ipv=0mA up=30s pv_mv=266.5 nfc_reads=0
 ```
 
-- **LCD:** line 1 shows temperature, humidity and light. Line 2 shows `Ipv …mA NFC`.
+- **LCD:** line 1 shows temperature, humidity and light. Line 2 shows `I…mA P…%`, plus `NFC` once the PN532 is found: panel current, and the performance index (`-` until calibrated).
 - **Phone:** turn NFC on, unlock the phone, and hold its back on the PN532 antenna. The tag text appears; NFC Tools → Read always shows it. `nfc_reads` goes up after each tap.
 - **Current zero:** with the panel covered, `pv_mv` should sit near 266 mV. If yours differs, set `PV_ZERO_MV` in [`station.ino`](../firmware/station/station.ino) to your dark reading and flash again.
 

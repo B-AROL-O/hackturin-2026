@@ -80,13 +80,13 @@ The MCU header mapping is documented in the
 
 Stacked on the UNO Q's UNO-format headers. **VCC switch set to 3.3 V**, so every Grove port supplies 3.3 V and GND.
 
-| Shield port | UNO Q signal (MCU pin)                                      | Device                                                       | Bus / address                   | Status                                     |
-| ----------- | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------- | ------------------------------------------ |
-| I2C         | SDA (PB11), SCL (PB10): MCU I2C2, `Wire`                    | Grove AHT20 temperature/humidity                             | I2C 0x38                        | verified                                   |
-| I2C         | same bus                                                    | Grove 16x2 LCD (monochrome, no RGB backlight chip)           | I2C 0x3E                        | verified                                   |
-| UART        | D0 = MCU RX (PB7), D1 = MCU TX (PB6): MCU USART1, `Serial1` | Grove NFC (PN532), HSU mode, 115200 baud                     | UART                            | verified                                   |
-| A0          | A0 (PA4), ADC1 ch 9                                         | Grove light sensor (phototransistor)                         | analog, 0–3.3 V                 | verified                                   |
-| A1          | A1 (PA5), ADC1 ch 10                                        | Grove 2.5A DC current sensor (ACS70331), solar panel current | analog, 800 mV/A, zero 266.5 mV | zero verified; current under light pending |
+| Shield port | UNO Q signal (MCU pin)                                      | Device                                                       | Bus / address                   | Status                                                       |
+| ----------- | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------- | ------------------------------------------------------------ |
+| I2C         | SDA (PB11), SCL (PB10): MCU I2C2, `Wire`                    | Grove AHT20 temperature/humidity                             | I2C 0x38                        | verified                                                     |
+| I2C         | same bus                                                    | Grove 16x2 LCD (monochrome, no RGB backlight chip)           | I2C 0x3E                        | verified                                                     |
+| UART        | D0 = MCU RX (PB7), D1 = MCU TX (PB6): MCU USART1, `Serial1` | Grove NFC (PN532), HSU mode, 115200 baud                     | UART                            | verified                                                     |
+| A0          | A0 (PA4), ADC1 ch 9                                         | Grove light sensor (phototransistor)                         | analog, 0–3.3 V                 | verified                                                     |
+| A1          | A1 (PA5), ADC1 ch 10                                        | Grove 2.5A DC current sensor (ACS70331), solar panel current | analog, 800 mV/A, zero 266.5 mV | zero verified; no usable current yet (field test 2026-10-11) |
 
 Notes:
 
