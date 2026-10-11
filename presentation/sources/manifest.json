@@ -7,34 +7,31 @@
     {
       "id": "pv-narrative",
       "path": "docs/pitch-narrative.md",
-      "revision": null,
+      "revision": "065bf3bf86ddf00a1014164b60cd165a9e5e6349",
       "sha256": "4239ae5e05fb8193763a564d27c4eaec884e8508cccb06e615fc25e7e81e1fd0",
       "status": "intended_behavior",
-      "upstream_url": null,
-      "source_state": "working_tree",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/065bf3bf86ddf00a1014164b60cd165a9e5e6349/docs/pitch-narrative.md",
+      "source_state": "committed",
       "input_filename": "pitch-narrative2.md",
-      "input_sha256": "8b9bc4b989f2a28bb4a6324a8600df0128b29176d4db57ce4306e5bfe1208433",
-      "base_revision": "fd257341c220efb137d4028b88e0b0b1ea425c1a"
+      "input_sha256": "8b9bc4b989f2a28bb4a6324a8600df0128b29176d4db57ce4306e5bfe1208433"
     },
     {
       "id": "pv-pitch",
       "path": "docs/pitch-draft.md",
-      "revision": null,
+      "revision": "065bf3bf86ddf00a1014164b60cd165a9e5e6349",
       "sha256": "2442383c5416e9a89c72a51bc66907934cf8a1ec42fc259c2005759ec642f5d9",
       "status": "intended_behavior",
-      "upstream_url": null,
-      "source_state": "working_tree",
-      "base_revision": "fd257341c220efb137d4028b88e0b0b1ea425c1a"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/065bf3bf86ddf00a1014164b60cd165a9e5e6349/docs/pitch-draft.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-index",
       "path": "docs/architecture/README.md",
-      "revision": null,
-      "sha256": "e9f4f20650c959d3c105996b9a73aa013a4377c5ec191d780cd201bb0bce9a50",
+      "revision": "065bf3bf86ddf00a1014164b60cd165a9e5e6349",
+      "sha256": "24fb8dc2aed8bd8a4ba28d63e62ed767f2fc96eaab7bce46c8d5c83d0245280a",
       "status": "proposed",
-      "upstream_url": null,
-      "source_state": "working_tree",
-      "base_revision": "fd257341c220efb137d4028b88e0b0b1ea425c1a"
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/065bf3bf86ddf00a1014164b60cd165a9e5e6349/docs/architecture/README.md",
+      "source_state": "committed"
     },
     {
       "id": "pv-overview",
@@ -57,19 +54,19 @@
     {
       "id": "pv-architecture",
       "path": "docs/architecture/architecture.md",
-      "revision": "3b0d3de4d1ab222619cea18722861714a2d117c1",
-      "sha256": "c5d90dd3ee638cdc74278d8d10a48a7bfb03ace676582149736970622130b7fa",
+      "revision": "4534fb3e402bc198ec91a71853809bec937e2568",
+      "sha256": "f3a4d47f9b9b4d1837bdb51d4381f4abc832d2ab55ce2b44c5e16c904ebcebae",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/3b0d3de4d1ab222619cea18722861714a2d117c1/docs/architecture/architecture.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4534fb3e402bc198ec91a71853809bec937e2568/docs/architecture/architecture.md",
       "source_state": "committed"
     },
     {
       "id": "pv-deployment",
       "path": "docs/architecture/deployment.md",
-      "revision": "0dcc8d8a85af013d11da6b4912d3290fd542d231",
-      "sha256": "052eeeaecc32eeebb0f8a9c50fff6f82ed4a1feecc7ca25e11ea0d53a1254f3c",
+      "revision": "4534fb3e402bc198ec91a71853809bec937e2568",
+      "sha256": "d2f510b5d916234fe5df646c96efe88434e04b7c50df80ef108d61a57ca5a0ba",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/0dcc8d8a85af013d11da6b4912d3290fd542d231/docs/architecture/deployment.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4534fb3e402bc198ec91a71853809bec937e2568/docs/architecture/deployment.md",
       "source_state": "committed"
     },
     {
@@ -84,10 +81,10 @@
     {
       "id": "pv-diagnostics",
       "path": "docs/architecture/components/diagnostics.md",
-      "revision": "3b0d3de4d1ab222619cea18722861714a2d117c1",
-      "sha256": "42c7514b51d3b1f0fa4b8750a9307171eb9d339ddcb72f27b2b0ce7050cf9e1d",
+      "revision": "4534fb3e402bc198ec91a71853809bec937e2568",
+      "sha256": "aa63588256e3f5d2d4781a6ebe5ab5410a2689c659061179758014b5f9cb2d40",
       "status": "proposed",
-      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/3b0d3de4d1ab222619cea18722861714a2d117c1/docs/architecture/components/diagnostics.md",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4534fb3e402bc198ec91a71853809bec937e2568/docs/architecture/components/diagnostics.md",
       "source_state": "committed"
     },
     {
@@ -198,6 +195,15 @@
       "sha256": "11dfe9fe817255ca16d3d8abb9f6d7236b4debbdf55c5c247025846757cc6f5e",
       "status": "generated_historical_replay",
       "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/cdd3625373e0e3c5079cb429d21dfed68e1e3095/docs/images/comparison-inverter-1-replayed.svg",
+      "source_state": "committed"
+    },
+    {
+      "id": "pv-phone-inspection",
+      "path": "docs/phone-inspection.md",
+      "revision": "4534fb3e402bc198ec91a71853809bec937e2568",
+      "sha256": "8c8f3b5049330d06af2fd7ff87f4220a041fc6256f05568246089bdf7b331dad",
+      "status": "implemented_software_model_hardware_validation_pending",
+      "upstream_url": "https://github.com/B-AROL-O/hackturin-2026/blob/4534fb3e402bc198ec91a71853809bec937e2568/docs/phone-inspection.md",
       "source_state": "committed"
     }
   ],
