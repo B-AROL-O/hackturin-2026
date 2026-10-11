@@ -5,8 +5,8 @@
 Build a calm, editorial presentation about photovoltaic field maintenance. Use
 generous whitespace, clear technical drawings, and close views of a panel when a
 photograph supplies useful context. Let the sensing and decision flow provide
-the recurring visual structure. The title slide can use a dark blue canvas
-with one panel image and a large PoopVolt wordmark.
+the recurring visual structure. The title slide can use a dark blue canvas with
+one panel image and a large PoopVolt wordmark.
 
 Use the older plant and its owner's question as the recurring visual context.
 The pigeon cue explains the name and remains secondary. The central visual is
@@ -14,7 +14,8 @@ expected versus observed production over matching periods, with estimates,
 observations, and simulations distinguished by labels and line patterns. Unknown
 reference inputs must remain visibly unavailable.
 
-Show the STL as a design concept and the software case with provenance. Keep
+Show the prototype electrical schematic as a dedicated scene and the replay
+chart with provenance. The undelivered STL is outside the main sequence. Keep
 SOLARMA channels distinct from verified strings and phone imagery separate from
 replay. A company-to-owner offer belongs in supporting context or the appendix.
 Thermal illustrations are risk context only, never current measured output.
@@ -22,13 +23,13 @@ Thermal illustrations are risk context only, never current measured output.
 ## Brand palette
 
 Use the palette in [brand-guidelines.md](../brand-guidelines.md): dark blue,
-solar yellow, white and neutral greys. It replaces the earlier teal, rust,
-amber and ivory proposal for new materials. Existing video cards and charts
-remain legacy exports and require a separate coordinated migration.
+solar yellow, white and neutral greys. It replaces the earlier teal, rust, amber
+and ivory proposal for new materials. Existing video cards and charts remain
+legacy exports and require a separate coordinated migration.
 
 Use blue text on yellow. Check final contrast and communicate status through
-labels, symbols and line patterns as well as color. Do not introduce extra
-brand accents or reinterpret measured evidence through decorative color.
+labels, symbols and line patterns as well as color. Do not introduce extra brand
+accents or reinterpret measured evidence through decorative color.
 
 ## Type and geometry
 

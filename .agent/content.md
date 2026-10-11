@@ -6,11 +6,14 @@ Use the [Italian company-use story](../docs/pitch-narrative.md) as the canonical
 spoken brief. Open with the approved hook: "Il tuo impianto è sporco di merda.
 Letteralmente", then ask how much it affects production. Explain how a
 photovoltaic service company proposes evidence-based interventions the owner can
-understand and assess. Follow the proposed comparison, STL concept, one software
-case, technician review, and verification of benefit. Keep the hook
-illustrative; no measured contamination loss is established.
+understand and assess. Follow the available peer comparison, future theoretical
+reference, prototype wiring, one historical replay, technician review, and
+verification of benefit. Keep the hook illustrative; no measured contamination
+loss is established.
 
-The main pitch is six slides and 180 seconds including demonstrations. Do not
+The main pitch is six scenes and 120 seconds including diagram holds,
+transitions, and closing. Separate voice-over, screen text, and motion cues. The
+electrical schematic replaces the undelivered STL in the main sequence. Do not
 open with the company sales/free-device offer; it remains a commercial
 hypothesis for supporting discussion or the appendix. Coesa is a possible
 service counterpart, not an established partner. Define Edge AI only if needed.
@@ -45,9 +48,11 @@ IDs.
 
 <!-- markdownlint-enable MD013 -->
 
-This PR supplies documentation, not an MVP implementation or STL artifact.
-Complete the demo from actual team evidence. If code, model, or mapped string
-outputs are absent, narrow the claim or show a clearly labeled simulation.
+This edit supplies a script and plans, not a finished video. The peer comparison
+and historical replay have [scoped results](../docs/comparison-results.md);
+prototype wiring has a [bring-up record](../docs/hardware-connections.md).
+Neither establishes a theoretical model, automatic maintenance proposals, or
+measured field benefit. No STL artifact is delivered.
 
 The [hardware inventory](../docs/hardware.md) records secured parts and the
 phone replacement for the unavailable thermal camera. Secured, selected,

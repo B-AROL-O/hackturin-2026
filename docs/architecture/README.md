@@ -2,14 +2,18 @@
 
 This is the entry point for architectural questions about PoopVolt. The views
 follow a C4-inspired hierarchy with additional physical deployment and runtime
-views. All views are proposed drafts. They describe intended behavior, not a
-verified implementation or measured performance.
+views. The system-design views are proposed drafts. They describe intended
+behavior, not a verified implementation or measured performance. The
+[phone inspection implementation](phone-inspection.md) records the implemented
+software slice; its trained model and UNO Q validation are pending.
 
-The [three-minute owner narrative](../pitch-narrative.md) starts with an older
+The [two-minute owner narrative](../pitch-narrative.md) starts with an older
 plant whose performance is unclear to its owner. It proposes an
-expected/observed comparison using a theoretical reference, software case, and
-STL concept. The model, required inputs, string mapping, and implemented demo
-scope remain unverified; see the data plan before making quantitative claims.
+expected/observed comparison, separating an available historical peer replay
+from a future theoretical reference. It shows the prototype electrical schematic
+in a dedicated motion graphics scene. The theoretical model, required inputs,
+and string mapping remain unverified; see the data plan and scoped comparison
+results before making quantitative claims.
 
 The secondary commercial proposal sells an edge device to a photovoltaic service
 company, which can offer it free to customers. Local string-level observations
@@ -24,25 +28,29 @@ The [hardware inventory](../hardware.md) records the secured UNO Q 4GB with
 Media Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate power
 components. The current prototype uses a phone RGB camera in place of the
 unavailable Grove thermal camera. Thermal acquisition is deferred; hardware
-availability does not establish tested integration.
-The electrical wiring view separately records the prototype connections reported
-in PR #49.
+availability does not establish tested integration. The electrical wiring view
+separately records the prototype connections reported in PR #49.
 
 ## Diagram Registry
 
-| Diagram ID            | View                                                              | Scope                                                  |
-| --------------------- | ----------------------------------------------------------------- | ------------------------------------------------------ |
-| `pv-overview`         | [System overview](overview.md)                                    | Purpose, processing stages, and intended outcomes      |
-| `pv-context`          | [System context](context.md)                                      | Operator, installation, and system boundary            |
-| `pv-architecture`     | [Application architecture](architecture.md)                       | Application modules, storage, and information flow     |
-| `pv-deployment`       | [Physical deployment](deployment.md)                              | Intended devices and execution environments            |
-| `pv-wiring`           | [Prototype electrical wiring](../hardware-connections.md)         | As-built USB power, Grove ports, and module pinouts    |
-| `pv-acquisition`      | [Acquisition](components/acquisition.md)                          | Input normalization, quality checks, and alignment     |
-| `pv-diagnostics`      | [Diagnostics](components/diagnostics.md)                          | Soiling, thermal, electrical, and degradation analysis |
-| `pv-maintenance`      | [Maintenance](components/maintenance.md)                          | Evidence assessment and operator recommendations       |
-| `pv-flow-soiling`     | [Soiling detection flow](flows/detect-soiling.md)                 | Observation-to-finding sequence                        |
-| `pv-flow-maintenance` | [Maintenance recommendation flow](flows/recommend-maintenance.md) | Finding-to-intervention sequence                       |
-| `pv-flow-plant`       | [Whole-plant monitoring flow](flows/monitor-plant.md)             | Multi-channel analysis, coverage, and synchronization  |
+<!-- markdownlint-disable MD013 -->
+
+| Diagram ID            | View                                                              | Scope                                                                 |
+| --------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `pv-overview`         | [System overview](overview.md)                                    | Purpose, processing stages, and intended outcomes                     |
+| `pv-context`          | [System context](context.md)                                      | Operator, installation, and system boundary                           |
+| `pv-architecture`     | [Application architecture](architecture.md)                       | Application modules, storage, and information flow                    |
+| `pv-deployment`       | [Physical deployment](deployment.md)                              | Intended devices and execution environments                           |
+| `pv-wiring`           | [Prototype electrical wiring](../hardware-connections.md)         | As-built USB power, Grove ports, and module pinouts                   |
+| `pv-acquisition`      | [Acquisition](components/acquisition.md)                          | Input normalization, quality checks, and alignment                    |
+| `pv-diagnostics`      | [Diagnostics](components/diagnostics.md)                          | Soiling, thermal, electrical, and degradation analysis                |
+| `pv-maintenance`      | [Maintenance](components/maintenance.md)                          | Evidence assessment and operator recommendations                      |
+| `pv-flow-soiling`     | [Soiling detection flow](flows/detect-soiling.md)                 | Observation-to-finding sequence                                       |
+| `pv-flow-maintenance` | [Maintenance recommendation flow](flows/recommend-maintenance.md) | Finding-to-intervention sequence                                      |
+| `pv-flow-plant`       | [Whole-plant monitoring flow](flows/monitor-plant.md)             | Multi-channel analysis, coverage, and synchronization                 |
+| `pv-phone-inspection` | [Phone inspection implementation](phone-inspection.md)            | Implemented HTTP upload, CPU inference adapter, storage and dashboard |
+
+<!-- markdownlint-enable MD013 -->
 
 ## How to Navigate
 
@@ -57,9 +65,9 @@ pages to actual code and their parent component.
 
 - Keep one canonical Mermaid source per logical diagram in its Markdown page.
   The electrical schematic `pv-wiring` uses the native
-  [`hardware/poopvolt.kicad_sch`](../../hardware/poopvolt.kicad_sch) source instead;
-  regenerate its exports with the documented KiCad workflow. Link from pitches
-  and other documents; do not edit generated exports independently.
+  [`hardware/poopvolt.kicad_sch`](../../hardware/poopvolt.kicad_sch) source
+  instead; regenerate its exports with the documented KiCad workflow. Link from
+  pitches and other documents; do not edit generated exports independently.
 - Preserve stable diagram IDs and component names across levels. Update this
   registry when a view is added or moved.
 - State scope, status, and a text explanation on each page. Use proposed,
@@ -106,6 +114,10 @@ reported-tested sensor/display interfaces.
 The [data plan](../data-plan.md) identifies which demo data exist and which
 additional measurements are needed. Battery-aware scheduling is a later off-grid
 extension rather than a requirement of the primary commercial proposal.
+
+Phone inspection selects LAN HTTP operator access and bounded JPEG/JSON
+retention for that software slice. Secure deployment, wider-system storage,
+trained-model evaluation and plant/string mapping still need validation.
 
 ## Method References
 

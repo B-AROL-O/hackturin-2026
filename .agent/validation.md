@@ -3,14 +3,17 @@
 ## Checks for this architecture draft
 
 Check Markdown with the CI versions and rules for Markdownlint, Prettier, and
-textlint. Check relative links, six-slide timing, and source manifest paths,
-states, revisions/base revisions, and checksums. The main duration is 180
+textlint. Check relative links, six-scene timing, and source manifest paths,
+states, revisions/base revisions, and checksums. The main duration is 120
 seconds including demonstrations. Match agenda, speaking notes, and visual-plan
 anchors.
 
-Confirm that the theoretical reference, implemented MVP, STL, and field benefit
-are never claimed without evidence. No deck implementation exists in this PR;
-browser review is pending, not a passed check.
+Confirm that the theoretical reference, current under illumination, STL, and
+field benefit are never claimed without evidence. Check the visible schematic,
+separate USB/solar supply paths, and replay period/units. Verify that all six
+voice-over blocks fit their intervals, including pauses and the closing hold. No
+deck or new video implementation exists in this edit; browser review is pending,
+not a passed check.
 
 ## Checks required for the future implementation
 
@@ -18,7 +21,7 @@ browser review is pending, not a passed check.
 
 | Area          | Acceptance criterion                                                                       |
 | ------------- | ------------------------------------------------------------------------------------------ |
-| Narrative     | One claim per main slide, six planned anchors, 180 seconds including demos                 |
+| Narrative     | One claim per main slide, six planned anchors, 120 seconds including holds and transitions |
 | Fidelity      | Company use, informed owner decision, reference assumptions, mapped scope, proposed status |
 | Sources       | Valid IDs, matching canonical hashes, local references, rights and artifact provenance     |
 | Rendering     | No clipped text, overlaps, missing figures, or unreadable labels                           |
@@ -43,6 +46,6 @@ visual review remain required.
 ## Definition of ready to share
 
 A clean checkout produces the complete bundle with pinned tools. The portable
-preview passes checks and a three-minute rehearsal with the demo. Identify
-limitations and artifact status explicitly. Publishing follows the user's
-authorized task and the selected host's workflow.
+preview passes checks and a two-minute rehearsal; a video export stays at or
+below 120 seconds. Identify limitations and artifact status explicitly.
+Publishing follows the user's authorized task and the selected host's workflow.

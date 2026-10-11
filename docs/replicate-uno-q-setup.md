@@ -2,7 +2,7 @@
 
 How to rebuild Lorenzo's working bench setup from scratch: UNO Q, Grove sensors, LCD, NFC tag, and the solar charging path with the current sensor. Wiring diagram: [hardware connections](hardware-connections.md) ([PDF](architecture/diagrams/pv-wiring.pdf)). Background and gotchas: [UNO Q setup](uno-q-setup.md).
 
-## Status (2026-10-10)
+## Status (2026-10-11)
 
 What works, verified on the hardware:
 
@@ -10,13 +10,17 @@ What works, verified on the hardware:
 - NFC: tapping an Android phone reads the live readings as tag text.
 - Current sensor zero offset calibrated in the dark: 266.5 mV, meaning 0 ± 3 mA.
 - Readings stream once per second to the board's Linux side over the Bridge, received by `station_rx.py` as CSV.
+- Panel performance index (relative, clear-sky model + clean baseline) computed on the board's Linux side and shown on the LCD and NFC text. The model is checked against pvlib and the return path to the MCU works.
 - Solar path wired: panel → current sensor → Waveshare Solar Power Manager → 1000 mAh LiPo. The Waveshare's ON LED and all four battery LEDs are lit.
 
 Still pending:
 
+- Calibrating the performance index in clear sun, then the demo (partly cover or soil the panel, and watch `P…%` drop). Waiting for Gianpaolo's solar panel; the mini panel may be too weak for the Waveshare's 6 V input.
 - Current reading and Solar Charge LED under real sunlight. The panel showed only 4.55 V open-circuit at dusk, below the Waveshare's 6 V input, and its rating isn't known.
 - Whether the Waveshare's USB OUT (5 V / 1 A) can run the UNO Q. Arduino recommends a 5 V / 3 A supply.
-- The phone camera and CV model (not started; see [model budget](uno-q-model-budget.md)).
+- The phone camera and CV model: owned by Giacomo (see [model budget](uno-q-model-budget.md)).
+- Panel voltage (resistor divider into A2) for absolute power and efficiency: optional, later.
+- Wi-Fi and network time on the board. Until then, pass the laptop time with `--now`.
 
 Decisions taken:
 
@@ -102,7 +106,7 @@ PoopVolt: T=24.4C RH=48% light=633 Ipv=0mA up=30s pv_mv=266.5 nfc_reads=0
 - **Phone:** turn NFC on, unlock the phone, and hold its back on the PN532 antenna. The tag text appears; NFC Tools → Read always shows it. `nfc_reads` goes up after each tap.
 - **Current zero:** with the panel covered, `pv_mv` should sit near 266 mV. If yours differs, set `PV_ZERO_MV` in [`station.ino`](../firmware/station/station.ino) to your dark reading and flash again.
 
-Optional, to check the readings reach the board's Linux side: deploy `firmware/station/linux/station_rx.py` as described in [UNO Q setup](uno-q-setup.md#station-sketch-firmwarestation). It should print one CSV line per second.
+Optional, to check the readings reach the board's Linux side: deploy `firmware/station/linux/station_rx.py` as described in [UNO Q setup](uno-q-setup.md#station-sketch-firmwarestation). It should print one CSV line per second. The same page explains the performance index: calibrate once with the panel clean in clear sun, then the LCD shows `P…%`.
 
 If something is missing, flash [`sensor_diag`](../firmware/sensor_diag/sensor_diag.ino) instead. It scans the I2C bus and reports each device.
 
