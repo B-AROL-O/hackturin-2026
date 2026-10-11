@@ -8,6 +8,9 @@ series are visible from the hard cut; external result labels appear together at
 80 s. The chart stays completely still, including 85–93 s. See
 [implementation](implementation.md) for the implemented workflow.
 
+Timing decision (2026-10-11): on-screen reveals in V01, V04, and V06 follow the
+recorded narration, so visuals no longer run ahead of or behind the voice. Scene
+windows, narration, and all shots and copy are unchanged; the film stays 120 s.
 
 Status: English adaptation of [the current pitch](../../docs/pitch-narrative.md),
 with user-selected English voiceover. Preserve the canonical six intervals.
@@ -34,7 +37,7 @@ Assets: `panel-rgb.svg`, `pigeon.svg`, `Logo_PoopVolt.png`.
 Sources: `pv-narrative`, `pv-brand`, `pv-logo`.
 
 0–3 s: white canvas, a stylized panel, one restrained pigeon entrance. The panel's
-`deposit` layer appears once; pause on “Literally.” 3–7 s: the panel reduces
+`deposit` layer appears once; pause on “Literally.” 4–7 s: the panel reduces
 beside the production question. 7–12 s: settle the complete original logo on
 white, preserving all its elements, aspect ratio, and clear space. Keep the
 illustrative label attached to the separate panel artwork. The cartoon is not
@@ -112,16 +115,18 @@ Persistent status: **Prototype / reported bring-up**.
 Assets: `pv-wiring.svg`, `prototype-bench-01.jpg`, `prototype-bench-02.jpg`,
 `prototype-outdoor.jpg`. Sources: `pv-narrative`, `pv-wiring`, `pv-wiring-svg`.
 
-0–5 s: show the complete electrical sheet. In a narrow adjacent photo strip,
-show `prototype-bench-01.jpg` for 0–2.5 s, then `prototype-bench-02.jpg` for
-2.5–5 s. Labels say **Prototype photo**, without inventing measurements.
-5–15 s: move to readable focused schematic views of UNO Q/Grove connections:
-I2C to AHT20/LCD, A0 to light, UART to NFC. Use overlay outlines and external
-large captions; preserve the original symbols and nets.
-15–22 s: focus on **Panel → Current sensor → Waveshare → LiPo** and A1.
+0–3.3 s: show the complete electrical sheet. In a narrow adjacent photo strip,
+show `prototype-bench-01.jpg` for 0–1.8 s, then `prototype-bench-02.jpg` for
+1.8–3.3 s. Labels say **Prototype photo**, without inventing measurements.
+3.3–8 s: move to readable focused schematic views of UNO Q/Grove connections:
+I2C to AHT20/LCD, then UART to NFC with A0 to light. Use external large
+captions; preserve the original symbols and nets.
+8–19.5 s: focus on **Panel → Current sensor → Waveshare → LiPo**: the sensor in
+series on the panel wire, the charger, then A1.
 Use `prototype-outdoor.jpg` as a small context insert for at least 3 seconds,
 marked **Prototype setup photo · USB connected**, while the solar path remains
-legible. 22–25 s: return to the complete sheet and hold the integration limits.
+legible. 19.5–25 s: return to the complete sheet and hold the integration
+limits.
 
 The two bench photographs are similar, so use the second for a purposeful close
 view, not a second identical full-screen shot. Photos retain their natural colors.
@@ -185,9 +190,9 @@ Closing descriptor: **Evidence for photovoltaic maintenance**.
 Attribution: **Suncheckers · hackTurin 2026**.
 Sources: `pv-narrative`, `pv-maintenance`, `pv-brand`, `pv-logo`.
 
-0–6 s: return to technician and owner; the technician's proposal is explicitly
-human-reviewed. 6–11 s: reveal cleaning/repair/replacement as options, then owner
-choice. 11–14 s: show a next-measurement placeholder labeled **Verify benefit**,
+0–3 s: return to technician and owner; the technician's proposal is explicitly
+human-reviewed. 3–6 s: reveal cleaning/repair/replacement as options, then owner
+choice. 7–14 s: show a next-measurement placeholder labeled **Verify benefit**,
 not an invented improvement. 14–17 s: settle the complete original logo on white
 with the descriptor and team attribution outside its clear space. 17–20 s: hold
 all final content still; narration finishes by 117 s and audio fades before 120 s.
