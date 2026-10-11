@@ -19,6 +19,7 @@ constexpr uint32_t SENSOR_PERIOD_MS = 1000;
 constexpr float ADC_REF_MV = 3300.0f;      // 10-bit ADC, 3.3 V reference
 constexpr float PV_ZERO_MV = 266.5f;       // sensor output at 0 A, measured in the dark 2026-10-10
 constexpr float PV_MA_PER_MV = 1000.0f / 800.0f;  // ACS70331 module: 800 mV/A
+constexpr float PV_NOISE_MA = 10.0f;  // zero drift (temperature) + ADC steps; below = 0
 constexpr size_t NFC_STACK_SIZE = 1024;  // = CONFIG_DYNAMIC_THREAD_STACK_SIZE (pool slot)
 constexpr int NFC_PRIORITY = 2;          // preempts loop() so taps are answered quickly
 constexpr uint32_t PERF_STALE_MS = 5000;  // drop the index if Linux stops sending it
@@ -94,6 +95,7 @@ void loop() {
   int light_raw = analogRead(A0);
   float pv_mv = read_pv_mv();
   float pv_ma = (pv_mv - PV_ZERO_MV) * PV_MA_PER_MV;
+  if (pv_ma < PV_NOISE_MA) pv_ma = 0.0f;  // no negative or drift-only current
   uint32_t uptime_ms = millis();
   uint32_t uptime_s = uptime_ms / 1000;
 
