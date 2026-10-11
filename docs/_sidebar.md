@@ -4,7 +4,7 @@
 
 - [Home](/)
 - [Project status](/project-status.md)
-- [Three-minute narrative](/pitch-narrative.md)
+- [Two-minute narrative](/pitch-narrative.md)
 - [Project pitch](/pitch-draft.md)
 - [Data and demonstration plan](/data-plan.md)
 - [Expected vs observed results](/comparison-results.md)

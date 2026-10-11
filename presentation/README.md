@@ -3,17 +3,18 @@
 Status: Architecture and planning draft. The HTML deck, theme, JavaScript,
 assets, build scripts, and hosting integration have not been implemented.
 
-This folder plans the team's three-minute PoopVolt presentation, including demo
+This folder plans the team's two-minute PoopVolt presentation, including demo
 time. Follow the [Italian narrative](../docs/pitch-narrative.md): an owner of an
 older plant lacks performance visibility. The approved strong opening leads into
 the company's use of an expected/observed comparison to propose interventions
 the owner can understand and assess. Technical review and benefit verification
 remain essential; no service conversion is guaranteed.
 
-Show an STL concept and one software case with its actual provenance and limits.
-The theoretical reference, verified string mapping, and implemented MVP scope
-remain to confirm. This PR does not implement the demo software or supply an
-STL.
+The six-scene Italian script separates narration, screen text, and motion cues.
+Show the prototype electrical schematic and one historical peer-comparison case
+with their actual provenance and limits. The theoretical reference and verified
+string mapping remain to confirm; an STL is not delivered. The new video remains
+a storyboard, separate from the existing English Devpost materials.
 
 Phone RGB simulation and separate SOLARMA history remain supporting evidence
 paths, not paired proof of production loss. RGB cannot confirm hotspots or lost
@@ -28,8 +29,7 @@ validation remain planned work.
 
 - [Presentation architecture](architecture.md): stack, module boundaries, target
   tree, and contracts.
-- [Agenda](plan/agenda.md): six-slide, three-minute pitch and technical
-  appendix.
+- [Agenda](plan/agenda.md): six-scene, two-minute pitch and technical appendix.
 - [Speaking plan](plan/speech_plan.md): timing, main claims, and transitions.
 - [Visual plan](plan/plots_plan.md): intended visuals and their canonical
   sources.
@@ -48,8 +48,8 @@ It separates Quarto slide authoring, narrative planning, visual planning,
 sources, local assets, and generated preview/release output.
 
 PoopVolt uses its own narrative and proposed visual identity. The draft assumes
-six main slides in three minutes, Italian audience copy, English contributor
-documentation, and one canonical deck source. The three-minute budget is the
+six main scenes in two minutes, Italian audience copy, English contributor
+documentation, and one canonical deck source. The two-minute budget is the
 team's requested brief, not an independently verified event requirement. No
 radar content, institutional theme, logos, fonts, deployment credentials, or
 site configuration are copied.

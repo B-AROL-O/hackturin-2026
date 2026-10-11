@@ -32,20 +32,21 @@ This is an illustrative hook, not measured evidence of contamination loss. The
 central message is: "PoopVolt trasforma uno scostamento produttivo in una
 proposta di intervento comprensibile."
 
-The canonical Italian story is the [three-minute narrative](pitch-narrative.md),
+The canonical Italian story is the [two-minute narrative](pitch-narrative.md),
 adapted from the team's `pitch-narrative2.md`.
 
 ## The hackathon presentation
 
-The agreed talk is three minutes, including a software demonstration and an STL
-design view. Follow the approved hook, company problem, expected/observed
-comparison, physical concept, software case, and technician-reviewed proposal.
-Explain how the company uses the product and how the owner assesses an
-intervention. Do not lead with the distribution offer.
+The talk is two minutes, planned as six motion graphics scenes. Follow the
+approved hook, company problem, available peer comparison and future theoretical
+reference, prototype electrical schematic, historical replay, and
+technician-reviewed proposal. Explain how the company uses the product and how
+the owner assesses an intervention. Do not lead with the distribution offer.
 
-The team's MVP software and STL are presentation materials whose files and
-verified functions must be linked before making implemented claims. This
-documentation change does not implement either artifact.
+The [peer comparison](comparison-results.md) supplies a scoped historical
+replay, and the [electrical schematic](hardware-connections.md) records
+prototype connections. Neither proves the full proposed system. An STL artifact
+is not delivered and stays outside the main sequence.
 
 If the theoretical reference, mapped strings, or software comparison are not
 available, use a clearly labeled simulation or narrow the demonstration. State
@@ -83,9 +84,9 @@ synchronization; the static presentation is not that service platform.
 The existing business proposal remains a hypothesis: sell an edge device to a
 photovoltaic service company, which could offer it to customers at no upfront
 device charge. Pricing, ownership, installation, support, and recurring fees are
-open. The three-minute narrative emphasizes owner value; explain the
-distribution model in questions or the appendix rather than treating it as an
-agreed partnership.
+open. The two-minute narrative emphasizes owner value; explain the distribution
+model in questions or the appendix rather than treating it as an agreed
+partnership.
 
 Coesa is a potential technical/service counterpart. Its existing monitoring and
 O&M activities provide context; Edge AI alone is not an established

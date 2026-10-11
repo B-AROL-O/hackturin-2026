@@ -35,6 +35,13 @@ unavailable-state message. Switching scenarios must never change slides.
 
 ## Motion
 
+The two-minute video uses the timed cues in the
+[Italian storyboard](../docs/pitch-narrative.md): brief entrances, explanatory
+highlights, focused schematic zooms, and holds for reading. Keep wiring and
+chart labels legible. Video scene timing includes transitions and the final
+hold. Provide synchronized subtitles. The following controls apply to an HTML
+adaptation; no video player or deck implementation exists yet.
+
 Use a short crossfade of roughly 200 to 300 ms. Permit at most two or three
 presenter-controlled builds to explain a causal relationship. Keep axes, source
 labels, uncertainty, and measured values visible throughout.

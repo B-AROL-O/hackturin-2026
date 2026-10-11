@@ -1,55 +1,44 @@
 # Speaking storyboard
 
-Status: Speaker plan for the three-minute company-use narrative. The
-[Italian copione](../../docs/pitch-narrative.md) is the spoken source. Times
-match the [agenda](agenda.md); demo time is included.
+Status: Voice-over plan for the two-minute company-use narrative. Read only the
+**Voce** blocks in the [Italian script](../../docs/pitch-narrative.md). Times
+match the [agenda](agenda.md), including pauses and closing holds.
 
 <!-- markdownlint-disable MD013 -->
 
-| Slide | Seconds | Start | End   | Main spoken point                                                                                | Bridge to next slide                |
-| ----- | ------- | ----- | ----- | ------------------------------------------------------------------------------------------------ | ----------------------------------- |
-| 1     | 25      | 00:00 | 00:25 | Use the approved strong hook, pause on Letteralmente, and ask about production impact            | How does the company explain it?    |
-| 2     | 25      | 00:25 | 00:50 | The company needs evidence to motivate work the owner can understand and assess                  | Make the proposal understandable    |
-| 3     | 30      | 00:50 | 01:20 | A proposed scoped production comparison supports the next inspection or service proposal         | Show the physical concept           |
-| 4     | 15      | 01:20 | 01:35 | The STL is a design concept; secured parts and tested integration are different states           | Show one software case              |
-| 5     | 40      | 01:35 | 02:15 | One actual MVP case or labeled simulation shows the company's evidence-to-proposal workflow      | Who reviews and decides?            |
-| 6     | 45      | 02:15 | 03:00 | Company and technician explain alternatives, owner assesses work, and follow-up verifies benefit | Close on an understandable proposal |
+| Scene | Seconds | Start | End   | Main spoken point                                                | Visual transition                      |
+| ----- | ------- | ----- | ----- | ---------------------------------------------------------------- | -------------------------------------- |
+| 1     | 12      | 00:00 | 00:12 | Strong hook, brief pause, question about production              | Panel becomes the owner's installation |
+| 2     | 18      | 00:12 | 00:30 | Company needs evidence the owner can understand                  | Owner's question becomes a comparison  |
+| 3     | 20      | 00:30 | 00:50 | Peer comparison exists; theoretical reference remains future     | Cut to the electrical schematic        |
+| 4     | 25      | 00:50 | 01:15 | UNO Q connections, current-check limit, separate USB/solar paths | Cut to independent historical replay   |
+| 5     | 25      | 01:15 | 01:40 | Replay flags inverter 1; it does not diagnose dirt               | Evidence becomes a technician review   |
+| 6     | 20      | 01:40 | 02:00 | Technician proposes, owner chooses, later measurements verify    | Hold the closing message for 3 seconds |
 
 <!-- markdownlint-enable MD013 -->
 
-## Required speaker notes
+## Required production notes
 
-Use the approved strong opening, pause before "Letteralmente", then connect
-immediately to production impact. Keep it an illustrative hook, not proof of
-loss. Explain the company's use of PoopVolt: inspect the evidence, motivate a
-proposal, and let the owner understand and assess it. Do not guarantee an
-intervention request. The free-device sales model remains supporting context,
-not the opening.
+Keep the hook illustrative. Do not attach a loss value from SOLARMA to the
+illustrated deposit or prototype panel. The available software compares peers;
+it is not the proposed weather-adjusted theoretical model.
 
-Describe the theoretical production model as proposed until an implementation
-and evaluation are linked. Specify actual inputs, uncertainty, units, comparison
-period, and channel/string coverage. If inputs are missing, say what cannot be
-estimated. Do not describe a model deviation as measured historical degradation.
+The hardware segment shows `pv-wiring`, not an undelivered STL. State that UNO Q
+uses USB power and the solar charging branch is separate. Current-sensor zero is
+reported verified; current under illumination remains pending. The schematic and
+bring-up record do not establish a field-ready, self-powered installation.
 
-The hardware segment shows an STL concept. Link its actual file and explain its
-function when available. Do not substitute the secured kit for a working device.
-The software segment must be completed from the MVP's actual functions; if it is
-not linked or executed, use a labeled illustrative scenario and say so.
+Use the replay's actual window, 1 August–17 September 2019, and inverter scope.
+Inverter 1 reports 0 kWh against approximately 292 kWh expected from peers. A
+candidate flag asks for inspection; it is not a cause or guaranteed recovery.
+Keep historical plots independent of phone RGB observations.
 
-Historical SOLARMA replay and phone RGB captures describe separate observations.
-The logs do not provide populated irradiance or verified channel-to-string
-mapping. RGB cannot measure heat or lost kWh. Never attach a replay loss to a
-phone deposit.
+Attribute intervention proposals to the technician. Owners assess work; benefit
+requires later comparable measurements. Coesa and free-device distribution
+remain supporting hypotheses, not confirmed partners or offers.
 
-Explain Coesa as a possible service counterpart, not an established partner. The
-proposed company purchase/free customer device model remains in the appendix.
-Pricing, support costs, and owner acceptance are unresolved.
-
-Cleaning is an option for dirty panels; dirt alone is not a reason to replace
-them. Keep repair, replacement, revamping, and continued operation as reviewed
-alternatives. Do not promise maximum production, guaranteed service requests, or
-full gap recovery. Verify the benefit after intervention under comparable
-operating conditions.
-
-Rehearse the complete static talk and demo within 180 seconds before adding
-interaction.
+Rehearse voice-over within each scene, leaving room for pauses and the
+three-second closing hold. Cut wording before accelerating delivery. A timed
+read and final export check must confirm the 120-second limit; word count alone
+is insufficient. The existing English Devpost video script and subtitles are
+separate materials.

@@ -4,11 +4,11 @@ Status: Proposed backlog. This change implements the architecture documentation,
 planning corpus, and source registry only.
 
 Follow the [owner narrative](../../docs/pitch-narrative.md): an older plant,
-unknown performance, proposed expected/observed comparison, STL concept,
-software case, and regeneration review. Implement the static three-minute story
-before enhancing the comparison scenario. Keep company distribution and separate
-phone/replay sources as appendix context. Preserve the revised agenda's six
-anchors.
+unknown performance, available peer comparison, future theoretical reference,
+electrical schematic, historical replay, and technician review. Implement the
+static two-minute story before enhancing the comparison scenario. Keep company
+distribution and separate phone/replay sources as appendix context. Preserve the
+revised agenda's six anchors.
 
 ## Ordered work
 
@@ -19,7 +19,7 @@ anchors.
 | P0   | Review audience language, time budget, evidence status, and visual direction       | Current draft | Updated agenda and accepted defaults recorded                                  |
 | P1   | Add `talk.qmd`, `_quarto.yml`, initial theme, and local preview instructions       | P0            | Six stable main anchors, four appendix anchors, notes, one local render        |
 | P2   | Render canonical diagrams and acquire local images and fonts with provenance       | P1            | Readable figures, recorded licenses, matching source hashes                    |
-| P3   | Compose every slide and notes using the speaking and visual plans                  | P1, P2        | Complete static narrative, readable at 1280 by 720, 180-second budget          |
+| P3   | Compose every slide and notes using the speaking and visual plans                  | P1, P2        | Complete static narrative, readable at 1280 by 720, 120-second budget          |
 | P4   | Add reduced-motion handling, print/reading layouts, and optional scenario controls | P3            | Complete static fallback, usable keyboard controls, both scenario states       |
 | P5   | Implement source, timing, rendered-link, and packaging checks                      | P3            | Meaningful failures for stale sources, duplicate anchors, missing dependencies |
 | P6   | Build portable audience and presenter bundles                                      | P4, P5        | Local assets and references, audience notes absent, network-free HTTP preview  |
@@ -51,7 +51,7 @@ Record the exact tested Quarto and diagram-rendering versions in build guidance.
 | Planned helper          | Contract                                                                                                                  |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `render_diagrams.py`    | Extract named canonical Mermaid blocks, render figures, retain text alternatives and provenance                           |
-| `check_presentation.py` | Check manifest hashes, source IDs, main/appendix anchors, 180-second timing, local links, assets, and note-exclusion mode |
+| `check_presentation.py` | Check manifest hashes, source IDs, main/appendix anchors, 120-second timing, local links, assets, and note-exclusion mode |
 | `build_share.py`        | Package validated output with assets, fixture, and complete referenced documentation; verify copied links                 |
 
 <!-- markdownlint-enable MD013 -->
@@ -74,15 +74,17 @@ Track implementation status against actual code and hardware artifacts.
 Start from the [reported hardware inventory](../../docs/hardware.md). The UNO Q
 4GB with Media Carrier, Seeed Studio Base Shield, sensors, LCD, and candidate
 power components are secured. Use phone RGB instead of the unavailable thermal
-camera. Use the Base Shield instead of the Grove shield v2 and HRS1358 instead
-of the Waveshare charger. Breadboards are unavailable; confirm a connection plan
-and required cables/adapters before assembly. Availability is not integration.
+camera. Use the Base Shield and the recorded Waveshare charging branch; HRS1358
+and LM2596 are not used. UNO Q is USB-powered, independently of that branch.
+Follow the canonical wiring record rather than inferring integration from
+availability.
 
 Before these supporting data paths, select and document the proposed theoretical
 production reference, required plant/weather inputs, missing-data behavior,
-comparison scope, and evaluation. Link actual MVP code and the STL artifact
-before using them as implemented evidence. The inspected replay alone cannot
-validate the expected-production model.
+comparison scope, and evaluation. Use the linked peer-comparison results and
+prototype wiring within their reported scope. The STL is outside the main
+sequence until delivered. The inspected replay alone cannot validate the
+expected-production model.
 
 1. Pin the inspected SOLARMA revision and downloaded file hashes; implement a
    replay importer with units, missing values, observation time, and coverage.

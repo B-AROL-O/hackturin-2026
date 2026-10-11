@@ -22,25 +22,29 @@ links.
 
 <!-- markdownlint-disable MD013 -->
 
-| Source ID              | Canonical page                                                             | Presentation use                                                         |
-| ---------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `pv-narrative`         | [Three-minute narrative](../../docs/pitch-narrative.md)                    | Owner story, proposed theoretical comparison, MVP and STL scope          |
-| `pv-pitch`             | [Project pitch](../../docs/pitch-draft.md)                                 | Problem and intended value                                               |
-| `pv-index`             | [Architecture index](../../docs/architecture/README.md)                    | View hierarchy, conventions, and open decisions                          |
-| `pv-overview`          | [System overview](../../docs/architecture/overview.md)                     | Intended processing stages and goals                                     |
-| `pv-context`           | [System context](../../docs/architecture/context.md)                       | Operator responsibility and system boundary                              |
-| `pv-architecture`      | [Application architecture](../../docs/architecture/architecture.md)        | Logical modules and `Local storage`                                      |
-| `pv-deployment`        | [Physical deployment](../../docs/architecture/deployment.md)               | Intended platform and unresolved interfaces                              |
-| `pv-acquisition`       | [Acquisition](../../docs/architecture/components/acquisition.md)           | Normalization, quality, and alignment                                    |
-| `pv-diagnostics`       | [Diagnostics](../../docs/architecture/components/diagnostics.md)           | Modality analysis, history, and uncertainty                              |
-| `pv-maintenance`       | [Maintenance](../../docs/architecture/components/maintenance.md)           | Evidence checks and operator recommendation                              |
-| `pv-flow-soiling`      | [Soiling flow](../../docs/architecture/flows/detect-soiling.md)            | Valid and unreliable input branches                                      |
-| `pv-flow-maintenance`  | [Maintenance flow](../../docs/architecture/flows/recommend-maintenance.md) | Operator review, intervention, and reassessment                          |
-| `pv-data-plan`         | [Data plan](../../docs/data-plan.md)                                       | Independent phone/replay paths and source limits                         |
-| `pv-flow-plant`        | [Whole-plant flow](../../docs/architecture/flows/monitor-plant.md)         | Multi-channel analysis, coverage, synchronization                        |
-| `coesa-energy-context` | [Company context](../../docs/company/coesa-energy.md)                      | Existing services and proposed buyer/distribution fit                    |
-| `pv-hardware`          | [Hardware inventory](../../docs/hardware.md)                               | Secured/unavailable parts, phone-camera substitution, integration limits |
-| `pv-references`        | [Reference index](../../docs/references.md)                                | Candidate datasets and links for hardware verification                   |
+| Source ID              | Canonical page                                                             | Presentation use                                                              |
+| ---------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `pv-narrative`         | [Two-minute motion graphics narrative](../../docs/pitch-narrative.md)      | Timed voice-over, wiring scene, replay, technician review                     |
+| `pv-pitch`             | [Project pitch](../../docs/pitch-draft.md)                                 | Problem and intended value                                                    |
+| `pv-index`             | [Architecture index](../../docs/architecture/README.md)                    | View hierarchy, conventions, and open decisions                               |
+| `pv-overview`          | [System overview](../../docs/architecture/overview.md)                     | Intended processing stages and goals                                          |
+| `pv-context`           | [System context](../../docs/architecture/context.md)                       | Operator responsibility and system boundary                                   |
+| `pv-architecture`      | [Application architecture](../../docs/architecture/architecture.md)        | Logical modules and `Local storage`                                           |
+| `pv-deployment`        | [Physical deployment](../../docs/architecture/deployment.md)               | Intended platform and unresolved interfaces                                   |
+| `pv-acquisition`       | [Acquisition](../../docs/architecture/components/acquisition.md)           | Normalization, quality, and alignment                                         |
+| `pv-diagnostics`       | [Diagnostics](../../docs/architecture/components/diagnostics.md)           | Modality analysis, history, and uncertainty                                   |
+| `pv-maintenance`       | [Maintenance](../../docs/architecture/components/maintenance.md)           | Evidence checks and operator recommendation                                   |
+| `pv-flow-soiling`      | [Soiling flow](../../docs/architecture/flows/detect-soiling.md)            | Valid and unreliable input branches                                           |
+| `pv-flow-maintenance`  | [Maintenance flow](../../docs/architecture/flows/recommend-maintenance.md) | Operator review, intervention, and reassessment                               |
+| `pv-data-plan`         | [Data plan](../../docs/data-plan.md)                                       | Independent phone/replay paths and source limits                              |
+| `pv-flow-plant`        | [Whole-plant flow](../../docs/architecture/flows/monitor-plant.md)         | Multi-channel analysis, coverage, synchronization                             |
+| `coesa-energy-context` | [Company context](../../docs/company/coesa-energy.md)                      | Existing services and proposed buyer/distribution fit                         |
+| `pv-hardware`          | [Hardware inventory](../../docs/hardware.md)                               | Secured/unavailable parts, phone-camera substitution, integration limits      |
+| `pv-wiring`            | [Prototype wiring](../../docs/hardware-connections.md)                     | Reported connections, USB supply, separate solar branch, current-check limits |
+| `pv-wiring-svg`        | [Electrical schematic SVG](../../docs/architecture/diagrams/pv-wiring.svg) | Existing KiCad export for the 25-second hardware scene                        |
+| `pv-comparison`        | [Comparison results](../../docs/comparison-results.md)                     | Historical peer replay, inverter 1, window, units, and limits                 |
+| `pv-comparison-chart`  | [Inverter 1 chart](../../docs/images/comparison-inverter-1-replayed.svg)   | Existing replay plot; no redrawn or invented data                             |
+| `pv-references`        | [Reference index](../../docs/references.md)                                | Candidate datasets and links for hardware verification                        |
 
 <!-- markdownlint-enable MD013 -->
 
@@ -52,16 +56,28 @@ details.
 ## Narrative source
 
 `pv-narrative` adapts the team-supplied `pitch-narrative2.md` into a clean
-three-minute copione with subsequent team-approved revisions to the hook and
-company-use framing. It is an authored scenario, not a customer interview or
+two-minute motion graphics copione, retaining the approved hook and company-use
+framing. Six scenes total 120 seconds, with narration, screen text, and
+animation cues separated. The electrical schematic replaces the undelivered STL
+in the main sequence. It is an authored scenario, not a customer interview or
 proof of a working MVP. The source entry records the input filename/checksum.
 Typos, Markdown, timing, and unsupported causal wording were clarified.
 
 The theoretical production reference is proposed; its inputs and validation are
-unresolved. MVP code, executed output, and the STL artifact must be linked
-separately. Do not treat planned demonstrations as implemented evidence.
+unresolved. The implemented peer comparison is a separate, scoped historical
+replay. Prototype wiring is a bring-up record, not proof of the full proposed
+deployment. The video itself remains planned. Do not treat the script as a
+finished video or field-performance evidence.
 
 ## Demonstration sources
+
+The wiring and chart entries pin the existing exports. `pv-wiring-svg` also
+records its canonical KiCad source path/hash; do not edit it independently.
+`pv-comparison` and its chart describe replayed history, not measurements from
+our prototype. The inspected data plan now records the available importer and
+peer comparison, while the hardware inventory records the separate Waveshare
+charging branch. These committed source baselines are refreshed after reviewing
+those changes; edited narrative/pitch/index entries use working-tree state.
 
 - `pv-hardware`: [Team hardware inventory](../../docs/hardware.md), reported on
   2026-10-10. Availability is team-reported; compatibility and operation are
