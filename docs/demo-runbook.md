@@ -9,6 +9,20 @@ phone (browser) ──Wi-Fi──► UNO Q Linux side :8000  (Docker: inspection
           station_rx.py ◄─Bridge─ UNO Q MCU (station sketch): AHT20, light, panel current, LCD, NFC tag
 ```
 
+## Who does what on the UNO Q
+
+The board has two halves, and the prototype uses each for what it is good at:
+
+- **MCU (STM32, real time, low bandwidth):** samples sensors at exact rates with
+  timer interrupts and semaphores, drives actuators and local I/O (LCD, NFC), and
+  keeps running when Linux is busy. It sends the Linux side small, already
+  meaningful messages (readings, events), not raw data streams.
+- **Linux side (Qualcomm, heavy compute):** large data (images), the CV model,
+  the solar model, storage, Wi-Fi and the dashboard API.
+- **The Bridge between them** is a 115200-baud UART (about 11 KB/s): fine for
+  readings and commands, too slow for images. That is why cameras belong on the
+  Linux side.
+
 ## What works today (verified on the hardware)
 
 - **Station (MCU):** temperature, humidity, light and solar panel current, shown on the LCD and readable by tapping an Android phone on the NFC reader.
