@@ -1,12 +1,12 @@
 :root {
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #173f32;
-  background: #f6f7f2;
+  color: #0d2d44;
+  background: #fff;
 
-  --green: #173f32;
-  --muted: #748074;
-  --lime: #cef57d;
+  --brand-blue: #0d2d44;
+  --muted: #52606d;
+  --brand-yellow: #f5c329;
 }
 
 * {
@@ -43,7 +43,7 @@ input:focus-visible,
 select:focus-visible,
 .file-button:focus-within,
 summary:focus-visible {
-  outline: 3px solid #719f40;
+  outline: 3px solid #0d2d44;
   outline-offset: 4px;
 }
 
@@ -62,14 +62,80 @@ summary:focus-visible {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--green);
+  color: var(--brand-blue);
   font-size: 27px;
   font-weight: 780;
   letter-spacing: -1.3px;
 }
 
 .brand-dot {
-  color: #91b35b;
+  color: #f5c329;
+}
+
+.brand img {
+  display: block;
+  height: 56px;
+  width: auto;
+}
+
+.station {
+  background: #f4f5f7;
+  border: 1px solid #d8dee4;
+  border-radius: 15px;
+  padding: 16px 18px;
+  margin-bottom: 28px;
+}
+
+.station.stale {
+  opacity: 0.6;
+}
+
+.station-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.station-age {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.station-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.station-grid > div {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.station-grid dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.station-grid dd {
+  margin: 4px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--brand-blue);
+}
+
+.station-grid small {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.station-perf {
+  border-left: 4px solid var(--brand-yellow);
 }
 
 .edge-status {
@@ -84,7 +150,7 @@ summary:focus-visible {
   content: "";
   width: 6px;
   height: 6px;
-  background: #b4b9ae;
+  background: #9aa5b1;
   border-radius: 100%;
 }
 
@@ -129,11 +195,11 @@ h1 {
 }
 
 h1 > span {
-  color: #839075;
+  color: #52606d;
 }
 
 .intro-note {
-  color: #697765;
+  color: #0d2d44;
   font-size: 13px;
   margin: 17px 0 0;
   line-height: 1.5;
@@ -151,7 +217,7 @@ h1 > span {
   display: flex;
   padding: 4px;
   gap: 2px;
-  background: #e9ece3;
+  background: #f4f5f7;
   border-radius: 30px;
 }
 
@@ -160,14 +226,14 @@ h1 > span {
   background: none;
   padding: 9px 18px;
   border-radius: 24px;
-  color: #78816f;
+  color: #52606d;
   font-size: 11px;
 }
 
 .mode-switch button.active {
   background: white;
-  color: var(--green);
-  box-shadow: 0 2px 6px #26382309;
+  color: var(--brand-blue);
+  box-shadow: 0 2px 6px #0d2d4409;
 }
 
 .upload-actions {
@@ -186,7 +252,7 @@ h1 > span {
   border: 0;
   border-radius: 9px;
   color: white;
-  background: var(--green);
+  background: var(--brand-blue);
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
@@ -204,8 +270,8 @@ h1 > span {
 
 .camera-button {
   background: transparent;
-  border: 1px solid #d4dbcb;
-  color: var(--green);
+  border: 1px solid #d8dee4;
+  color: var(--brand-blue);
 }
 
 .view-note {
@@ -216,8 +282,8 @@ h1 > span {
 }
 
 .view-label {
-  background: #e6eddc;
-  color: #4b6833;
+  background: #d8dee4;
+  color: #0d2d44;
   border-radius: 20px;
   padding: 5px 9px;
   font-size: 9px;
@@ -228,7 +294,7 @@ h1 > span {
 .view-note p {
   margin: 0;
   font-size: 10px;
-  color: #7d8575;
+  color: #52606d;
   line-height: 1.5;
 }
 
@@ -241,14 +307,14 @@ h1 > span {
 .image-card {
   background: #fff;
   border-radius: 15px;
-  border: 1px solid #e3e7dd;
+  border: 1px solid #d8dee4;
   padding: 15px;
   min-width: 0;
-  box-shadow: 0 6px 24px #23332003;
+  box-shadow: 0 6px 24px #0d2d4403;
 }
 
 .processed-card {
-  border-color: #cfdcc0;
+  border-color: #d8dee4;
 }
 
 .card-heading,
@@ -271,15 +337,15 @@ h1 > span {
 
 .card-heading h2 > span {
   display: inline-block;
-  color: #91a080;
+  color: #52606d;
   font-size: 9px;
   margin-right: 8px;
 }
 
 .image-tag {
   font-size: 9px;
-  color: #85907b;
-  border: 1px solid #e3e9dd;
+  color: #52606d;
+  border: 1px solid #d8dee4;
   border-radius: 20px;
   padding: 5px 8px;
   background: transparent;
@@ -287,16 +353,16 @@ h1 > span {
 }
 
 .overlay-toggle {
-  background: #eff5e5;
+  background: #f4f5f7;
   border: 0;
-  color: #587840;
+  color: #0d2d44;
 }
 
 .image-stage {
   position: relative;
   aspect-ratio: 4 / 3;
   line-height: 0;
-  background: #edf0e8;
+  background: #f4f5f7;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -318,7 +384,7 @@ h1 > span {
 .card-footer {
   margin-top: 12px;
   font-size: 9px;
-  color: #8a9281;
+  color: #52606d;
   line-height: 1.4;
 }
 
@@ -342,7 +408,7 @@ h1 > span {
   font-weight: 600;
   letter-spacing: 0.14em;
   line-height: 1;
-  background: #173f32c9;
+  background: #0d2d44c9;
   color: #fff;
   backdrop-filter: blur(6px);
   pointer-events: none;
@@ -365,7 +431,7 @@ h1 > span {
   place-items: center;
   width: 42px;
   height: 42px;
-  background: #e0e7d5;
+  background: #d8dee4;
   border-radius: 12px;
   font-size: 22px;
   margin-bottom: 16px;
@@ -383,8 +449,8 @@ h1 > span {
 }
 
 .detection rect {
-  fill: #cef57d08;
-  stroke: #cef57d;
+  fill: #f5c32908;
+  stroke: #f5c329;
   stroke-width: 1.5;
   vector-effect: non-scaling-stroke;
 }
@@ -394,15 +460,15 @@ h1 > span {
 }
 
 .detection.panel rect {
-  stroke: #cef57d90;
+  stroke: #f5c32990;
   stroke-dasharray: 5 4;
   fill: none;
 }
 
 .detection.panel.selected rect {
   stroke-width: 3;
-  stroke: #cef57d;
-  fill: #cef57d0c;
+  stroke: #f5c329;
+  fill: #f5c3290c;
 }
 
 .detection.dust rect {
@@ -411,7 +477,7 @@ h1 > span {
 }
 
 .detection.bird_dropping rect {
-  stroke: #cef57d;
+  stroke: #f5c329;
 }
 
 .detection.visible_damage rect {
@@ -427,7 +493,7 @@ h1 > span {
   fill: #fff;
   font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  stroke: #173f32;
+  stroke: #0d2d44;
   stroke-width: 4;
   paint-order: stroke;
 }
@@ -448,7 +514,7 @@ h1 > span {
 }
 
 .findings-top .eyebrow {
-  color: #7b896d;
+  color: #52606d;
   font-size: 8px;
   margin-bottom: 8px;
 }
@@ -465,13 +531,13 @@ h1 > span {
   align-items: center;
   gap: 8px;
   font-size: 10px;
-  color: #7b896d;
+  color: #52606d;
 }
 
 .panel-picker select {
-  color: var(--green);
+  color: var(--brand-blue);
   background: #fff;
-  border: 1px solid #dce3d3;
+  border: 1px solid #d8dee4;
   border-radius: 7px;
   padding: 9px 24px 9px 10px;
   font-size: 10px;
@@ -491,7 +557,7 @@ h1 > span {
   gap: 8px;
   padding: 8px 12px;
   background: #fff;
-  border: 1px solid #dfe5d6;
+  border: 1px solid #d8dee4;
   border-radius: 24px;
   font-size: 10px;
 }
@@ -505,7 +571,7 @@ h1 > span {
 }
 
 .finding-chip.bird_dropping::before {
-  background: #87a650;
+  background: #f5c329;
 }
 
 .finding-chip.visible_damage::before {
@@ -514,21 +580,21 @@ h1 > span {
 
 .finding-chip.unsupported {
   background: transparent;
-  color: #8b9481;
+  color: #52606d;
   border-color: transparent;
   padding-left: 4px;
 }
 
 .finding-chip.unsupported::before {
-  background: #b9c0b1;
+  background: #9aa5b1;
 }
 
 .next-step {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: #ecf0e3;
-  border: 1px solid #dfe7d2;
+  background: #f4f5f7;
+  border: 1px solid #d8dee4;
   border-radius: 11px;
   padding: 18px 20px;
 }
@@ -538,15 +604,15 @@ h1 > span {
   place-items: center;
   width: 32px;
   height: 32px;
-  background: #deebc6;
-  color: #587a34;
+  background: #f4f5f7;
+  color: #0d2d44;
   border-radius: 9px;
   flex-shrink: 0;
 }
 
 .next-step .eyebrow {
   font-size: 7px;
-  color: #83946b;
+  color: #52606d;
   margin-bottom: 6px;
 }
 
@@ -558,7 +624,7 @@ h1 > span {
 
 .next-step small {
   display: block;
-  color: #8c967e;
+  color: #52606d;
   font-size: 9px;
   line-height: 1.5;
   margin-top: 4px;
@@ -570,19 +636,19 @@ h1 > span {
 
 .muted {
   font-size: 10px;
-  color: #7d8773;
+  color: #52606d;
   line-height: 1.6;
 }
 
 details {
   margin-top: 16px;
-  border-bottom: 1px solid #e1e7d8;
+  border-bottom: 1px solid #d8dee4;
   padding-bottom: 16px;
 }
 
 summary {
   font-size: 10px;
-  color: #79856e;
+  color: #52606d;
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -606,7 +672,7 @@ summary > span {
 .prediction {
   font-size: 10px;
   padding: 7px 10px;
-  background: #e9eee0;
+  background: #f4f5f7;
   border-radius: 5px;
 }
 
@@ -621,9 +687,9 @@ summary > span {
 .share input {
   min-width: 0;
   flex: 1;
-  color: var(--green);
+  color: var(--brand-blue);
   background: white;
-  border: 1px solid #dce3d3;
+  border: 1px solid #d8dee4;
   border-radius: 6px;
   padding: 9px;
   font-size: 10px;
@@ -631,7 +697,7 @@ summary > span {
 
 .share button {
   border: 0;
-  background: var(--green);
+  background: var(--brand-blue);
   color: white;
   border-radius: 6px;
   padding: 10px 14px;
@@ -653,7 +719,7 @@ summary > span {
 
 #status {
   font-size: 10px;
-  color: #839075;
+  color: #52606d;
   min-height: 14px;
   margin: 14px 0;
   line-height: 1.5;
@@ -669,8 +735,8 @@ footer {
   gap: 20px;
   padding: 20px 0 25px;
   font-size: 9px;
-  color: #94a085;
-  border-top: 1px solid #e1e7d8;
+  color: #52606d;
+  border-top: 1px solid #d8dee4;
 }
 
 @media (width >= 1700px) {
@@ -693,8 +759,15 @@ footer {
   }
 
   .brand img {
-    width: 34px;
-    height: 34px;
+    height: 40px;
+  }
+
+  .station-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .station-perf {
+    grid-column: 1 / -1;
   }
 
   .edge-status {
@@ -781,4 +854,23 @@ footer {
   .results {
     padding-top: 24px;
   }
+}
+
+.danger {
+  background: #fff;
+  color: #a4553e;
+  border: 1px solid #a4553e;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.danger:hover {
+  background: #a4553e0d;
+}
+
+.board-tools {
+  display: flex;
+  justify-content: flex-end;
+  margin: 8px 0 20px;
 }

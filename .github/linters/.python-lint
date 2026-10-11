@@ -33,5 +33,5 @@ no-docstring-rgx=^(_|test_)
 [DESIGN]
 max-args=6
 max-positional-arguments=6
-max-attributes=8
+max-attributes=10
 max-locals=25

@@ -68,4 +68,6 @@ How the index works:
 - Checked against `pvlib`: sun position within 0.02°. Irradiance is about 9 % above the Ineichen clear-sky model on average, but calibration cancels a constant offset. What remains is drift with sun height: about 8 % with the sun above 25° (`--min-elevation`, default), which in October-November means roughly 10:00–17:00. So the index flags losses of roughly 10–15 % or more.
 - Limits: clouds lower the index just like soiling; a full battery stops the charger drawing current (keep a load such as a phone on the Waveshare USB OUT); the light sensor saturates (about 640) and is not used; no panel voltage yet, so this is a relative index, not efficiency in %.
 
+With `--latest latest.json`, the receiver also keeps the latest reading in a small JSON file, which the [inspection dashboard](phone-inspection.md) shows live.
+
 CSV columns: `utc` (corrected), the reading fields, `sun_elev_deg`, `sun_az_deg`, `poa_clear_wm2`, `ratio`, `perf_pct` (`nan` when not computed: sun too low, or no panel current). The sketch reports currents below 10 mA as 0: the sensor's zero drifts by about ±10 mA with temperature (in the sun it read 257–260 mV instead of 266.5 mV), and `pv_mv` keeps the raw value.

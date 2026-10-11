@@ -3,21 +3,56 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f6f7f2" />
+    <meta name="theme-color" content="#ffffff" />
     <title>PoopVolt · A clearer view</title>
-    <link rel="icon" href="/static/logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="/static/logo-poopvolt.png" type="image/png" />
     <link rel="stylesheet" href="/static/style.css" />
     <script src="/static/app.js" defer></script>
   </head>
   <body>
     <header class="topbar">
       <a class="brand" href="/" aria-label="PoopVolt home">
-        <img src="/static/logo.svg" alt="" width="40" height="40" />
-        <span>PoopVolt<span class="brand-dot">.</span></span>
+        <img
+          src="/static/logo-poopvolt.png"
+          alt="PoopVolt"
+          width="200"
+          height="56"
+        />
       </a>
       <span id="health" class="edge-status">Connecting to edge</span>
     </header>
     <main>
+      <section id="station" class="station" aria-label="UNO Q station readings">
+        <div class="station-head">
+          <p class="eyebrow">UNO Q STATION · LIVE</p>
+          <span id="station-age" class="station-age">Waiting for station</span>
+        </div>
+        <dl class="station-grid">
+          <div>
+            <dt>Temperature</dt>
+            <dd id="st-temp">–</dd>
+          </div>
+          <div>
+            <dt>Humidity</dt>
+            <dd id="st-rh">–</dd>
+          </div>
+          <div>
+            <dt>Light</dt>
+            <dd id="st-light">–</dd>
+            <small>raw, uncalibrated</small>
+          </div>
+          <div>
+            <dt>Panel current</dt>
+            <dd id="st-current">–</dd>
+            <small>below 10 mA shown as 0</small>
+          </div>
+          <div class="station-perf">
+            <dt>Performance</dt>
+            <dd id="st-perf">–</dd>
+            <small id="st-perf-note">relative to a clean panel</small>
+          </div>
+        </dl>
+      </section>
       <section class="intro">
         <div>
           <p class="eyebrow">
@@ -165,6 +200,9 @@
           >
             Copy link
           </button>
+          <button id="delete-inspection" type="button" class="danger">
+            Delete inspection
+          </button>
         </div>
       </section>
       <div id="capture-tools" class="capture-tools" hidden>
@@ -174,6 +212,11 @@
         </button>
       </div>
       <p id="status" role="status" aria-live="polite"></p>
+      <div class="board-tools">
+        <button id="clear-all" type="button" class="danger">
+          Clear all photos on the board
+        </button>
+      </div>
       <footer>
         <span>Small observations. Better care.</span
         ><span>PoopVolt / Phone → Edge</span>

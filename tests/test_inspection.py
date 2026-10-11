@@ -259,3 +259,63 @@ def test_rgb_normalization_padding_and_extreme_aspect_ratio(model_settings):
     predictions, latency = detector.infer(Image.new("RGB", (1, 10_000)))
     assert latency > 0
     assert isinstance(predictions, list)
+
+
+def test_delete_one_inspection(model_settings):
+    with TestClient(create_app(model_settings)) as client:
+        keep, gone = upload(client).json(), upload(client).json()
+        assert client.delete(f"/api/inspections/{gone['id']}").status_code == 204
+        assert client.get(f"/api/inspections/{gone['id']}").status_code == 404
+        assert client.get(f"/api/inspections/{gone['id']}/image").status_code == 404
+        assert client.delete(f"/api/inspections/{gone['id']}").status_code == 404
+        assert client.get(f"/api/inspections/{keep['id']}").status_code == 200
+        assert sorted(p.name for p in model_settings.storage.iterdir()) == [
+            f"{keep['id']}.jpg",
+            f"{keep['id']}.json",
+        ]
+
+
+def test_clear_all_inspections(model_settings):
+    with TestClient(create_app(model_settings)) as client:
+        ids = [upload(client).json()["id"] for _ in range(3)]
+        assert client.delete("/api/inspections").json() == {"removed": 3}
+        assert not list(model_settings.storage.iterdir())
+        assert all(client.get(f"/api/inspections/{i}").status_code == 404 for i in ids)
+        assert client.delete("/api/inspections").json() == {"removed": 0}
+        assert upload(client).status_code == 201
+
+
+def test_delete_refused_while_inspection_runs(model_settings):
+    started, release = Event(), Event()
+
+    def factory(model, config):
+        detector = Detector(model, config)
+        infer = detector.infer
+
+        def blocking_infer(image):
+            started.set()
+            assert release.wait(5)
+            return infer(image)
+
+        detector.infer = blocking_infer
+        return detector
+
+    with (
+        TestClient(create_app(model_settings, factory)) as client,
+        ThreadPoolExecutor() as executor,
+    ):
+        release.set()
+        existing = upload(client).json()
+        release.clear()
+        started.clear()
+        running = executor.submit(upload, client)
+        try:
+            assert started.wait(5)
+            assert client.delete("/api/inspections").status_code == 429
+            assert (
+                client.delete(f"/api/inspections/{existing['id']}").status_code == 429
+            )
+        finally:
+            release.set()
+        assert running.result().status_code == 201
+        assert client.delete("/api/inspections").json() == {"removed": 2}
