@@ -22,12 +22,12 @@ bool Pn532Tag::begin() {
   k_mutex_init(&ndef_mutex);
   setText("");
 
-  ser.begin(115200);
+  serial_port.begin(115200);
   static const uint8_t wakeup[] = {0x55, 0x55, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                                    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-  ser.write(wakeup, sizeof(wakeup));
+  serial_port.write(wakeup, sizeof(wakeup));
   delay(10);
-  while (ser.available()) ser.read();
+  while (serial_port.available()) serial_port.read();
 
   const uint8_t sam[] = {CMD_SAM_CONFIGURATION, 0x01, 0x14, 0x01};  // normal mode
   if (!command(sam, sizeof(sam), 500)) return false;
@@ -197,9 +197,9 @@ void Pn532Tag::send(const uint8_t* cmd, uint8_t len) {
   for (uint8_t i = 0; i < len; i++) sum += cmd[i];
   const uint8_t header[] = {0x00, 0x00, 0xFF, frame_len_byte, (uint8_t)(0x100 - frame_len_byte), TFI_HOST};
   const uint8_t trailer[] = {(uint8_t)(0x100 - sum), 0x00};
-  ser.write(header, sizeof(header));
-  ser.write(cmd, len);
-  ser.write(trailer, sizeof(trailer));
+  serial_port.write(header, sizeof(header));
+  serial_port.write(cmd, len);
+  serial_port.write(trailer, sizeof(trailer));
 }
 
 void Pn532Tag::consume(size_t n) {
@@ -213,7 +213,7 @@ void Pn532Tag::consume(size_t n) {
 
 // Parses at most one information frame from the UART into `frame`; skips ACKs.
 bool Pn532Tag::readFrame() {
-  while (ser.available() && rx_len < sizeof(rx)) rx[rx_len++] = ser.read();
+  while (serial_port.available() && rx_len < sizeof(rx)) rx[rx_len++] = serial_port.read();
 
   while (true) {
     while (rx_len >= 3 && !(rx[0] == 0x00 && rx[1] == 0x00 && rx[2] == 0xFF)) consume(1);

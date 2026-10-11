@@ -139,8 +139,7 @@ def parse_args():
     p.add_argument(
         "--now",
         type=float,
-        help="current UTC time as Unix seconds (from the laptop: $(date +%%s)); "
-        "corrects the board clock",
+        help="current UTC time as Unix seconds (from the laptop: $(date +%%s)); corrects the board clock",
     )
     p.add_argument("--lat", type=float, default=45.07, help="latitude (default Turin)")
     p.add_argument("--lon", type=float, default=7.69, help="longitude (default Turin)")
@@ -182,8 +181,7 @@ def main():
     index = PerformanceIndex(args)
     if index.baseline is None and not args.calibrate:
         print(
-            "no baseline yet: run once with --calibrate 30 while the panel is clean "
-            "in clear sun",
+            "no baseline yet: run once with --calibrate 30 while the panel is clean in clear sun",
             file=sys.stderr,
         )
 

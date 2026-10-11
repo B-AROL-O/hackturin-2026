@@ -13,7 +13,7 @@ class Pn532Tag {
 public:
   static constexpr size_t MAX_TEXT = 100;
 
-  explicit Pn532Tag(HardwareSerial& serial) : ser(serial) {}
+  explicit Pn532Tag(HardwareSerial& serial) : serial_port(serial) {}
 
   bool begin();  // wake up + configure; false if no PN532 answers
   uint32_t firmwareVersion() const { return fw_version; }
@@ -31,7 +31,7 @@ private:
   void handleApdu(const uint8_t* apdu, uint8_t len);
   void consume(size_t n);
 
-  HardwareSerial& ser;
+  HardwareSerial& serial_port;
   uint32_t fw_version = 0;
   State state = State::Idle;
   uint32_t state_since = 0;
