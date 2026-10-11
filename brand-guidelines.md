@@ -34,7 +34,7 @@ ancora previste. Le linee guida di brand non sostituiscono lo stato del progetto
 ### Nome
 
 - Scrivere sempre **PoopVolt**, con P e V maiuscole.
-- Usare **Team B-AROL-O** per l'attribuzione al team.
+- Usare **Suncheckers** per l'attribuzione al team.
 - Tenere separati nome del prodotto, nome del team e nome dell'evento.
 - Conservare i nomi tecnici esistenti nei percorsi e nel codice.
 
