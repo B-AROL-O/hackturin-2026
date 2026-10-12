@@ -23,6 +23,8 @@
   existing capabilities, source register, and proposed PoopVolt positioning.
 - [Reference index](references.md): canonical external sources and retrieval
   keywords for AI agents and contributors.
+- [hackTurin 2026 resources](hackturin-2026.md): quick links, event details,
+  mentors, partners and sponsors.
 
 See upstream GitHub repository:
 <https://github.com/arol-polito/python-project-template>
