@@ -18,8 +18,8 @@ company-funded/free-device offer remains a secondary commercial hypothesis.
 
 > This project was initially developed during the [hackTurin 2026](https://luma.com/t2odor1k) hackathon which took place in Turin over the 2026-10-11 weekend.
 > See the [full writeup on Devpost](https://devpost.com/software/poopvolt).
-
-We are tackling the **Beyond Solar** challenge with **PoopVolt**, an Edge AI
+>
+> Our team tackled the **Beyond Solar** challenge with **PoopVolt**, an Edge AI
 predictive maintenance system for off-grid photovoltaic installations. See the
 [project pitch](docs/pitch-draft.md) for the idea description.
 
