@@ -149,8 +149,10 @@ replayed or simulated.
 
 ## Licence and reuse
 
-The repository is MIT licensed ([LICENSE](LICENSE)). SOLARMA data is MIT
-licensed and its notice is kept in [`data/solarma/NOTICE.md`](data/solarma/NOTICE.md).
+The repository is MIT licensed ([LICENSE](LICENSE)). It is based on the
+[arol-polito/python-project-template](https://github.com/arol-polito/python-project-template)
+template. SOLARMA data is MIT licensed and its notice is kept in
+[`data/solarma/NOTICE.md`](data/solarma/NOTICE.md).
 [Project status](docs/project-status.md) lists what is pre-existing.
 
 ## Repository layout
