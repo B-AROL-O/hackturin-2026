@@ -14,7 +14,11 @@ an STL concept, and technician-reviewed regeneration. The theoretical model,
 implemented demo scope, and field benefits remain to verify. The
 company-funded/free-device offer remains a secondary commercial hypothesis.
 
-## Challenge
+## The Challenge
+
+> This code was initially developed during the [hack Turin 2026](https://luma.com/t2odor1k).
+>
+> See the [full writeup on Devpost](https://devpost.com/software/poopvolt)
 
 We are tackling the **Beyond Solar** challenge with **PoopVolt**, an Edge AI
 predictive maintenance system for off-grid photovoltaic installations. See the
