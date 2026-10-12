@@ -2,7 +2,7 @@
 
 Quick links to PoopVolt documentation, plus event, partner and sponsor
 information for the [hackTurin 2026](https://luma.com/t2odor1k) hackathon.
-Back to the [project README](../README.md).
+Back to the [project readme](../README.md).
 
 ## Quick links
 
