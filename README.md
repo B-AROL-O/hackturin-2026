@@ -16,9 +16,8 @@ company-funded/free-device offer remains a secondary commercial hypothesis.
 
 ## The Challenge
 
-> This code was initially developed during the [hack Turin 2026](https://luma.com/t2odor1k).
->
-> See the [full writeup on Devpost](https://devpost.com/software/poopvolt)
+> This project was initially developed during the [hackTurin 2026](https://luma.com/t2odor1k) hackathon which took place in Turin over the 2026-10-11 weekend.
+> See the [full writeup on Devpost](https://devpost.com/software/poopvolt).
 
 We are tackling the **Beyond Solar** challenge with **PoopVolt**, an Edge AI
 predictive maintenance system for off-grid photovoltaic installations. See the
@@ -217,14 +216,12 @@ See [project status](docs/project-status.md) for implementation and testing limi
 
 ## The Team
 
-- [Giacomo Lisita](https://www.linkedin.com/in/giacomolisita) | GitHub:
-  <https://github.com/giacolees> | Telegram: @younglees
-- [Gianpaolo Macario](https://www.linkedin.com/in/gmacario/) | GitHub:
-  <https://github.com/gmacario> | Telegram: @gmacario
-- [Lorenzo Palloni](https://www.linkedin.com/in/lorenzopalloni/) | GitHub:
-  <https://github.com/lorenzopalloni> | Telegram: @lorenzopalloni
-- [Federico Nebuloni](https://www.linkedin.com/in/federico-nebuloni-770641246) |
-  GitHub: <https://github.com/fedenebu> | Telegram: @Foxtrot230
+| Name | GitHub | Telegram |
+| ---- | ------ | -------- |
+| [Giacomo Lisita](https://www.linkedin.com/in/giacomolisita) | <https://github.com/giacolees> | @younglees
+| [Gianpaolo Macario](https://www.linkedin.com/in/gmacario/) | <https://github.com/gmacario> | @gmacario
+| [Lorenzo Palloni](https://www.linkedin.com/in/lorenzopalloni/) |<https://github.com/lorenzopalloni> | @lorenzopalloni
+| [Federico Nebuloni](https://www.linkedin.com/in/federico-nebuloni-770641246) | <https://github.com/fedenebu> | @Foxtrot230
 
 ## hackTurin 2026 at a glance
 
