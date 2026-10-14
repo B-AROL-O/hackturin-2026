@@ -1,6 +1,11 @@
 {
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "files": {
-    "includes": ["**", "!**/*.svg"]
+    "includes": ["**", "!**/*.svg", "!presentation/video"]
   },
   "linter": {
     "rules": {
