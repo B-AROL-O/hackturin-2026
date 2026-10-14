@@ -3,7 +3,8 @@
 // the display is not readable) and streams them to the Linux side over the
 // Bridge as notify("station", seq, uptime_ms, temp_c, rh_pct, light_raw, pv_ma,
 // pv_mv); see linux/station_rx.py. Linux sends back the panel performance index
-// with set_perf (tenths of %, -1 = not available), shown on the LCD and NFC text.
+// with set_perf (tenths of %, -1 = not available), shown on the LCD and NFC text,
+// and its Wi-Fi IP with set_ip, added to the NFC text as the dashboard address.
 //
 // I2C (Wire): AHT20 0x38, LCD 0x3E. A0: light sensor. A1: Grove 2.5A DC current
 // sensor (ACS70331) in series with the solar panel. PN532 on the shield
@@ -35,6 +36,7 @@ bool has_nfc = false;
 uint32_t seq = 0;
 volatile int perf_x10 = -1;
 volatile uint32_t perf_at_ms = 0;
+char board_ip[16] = "";  // dotted IPv4 from Linux, empty until known
 static struct k_thread nfc_data;
 
 float read_pv_mv() {
@@ -44,6 +46,11 @@ float read_pv_mv() {
     delay(2);
   }
   return sum / 10.0f * ADC_REF_MV / 1024.0f;
+}
+
+void set_ip(MsgPack::str_t ip) {
+  strncpy(board_ip, ip.c_str(), sizeof(board_ip) - 1);
+  board_ip[sizeof(board_ip) - 1] = '\0';
 }
 
 void set_perf(int x10) {
@@ -72,6 +79,7 @@ bool start_nfc() {
 void setup() {
   Bridge.begin();
   Bridge.provide("set_perf", set_perf);
+  Bridge.provide("set_ip", set_ip);
   Monitor.begin();
   Wire.begin();
 
@@ -117,9 +125,12 @@ void loop() {
   if (perf >= 0) snprintf(perf_str, sizeof(perf_str), "%d%%", (perf + 5) / 10);
 
   char text[Pn532Tag::MAX_TEXT];
-  snprintf(text, sizeof(text), "PoopVolt: T=%.1fC RH=%.0f%% light=%d Ipv=%.0fmA perf=%s up=%lus",
+  int n = snprintf(text, sizeof(text), "PoopVolt: T=%.1fC RH=%.0f%% light=%d Ipv=%.0fmA perf=%s up=%lus",
            (double)temp_c, (double)hum_pct, light_raw, (double)pv_ma, perf_str,
            (unsigned long)uptime_s);
+  if (board_ip[0] && n > 0 && (size_t)n < sizeof(text)) {
+    snprintf(text + n, sizeof(text) - n, " dashboard: http://%s:8000", board_ip);
+  }
   tag.setText(text);
   Bridge.notify("station", seq++, uptime_ms, temp_c, hum_pct, light_raw, pv_ma, pv_mv);
 

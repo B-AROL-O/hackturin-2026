@@ -11,7 +11,7 @@
 
 class Pn532Tag {
  public:
-  static constexpr size_t MAX_TEXT = 100;
+  static constexpr size_t MAX_TEXT = 140;
 
   explicit Pn532Tag(HardwareSerial& serial) : serial_port(serial) {}
 
