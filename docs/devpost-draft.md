@@ -206,8 +206,13 @@ Adapted from the requirement mapping of the earlier SunCheck work breakdown.
   there. Its response is a list of inverters to inspect. Run it on the board
   before submitting, or say in the description where it runs.
 - **Start from a well-defined user, context and problem.** Covered: the owner
-  of an older plant and the service company that maintains it. Validation with
-  the Coesa mentor (issue #13) is still open.
+  of an older plant and the service company that maintains it. We showed our
+  progress to Matteo Stoppa (Coesa) on 10 and 11 October; he told us Coesa has
+  no fine-grained data from plants it did not develop and commission, so it
+  cannot make optimized revamping proposals for them
+  ([notes](company/coesa-energy.md)). That supports the problem but is not an
+  approval of our solution, so say "discussed with", not "validated by". The questions on the reference model, data access and the
+  free-device model are still unanswered (issue #13).
 - **Show the improvement with a practical test and numbers.** Covered on replayed data. The
   evidence list now states it for the replay: inverter 1 produced nothing for
   75 days without being restored, and a daily peer check points at it on the

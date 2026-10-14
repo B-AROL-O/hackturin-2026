@@ -191,6 +191,29 @@ These are team-proposed dimensions, not Coesa's judging criteria:
 - Offline and remote behavior: local operation, queue recovery, coverage,
   last-seen timestamps, and company/own-plant access separation.
 
+### Mentor feedback
+
+Reported by Gianpaolo Macario on 2026-10-11 (issue #13). The team met Matteo
+Stoppa (Coesa) on Saturday 2026-10-10 and Sunday 2026-10-11 and showed him the
+progress so far. Only the points below were relayed; this is a paraphrase, not
+a transcript, and it is not Coesa's position on PoopVolt or an approval of it.
+
+- **Evidence available today:** Stoppa said that Coesa has no fine-grained data
+  from photovoltaic plants it has not developed and commissioned. Because of
+  that, it cannot provide optimized proposals for revamping those plants. This
+  is consistent with its public pages, which describe monitoring for its own
+  plants; it says nothing about the plants it built.
+
+What this means for the team (analysis, not mentor feedback): the target is the
+older plant that Coesa did not build, where the owner has no evidence and Coesa
+cannot size a revamping offer. That supports the problem and the purpose of
+PoopVolt's evidence, and it makes revamping proposals, not only cleaning, a
+use of it. It also means the SOLARMA replay is the only plant history we can
+point to, and the "multi-channel plant history" must not be presented as
+available from Coesa: the device would have to produce that data. Whether the
+evidence we produce is good enough to size a revamping offer is not yet
+validated.
+
 ### Questions for Coesa or a mentor
 
 1. Which customer segment and existing O&M workflow should host the first pilot?

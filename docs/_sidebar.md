@@ -16,6 +16,7 @@
 - [Prototype electrical wiring](/hardware-connections.md)
 - [Replicate the UNO Q prototype](/replicate-uno-q-setup.md)
 - [Reference index](/references.md)
+- [hackTurin 2026 resources](/hackturin-2026.md)
 - [HOWTO Create a GitHub repository from template](/howto-create-repository-from-template.md)
 
 <!-- EOF -->
