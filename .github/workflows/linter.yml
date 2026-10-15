@@ -39,6 +39,9 @@ jobs:
           VALIDATE_BIOME_FORMAT: false
           # The Remotion film project is generated, minified and vendored
           # (fonts, lock file, audio); it is checked by its own scripts.
-          FILTER_REGEX_EXCLUDE: ^presentation/video/
+          # Paths are absolute (/github/workspace/...), so don't anchor with ^.
+          # Biome and Prettier lint the whole tree: see biome.json and
+          # .prettierignore.
+          FILTER_REGEX_EXCLUDE: presentation/video/
           DEFAULT_BRANCH: main
 # EOF

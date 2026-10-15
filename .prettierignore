@@ -1,0 +1,3 @@
+# The Remotion film project is generated and vendored; see
+# FILTER_REGEX_EXCLUDE in .github/workflows/linter.yml.
+presentation/video/
