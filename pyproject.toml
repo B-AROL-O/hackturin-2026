@@ -1,6 +1,6 @@
 [project]
 name = "PoopVolt"
-version = "0.2.0"
+version = "0.3.0"
 description = "PoopVolt edge diagnostics for off-grid photovoltaic installations"
 readme = "README.md"
 requires-python = ">=3.12"
