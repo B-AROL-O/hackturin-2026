@@ -4,7 +4,7 @@ How to rebuild Lorenzo's working bench setup from scratch: UNO Q, Grove sensors,
 
 ## Status (frozen 2026-10-11, handover)
 
-The software pipeline works end to end. The solar measurement does not yet produce usable data: today's mini panel delivers no real current through this charger. Everything is merged in `develop`.
+The software pipeline works end-to-end. The solar measurement does not yet produce usable data: today's mini panel delivers no real current through this charger. Everything is merged in `develop`.
 
 What works, verified on the hardware:
 
