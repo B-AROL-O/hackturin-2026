@@ -39,7 +39,7 @@ startup. Successful inspections run once per submitted photograph.
 The detector's supported format, geometric panel association and conservative
 recommendation rules are explicit in the
 [setup/contract guide](../phone-inspection.md). These rules do not implement the
-wider predictive-maintenance design. Local storage is single-process, bounded
+wider predictive-maintenance design. The data directory is single-process, bounded
 to 100 records/250 MiB, and served at the same origin as the browser-ready UI.
 Phone and laptop use the board's LAN HTTP address. Model accuracy, actual latency,
 and phone/UNO Q hardware acceptance remain unverified.

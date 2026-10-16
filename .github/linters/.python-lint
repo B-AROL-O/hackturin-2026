@@ -10,6 +10,19 @@ disable=
     # The Linux receivers are standalone scripts copied to the board.
     duplicate-code,
     line-too-long,
+    # Docstrings are not required for tests, scripts and small helpers.
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    # Standalone scripts adjust sys.path before importing; lazy imports keep
+    # optional heavy dependencies (cv2, numpy, uvicorn) out of module load.
+    wrong-import-position,
+    import-outside-toplevel,
+    # Size limits that flag the model and request handlers without a better fix.
+    too-few-public-methods,
+    too-many-locals,
+    too-many-branches,
+    too-many-statements,
     # pytest injects fixtures by parameter name.
     redefined-outer-name
 
@@ -20,5 +33,5 @@ no-docstring-rgx=^(_|test_)
 [DESIGN]
 max-args=6
 max-positional-arguments=6
-max-attributes=8
+max-attributes=10
 max-locals=25

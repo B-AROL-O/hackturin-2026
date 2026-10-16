@@ -29,7 +29,7 @@ def test_station_missing_file_is_unavailable(tmp_path):
 def test_station_fresh_and_stale(tmp_path):
     settings, client = make_client(tmp_path)
     reading = {"temp_c": 24.3, "pv_ma": 0.0, "perf_pct": None, "calibrated": False}
-    settings.station.write_text(json.dumps(reading))
+    settings.station.write_text(json.dumps(reading), encoding="utf-8")
     with client:
         fresh = client.get("/api/station").json()
         old = time.time() - 60
@@ -41,6 +41,6 @@ def test_station_fresh_and_stale(tmp_path):
 
 def test_station_corrupt_file_is_unavailable(tmp_path):
     settings, client = make_client(tmp_path)
-    settings.station.write_text("{not json")
+    settings.station.write_text("{not json", encoding="utf-8")
     with client:
         assert client.get("/api/station").json()["available"] is False

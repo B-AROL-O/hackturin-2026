@@ -180,5 +180,5 @@ measurements. See [the QA record](../video/review.md) for actual export checks.
 
 The current direction preserves the original canonical replay chart, including
 its technical colors and typography; it supersedes the older plan for a branded
-re-export. The chart, its generator, and source data are unchanged. All newly
+reexport. The chart, its generator, and source data are unchanged. All newly
 authored typography uses the bundled Source Sans 3 regular/semibold under SIL OFL.

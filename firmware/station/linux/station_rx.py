@@ -29,6 +29,7 @@ import math
 import os
 import socket
 import statistics
+import subprocess
 import sys
 import time
 
@@ -40,6 +41,8 @@ import solar_model
 ROUTER_SOCKET = "/var/run/arduino-router.sock"
 METHOD = "station"
 MCU_PERF_METHOD = "set_perf"  # provided by the sketch: perf in tenths of %, -1 = none
+MCU_IP_METHOD = "set_ip"  # provided by the sketch: board IPv4, shown in the NFC text
+IP_REFRESH_S = 10.0
 MIN_PANEL_MA = 5.0  # below this the current is ADC noise (about 4 mA per step)
 # A baseline only applies to the place and panel orientation it was made for.
 GEOMETRY = ("lat", "lon", "tilt", "azimuth")
@@ -123,7 +126,7 @@ class PerformanceIndex:
             "tilt": self.args.tilt,
             "azimuth": self.args.azimuth,
         }
-        with open(self.args.baseline, "w") as f:
+        with open(self.args.baseline, "w", encoding="utf-8") as f:
             json.dump(record, f, indent=2)
         print(
             f"calibrated: clean ratio {self.baseline:.4f} mA per W/m2 from "
@@ -213,10 +216,24 @@ def main():
         )
 
     if args.csv:
-        with open(args.csv, "a", newline="") as out:
+        with open(args.csv, "a", newline="", encoding="utf-8") as out:
             receive(out, out.tell() == 0, index, clock_offset, args.latest)
     else:
         receive(sys.stdout, True, index, clock_offset, args.latest)
+
+
+def board_ip():
+    """First IPv4 address of the board, skipping loopback and Docker's bridge."""
+    try:
+        out = subprocess.run(
+            ["hostname", "-I"], capture_output=True, text=True, timeout=2, check=False
+        ).stdout
+    except (OSError, subprocess.SubprocessError):
+        return None
+    for addr in out.split():
+        if "." in addr and not addr.startswith(("127.", "172.17.")):
+            return addr
+    return None
 
 
 def write_latest(path, record):
@@ -226,7 +243,7 @@ def write_latest(path, record):
         for k, v in record.items()
     }
     tmp = f"{path}.tmp"
-    with open(tmp, "w") as f:
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(clean, f)
     os.replace(tmp, path)
 
@@ -241,6 +258,7 @@ def receive(out, write_header, index, clock_offset, latest=None):
     unpacker = msgpack.Unpacker(raw=False)
     register(sock, unpacker)
     print(f"registered '{METHOD}' on {ROUTER_SOCKET}", file=sys.stderr)
+    next_ip_at = 0.0
 
     while True:
         data = sock.recv(4096)
@@ -256,6 +274,11 @@ def receive(out, write_header, index, clock_offset, latest=None):
 
             perf_x10 = -1 if math.isnan(perf) else max(0, round(perf * 10))
             sock.sendall(msgpack.packb([2, MCU_PERF_METHOD, [perf_x10]]))
+            if time.monotonic() >= next_ip_at:
+                next_ip_at = time.monotonic() + IP_REFRESH_S
+                ip = board_ip()
+                if ip:
+                    sock.sendall(msgpack.packb([2, MCU_IP_METHOD, [ip]]))
 
             values = (*reading, elev, az, poa, ratio, perf)
             writer.writerow(
