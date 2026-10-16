@@ -232,7 +232,8 @@ Hard deadline: Sunday 11 October 2026, 16:00 CEST; aim for 15:30.
       13:00 checkpoint and again after #69. If the performance index is
       calibrated in clear sun before the deadline, say so and give the result;
       otherwise keep "implemented, not calibrated".
-- [ ] Add the video link, and check it opens in a logged-out browser.
+- [x] Add the video link, and check it opens in a logged-out browser:
+      <https://www.youtube.com/watch?v=iN8QtD9RLIk>.
 - [ ] Add a photo of the prototype and the two diagrams; a screenshot of the
       inspection page is optional and must keep its "demo" label.
 - [ ] Re-run `uv run python -m poopvolt.report` if the comparison changes, and

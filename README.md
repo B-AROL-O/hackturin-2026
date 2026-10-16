@@ -17,7 +17,8 @@ company-funded/free-device offer remains a secondary commercial hypothesis.
 ## The Challenge
 
 > This project was initially developed during the [hackTurin 2026](https://luma.com/t2odor1k) hackathon which took place in Turin over the 2026-10-11 weekend.
-> See the [full writeup on Devpost](https://devpost.com/software/poopvolt).
+> See the [full writeup on Devpost](https://devpost.com/software/poopvolt)
+> and the [pitch video on YouTube](https://www.youtube.com/watch?v=iN8QtD9RLIk).
 > Quick links, event details, partners and sponsors are in
 > [hackTurin 2026 resources](docs/hackturin-2026.md).
 
