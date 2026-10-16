@@ -6,6 +6,8 @@ Back to the [project readme](../README.md).
 
 ## Quick links
 
+- [Pitch video on YouTube](https://www.youtube.com/watch?v=iN8QtD9RLIk) —
+  the PoopVolt project video for hackTurin 2026.
 - [Three-minute Italian narrative](pitch-narrative.md) — owner, production
   comparison, software demo, STL concept, and regeneration.
 - [Project pitch](pitch-draft.md) — proposed product and commercial
