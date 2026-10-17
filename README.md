@@ -73,6 +73,13 @@ flowchart TB
     A --> B --> C --> D --> E
 ```
 
+The bench prototype, assembled on cardboard during the hackathon:
+
+![PoopVolt bench prototype: UNO Q with Grove Base Shield, 16x2 LCD showing
+temperature, humidity, light and panel current, NFC antenna, Grove sensors,
+mini solar panel, charge manager and LiPo
+battery](docs/video/assets/prototype-bench-01.jpg)
+
 The prototype wiring (UNO Q with Base Shield, five Grove modules and a separate
 solar charging path) is recorded in [hardware connections](docs/hardware-connections.md):
 
@@ -113,11 +120,27 @@ quantities and approximate cost are in the [bill of materials](hardware/bom.md).
 
 ## Validation
 
-Numbers we have, with their origin:
+Headline numbers, each labelled by origin:
+
+<!-- markdownlint-disable MD013 -->
+
+| What                              | Number                                                                                                                                 | Origin              |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| Soiling classifier accuracy       | Not available: no PoopVolt model and no labelled photo set yet                                                                         | —                   |
+| Inference time on the UNO Q (CPU) | About 0.8 s per photo with the off-the-shelf test model; reference models 258 ms (NanoDet-Plus, 416x416) and 2.27 s (YOLOX-S, 640x640) | Measured            |
+| Example deviation (inverter 1)    | No production for 75 days, about 550 kWh short of its peers (lower bound); flagged on its first day without production                 | Replayed            |
+| Detection of an injected loss     | Flagged in 10 of 10 inverters from 8 %, 4 of 10 at 4 to 6 %, mostly not at 2 %; threshold chosen after seeing the data                 | Simulated on replay |
+| Device cost                       | About 145 for the prototype, single-unit list prices, not a production cost                                                            | Bill of materials   |
+
+<!-- markdownlint-enable MD013 -->
+
+Details and sources:
 
 - **Measured on the UNO Q:** CPU-only inference of reference models, for
   example NanoDet-Plus at 416x416 in 258 ms and YOLOX-S at 640x640 in 2.27 s
-  ([model budget](docs/uno-q-model-budget.md)). No PoopVolt model has been run
+  ([model budget](docs/uno-q-model-budget.md)). The off-the-shelf test model
+  takes about 0.8 s per photo on the board
+  ([test model](models/offtheshelf/README.md)). No PoopVolt model has been run
   yet.
 - **Replayed:** the SOLARMA export loads as 58,687 detail rows from 13
   inverters, with 1,157 communication outages and no irradiance values
